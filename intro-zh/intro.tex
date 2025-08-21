@@ -1,0 +1,2821 @@
+\chapter{Introduction and notation \quad \quad 引言与符号}
+\label{ch:intro}
+
+{\em Wisdom is the quality that keeps you from getting into situations where you need it. --Doug Larson}
+
+{\em 智慧是一种让你远离需要智慧的困境的品质。--道格·拉森}
+
+\section{Basic sets 基本集合}
+\label{sec:basic}
+
+It has been said\index{Kronecker, Leopold}\footnote{Usually attributed to 
+Kronecker -- ``Die ganze Zahl schuf der liebe Gott, alles \"{U}brige 
+ist Menschenwerk.''} that ``God invented
+the integers, all else is the work of Man.''  This is 
+a mistranslation.  The term ``integers'' should
+actually be ``whole numbers.''  The concepts of zero and negative 
+values seem (to many people) to be unnatural constructs.  Indeed, otherwise
+intelligent people are still known to rail against the concept of a
+negative quantity -- ``How can you have negative three apples?'' 
+The concept of zero is also somewhat profound.
+
+有人曾说\index{Kronecker, Leopold}\footnote{通常认为是克罗内克所说——“Die ganze Zahl schuf der liebe Gott, alles \"{U}brige ist Menschenwerk。”}，“上帝创造了整数，其余一切皆是人的工作。” 这是一个错误的翻译。术语“整数”实际上应该是“自然数”。零和负值的概念（对许多人来说）似乎是不自然的构造。确实，有些本应聪明的人仍然会反对负数数量的概念——“你怎么能有负三个苹果呢？” 零的概念也颇为深刻。
+
+Probably most people will agree that the 
+\index{natural 
+numbers} natural numbers {\em are} a natural construct -- they are the numbers we use to count things.  Traditionally, the natural numbers are denoted $\Naturals$.
+
+可能大多数人会同意，\index{natural numbers}自然数确实是一种自然的构造——它们是我们用来数东西的数。传统上，自然数用$\Naturals$表示。
+
+At this point in time there seems to be no general agreement about the status
+of zero ($0$) as a natural number. Are there collections that we might possibly
+count that have \emph{no} members? Well, yes -- I'd invite you to consider the collection of gold bars that I keep in my basement\ldots
+
+目前，关于零（$0$）是否是自然数，似乎没有普遍的共识。我们有没有可能数一些成员数量为\emph{零}的集合呢？嗯，有的——我邀请你思考一下我地下室里收藏的金条集合……
+
+The traditional view seems to be that 
+
+\[ \Naturals = \{1, 2, 3, 4, \ldots \} \]
+
+\noindent i.e.\ that the naturals don't include 0.  My personal 
+preference would be to make the other choice (i.e.\ to include $0$
+in the natural numbers), but for the moment, let's be traditionalists.
+
+传统的观点似乎是：
+\[ \Naturals = \{1, 2, 3, 4, \ldots \} \]
+\noindent 也就是说，自然数不包括0。我个人的偏好是做出另一种选择（即，将$0$包含在自然数中），但暂时让我们遵循传统。
+
+\noindent Be advised that this is a choice.  We are adopting a 
+convention. If in some other course, or other mathematical setting 
+you find that the other convention is preferred, well, it's good to
+learn flexibility\ldots
+
+\noindent 请注意，这是一个选择。我们正在采纳一种惯例。如果在其他课程或其他数学环境中，你发现另一种惯例更受青睐，那么，学会灵活变通是件好事……
+
+Perhaps the best way of saying what a set is, is to do as we 
+have above. List all the elements.  Of course, if a set has an
+infinite number of things in it, this is a difficult task -- so
+we satisfy ourselves by listing enough of the elements that the
+pattern becomes clear.
+
+也许说明一个集合是什么的最好方式是像我们上面所做的那样，列出所有元素。当然，如果一个集合中有无限多个元素，这是一项艰巨的任务——所以我们只需列出足够的元素，使模式变得清晰即可。
+
+Taking $\Naturals$ for granted, what is meant by the ``all else''
+that humankind is responsible for? The basic sets of different types
+of ``numbers'' that every mathematics student should know are: $\Naturals,
+\Integers, \Rationals, \Reals
+\; \mbox{and} \; \Complexes$. Respectively: the naturals, the integers, the
+rationals, the reals, and the complex numbers.  The use of $\Naturals,
+\Reals \; \mbox{and} \;
+\Complexes$ is probably clear to an English
+speaker.  The integers are denoted with a $\Integers$ because of the
+German word {\em Zahlen} which means ``numbers.''   The rational numbers are
+probably denoted using $\Rationals$, for ``quotients.''  Etymology
+aside, is it possible for us to provide precise descriptions of these
+remaining sets?
+
+在理所当然地接受$\Naturals$之后，人类所负责的“其余一切”指的是什么呢？每个数学学生都应该知道的基本的不同类型“数”的集合是：$\Naturals, \Integers, \Rationals, \Reals\; \mbox{and} \; \Complexes$。分别代表：自然数、整数、有理数、实数和复数。对于讲英语的人来说，$\Naturals, \Reals \; \mbox{and} \; \Complexes$的使用可能很清楚。整数用$\Integers$表示，是因为德语单词{\em Zahlen}的意思是“数”。有理数可能用$\Rationals$表示，代表“商”。撇开词源不谈，我们能否为这些剩下的集合提供精确的描述呢？
+
+The \index{integers} integers ($\Integers$) are just the set of natural numbers
+together with the negatives of naturals and zero.
+We can use
+a doubly infinite list to denote this set.
+
+\index{integers}整数($\Integers$)就是自然数集、自然数的负数以及零的集合。
+我们可以用一个双向无限列表来表示这个集合。
+
+\[ \Integers = \{ \ldots -3, -2, -1, 0, 1, 2, 3, \ldots \} \]
+
+
+To describe the \index{rationals} rational numbers precisely we'll have to wait until Section~\ref{sec:rat}. In the interim, we can use an intuitively appealing, but somewhat imprecise
+definition for the set of rationals. A rational number is a fraction built out
+of integers.   This also provides us with
+a chance to give an example of using the main other way of describing
+the contents of a set -- so-called \index{set-builder notation} set-builder notation.
+
+要精确地描述\index{rationals}有理数，我们必须等到第~\ref{sec:rat}节。在此期间，我们可以使用一个直观上吸引人但又有些不精确的有理数集定义。一个有理数是由整数构成的分数。这也为我们提供了一个机会来举例说明描述集合内容的另一种主要方法——所谓的\index{set-builder notation}集合构建符号。
+
+\[ \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and} \;
+b \in \Integers \; \mbox{and} \; b \neq 0 \} \]
+
+Let's start building a ``glossary'' -- a translation lexicon
+between the symbols of mathematics and plain language. In the line
+above we are defining the set $\Rationals$ of rational numbers, so the
+first symbols that appear are ``$\Rationals =$.''  It is interesting to 
+note that the equals sign has two subtly different meanings: assignment
+and equality testing,  in the mathematical sentence above we are
+making an assignment -- that is, we are declaring that from now on the set
+$\Rationals$ will {\em be} the set defined on the remainder of the
+line.\footnote{Some Mathematicians contend that only the ``equality
+  test'' meaning of the equals sign is real, that by writing the
+  mathematical sentence above we are asserting the truth of 
+the
+  equality test.  This may be technically correct but it isn't how
+  most people think of things.}  
+Shall we dissect the rest of that line?
+
+让我们开始建立一个“词汇表”——一个在数学符号和日常语言之间的翻译词典。在上面一行中，我们正在定义有理数集$\Rationals$，所以最先出现的符号是“$\Rationals =$”。有趣的是，等号有两个微妙不同的含义：赋值和相等性测试。在上面的数学句子中，我们正在进行赋值——也就是说，我们声明从现在起，集合$\Rationals$将{\em 是}该行剩余部分所定义的集合。\footnote{一些数学家认为，等号只有“相等性测试”的含义才是真实的，通过写出上面的数学句子，我们是在断言相等性测试的真实性。这在技术上可能是正确的，但这并不是大多数人的思维方式。} 让我们来剖析那行剩下的部分好吗？
+
+There are only 4 
+characters whose meaning may be in doubt, $\{$, $\}$, $\in$ and $\suchthat$. The curly braces (a.k.a. {\em french braces}) are almost universally
+reserved to denote sets, anything appearing between curly braces is 
+meant to define a set.
+
+只有4个字符的含义可能存疑，它们是 $\{$, $\}$, $\in$ 和 $\suchthat$。花括号（又称{\em 法式括号}）几乎普遍被用来表示集合，出现在花括号之间的任何东西都意在定义一个集合。
+
+In translating from ``math'' to English,
+replace the initial brace with the phrase ``the set of all.''  The 
+next arcane symbol to appear is the vertical bar. As we will see in
+Section~\ref{div} this symbol has (at least) two meanings -- it will
+always be clear from context which is meant. In the sentence we are
+analyzing, it stands for the words ``such that.''  The last bit of
+arcana to be deciphered is the symbol $\in$, it stands for the English
+word ``in'' or, more formally, ``is an element of.''
+
+在从“数学”翻译到英语时，将开头的花括号替换为短语“所有……的集合”。下一个出现的神秘符号是竖线。我们将在第~\ref{div}节看到，这个符号（至少）有两个含义——通过上下文总能清楚地判断其意。在我们正在分析的句子中，它代表“使得”这个词。最后一个需要解读的神秘符号是$\in$，它代表英语单词“in”，或者更正式地，“是……的一个元素”。
+
+Let's parse the entire mathematical sentence we've been discussing
+with an English translation in parallel.
+
+让我们用英语翻译并行解析我们一直在讨论的整个数学句子。
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\Rationals$ & $=$ & $\{$  \\ \hline
+\rule[-6pt]{0pt}{22pt} The rational numbers & are defined to be & the set of all\\
+\rule[-6pt]{0pt}{22pt} 有理数 & 被定义为 & 所有...的集合\\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c}
+\rule[-10pt]{0pt}{22pt} $\displaystyle \frac{a}{b}$ & $\suchthat$ \\ \hline
+\rule[-6pt]{0pt}{22pt} fractions of the form $a$ over $b$ & such that \\
+\rule[-6pt]{0pt}{22pt} 形如 $a$ 除以 $b$ 的分数 & 使得 \\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $a \in \Integers$ & and & $b \in \Integers$ \\ \hline
+\rule[-6pt]{0pt}{22pt} $a$ is an element of the integers & and & $b$ is an
+element of the integers \\
+\rule[-6pt]{0pt}{22pt} $a$ 是整数集的一个元素 & 并且 & $b$ 是整数集的一个元素 \\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} and & $b \neq 0$ & $\}$ \\ \hline
+\rule[-6pt]{0pt}{22pt} and & $b$ is nonzero. & (the final curly brace
+is silent) \\
+\rule[-6pt]{0pt}{22pt} 并且 & $b$ 是非零的。 & (末尾的花括号不发音) \\
+\end{tabular}
+
+\vspace{.2in}
+
+It is quite apparent that the mathematical notation represents a huge
+improvement as regards brevity.
+
+很明显，在简洁性方面，数学符号代表了一个巨大的进步。
+
+As mentioned previously, this definition is slightly flawed.  We will
+have to wait 'til later to get a truly precise
+definition of the rationals, but we invite the reader to mull over
+what's wrong with this one. Hint: think about the issue of whether
+a fraction is in lowest terms.
+
+如前所述，这个定义略有缺陷。我们将不得不等到后面才能得到一个真正精确的有理数定义，但我们邀请读者仔细思考一下这个定义有什么问题。提示：思考一个分数是否为最简形式的问题。
+
+Let's proceed with our menagerie of sets of numbers.  The next set
+we'll consider is $\Reals$, the set of\index{reals} real numbers. To someone
+who has completed Calculus, the reals are perhaps the most obvious and
+natural notion of what is meant by ``number.''  It may be surprising to
+learn that the actual definition of what is meant by a real number is
+extremely difficult.
+
+让我们继续我们关于数集的探讨。下一个我们将考虑的集合是$\Reals$，即\index{reals}实数集。对于已经完成微积分学习的人来说，实数可能是关于“数”的含义最明显和自然的概念。然而，得知实数的实际定义极其困难，可能会让人感到惊讶。
+
+In fact, the first reasonable formulation of a
+precise definition of the reals came around 1858, more than 180 years
+after the development of the 
+Calculus\index{Newton, Isaac}\footnote{Although it was not
+  published until 1736, Newton's book (De Methodis Serierum et
+  Fluxionum) describing both differential and integral Calculus was
+  written in 1671.}.
+
+事实上，第一个关于实数精确定义的合理表述出现在1858年左右，比微积分\index{Newton, Isaac}\footnote{尽管直到1736年才出版，牛顿描述微分和积分微积分的著作《De Methodis Serierum et Fluxionum》写于1671年。}的发展晚了180多年。
+
+A precise 
+definition for the set $\Reals$ of real numbers is 
+beyond the scope of this book, for the moment consider the
+following intuitive description. A real number is a number that 
+measures some physical quantity.
+
+实数集$\Reals$的精确定义超出了本书的范围，暂时请考虑以下直观描述。实数是用来测量某种物理量的数。
+
+For example, if a circle has
+diameter 1 then its circumference is $\pi$, thus $\pi$ is a real
+number. The points $(0,0)$ and $(1,1)$ in the Cartesian plane have
+distance $\sqrt{ (0-1)^2 + (0-1)^2} = \sqrt{2}$, thus $\sqrt{2}$ is 
+a real number. Any rational number is clearly a real number -- slope
+is a physical quantity, and the line from $(0,0)$ to $(b,a)$ has slope
+$a/b$.
+
+例如，如果一个圆的直径为1，那么它的周长是$\pi$，因此$\pi$是一个实数。笛卡尔平面上的点$(0,0)$和$(1,1)$之间的距离是$\sqrt{ (0-1)^2 + (0-1)^2} = \sqrt{2}$，因此$\sqrt{2}$是一个实数。任何有理数显然都是一个实数——斜率是一种物理量，从$(0,0)$到$(b,a)$的直线的斜率是$a/b$。
+
+In ancient Greece, \index{Pythagoras}Pythagoras -- who has sometimes been
+described as the first pure Mathematician, believed that 
+every real quantity was in fact rational, a belief that we now know to
+be false. The numbers $\pi$ and $\sqrt{2}$ mentioned above are not
+rational numbers. For the moment it is useful to recall a practical
+method for distinguishing between rational numbers and real quantities
+that are not rational -- consider their decimal expansions. If the
+reader is unfamiliar with the result to which we are alluding, we urge
+you to experiment. Use a calculator or (even better) a computer
+algebra package to find the decimal expansions of various quantities.
+Try $\pi$, $\sqrt{2}$, $1/7$, $2/5$, $16/17$, $1/2$ and a few other
+quantities of your own choice. Given that we have already said that the first
+two of these are not rational, try to determine the pattern. What is 
+it about the decimal expansions
+that distinguishes rational quantities from reals that aren't rational?
+
+在古希腊，\index{Pythagoras}毕达哥拉斯——有时被描述为第一位纯粹的数学家——相信每一个实量实际上都是有理数，我们现在知道这个信念是错误的。上面提到的数$\pi$和$\sqrt{2}$不是有理数。目前，回忆一个区分有理数和非有理实量的实用方法是很有用的——考虑它们的小数展开。如果读者不熟悉我们所暗示的结果，我们敦促您进行实验。使用计算器或（更好的是）计算机代数软件包来查找各种量的小数展开。尝试$\pi$、$\sqrt{2}$、$1/7$、$2/5$、$16/17$、$1/2$以及您自己选择的其他一些量。鉴于我们已经说过前两个不是有理数，请尝试确定其模式。是小数展开的什么特性区分了有理量和非有理的实量？
+
+Given that we can't give a precise definition of a real number at this
+point it is perhaps surprising that we {\em can} define the set
+$\Complexes$ of \index{complex numbers}complex numbers with precision 
+(modulo the fact that we define them in terms of $\Reals$).
+
+鉴于我们目前无法给出现实数的精确定义，我们{\em 能够}精确地定义\index{complex numbers}复数集$\Complexes$（尽管我们是根据$\Reals$来定义它们的），这或许会令人惊讶。
+
+\[ \Complexes = \{ a + bi \suchthat a \in \Reals \; \mbox{and} \; b \in
+\Reals \; \mbox{and} \; i^2 = -1 \} \]
+
+Translating this bit of mathematics into English we get: 
+
+将这部分数学翻译成英语，我们得到：
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\Complexes$ & $=$ & $\{$  \\ \hline
+\rule[-6pt]{0pt}{22pt} The complex numbers & are defined to be & the set of all\\
+\rule[-6pt]{0pt}{22pt} 复数 & 被定义为 & 所有...的集合\\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c}
+\rule[-10pt]{0pt}{22pt} $a+bi$ & $\suchthat$ \\ \hline
+\rule[-6pt]{0pt}{22pt} expressions of the form $a$ plus $b$ times $i$ & such that \\
+\rule[-6pt]{0pt}{22pt} 形如 $a$ 加 $b$ 乘 $i$ 的表达式 & 使得 \\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $a \in \Reals$ & and & $b \in \Reals$ \\ \hline
+\rule[-6pt]{0pt}{22pt} $a$ is an element of the reals & and & $b$ is an
+element of the reals \\
+\rule[-6pt]{0pt}{22pt} $a$ 是实数集的一个元素 & 并且 & $b$ 是实数集的一个元素 \\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} and & $i^2 = -1$ & $\}$ \\ \hline
+\rule[-6pt]{0pt}{22pt} and & $i$ has the property that its
+square is negative one. &  \\
+\rule[-6pt]{0pt}{22pt} 并且 & $i$ 的平方是负一。 & \\
+\end{tabular}
+
+\vspace{.2in}
+
+We sometimes denote a complex number using a single variable (by
+convention, either late alphabet Roman letters or Greek letters.
+Suppose that we've defined $z = a + bi$.  The single letter $z$
+denotes the entire complex number.  We can extract the individual
+components of this complex number by talking about the 
+\index{real part}real and
+\index{imaginary part}imaginary parts of $z$.  
+Specifically, $Re(z) = a$ is called the
+real part of $z$, and $Im(z) = b$ is called the imaginary part of
+$z$.
+
+我们有时用一个单一的变量来表示一个复数（按照惯例，使用字母表中靠后的罗马字母或希腊字母）。假设我们定义了$z = a + bi$。单个字母$z$表示整个复数。我们可以通过讨论$z$的\index{real part}实部和\index{imaginary part}虚部来提取这个复数的各个组成部分。具体来说，$Re(z) = a$被称为$z$的实部，$Im(z) = b$被称为$z$的虚部。
+
+
+Complex numbers are added and multiplied as if they were binomials
+(polynomials with just two terms) where $i$ is treated as if it were 
+the variable -- except that we use the algebraic property that $i$'s
+square is -1.  For example, to add the complex numbers $1+2i$ and
+$3-6i$ we just think of the binomials $1+2x$ and $3-6x$.  Of course we
+normally write a binomial with the term involving the variable coming
+first, but this is just a convention.  The sum of those binomials
+would be $4-4x$ and so the sum of the given complex numbers is $4-4i$.
+This sort of operation is fairly typical and is called 
+\index{component-wise operations}{\em  component-wise} addition.
+
+复数的加法和乘法就像它们是二项式（只有两项的多项式）一样，其中$i$被当作变量处理——只是我们使用$i$的平方为-1的代数性质。例如，要将复数$1+2i$和$3-6i$相加，我们只需将其看作二项式$1+2x$和$3-6x$。当然，我们通常将包含变量的项写在二项式的前面，但这只是一个惯例。这些二项式的和将是$4-4x$，因此给定复数的和是$4-4i$。这种运算是相当典型的，被称为\index{component-wise operations}{\em 分量式}加法。
+
+To multiply complex numbers we have to
+recall how it is that we multiply binomials. This is the well-known
+FOIL rule (first, outer, inner, last).  For example the product of
+$3-2x$ and $4+3x$ is $(3\cdot 4) + (3 \cdot 3x) + (-2x\cdot 4) +
+(-2x\cdot 3x)$ this expression simplifies to $12 + x - 6x^2$. The
+analogous calculation with complex numbers looks just the same, until
+we get to the very last stage where, in simplifying, we use the fact
+that $i^2=-1$.
+
+要乘复数，我们必须回忆起我们是如何乘二项式的。这就是众所周知的FOIL法则（首项、外项、内项、末项）。例如，$3-2x$和$4+3x$的乘积是$(3\cdot 4) + (3 \cdot 3x) + (-2x\cdot 4) + (-2x\cdot 3x)$，这个表达式简化为$12 + x - 6x^2$。复数的类似计算看起来完全一样，直到我们到达最后一个阶段，在简化时，我们使用$i^2=-1$这个事实。
+
+\begin{gather*}
+ (3-2i)\cdot (4+3i) \\
+= (3\cdot 4) + (3\cdot 3i) + (-2i\cdot 4) + (-2i\cdot 3i) \\
+= 12 + 9i - 8i -6i^2 \\
+= 12 + i + 6 \\
+= 18 + i 
+\end{gather*}
+
+
+The real numbers have a natural ordering, and hence, so do the 
+other sets that are contained in $\Reals$. The complex numbers 
+can't really be put into a well-defined order --- which should be
+bigger, $1$  or $i$? But we do have a way to, at least partially, 
+accomplish this task.
+
+实数有一个自然的顺序，因此，包含在$\Reals$中的其他集合也是如此。复数不能真正地被放入一个明确的顺序中——哪个应该更大，$1$还是$i$？但我们确实有一种方法，至少可以部分地完成这个任务。
+
+The \index{modulus, of a complex number}
+\emph{modulus} of a complex number is a real number that gives the
+distance from the origin ($0+0i$) of the complex plane, to the given
+complex number. We indicate the modulus using absolute value bars,
+and you should note that if a complex number happens to be purely
+real, the modulus and the usual notion of absolute value coincide.
+
+复数的\index{modulus, of a complex number}\emph{模}是一个实数，它给出复平面上从原点($0+0i$)到给定复数的距离。我们用绝对值符号来表示模，你应该注意到，如果一个复数恰好是纯实数，那么模和通常的绝对值概念是一致的。
+
+If $z = a + bi$ is a complex number, then its modulus, $\|a + bi \|$,
+is given by the formula $\sqrt{a^2+b^2}$.
+
+如果$z = a + bi$是一个复数，那么它的模，$\|a + bi \|$，由公式$\sqrt{a^2+b^2}$给出。
+
+Several of the sets of numbers we've been discussing can be split
+up based on the so-called \index{trichotomy}\emph{trichotomy property}:
+every real number is either positive, negative or zero. In particular,
+$\Integers$, $\Rationals$ and $\Reals$ can have modifiers stuck on so
+that we can discuss (for example) the negative real numbers, or the
+positive rational numbers or the integers that aren't negative.
+To do this, we put superscripts on the set symbols, either a $+$ 
+or a $-$ or the word \index{noneg}``noneg.''
+
+我们一直在讨论的几个数集可以根据所谓的\index{trichotomy}\emph{三分法性质}进行划分：每个实数要么是正数，要么是负数，要么是零。特别是，$\Integers$、$\Rationals$和$\Reals$可以加上修饰符，以便我们可以讨论（例如）负实数、正有理数或非负整数。为此，我们在集合符号上加上上标，可以是$+$、$-$或单词\index{noneg}“noneg”。
+
+So 
+
+\[ \Integers^+ \; = \; \{ x \in \Integers \suchthat x > 0 \} \]
+
+\noindent and 
+
+\[ \Integers^- \; = \; \{ x \in \Integers \suchthat x < 0 \} \]
+
+\noindent and 
+
+\[ \Znoneg \; = \; \{ x \in \Integers \suchthat x \geq 0 \}. \]
+
+Presumably, we could also use ``nonpos'' as a superscript to indicate
+non-positive integers, but this never seems to come up in practice.
+Also, you should note that $\Integers^+$  is really the same thing
+as $\Naturals$, but that  $\Znoneg$  is different because it 
+contains $0$.
+
+据推测，我们也可以使用“nonpos”作为上标来表示非正整数，但这在实践中似乎从未出现过。此外，你应该注意$\Integers^+$实际上与$\Naturals$是同一回事，但$\Znoneg$是不同的，因为它包含$0$。
+
+We would be remiss in closing this section without discussing the
+way the sets of numbers we've discussed fit together. Simply put,
+each is contained in the next.  $\Naturals$ is contained in $\Integers$, 
+$\Integers$ is contained in $\Rationals$, $\Rationals$ is contained
+in $\Reals$, and $\Reals$ is contained in $\Complexes$. Geometrically the complex numbers are essentially a two-dimensional
+plane.  The real numbers sit inside this plane just as the $x$-axis
+sits inside the usual Cartesian plane -- in this context you may
+hear people talk about ``the real line within the complex plane.''
+
+在结束本节时，如果不讨论我们所讨论的数集是如何相互关联的，那将是我们的疏忽。简单地说，每一个都包含在下一个之中。$\Naturals$包含在$\Integers$中，$\Integers$包含在$\Rationals$中，$\Rationals$包含在$\Reals$中，而$\Reals$包含在$\Complexes$中。从几何上看，复数本质上是一个二维平面。实数就坐落在这个平面内，就像$x$轴坐落在通常的笛卡尔平面内一样——在这种情况下，你可能会听到人们谈论“复平面内的实轴”。
+
+It is probably clear how $\Naturals$ lies within $\Integers$, and 
+every integer is certainly a real number. The intermediate set
+$\Rationals$ (which contains the integers, and is contained by the
+reals) has probably the most interesting relationship with the
+set that contains it.
+
+$\Naturals$如何位于$\Integers$之内可能很清楚，并且每个整数当然都是一个实数。中间集$\Rationals$（它包含整数，并被实数包含）与其包含它的集合之间的关系可能是最有趣的。
+
+Think of the real line as being solid, like
+a dark pencil stroke. The rationals are like sand that has been
+sprinkled very evenly over that line. Every point on the line
+ has bits of sand nearby, but not (necessarily) on top of it.
+
+把实数线想象成是实心的，像一条深色的铅笔划线。有理数就像被非常均匀地撒在那条线上的沙子。线上的每一点附近都有沙粒，但不一定（必然）就在它的上面。
+
+\newpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{intro-zh/basic-exer.tex}
+
+\newpage
+
+\section{Definitions: Prime numbers 定义：素数}
+\label{sec:def}
+
+You may have noticed that in Section~\ref{sec:basic} an awful lot of
+emphasis was placed on whether we had good, precise definitions
+for things.
+
+您可能已经注意到，在第~\ref{sec:basic}节中，我们非常强调是否对事物有良好而精确的定义。
+
+Indeed, more than once apologies were made for giving
+imprecise or intuitive definitions.  This is because, in Mathematics,
+definitions are our lifeblood.
+
+的确，我们不止一次为给出不精确或直观的定义而道歉。这是因为，在数学中，定义是我们的生命线。
+
+More than in any other human 
+endeavor, Mathematicians strive for precision.
+
+数学家比任何其他人类领域的从业者都更追求精确性。
+
+This precision
+comes with a cost -- Mathematics can deal with only the very 
+simplest of phenomena\footnote{For an intriguing discussion of this 
+point, read Gian Carlo Rota's book {\em Indiscrete Thoughts}~\cite{rota}.}.
+
+这种精确性是有代价的——数学只能处理非常简单的现象\footnote{关于这一点的一个有趣的讨论，请阅读吉安-卡洛·罗塔的书《离散随想》~\cite{rota}。}。
+
+To laypeople who think of math as being
+a horribly difficult subject, that last sentence will certainly 
+sound odd, but most professional Mathematicians will be nodding 
+their heads at this point.
+
+对于认为数学是一门极其困难的学科的外行来说，最后一句话听起来肯定很奇怪，但大多数职业数学家此时都会点头赞同。
+
+Hard questions are more properly dealt 
+with by Philosophers than by Mathematicians.  Does a cat have 
+a soul?
+
+难题更适合由哲学家而不是数学家来处理。猫有灵魂吗？
+
+Impossible
+to say, because neither of the nouns in that question can be 
+defined with any precision.
+
+无法回答，因为那个问题中的两个名词都无法被精确定义。
+
+Is the square root of 2 a rational number?
+Absolutely not!
+
+2的平方根是有理数吗？绝对不是！
+
+The reason
+for the certainty we feel in answering this second question is
+that we know {\em precisely} what is meant by the phrases 
+``square root of 2'' and ``rational number.''
+
+我们能如此肯定地回答第二个问题，原因在于我们{\em 精确地}知道“2的平方根”和“有理数”这两个短语的含义。
+
+We often need to first approach
+a topic by thinking visually or intuitively, but when it comes to
+proving our assertions, nothing beats the power of having the
+``right'' definitions around.
+
+我们常常需要首先通过视觉或直觉来接触一个主题，但当要证明我们的论断时，没有什么比拥有“正确”的定义更有力了。
+
+It may be surprising to learn that
+the ``right'' definition often evolves over the years.
+
+得知“正确”的定义常常会随着时间的推移而演变，这可能会令人惊讶。
+
+This 
+happens for the simple reason that some definitions lend themselves
+more easily to proving assertions.
+
+发生这种情况的简单原因是，某些定义更容易用于证明论断。
+
+In fact, it is often the case
+that definitions are inspired by attempts to prove something that 
+fail.
+
+事实上，定义往往是在证明某事的尝试失败后受到启发的。
+
+In the midst of such a failure, it isn't uncommon for a 
+Mathematician to bemoan ``If only the definition of (fill in the 
+blank) were \ldots'', then to realize that it is possible to
+use that definition or a modification of it.
+
+在这样的失败中，数学家感叹“如果（填空）的定义是……就好了”的情况并不少见，然后意识到可以使用那个定义或其修改版本是可能的。
+
+But! When there are 
+several definitions
+for the same idea they had better agree with one another!
+
+但是！当同一个概念有多个定义时，它们最好相互一致！
+
+Consider the definition of a \index{prime numbers}prime number. 
+
+考虑一下\index{prime numbers}素数的定义。
+
+\begin{defi} 
+A {\em prime number} is a positive integer,
+greater than 1, whose only factors are 1 and itself.
+\end{defi}
+
+\begin{defi}
+一个{\em 素数}是一个大于1的正整数，其唯一的因数是1和它本身。
+\end{defi}
+
+You probably first heard this definition in Middle School, if not
+earlier.
+
+你可能在中学，甚至更早就第一次听到这个定义。
+
+It is a perfectly valid definition of what it means 
+for an integer to be prime.
+
+这是一个完全有效的关于整数为素数的含义的定义。
+
+In more advanced mathematics, it
+was found that it was necessary to define a notion of primality
+for objects other than integers.
+
+在更高等的数学中，人们发现有必要为整数以外的对象定义素性的概念。
+
+It turns out that the following
+statement is essentially equivalent to the definition of ``prime'' we've just
+given (when dealing with integers), but that it can be applied in 
+more general settings.
+
+事实证明，下面的陈述与我们刚才给出的“素数”定义（在处理整数时）本质上是等价的，但它可以应用于更普遍的场合。
+
+\begin{defi}
+A {\em prime} is a quantity $p$ such that whenever $p$ is a 
+factor of some product $ab$, then either $p$ is a factor of
+$a$ or $p$ is a factor of $b$.
+\end{defi}
+
+\begin{defi}
+一个{\em 素数}是一个量 $p$，使得只要 $p$ 是某个乘积 $ab$ 的一个因数，那么 $p$ 要么是 $a$ 的一个因数，要么是 $b$ 的一个因数。
+\end{defi}
+
+\begin{exer}
+The number 1 is {\em not} considered to be a prime.  Does
+1 satisfy the above definition?
+\end{exer}
+
+\begin{exer}
+数字1{\em 不}被认为是素数。那么1满足上述定义吗？
+\end{exer}
+
+If you go on to study Number Theory or Abstract Algebra you'll see how
+the alternate definition we've given needs to be tweaked so that (for example) 
+1 \emph{wouldn't} get counted as a prime.
+The fix isn't hugely complicated (but it 
+is a {\em little} complicated) and is a bit beyond our scope right now\ldots
+
+如果你继续学习数论或抽象代数，你会看到我们给出的备用定义需要如何调整，以便（例如）1\emph{不会}被算作素数。这个修正不是很复杂（但确实有{\em 一点}复杂），并且目前超出了我们的范围……
+ 
+Often, it is the case that we can formulate {\em many} equivalent
+definitions for some concept.
+
+通常情况下，我们可以为某个概念制定{\em 许多}等价的定义。
+
+When this happens you may run
+across the abbreviation \index{TFAE}TFAE, which stands for ``The following
+are equivalent.''  A TFAE proof consists of showing that a host
+of different statements actually define the same concept.
+
+当这种情况发生时，你可能会遇到缩写\index{TFAE}TFAE，它代表“以下各项等价”。一个TFAE证明旨在表明许多不同的陈述实际上定义了同一个概念。
+
+Since we have been discussing primes in this section (mainly 
+as an example of a concept with more than one equivalent 
+definition), this seems like a reasonable time to make some
+explorations relative to prime numbers.
+
+由于我们本节一直在讨论素数（主要作为具有多个等价定义的感念的例子），现在似乎是进行一些与素数相关的探索的合理时机。
+
+We'll begin in the 
+third century B.C..   \index{Eratosthenes of Cyrene}
+Eratosthenes of Cyrene was a Greek Mathematician and
+Astronomer who is remembered to this day for his many accomplishments.
+
+我们将从公元前三世纪开始。昔兰尼的\index{Eratosthenes of Cyrene}埃拉托斯特尼是一位希腊数学家和天文学家，他因其诸多成就至今仍被人们铭记。
+
+He was a librarian at the great library of Alexandria.
+
+他曾是亚历山大图书馆的馆长。
+
+He made
+measurements of the Earth's circumference and the distances of
+the Sun and Moon that were remarkably accurate, but probably his
+most remembered achievement is the ``sieve'' method for finding
+primes.
+
+他测量了地球的周长以及太阳和月亮的距离，其结果非常精确，但他最被人记住的成就可能是寻找素数的“筛法”。
+
+Indeed, the \index{sieve of Eratosthenes}sieve of Eratosthenes 
+is still of importance
+in mathematical research.
+
+的确，\index{sieve of Eratosthenes}埃拉托斯特尼筛法在数学研究中至今仍具有重要意义。
+
+Basically, the sieve method consists 
+of creating a very long list of natural numbers and then crossing
+off all the numbers that aren't primes (a positive integer that
+isn't 1, and isn't a prime is called \index{composite}\emph{ composite}).
+
+基本上，筛法包括创建一个很长的自然数列表，然后划掉所有不是素数的数（一个大于1且不是素数的正整数被称为\index{composite}\emph{合数}）。
+
+This process
+is carried out in stages.  First we circle 2 and then cross off
+every number that has 2 as a factor -- thus we've identified 
+2 as the first prime number and eliminated a whole bunch of numbers 
+that aren't prime.
+
+这个过程分阶段进行。首先我们圈出2，然后划掉所有以2为因数的数——这样我们就确定了2是第一个素数，并排除了一大堆不是素数的数。
+
+The first number that hasn't been eliminated at
+this stage is 3, we circle it (indicating that 3 is the second prime
+number) and then cross off every number that has 3 as a factor.
+
+在这个阶段第一个没有被划掉的数是3，我们圈出它（表示3是第二个素数），然后划掉所有以3为因数的数。
+
+Note
+that some numbers (for example, 6 and 12) will have been crossed off
+more than once!
+
+注意，有些数（例如6和12）会被划掉不止一次！
+
+In the third stage of the sieve process, we circle
+5, which is the smallest number that hasn't yet been crossed off, and
+then cross off all multiples of 5.  The first three stages in the
+sieve method are shown in Figure~\ref{fig:sieve}.
+
+在筛法过程的第三个阶段，我们圈出5，这是尚未被划掉的最小的数，然后划掉5的所有倍数。筛法的前三个阶段如图~\ref{fig:sieve}所示。
+
+\begin{figure}[!hbtp]
+\input{figures/Eratosthenes.tex}
+\caption[The sieve of Eratosthenes.]{The first three stages in the %
+sieve of Eratosthenes. What is the smallest composite number that %
+hasn't been crossed off? 埃拉托斯特尼筛法的前三个阶段。尚未被划掉的最小合数是多少？}
+\label{fig:sieve} 
+\end{figure}
+
+It is interesting to note that the sieve gives us a means of finding
+all the primes up to $p^2$ by using the primes up to (but not
+including) $p$.
+
+有趣的是，筛法为我们提供了一种通过使用直到（但不包括）$p$的所有素数来找出所有小于$p^2$的素数的方法。
+
+For
+example, to find all the primes less than $13^2 = 169$, we need only
+use $2, 3, 5, 7$ and $11$ in the sieve.
+
+例如，要找到所有小于$13^2 = 169$的素数，我们只需要在筛法中使用$2, 3, 5, 7$和$11$。
+
+Despite the fact that one can find primes using this simple 
+mechanical method, the way that prime numbers are distributed
+amongst the integers is very erratic.
+
+尽管可以用这种简单的机械方法找到素数，但素数在整数中的分布方式非常不规律。
+
+Nearly any statement that
+purports to show some regularity in the distribution of the 
+primes will turn out to be false.
+
+几乎任何声称素数分布具有某种规律性的陈述最终都会被证明是错误的。
+
+Here are two such false
+conjectures regarding prime numbers.
+
+这里有两个关于素数的错误猜想。
+
+\begin{conj} \label{conj:ferm}
+Whenever $p$ is a prime number, $2^p-1$ is also a prime.
+
+
+当 $p$ 是一个素数时，$2^p-1$ 也是一个素数。
+\end{conj}
+
+\begin{conj} \label{conj:poly}
+The polynomial $x^2-31x+257$ evaluates to a prime number
+whenever $x$ is a natural number.
+
+
+当 $x$ 是自然数时，多项式 $x^2-31x+257$ 的计算结果总是一个素数。
+\end{conj}
+
+In the exercises for this section, you will be asked to
+explore these statements further.
+
+在本节的练习中，你将被要求进一步探讨这些陈述。
+
+Prime numbers act as multiplicative building blocks for the rest of
+the integers.
+
+素数充当其余整数的乘法构建基石。
+
+When we disassemble an integer into its building blocks
+we are finding the \index{prime factorization}\emph{prime factorization} 
+of that number.
+
+当我们将一个整数分解成它的构建基石时，我们就是在寻找那个数的\index{prime factorization}\emph{素因数分解}。
+
+Prime
+factorizations are unique.  That is, a number is either prime or it
+has prime factors (possibly raised to various powers) that are
+uniquely determined -- except that they may be re-ordered.
+
+素因数分解是唯一的。也就是说，一个数要么是素数，要么它有唯一确定的素因数（可能带有不同的幂次）——只是它们的顺序可以重新排列。
+
+On the next page
+is a table that contains all the primes that are less than 5000.
+Study this table and discover the secret of its compactness!
+
+下一页的表格包含了所有小于5000的素数。研究此表，发现其紧凑的秘密！
+
+\newpage
+
+
+\renewcommand{\tabcolsep}{2.4pt}
+\renewcommand{\arraystretch}{.63}
+\addtolength{\lineskip}{-2pt}
+{\small 
+\hspace{-.5in}
+\begin{tabular}{|lr|cccc|cccc|cccc|cccc|cccc|cccc|cccc|cccc|cccc|cccc|}
+  \hline 
+\rule{0pt}{10pt} & \bf T & \multicolumn{4}{c|}{\bf 0} & \multicolumn{4}{c|}{\bf 1} &
+ \multicolumn{4}{c|}{\bf 2} & \multicolumn{4}{c|}{\bf 3} & \multicolumn{4}{c|}{\bf 4}
+ & \multicolumn{4}{c|}{\bf 5} & \multicolumn{4}{c|}{\bf 6} &
+ \multicolumn{4}{c|}{\bf 7} & \multicolumn{4}{c|}{\bf 8} & \multicolumn{4}{c|}{\bf 9}
+ \\
+\bf H & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & &
+ & & & & & & & \\ \hline
+\rule{0pt}{9pt}\bf 0 & & 2 & 3 & 5 & 7 & 1 & 3 & 7 & 
+9 & & 3 & & 9 & 1 & & 7 & & 1 & 3 & 7 & & & 3 & & 9 & 1 & & 7 & & 1 & 3 & & 9 & & 3 & & 9 & & & 7 & \\
+\bf 1 & & 1 & 3 & 7 & 9 & & 3 & & & & & 7 & & 1 & & 7 & 9 & & & & 9 & 1 & & 7 & & & 3 & 7 & & & 3 & & 
+9 & 1 & & & & 1 & 3 & 7 & 9 \\
+\bf 2 & & & & & & 1 & & & & & 3 & 7 & 9 & & 3 & & 9 & 1 & & & & 1 & & 7 & & & 3 & & 9 & 1 & & 7 & & 1 & 3 & & & & 3 & & \\
+\bf 3 & & & & 7 & & 1 & 3 & 7 & & & & & & 1 & & 7 & & & 
+& 7 & 9 & & 3 & & 9 & & & 7 & & & 3 & & 9 & & 3 & & 9 & & & 7 & \\
+\bf 4 & & 1 & & & 9 & & & & 9 & 1 & & & & 1 & 3 & & 9 & & 3 & & 9 & & & 7 &
+& 1 & 3 & 7 & & & & & 9 & & & 7 & & 1 & & & 9 \\ \hline
+\rule{0pt}{9pt}\bf 5 & & & 3 & & 
+9 & & & & & 1 & 3 & & & & & & & 1 & & 7 & & & & 7 & & & 3 & & 9 & 1 & & 7 & & & & 7 & & & 3 & & 9 \\
+\bf 6 & & 1 & & 7 & & & 3 & 7 & 9 & & & & & 1 & & & & 1 & 3 & 7 & & & 3 & & 9 & 1 & & & & & 3 & 7 & & & 
+3 & & & 1 & & & \\
+\bf 7 & & 1 & & & 9 & & & & 9 & & & 7 & & & 3 & & 9 & & 3 & & & 1 & & 7 & & 1 & & & 9 & & 3 & & & & & 7 & & & & 7 & \\
+\bf 8 & & & & & 9 & 1 & & & & 1 & 3 & 7 & 9 & & & & 9 & & & & & & 3 & 7 
+& 9 & & 3 & & & & & 7 & & 1 & 3 & 7 & & & & & \\
+\bf 9 & & & & 7 & & 1 & & & 9 & & & & 9 & & & 7 & & 1 & & 7 & & & 3 & & & &
+& 7 & & 1 & & 7 & & & 3 & & & 1 & & 7 & \\ \hline
+\rule{0pt}{9pt}\bf 10 & & & & & 9 & & 3 & & 9 & 1 & & & & 
+1 & 3 & & 9 & & & & 9 & 1 & & & & 1 & 3 & & 9 & & & & & & & 7 & & 1 & 3 & 7 & \\
+\bf 11 & & & 3 & & 9 & & & 7 & & & 3 & & 9 & & & & & & & & & 1 & 3 & & & & 3 & & & 1 & & & & 1 & & 7 & & & 3 & & \\
+\bf 12 & & 1 & 
+& & & & 3 & 7 & & & 3 & & 9 & 1 & & 7 & & & & & 9 & & & & 9 & & & & & & & 7 & 9 & & 3 & & 9 & 1 & & 7 & \\
+\bf 13 & & 1 & 3 & 7 & & & & & 9 & 1 & & 7 & & & & & & & & & & & & & & 1 & & 7 & & & 3 & & & 1 & & 
+& & & & 9 \\
+\bf 14 & & & & & 9 & & & & & & 3 & 7 & 9 & & 3 & & 9 & & & 7 & & 1 & 3 & & 9
+& & & & & 1 & & & & 1 & 3 & 7 & 9 & & 3 & & 9 \\ \hline
+\rule{0pt}{9pt}\bf 15 & & & & & & 1 & & & & & 3 & & & 1 & & & & & 3 & & 9 & & 3 & & 9 
+& & & 7 & & 1 & & & 9 & & 3 & & & & & 7 & \\
+\bf 16 & & 1 & & 7 & 9 & & 3 & & 9 & 1 & & 7 & & & & 7 & & & & & & & & 7 & & & 3 & 7 & 9 & & & & & & & & & & 3 & 7 & 9 \\
+\bf 17 & & & & & 9 & & & & & 1 & 3 & & & & 3 
+& & & 1 & & 7 & & & 3 & & 9 & & & & & & & 7 & & & 3 & 7 & 9 & & & & \\
+\bf 18 & & 1 & & & & 1 & & & & & 3 & & & 1 & & & & & & 7 & & & & & & 1 & & 7 & & 1 & 3 & 7 & 9 & & & & 9 & & & & \\
+\bf 19 & & 1 & & 7 & & & 
+3 & & & & & & & 1 & 3 & & & & & & 9 & 1 & & & & & &
+& & & 3 & & 9 & & & 7 & & & 3 & 7 & 9 \\ \hline
+\rule{0pt}{9pt}\bf 20 & & & 3 & & & 1 & & 7 & & & & 7 & 9 & & & & 9 & & & & & & 3 & & & & 3 & & 9 & & & & & 1 & 3 & 7 & 9 & & & 
+& 9 \\
+\bf 21 & & & & & & 1 & 3 & & & & & & 9 & 1 & & 7 & & 1 & 3 & & & & 3 & & & 1 & & & & & & & 9 & & & & & & & & \\
+\bf 22 & & & 3 & 7 & & & 3 & & & 1 & & & & & & 7 & 9 & & 3 & & & 1 & & & & & & 7 & 9 & & 3 & 
+& & 1 & & 7 & & & 3 & 7 & \\
+\bf 23 & & & & & 9 & 1 & & & & & & & & & 3 & & 9 & 1 & & 7 & & 1 & & 7 & & & & & & 1 & & 7 & & 1 & 3 & & 9 & & 3 & & 9 \\
+\bf 24 & & & & & & 1 & & 7 & & & 3 & & & & & 7 & & 1 & & 7 & 
+& & & 9 & & &
+7 & & & 3 & 7 & & & & & & & & & \\ \hline
+\rule{0pt}{9pt}\bf 25 & & & 3 & & & & & & & 1 & & & & 1 & & & 9 & & 3 & & 9 & 1 & & 7 & & & & & & & & & 9 & & & & & 1 & 3 & & \\
+\bf 26 & & & & & 9 & & & 7 & & 1 & & & & & 3 & 
+& & & & 7 & & & & 7 & 9 & & 3 & & & 1 & & 7 & & & 3 & 7 & 9 & & 3 & & 9 \\
+\bf 27 & & & & 7 & & 1 & 3 & & 9 & & & & 9 & 1 & & & & 1 & & & 9 & & 3 & & & & & 7 & & & & 7 & & & & & 9 & 1 & & 7 & \\
+\bf 28 & & 1 & 3 
+& & & & & & 9 & & & & & & 3 & 7 & & & 3 & & & 1 & & 7 & & 1 & & & & & & & 9 & & & 7 & & & & 7 & \\
+\bf 29 & & & 3 & & 9 & & & 7 & & & & 7 & & & & & 9 & & & & & & 3 & 7 & & & 3
+& & 9 & 1 & & & & & & & & & & & 
+9 \\ \hline
+\rule{0pt}{9pt}\bf 30 & & 1 & & & & 1 & & & 9 & & 3 & & & & & 7 & & 1 & & & 9 & & & & & 1 & & 7 & & & & & 9 & & 3 & & 9 & & & & \\
+\bf 31 & & & & & 9 & & & & 9 & 1 & & & & & & 7 & & & & & & & & & & & 3 & 7 & 9 & & & & & 
+1 & & 7 & & 1 & & & \\
+\bf 32 & & & 3 & & 9 & & & 7 & & 1 & & & 9 & & & & & & & & & 1 & 3 & 7 & 9 & & & & & 1 & & & & & & & & & & & 9 \\
+\bf 33 & & 1 & & 7 & & & 3 & & 9 & & 3 & & 9 & 1 & & & & & 3 & 7 & & & & & 
+9 & 1 & & & & 1 & 3 & & & & & & 9 & 1 & & & \\
+\bf 34 & & & & 7 & & & 3 & & & & & & & & 3 & & & & & & 9 & & & 7 & & 1 & 3 &
+7 & 9 & & & & & & & & & 1 & & & 9 \\ \hline
+\rule{0pt}{9pt}\bf 35 & & & & & & 1 & & 7 & & & & 7 & 9 & & 3 & & 
+9 & 1 & & 7 & & & & 7 & 9 & & & & & 1 & & & & 1 & 3 & & & & 3 & & \\
+\bf 36 & & & & 7 & & & 3 & 7 & & & 3 & & & 1 & & 7 & & & 3 & & & & & & 9 & & & & & 1 & 3 & 7 & & & & & & 1 & & 7 & \\
+\bf 37 & & 1 & & & 9 & & 
+& & 9 & & & 7 & & & 3 & & 9 & & & & & & & & & 1 & & 7 & 9 & & & & 9 & & & & & & 3 & 7 & \\
+\bf 38 & & & 3 & & & & & & & 1 & 3 & & & & 3 & & & & & 7 & & 1 & 3 & & & & 3 & & & & & 7 & & 1 & & & 9 & & & & \\
+\bf 39 
+& & & & 7 & & 1 & & 7 & 9 & & 3 & & 9 & 1 & & & & & 3 & 7 & & & & & &
+& & 7 & & & & & & & & & 9 & & & & \\ \hline
+\rule{0pt}{9pt}\bf 40 & & 1 & 3 & 7 & & & 3 & & 9 & 1 & & 7 & & & & & & & & & 9 & 1 & & 7 & & & & & & & 3 & & 9 & 
+& & & & 1 & 3 & & 9 \\
+\bf 41 & & & & & & 1 & & & & & & 7 & 9 & & 3 & & 9 & & & & & & 3 & 7 & 9 & & & & & & & 7 & & & & & & & & & \\
+\bf 42 & & 1 & & & & 1 & & 7 & 9 & & & & 9 & 1 & & & & 1 & 3 & & & & 3 & & 9 & 
+1 & & & & 1 & 3 & & & & 3 & & 9 & & & 7 & \\
+\bf 43 & & & & & & & & & & & & 7 & & & & 7 & 9 & & & & 9 & & & 7 & & & 3 & & & & 3 & & & & & & & 1 & & 7 & \\
+\bf 44 & & & & & 9 & & & & & 1 & 3 & & & & & & & 1 & & 7 
+& & 1 & & 7 & & & 3
+& & & & & & & 1 & 3 & & & & 3 & & \\ \hline
+\rule{0pt}{9pt}\bf 45 & & & & 7 & & & 3 & 7 & 9 & & 3 & & & & & & & & & 7 & 9 & & & & & 1 & & 7 & & & & & & & 3 & & & 1 & & 7 & \\
+\bf 46 & & & 3 & & & & & & & 1 & & & & 
+& & 7 & 9 & & 3 & & 9 & 1 & & 7 & & & 3 & & & & 3 & & 9 & & & & & 1 & & & \\
+\bf 47 & & & 3 & & & & & & & 1 & 3 & & 9 & & 3 & & & & & & & 1 & & & 9 & & & & & & & & & & 3 & 7 & 9 & & 3 & & 9 \\
+\bf 48 & & 1 & & & 
+& & 3 & 7 & & & & & & 1 & & & & & & & & & & & & 1 & & & & 1 & & 7 & & & & & 9 & & & & \\
+\bf 49 & & & 3 & & 9 & & & & 9 & & & & & 1 & 3 & 7 & & & 3 & & & 1 & & 7 & &
+& & 7 & 9 & & 3 & & & & & 7 & & & 3 & & 9 
+\\ \hline
+\end{tabular}
+}
+
+\addtolength{\lineskip}{2pt}
+\renewcommand{\arraystretch}{1}
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{intro-zh/def-exer.tex}
+
+
+\newpage
+
+\section{More scary notation 更多可怕的符号}
+\label{sec:scary}
+
+It is often the case that we want to prove statements that
+assert something is true for {\em every} element of a set.
+
+我们常常需要证明对一个集合中的{\em 每个}元素都成立的命题。
+
+For example, ``Every number has an additive inverse.''
+You should note that the truth of that statement is relative,
+it depends on what is meant by ``number.''  If we are talking
+about natural numbers it is clearly false:  3's additive 
+inverse isn't in the set under consideration.
+
+例如，“每个数都有一个加法逆元。”你应该注意到，这个命题的真伪是相对的，它取决于“数”的含义。如果我们讨论的是自然数，这个命题显然是假的：3的加法逆元不在所考虑的集合中。
+
+If we are
+talking about integers or any of the other sets we've considered,
+the statement is true.
+
+如果我们讨论的是整数或我们考虑过的任何其他集合，那么这个命题是真的。
+
+A statement that begins with the English
+words ``every'' or ``all'' is called \index{universal quantification}
+\emph{universally quantified}.
+
+以英文单词“every”或“all”开头的命题被称为\index{universal quantification}\emph{全称量化}的。
+
+It is asserted that the statement holds for {\em everything} within
+some universe.
+
+它断言该命题在某个论域内对{\em 所有事物}都成立。
+
+It is probably clear that when we are making
+statements asserting that a thing has an additive inverse, we 
+are not discussing human beings or animals or articles of clothing --
+we are talking about objects that it is reasonable to add together:
+numbers of one sort or another.
+
+很可能清楚的是，当我们断言某物有加法逆元时，我们讨论的不是人、动物或衣物——我们讨论的是可以合理地相加的对象：这样或那样的数。
+
+When being careful -- and we should always
+strive to be careful! -- it is important to make explicit what 
+universe (known as the \index{universe of discourse}\emph{universe of discourse}) the objects
+we are discussing come from.
+
+在严谨时——我们应当时刻力求严谨！——明确我们讨论的对象来自哪个论域（称为\index{universe of discourse}\emph{论域}）是非常重要的。
+
+Furthermore, we need to distinguish 
+between statements that assert that everything in the universe of
+discourse has some property, and statements that say something
+about a few (or even just one) of the elements of our universe.
+
+此外，我们需要区分两种命题：一种是断言论域中所有事物都具有某种性质的命题，另一种是关于我们论域中少数（甚至只有一个）元素具有某种性质的命题。
+
+Statements of the latter sort are called \index{existential quantification}
+\emph{existentially quantified}.
+
+后一种命题被称为\index{existential quantification}\emph{存在量化}的。
+
+Adding to the glossary or translation lexicon we started earlier,
+there are symbols which describe both these types of quantification.
+
+在我们之前开始的词汇表或翻译词典中，可以加入描述这两种量化类型的符号。
+
+The symbol $\forall$, an upside-down A, is used for universal
+quantification, and is usually translated as ``for all.''  
+The symbol $\exists$, a backwards E, is used for existential
+quantification, it's translated as ``there is'' or ``there exists.''
+Lets have a look at a mathematically precise sentence that captures
+the meaning of the one with which we started this section.
+
+符号$\forall$，一个倒置的A，用于全称量化，通常翻译为“对于所有”。符号$\exists$，一个反向的E，用于存在量化，翻译为“存在”。让我们看一个数学上精确的句子，它抓住了本节开始时那个句子的含义。
+
+\[ \forall x \in \Integers, \; \exists y \in \Integers, \; x+y=0.
+\]
+
+Parsing this as we have done before with an English translation in 
+parallel, we get:
+
+像我们之前做的那样，用英语翻译并行解析，我们得到：
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\forall x$ & $\in \Integers$ & $\exists y$  \\ \hline
+\rule[-6pt]{0pt}{22pt} For every number $x$ & in the set of integers &
+there is a number $y$ \\
+\rule[-6pt]{0pt}{22pt} 对于每个数 $x$ & 在整数集中 & 存在一个数 $y$ \\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c}
+\rule[-10pt]{0pt}{22pt} $\in \Integers$ & $x+y=0$ \\ \hline
+\rule[-6pt]{0pt}{22pt} in the integers  & having the property that
+their sum is $0$. \\
+\rule[-6pt]{0pt}{22pt} 在整数集中 & 其和为0。 \\
+\end{tabular}
+
+
+\vspace{.2in}
+
+\begin{exer} Which type of quantification do the following
+statements have?
+下列命题属于哪种量化类型？
+\begin{enumerate}
+\item Every dog has his day.
+
+ 风水轮流转，人人皆有得意日。 \rotatebox{180}{(全称量化)}
+\item Some days it's just not worth getting out of bed.
+
+ 有些日子就是不值得起床。\begin{turn}{180}(存在量化)\end{turn}
+\item There's a party in {\em somebody's} dorm this Saturday.
+
+这周六在{\em 某人}的宿舍有个派对。\begin{turn}{180}(存在量化)\end{turn}
+\item There's someone for everyone.
+
+每个人都有命中注定的另一半。\begin{turn}{180}(全称量化和存在量化)\end{turn}
+\end{enumerate}
+\end{exer}
+
+A couple of the examples in the exercise above actually have two quantifiers
+in them.
+
+上面练习中的几个例子实际上包含两个量词。
+
+When there are two or more (different) quantifiers in a sentence
+you have to be careful about keeping their order straight.
+
+当一个句子中有两个或更多（不同的）量词时，你必须注意保持它们的顺序正确。
+
+The following 
+two sentences contain all the same elements except that the words that 
+indicate quantification have been switched.
+
+下面两个句子包含所有相同的元素，只是表示量化的词语被调换了位置。
+
+Do they have the same meaning?
+
+它们的含义相同吗？
+
+\begin{quote}
+For every student in James Woods High School, there is some item of
+cafeteria food that they like to eat.
+\end{quote}
+
+\begin{quote}
+对于詹姆斯·伍兹高中的每一位学生，都至少有一种他们喜欢吃的食堂食物。
+\end{quote}
+
+\begin{quote}
+There is some item of cafeteria food that every student in James Woods 
+High School likes to eat.
+\end{quote}
+
+\begin{quote}
+有一种食堂食物，是詹姆斯·伍兹高中每一位学生都喜欢吃的。
+\end{quote}
+
+\newpage
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\input{intro-zh/scary-exer.tex}
+
+
+\newpage
+
+\section{Definitions of elementary number theory 初等数论的定义}
+\label{sec:num_thry}
+
+\subsection{Even and odd 奇数与偶数}
+\label{even_n_odd}
+
+If you divide a number by 2 and it comes out even (i.e.\ with
+no remainder) the number is said to be {\em even}.
+
+如果你将一个数除以2，结果是整数（即没有余数），那么这个数就被称为{\em 偶数}。
+
+So the 
+{\em word} even is related to division.  It turns out that the
+{\em concept} even is better understood through thinking about
+multiplication.
+
+所以，{\em 词语}“偶数”与除法有关。但事实证明，通过乘法来思考，可以更好地理解{\em 概念}“偶数”。
+
+\begin{defi}
+An integer $n$ is {\em even} exactly when there is an integer $m$
+such that $n = 2m$.
+\end{defi}
+
+\begin{defi}
+一个整数 $n$ 是{\em 偶数}，当且仅当存在一个整数 $m$，使得 $n = 2m$。
+\end{defi}
+
+You should note that there is a ``two-way street'' sort of quality
+to this definition -- indeed with most, if not all, definitions.
+
+你应该注意到，这个定义——实际上大多数（如果不是全部）定义——都具有一种“双向”的特质。
+
+If 
+a number is even, then we are guaranteed the existence of another
+integer half as big.
+
+如果一个数是偶数，那么我们保证存在另一个大小为其一半的整数。
+
+On the other hand, if we can show that another
+integer half as big exists, then we know the original number is even.
+
+另一方面，如果我们能证明存在另一个大小为其一半的整数，那么我们就知道原来的数是偶数。
+
+This two-wayness means that the definition is what is known as a 
+{\em biconditional}, a concept which we'll revisit in
+Section~\ref{sec:impl}.
+
+这种双向性意味着该定义是一个所谓的{\em 双条件句}，我们将在第~\ref{sec:impl}节中重新讨论这个概念。
+
+A lot of people don't believe that $0$ should be counted as an even
+number.
+
+很多人不认为 $0$ 应该被算作偶数。
+
+Now that we are armed with a precise definition, we can
+answer this question easily.
+
+现在我们有了一个精确的定义，可以轻松地回答这个问题。
+
+Is there an integer $x$ such that
+$0 = 2x$ ?  Certainly! let $x$ also be $0$.
+
+是否存在一个整数 $x$ 使得 $0 = 2x$？当然！让 $x$ 也为 $0$ 即可。
+
+(Notice that in the
+definition, nothing was said about $m$ and $n$ being distinct from
+one another.)  
+
+（请注意，在定义中，并未提及 $m$ 和 $n$ 必须是不同的数。）
+
+An integer is {\em odd} if it isn't even.
+
+一个整数如果不是偶数，那么它就是{\em 奇数}。
+
+That is, amongst integers,
+there are only two possibilities: even or odd.
+
+也就是说，在整数中，只有两种可能性：偶数或奇数。
+
+We can also define
+oddness without reference to ``even.''
+
+我们也可以在不提及“偶数”的情况下定义奇数。
+
+\begin{defi}
+An integer $n$ is {\em odd} exactly when there is an integer $m$
+such that $n = 2m + 1$.
+\end{defi}
+
+\begin{defi}
+一个整数 $n$ 是{\em 奇数}，当且仅当存在一个整数 $m$，使得 $n = 2m + 1$。
+\end{defi}
+
+
+\subsection{Decimal and base-\emph{n} notation 十进制与N进制表示法}\label{base-n}
+
+You can also identify even numbers by considering their
+decimal representation.
+
+你也可以通过考虑一个数的十进制表示来识别偶数。
+
+Recall that each digit in the 
+decimal representation of a number has a value that depends
+on its position.
+
+回想一下，一个数十进制表示中的每一位数字的值都取决于它的位置。
+
+For example, the number $3482$ really means
+$3\cdot10^3 + 4\cdot10^2 + 8\cdot10^1 + 2\cdot10^0$.
+
+例如，数字 $3482$ 实际上意味着 $3\cdot10^3 + 4\cdot10^2 + 8\cdot10^1 + 2\cdot10^0$。
+
+This 
+is also known as \index{place notation}place notation.  
+The fact that we use the 
+powers of 10 in our place notation is probably due to the
+fact that most humans have 10 fingers.
+
+这也被称为\index{place notation}位值记数法。我们在位值记数法中使用10的幂，很可能是因为大多数人有10个手指。
+
+It is possible to
+use {\em any} number in place of 10.  In Computer Science there
+are 3 other bases in common use: 2, 8 and 16 -- these are
+known (respectively) as binary, octal and hexadecimal notation.
+
+可以用{\em 任何}数来代替10。在计算机科学中，有另外3种常用的进制：2、8和16——它们分别被称为二进制、八进制和十六进制表示法。
+
+When denoting a number using some base other than 10, it is
+customary to append a subscript indicating the base.
+
+当使用10以外的进制表示一个数时，通常会在后面附加一个下标来指明进制。
+
+So, for example, $1011_2$ is binary notation meaning
+$1\cdot2^3 + 0\cdot2^2 + 1\cdot2^1 + 1\cdot2^0$ or $8+2+1 = 11$.
+
+例如，$1011_2$ 是二进制表示法，意思是 $1\cdot2^3 + 0\cdot2^2 + 1\cdot2^1 + 1\cdot2^0$ 或 $8+2+1 = 11$。
+
+No matter what base we are using, the rightmost digit of
+the number multiplies the base raised to the $0$-th power.
+
+无论我们使用什么进制，最右边的数字都乘以该进制的0次幂。
+
+Any number raised to the $0$-th power is 1, and the rightmost
+digit is consequently known as the units digit.
+
+任何数的0次幂都是1，因此最右边的数字被称为个位数。
+
+We are now
+prepared to give some statements that are equivalent to our
+definition of even.
+
+现在我们准备给出一些与偶数定义等价的陈述。
+
+These statements truly don't deserve the
+designation ``theorem,'' they are immediate consequences of the
+definition.
+
+这些陈述实在称不上是“定理”，它们是定义的直接推论。
+
+\begin{thm}
+An integer is {\em even} if the units digit in its decimal
+representation is one of 0, 2, 4, 6 or 8.
+
+
+如果一个整数的十进制表示中的个位数是0、2、4、6或8之一，那么这个整数是{\em 偶数}。
+\end{thm}
+
+\begin{thm}
+An integer is {\em even} if the units digit in its binary
+representation is 0.
+
+
+如果一个整数的二进制表示中的个位数是0，那么这个整数是{\em 偶数}。
+\end{thm}
+
+\vspace{.5 in}
+
+For certain problems it is natural to use some particular notational system.
+
+对于某些问题，使用特定的记数系统是很自然的。
+
+For example, the
+last theorem would tend to indicate that binary numbers are useful
+in problems dealing with even and odd.
+
+例如，最后一个定理倾向于表明二进制数在处理奇偶问题时很有用。
+
+Given that there are many different 
+notations that are available to us, it is obviously desirable to have 
+means at our disposal for converting between them.
+
+鉴于我们有许多不同的表示法可用，拥有在它们之间进行转换的方法显然是可取的。
+
+It is possible to 
+develop general rules for converting a base-$a$ number to a base-$b$ 
+number (where $a$ and $b$ are arbitrary) but it is actually more convenient 
+to pick a ``standard'' base (and since we're human we'll use base-$10$) 
+and develop methods for converting between an arbitrary base and the 
+``standard'' one.
+
+开发将一个 $a$ 进制数转换为 $b$ 进制数（其中 $a$ 和 $b$ 是任意的）的通用规则是可能的，但实际上更方便的做法是选择一个“标准”进制（既然我们是人类，我们就用10进制），并开发在任意进制和“标准”进制之间转换的方法。
+
+Imagine that in the not-too-distant future we need to 
+convert some numbers from the base-$7$ system used by the Seven-lobed 
+Amoebazoids from Epsilon Eridani III to the base-$12$ scheme favored 
+by the Dodecatons of Alpha-Centauri IV.
+
+想象一下，在不远的将来，我们需要将一些数字从波江座ε星III上的七叶变形虫使用的7进制系统，转换为南门二IV上的十二指肠虫偏爱的12进制方案。
+
+We will need a procedure
+for converting base-$7$ to base-$10$ and another procedure for converting 
+from base-$10$ to base-$12$.
+
+我们将需要一个从7进制转换为10进制的程序，以及另一个从10进制转换为12进制的程序。
+
+In the School House Rock episode 
+``Little Twelve Toes'' they describe base-$12$
+numeration in a way that is understandable for elementary school 
+children -- the digits they use are 
+$\{1, 2, 3, 4, 5, 6, 7, 8, 9, \delta, \epsilon \}$, the last two digits 
+(which are pronounced ``dec'' and ``el'') are necessary since we need 
+single symbols for the things we ordinarily denote using $10$ and $11$.
+
+在《School House Rock》的“Little Twelve Toes”一集中，他们以小学生可以理解的方式描述了12进制计数法——他们使用的数字是 $\{1, 2, 3, 4, 5, 6, 7, 8, 9, \delta, \epsilon \}$，最后两个数字（发音为“dec”和“el”）是必需的，因为我们需要用单个符号来表示我们通常用 $10$ 和 $11$ 表示的东西。
+
+Converting from some other base to decimal is easy.  You just use the 
+definition of place notation.
+
+从其他进制转换到十进制很容易。你只需使用位值记数法的定义即可。
+
+For example, to find what $451663_7$ 
+represents in decimal, just write
+
+例如，要计算 $451663_7$ 在十进制中代表什么，只需写出：
+
+\[ 4 \cdot 7^5 + 5 \cdot 7^4 + 1 \cdot 7^3 + 6 \cdot 7^2 + 6 \cdot 7 + 3 =  4 \cdot 16807 + 5 \cdot 2401 + 1 \cdot 343 + 6 \cdot 49 + 6 \cdot 7 + 3 = 79915. \] 
+
+(Everything in the line above can be interpreted as a base-$10$ number, 
+and no subscripts are necessary for base-$10$.)
+
+（上面一行中的所有内容都可以解释为10进制数，因此不需要下标。）
+
+Converting from decimal to some other base is harder.
+
+从十进制转换到其他进制更难。
+
+There is an algorithm 
+called ``repeated division'' that we'll explore a bit in the exercises 
+for this section.
+
+有一种叫做“重复相除法”的算法，我们将在本节的练习中稍作探讨。
+
+For the moment, just verify that 
+$3\delta 2\epsilon 7_{12}$ is also a representation of the
+number more conventionally written as 79915.
+
+现在，请验证 $3\delta 2\epsilon 7_{12}$ 也是通常写作79915的那个数的表示形式。
+
+\subsection{Divisibility 整除性}
+\label{div}
+
+The notion of being even has an obvious generalization.
+
+偶数的概念有一个明显的推广。
+
+Suppose
+we asked whether $3$ divided evenly into a given number.
+
+假设我们问一个给定的数是否能被3整除。
+
+Presumably
+we could make a definition of what it meant to be {\em threeven}, but
+rather than doing so (or engaging in any further punnery) we shall
+instead move to a general definition.
+
+大概我们可以定义一个“三偶数”的概念，但我们不这样做（也不再玩文字游戏），而是转向一个通用的定义。
+
+We need a notation for the
+situation when one number divides evenly into another.
+
+我们需要一种符号来表示一个数能被另一个数整除的情况。
+
+There are
+many ways to describe this situation in English, but essentially 
+just one in ``math,''  we use a vertical bar -- {\em not} a fraction
+bar.
+
+在英语中有很多方法来描述这种情况，但在“数学”中基本上只有一种，我们使用一个竖线——{\em 不是}分数线。
+
+Indeed the difference between this vertical bar and the 
+fraction symbol (\rule{3pt}{0pt}$\divides$ versus $/$) needs to 
+be strongly stressed.
+
+确实，需要特别强调这个竖线和分数符号（\rule{3pt}{0pt}$\divides$ 与 $/$）之间的区别。
+
+The vertical bar
+when placed between two numbers is a symbol which asks the question 
+``Does the first number divide evenly (i.e.\ with no remainder) into 
+the second?''  On the other hand the fraction bar asks you to actually
+carry out some division.
+
+放在两个数字之间的竖线是一个符号，它问的是“第一个数能整除（即没有余数）第二个数吗？”。而分数线则是要求你实际执行除法运算。
+
+The value of $2\divides 5$ is {\em false}, whereas
+the value of $2/5$ is $.4$
+
+$2\divides 5$ 的值是{\em 假}，而 $2/5$ 的值是 $.4$。
+
+As was the case in defining even, it turns out that it is best
+to think of multiplication, not division, when making a formal
+definition of this concept.
+
+与定义偶数时一样，事实证明在对这个概念进行正式定义时，最好考虑乘法，而不是除法。
+
+Given any two integers $n$ and $d$
+we define the symbol \index{divisibility}$d\divides n$ by
+
+给定任意两个整数 $n$ 和 $d$，我们定义符号 \index{divisibility}$d\divides n$ 如下：
+
+\begin{defi}
+$ d \divides n$ exactly when $\exists k \in \Integers$ such that $n = kd$.
+\end{defi}
+
+\begin{defi}
+$ d \divides n$ 当且仅当 $\exists k \in \Integers$ 使得 $n = kd$。
+\end{defi}
+
+In spoken language the symbol $d \divides n$ can be translated in a variety 
+of ways:
+
+在口语中，符号 $d \divides n$ 可以有多种翻译方式：
+
+\begin{itemize}
+\item $d$ is a divisor of $n$.
+$d$ 是 $n$ 的一个约数。
+\item $d$ divides $n$ evenly.
+ $d$ 整除 $n$。
+\item $d$ is a factor of $n$.
+ $d$ 是 $n$ 的一个因数。
+\item $n$ is an integer multiple of $d$.
+ $n$ 是 $d$ 的整数倍。
+\end{itemize}
+
+Although, by far the most popular way of expressing this concept is to just say ``$d$ divides $n$.''
+
+然而，到目前为止，表达这个概念最流行的方式就是说“$d$ 整除 $n$”。
+
+\subsection{Floor and ceiling 取整函数}
+\label{floor}
+
+Suppose there is an elevator with a capacity of 1300 pounds.
+
+假设有一部电梯的承重能力为1300磅。
+
+A large
+group of men who all weigh about 200 pounds want to ascend in it.
+
+一大群体重都在200磅左右的男人想乘坐它上升。
+
+How
+many should ride at a time?  This is just a division problem, 1300/200
+gives 6.5 men should ride together.
+
+一次应该搭乘多少人？这只是一个除法问题，1300/200 得出6.5个男人应该一起乘坐。
+
+Well, obviously putting half a
+person on an elevator is a bad idea -- should we just round-up and 
+let 7 ride together?
+
+嗯，显然让半个人上电梯是个坏主意——我们应该直接向上取整，让7个人一起乘坐吗？
+
+Not if the 1300 pound capacity rating doesn't
+have a safety margin!
+
+如果1300磅的承重等级没有安全余量，那就不行！
+
+This is an example of the kind of problem
+in which the floor function is used.
+
+这是一个使用下取整函数解决问题的例子。
+
+The \index{floor function}
+floor function takes a real number as input and returns the next 
+lower integer.
+
+\index{floor function}下取整函数接受一个实数作为输入，并返回下一个更小的整数。
+
+Suppose after a party we have 43 unopened bottles of beer.
+
+假设派对后我们有43瓶未开封的啤酒。
+
+We'd like
+to store them in containers that hold 12 bottles each.  How many 
+containers will we need?
+
+我们想把它们存放在每个能装12瓶的容器里。我们需要多少个容器？
+
+Again, this is simply a division problem --
+$43/12 = 3.58\overline{333}$.
+
+这同样只是一个除法问题——$43/12 = 3.58\overline{333}$。
+
+So we need 3 boxes and another 
+7 twelfths of a box.
+
+所以我们需要3个箱子，外加一个箱子的十二分之七。
+
+Obviously we really need 4 boxes -- at least one
+will have some unused space in it.
+
+显然我们实际上需要4个箱子——至少有一个会有一些未使用的空间。
+
+In this sort of situation
+we're dealing with the \index{ceiling function}ceiling function.
+
+在这种情况下，我们处理的是\index{ceiling function}上取整函数。
+
+Given a real number, the ceiling function rounds it up to the 
+next integer.
+
+给定一个实数，上取整函数会将其向上舍入到下一个整数。
+
+Both of these functions are denoted using symbols that look very
+much like absolute value bars.
+
+这两个函数都用看起来很像绝对值符号的符号来表示。
+
+The difference lies in some 
+small horizontal strokes.
+
+区别在于一些小的水平短线。
+
+If $x$ is a real number, its floor is denoted $\lfloor x \rfloor$,
+and its ceiling is denoted $\lceil x \rceil$.
+
+如果 $x$ 是一个实数，它的下取整表示为 $\lfloor x \rfloor$，它的上取整表示为 $\lceil x \rceil$。
+
+Here are the 
+formal definitions:
+
+以下是正式定义：
+
+\begin{defi}
+$y = \lfloor x \rfloor$ exactly when $y \in \Integers$ and 
+$y \leq x < y+1$.
+\end{defi}
+
+\begin{defi}
+$y = \lfloor x \rfloor$ 当且仅当 $y \in \Integers$ 且 $y \leq x < y+1$。
+\end{defi}
+
+\begin{defi}
+$y = \lceil x \rceil$ exactly when $y \in \Integers$ and 
+$y-1 < x \leq y$.
+\end{defi}
+
+\begin{defi}
+$y = \lceil x \rceil$ 当且仅当 $y \in \Integers$ 且 $y-1 < x \leq y$。
+\end{defi}
+
+Basically, the definition of floor says that $y$ is an integer
+that is less than or equal to $x$, but $y+1$ definitely exceeds $x$.
+
+基本上，下取整的定义是说 $y$ 是一个小于或等于 $x$ 的整数，但 $y+1$ 绝对超过 $x$。
+
+The definition of ceiling can be paraphrased similarly.
+
+上取整的定义可以类似地解释。
+
+
+\subsection{Div and mod 整除与取模}
+\label{div/mod}
+
+In the next section we'll discuss the so-called division algorithm --
+this may be over-kill since you certainly already know how to do
+division!
+
+在下一节中，我们将讨论所谓的除法算法——这可能有点小题大做，因为你肯定已经知道如何做除法了！
+
+Indeed, in the U.S., long division is usually first studied
+in the latter half of elementary school, and division problems that
+don't involve a remainder may be found as early as the first grade.
+
+的确，在美国，长除法通常在小学后半段才开始学习，而不涉及余数的除法问题可能早在一年级就会遇到。
+
+Nevertheless, we're going to discuss this process in sordid detail
+because it gives us a good setting in which to prove relatively easy
+statements.
+
+尽管如此，我们还是要详细讨论这个过程，因为它为我们证明相对简单的命题提供了一个很好的背景。
+
+Suppose you are setting-up a long division problem in
+which the integer $n$ is being divided by a positive divisor $d$.
+
+假设你正在设置一个长除法问题，其中整数 $n$ 被一个正除数 $d$ 除。
+
+(If you want to divide by a negative number, just divide by the
+corresponding positive number and then throw an extra minus sign 
+on at the end.)
+
+（如果你想除以一个负数，只需除以相应的正数，然后在最后加上一个额外的负号。）
+
+\centerline{ \begin{tabular}{cc}
+ & q \\ 
+ d & \begin{tabular}{|c} \hline 
+     \rule{8pt}{0pt} n \rule{8pt}{0pt} 
+     \end{tabular}  \\
+ & $\vdots$ \\ \cline{2-2}
+ & r \\
+\end{tabular} }
+
+Recall that the answer consists of two parts, a {\em quotient} $q$,
+and a {\em remainder} $r$.
+
+回想一下，答案由两部分组成，一个{\em 商} $q$ 和一个{\em 余数} $r$。
+
+Of course, $r$ may be zero, but also, the
+largest $r$ can be is $d-1$.
+
+当然，$r$ 可以是零，但 $r$ 最大只能是 $d-1$。
+
+The assertion that this answer uniquely
+exists is known as the \index{quotient-remainder theorem}
+\emph{quotient-remainder theorem}:
+
+断言这个答案唯一存在的命题被称为\index{quotient-remainder theorem}\emph{商余定理}：
+
+\begin{thm} \label{quo-rem}
+Given integers $n$ and $d>0$, there are unique integers $q$ and $r$ such
+that $n = qd + r$ and $ 0 \leq r < d$.
+\end{thm}
+
+\begin{thm} \label{quo-rem}
+给定整数 $n$ 和 $d>0$，存在唯一的整数 $q$ 和 $r$，使得 $n = qd + r$ 且 $ 0 \leq r < d$。
+\end{thm}
+
+The words ``div'' and ``mod'' that appear in the title of this
+subsection provide mathematical shorthand for $q$ and $r$.
+
+本小节标题中出现的“div”和“mod”为 $q$ 和 $r$ 提供了数学上的简写。
+
+Namely,
+``$n \bmod d$'' is a way of expressing the remainder $r$, and ``$n
+\tdiv d$'' is a way of expressing the quotient $q$.
+
+即，“$n \bmod d$”是表示余数 $r$ 的一种方式，而“$n \tdiv d$”是表示商 $q$ 的一种方式。
+
+If two integers, $m$ and $n$, leave the same remainder when you
+divide them by $d$, we say that they are \index{congruence}
+\emph{congruent modulo $d$}.
+
+如果两个整数 $m$ 和 $n$ 在被 $d$ 除时余数相同，我们说它们\index{congruence}\emph{模 $d$ 同余}。
+
+One could express this by writing $n \bmod d = m \bmod d$, but usually
+we adopt a shorthand notation
+
+我们可以通过写 $n \bmod d = m \bmod d$ 来表达这一点，但通常我们采用一种简写符号：
+
+\[ n \equiv m \pmod{d}.
+\]
+
+If one is in a context in which it is completely clear what $d$ is, it's
+acceptable to just write $n \equiv m$.
+
+如果在上下文中完全清楚 $d$ 是什么，只写 $n \equiv m$ 也是可以接受的。
+
+The ``mod'' operation is used quite a lot in mathematics.
+
+“模”运算在数学中被广泛使用。
+
+When we do 
+computations modulo some number $d$, (this is known as ``modular arithmetic''
+or, sometimes, ``clock arithmetic'') some very nice properties of ``mod''
+come in handy:
+
+当我们进行模某个数 $d$ 的计算时（这被称为“模算术”或有时称为“时钟算术”），“模”的一些非常好的性质就派上用场了：
+
+\[ x + y \bmod d = ( x \bmod d + y \bmod d ) \bmod d \]
+
+\noindent and
+
+\[ x \cdot y \bmod d = ( x \bmod d \cdot y \bmod d ) \bmod d.
+\] 
+
+These rules mean that we can either do the operations first, then 
+reduce the answer $\bmod\; d$ or we can do the reduction $\bmod\; d$ 
+first and then do the operations (although we may have to do one 
+more round of reduction $\bmod\; d$).
+
+这些规则意味着我们可以先进行运算，然后将答案对 $d$ 取模，或者我们可以先对 $d$ 取模，然后再进行运算（尽管我们可能需要再进行一轮对 $d$ 的取模）。
+
+For example, if we are working $\bmod\; 10$, and want to compute 
+$87 \cdot 96 \bmod\; 10$, we can instead just compute $7 \cdot 6 \bmod\; 10$,
+which is $2$.
+
+例如，如果我们正在进行模10运算，并想计算 $87 \cdot 96 \bmod\; 10$，我们可以转而只计算 $7 \cdot 6 \bmod\; 10$，结果是2。
+
+\subsection{Binomial coefficients 二项式系数}
+\label{binom_coeff}
+
+A ``binomial'' is a polynomial with 2 terms, for example $x+1$ or $a+b$.
+
+“二项式”是具有2项的多项式，例如 $x+1$ 或 $a+b$。
+
+The numbers that appear as the coefficients when one raises a binomial
+to some power are -- rather surprisingly -- known as 
+\index{binomial coefficients} binomial coefficients.
+
+当一个二项式被提升到某个幂次时，出现的系数——相当令人惊讶地——被称为\index{binomial coefficients}二项式系数。
+
+Let's have a look at the first several powers of $a+b$.
+
+让我们看一下 $a+b$ 的前几个幂。
+
+\begin{gather*}
+(a+b)^0 = 1 \\
+(a+b)^1 = a+b \\
+(a+b)^2 = a^2 + 2ab + b^2 \\
+\end{gather*} 
+
+To go much further than the second power requires a bit of work,
+but try the following
+
+要远超二次幂需要一些工作，但请尝试以下练习。
+
+\begin{exer}
+Multiply $(a+b)$ and $(a^2 + 2ab + b^2)$ in order to determine $(a+b)^3$.
+If you feel up to it, multiply $(a^2 + 2ab + b^2)$ times itself in order
+to find $(a+b)^4$.
+\end{exer}
+
+\begin{exer}
+将 $(a+b)$ 和 $(a^2 + 2ab + b^2)$ 相乘以确定 $(a+b)^3$。如果你愿意，可以将 $(a^2 + 2ab + b^2)$ 自身相乘以求得 $(a+b)^4$。
+\end{exer}
+
+Since we're interested in the coefficients of these polynomials, it's important
+to point out that if no coefficient appears in front of a term that means the
+coefficient is 1.
+
+由于我们对这些多项式的系数感兴趣，需要指出的是，如果一个项前面没有系数，那意味着系数是1。
+
+These binomial coefficients can be placed in an arrangement known as
+\index{Pascal's triangle} \index{Blaise Pascal} Pascal's triangle
+\footnote{This triangle was actually known well before Blaise Pascal %
+began to study it, but it carries his name today.}, which
+provides a convenient way to calculate small binomial coefficients
+
+这些二项式系数可以排列成一种被称为\index{Pascal's triangle} \index{Blaise Pascal}帕斯卡三角形\footnote{这个三角形实际上在布莱兹·帕斯卡开始研究它之前就已广为人知，但今天它以帕斯卡的名字命名。}的结构，它为计算小的二项式系数提供了一种便捷的方法。
+
+\begin{figure}[!hbt]
+\begin{center}
+\begin{tabular}{ccccccccc}
+ & & & & 1 & & & & \\
+ & & & 1 & & 1 & & & \\
+ & & 1 &  & 2 &  
+ & 1 & & \\ 
+ & 1 & & 3 & & 3 & & 1 & \\
+1 & & 4 & & 6 & & 4 & & 1 \\
+\end{tabular}
+\end{center}
+
+\vspace{.2in}
+
+\caption[Pascal's triangle.]{The first $5$ rows of Pascal's triangle (which are numbered 0 through 4 \ldots). 帕斯卡三角形的前5行（编号为0到4……）。}
+\label{fig:pascal}
+\end{figure}
+
+Notice that in the triangle there is a border on both sides containing
+1's and that the numbers on the inside of the triangle are the sum of the
+two numbers above them.
+
+请注意，在三角形中，两侧各有一条包含1的边界，并且三角形内部的数字是它们上方两个数字的和。
+
+You can use these facts to extend the triangle.
+
+你可以利用这些事实来扩展这个三角形。
+
+\begin{exer}
+Add the next two rows to the Pascal triangle in Figure~\ref{fig:pascal}.
+\end{exer}
+
+\begin{exer}
+在图~\ref{fig:pascal}的帕斯卡三角形中添加下两行。
+\end{exer}
+
+Binomial coefficients are denoted using a somewhat strange looking
+symbol.  The number in the $k$-th position in row number $n$ of
+the triangle is denoted $\displaystyle \binom{n}{k}$.
+
+二项式系数用一个看起来有些奇怪的符号表示。三角形第 $n$ 行第 $k$ 个位置的数表示为 $\displaystyle \binom{n}{k}$。
+
+This looks 
+a little like a fraction, but the fraction bar is missing.  Don't
+put one in!
+
+这看起来有点像分数，但缺少分数线。不要加上去！
+
+It's \emph{supposed} to be missing.  In spoken English
+you say ``$n$ choose $k$'' when you encounter the symbol $\displaystyle \binom{n}{k}$.
+
+它\emph{本应}是缺失的。在口语英语中，当你遇到符号 $\displaystyle \binom{n}{k}$ 时，你说“$n$ choose $k$”。
+
+There is a formula for the binomial coefficients -- which is nice.
+
+二项式系数有一个公式——这很好。
+
+Otherwise
+we'd need to complete a pretty huge Pascal triangle in order to compute
+something like $\displaystyle \binom{52}{5}$.
+
+否则，为了计算像 $\displaystyle \binom{52}{5}$ 这样的值，我们需要完成一个相当巨大的帕斯卡三角形。
+
+The formula involves 
+\index{factorials} factorial notation.  Just to be sure we are 
+all on the same page, we'll define factorials before proceeding.
+
+这个公式涉及到\index{factorials}阶乘表示法。为了确保我们都理解一致，我们先定义阶乘。
+
+The symbol for factorials is an exclamation point following a number.
+
+阶乘的符号是一个跟在数字后面的感叹号。
+
+This is just a short-hand for expressing the
+product of all the numbers up to a given one.
+
+这只是表示一个给定数及其之前所有正整数乘积的简写。
+
+For example $7!$ means $1\cdot 2\cdot 3\cdot 4\cdot 5\cdot 6\cdot 7$.
+
+例如，$7!$ 表示 $1\cdot 2\cdot 3\cdot 4\cdot 5\cdot 6\cdot 7$。
+
+Of course, there's really no need to write the initial $1$ --- also,
+for some reason people usually write the product in decreasing order
+($7! = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2)$.
+
+当然，实在没必要写开头的1——另外，出于某种原因，人们通常按降序写这个乘积（$7! = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2)$。
+
+The formula for a binomial coefficient is 
+
+二项式系数的公式是：
+
+\[ \binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}. \]
+
+For example
+
+例如
+
+\[ \binom{5}{3} = \frac{5!}{3! \cdot (5-3)!} = \frac{1\cdot 2\cdot 3\cdot 4\cdot 5}{(1\cdot 2\cdot 3) \cdot (1\cdot 2)} = 10. \]
+
+A slightly more complicated example (and one that gamblers are fond of) 
+is
+
+一个稍微复杂一些（并且是赌徒们喜欢的）例子是：
+
+\begin{gather*} 
+\binom{52}{5} = \frac{52!}{5! \cdot (52-5)!} 
+ = \frac{1\cdot 2\cdot 3\cdot \cdots 52}{(1\cdot 2\cdot 3 \cdot 4 \cdot 5) \cdot (1\cdot 2 \cdot 3\cdot \cdots 47)}\\
+ = \frac{48 \cdot 49 \cdot 50 \cdot 51 \cdot 52}{1\cdot 2\cdot 3 \cdot 4 \cdot 5} = 2598960.
+\end{gather*}
+
+The reason that a gambler might be interested in the number we just calculated
+is that binomial coefficients do more than just give us the coefficients in the
+expansion of a binomial.
+
+赌徒可能对我们刚刚计算的数字感兴趣的原因是，二项式系数的作用不仅仅是给出二项式展开式中的系数。
+
+They also can be used to compute how many ways one
+can choose a subset of a given size from a set.
+
+它们还可以用来计算从一个集合中选择一个给定大小的子集有多少种方式。
+
+Thus $\binom{52}{5}$ is the
+number of ways that one can get a 5 card hand out of a deck of 52 cards.
+
+因此，$\binom{52}{5}$ 是从一副52张的牌中拿到5张牌的不同方式的数量。
+
+\begin{exer}
+There are seven days in a week.  In how many ways can one choose a set
+of three days (per week)?
+\end{exer}
+
+\begin{exer}
+一周有七天。有多少种方式可以选择（每周）三天的组合？
+\end{exer}
+
+\newpage
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\input{intro-zh/num_thry-exer.tex}
+
+\newpage
+
+\section[Some algorithms]{Some algorithms of elementary number theory 初等数论的一些算法}
+\label{sec:alg}
+
+An \index{algorithm}\emph{algorithm} is simply a set of clear 
+instructions for achieving
+some task.
+
+\index{algorithm}\emph{算法}是为完成某项任务而设定的一套清晰的指令。
+
+The Persian mathematician and astronomer
+Al-Khwarizmi\footnote{Abu Ja'far Muhammad ibn Musa al-Khwarizmi} was a
+scholar at the House of Wisdom in Baghdad who lived in the 8th and 9th
+centuries A.D.   He is remembered for his algebra treatise \emph{Hisab
+  al-jabr w'al-muqabala} from which we derive the very {\em word}
+``algebra,'' and a text on the Hindu-Arabic numeration scheme.
+
+波斯数学家和天文学家花拉子米\footnote{Abu Ja'far Muhammad ibn Musa al-Khwarizmi}是公元8至9世纪巴格达智慧宫的一位学者。他因其代数专著《Hisab al-jabr w'al-muqabala》（我们正是从此书衍生出“代数”这个词）以及一本关于印度-阿拉伯数字系统的著作而闻名。
+
+\begin{quote}
+Al-Khwarizmi also wrote a treatise on Hindu-Arabic numerals.  The
+Arabic text is lost but a Latin translation, {\em Algoritmi de numero
+Indorum} (in English {\em Al-Khwarizmi on the Hindu Art of Reckoning}) gave
+rise to the word algorithm deriving from his name in the
+title.~\cite{HisMathArch} 
+\end{quote}
+
+\begin{quote}
+花拉子米还写了一篇关于印度-阿拉伯数字的论文。阿拉伯原文已失传，但其拉丁译本《Algoritmi de numero Indorum》（英文为《花拉子米论印度计算艺术》）的标题中由他的名字衍生出了“算法”一词。~\cite{HisMathArch}
+\end{quote}
+
+While the study of algorithms is more properly a subject within
+Computer Science, a student of Mathematics can derive considerable
+benefit from it.
+
+虽然算法研究更确切地说是计算机科学的范畴，但数学专业的学生也能从中获益匪浅。
+
+There is a big difference between an algorithm description intended
+for human consumption and one meant for a computer\footnote{The 
+whole history of Computer Science could be
+  described as the slow advance whereby computers have become  able to
+  utilize more and more abstracted descriptions of algorithms.
+Perhaps in the not-too-distant future machines will be capable of
+  understanding instruction sets that currently require human interpreters.}.
+
+为人类理解而写的算法描述与为计算机编写的算法描述之间有很大的区别\footnote{整个计算机科学的历史可以被描述为计算机能够利用越来越抽象的算法描述的缓慢进步过程。也许在不远的将来，机器将能够理解目前需要人类解释的指令集。}。
+
+The two favored human-readable forms for describing
+algorithms are \index{pseudocode} pseudocode and \index{flowchart} 
+flowcharts.
+
+描述算法的两种常用的人类可读形式是\index{pseudocode}伪代码和\index{flowchart}流程图。
+
+The former is text-based
+and the latter is visual.  There are many different modules from which
+one can build algorithmic structures: for-next loops, do-while loops, if-then
+statements, goto statements, switch-case structures, etc.   We'll use
+a minimal subset of the choices available.
+
+前者是基于文本的，后者是可视化的。我们可以用许多不同的模块来构建算法结构：for-next循环、do-while循环、if-then语句、goto语句、switch-case结构等。我们将使用可用选择的一个最小子集。
+
+\begin{itemize}
+\item Assignment statements 赋值语句
+\item If-then control statements If-then 控制语句
+\item Goto statements Goto 语句
+\item Return 返回
+\end{itemize}
+
+We take the view that an algorithm is something like a function, it
+takes for its input a list of parameters that describe a particular
+case of some general problem, and produces as its output a solution to
+that problem.
+
+我们认为算法类似于一个函数，它接受一个描述某个普遍问题特定实例的参数列表作为输入，并产生该问题的解决方案作为输出。
+
+(It should be noted that there are other possibilities
+-- some programs require that the variable in which the output is to
+be placed be handed them as an input parameter, others have no
+specific output, their purpose is achieved as a side-effect.)  The
+intermediary between input and output is the algorithm instructions
+themselves and a set of so-called local variables which are used much
+the way scrap paper is used in a hand calculation -- intermediate
+calculations are written on them, but they are tossed aside once the
+final answer has been calculated.
+
+（应该指出，还存在其他可能性——一些程序要求将用于存放输出的变量作为输入参数传递，另一些则没有特定的输出，其目的是通过副作用实现的。）输入和输出之间的中介是算法指令本身以及一组所谓的局部变量，这些变量的使用方式很像手算中使用的草稿纸——中间计算结果写在上面，但一旦计算出最终答案，它们就会被丢弃。
+
+Assignment statements allow us to do all kinds of arithmetic
+operations (or rather to think of these types of operations as being
+atomic.)  In actuality even a simple procedure like adding two numbers
+requires an algorithm of sorts, we'll avoid such a fine level of
+detail.
+
+赋值语句允许我们进行各种算术运算（或者更确切地说，将这些运算视为原子操作）。实际上，即使是像两数相加这样简单的过程也需要某种算法，但我们将避免这种精细的细节。
+
+Assignments consist of evaluating some (possibly quite
+complicated) formula in the inputs and local variables and assigning
+that value to some local variable.
+
+赋值操作包括在输入和局部变量中评估某个（可能相当复杂的）公式，并将该值赋给某个局部变量。
+
+The two uses of the phrase ``local
+variable''  in the previous sentence do not need to be distinct, thus
+$x = x + 1$ is a perfectly legal assignment.
+
+前一句话中两次使用的“局部变量”一词不必是不同的，因此 $x = x + 1$ 是一个完全合法的赋值。
+
+If-then control statements are decision makers.  They first calculate
+a Boolean expression (this is just a fancy way of saying something
+that is either {\tt true} or {\tt false}), and send program flow to 
+different locations depending on that result.
+
+If-then 控制语句是决策者。它们首先计算一个布尔表达式（这只是说某事为{\tt true}或{\tt false}的一种花哨方式），然后根据结果将程序流引向不同的位置。
+
+A small example will
+serve as an illustration.  Suppose that in the body of an algorithm we
+wish to check if 2 variables, $x$ and $y$ are equal, and if they are,
+increment $x$ by 1.  This is illustrated in Figure~\ref{fig:if-then}
+both in pseudocode and as a flowchart.
+
+一个小例子可以作为说明。假设在一个算法的主体中，我们希望检查两个变量 $x$ 和 $y$ 是否相等，如果相等，则将 $x$ 增加1。这在图~\ref{fig:if-then}中以伪代码和流程图两种形式进行了说明。
+
+\begin{figure}[!hbt] 
+\begin{tabular}{ccc} 
+\input{figures/if-then_flowchart.tex} 
+ & \hspace{1in} &
+\begin{minipage}[b]{.3\textwidth}
+\tt If $x=y$ then \\
+\rule{15pt}{0pt}  $x=x+1$ \\
+End If \\
+\rule{30pt}{0pt} \vdots\\
+\\
+\\
+\end{minipage} \\
+\end{tabular}
+\caption{A small example in pseudocode and as a flowchart. 一个伪代码和流程图的小例子。}
+\label{fig:if-then}
+\end{figure}
+
+Notice the use of indentation in the pseudocode example to indicate
+the statements that are executed if the Boolean expression is true.
+
+注意在伪代码示例中使用了缩进，以指示在布尔表达式为真时执行的语句。
+
+These examples also highlight the difference between the two senses 
+that the word ``equals'' (and the symbol $=$) has.
+
+这些例子也突显了“等于”这个词（以及符号 $=$）所具有的两种不同含义。
+
+In the Boolean
+expression the sense is that of {\em testing} equality, in the
+assignment statements (as the name implies) an {\em assignment} is
+being made.
+
+在布尔表达式中，其含义是{\em 测试}相等性，而在赋值语句中（顾名思义）是进行{\em 赋值}。
+
+In many programming languages this distinction is made
+explicit, for instance in the C language equality testing is done via
+the symbol ``=='' whereas assignment is done using a single equals
+sign ($=$).
+
+在许多编程语言中，这种区别是明确的，例如在C语言中，相等性测试通过符号“==”完成，而赋值则使用单个等号（$=$）。
+
+In Mathematics the equals sign usually indicates equality
+testing, when the assignment sense is desired the word ``let'' will
+generally precede the equality.
+
+在数学中，等号通常表示相等性测试，当需要赋值的含义时，通常会在等式前加上“令”这个词。
+
+While this brief introduction to the means of notating algorithms is by no
+means complete, it is hopefully sufficient for our purpose which is
+solely to introduce two algorithms that are important in elementary
+number theory.
+
+虽然这个关于算法表示方法的简短介绍绝非完整，但希望它足以满足我们的目的，即仅仅介绍初等数论中两个重要的算法。
+
+The \index{division algorithm} division algorithm, 
+as presented here, is simply
+an explicit version of the process one follows to calculate a quotient
+and remainder using long division.
+
+这里介绍的\index{division algorithm}除法算法，只是人们用长除法计算商和余数过程的一个明确版本。
+
+The procedure we give is unusually
+inefficient -- with very little thought one could devise an algorithm
+that would produce the desired answer using many fewer operations --
+however the main point here is purely to show that division can be
+accomplished by essentially mechanical means.
+
+我们给出的过程异常低效——稍加思考就可以设计出一种使用更少操作就能得到期望答案的算法——然而，这里的主要目的纯粹是为了表明除法可以通过基本上机械化的方式完成。
+
+The Euclidean algorithm
+is far more interesting both from a theoretical and a practical
+perspective.
+
+从理论和实践的角度来看，欧几里得算法都更有趣得多。
+
+The Euclidean algorithm computes the greatest common
+divisor (gcd) of two integers.
+
+欧几里得算法计算两个整数的最大公约数（gcd）。
+
+The gcd of of two numbers $a$ and $b$
+is denoted $\gcd{a}{b}$ and is the largest integer that divides both
+$a$ and $b$ evenly.
+
+两个数 $a$ 和 $b$ 的gcd表示为 $\gcd{a}{b}$，是能够同时整除 $a$ 和 $b$ 的最大整数。
+
+A pseudocode outline of the division algorithm is as follows:
+\medskip
+
+除法算法的伪代码纲要如下：
+\medskip
+
+\begin{center}
+\begin{minipage}[b]{.5\textwidth}
+\tt Algorithm: Division\\
+Inputs: integers $n$ and $d$.\\
+Local variables: $q$ and $r$.\\
+\\
+Let $q = 0$. \\
+Let $r = n$. \\
+Label 1.\\
+If $r < d$ then\\
+\rule{15pt}{0pt} Return $q$ and $r$.\\
+End If\\
+Let $q = q + 1$.\\
+Let $r = r - d$.\\
+Goto 1. \\
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}[b]{.5\textwidth}
+\tt 算法：除法\\
+输入：整数 $n$ 和 $d$。\\
+局部变量：$q$ 和 $r$。\\
+\\
+令 $q = 0$。\\
+令 $r = n$。\\
+标签 1。\\
+如果 $r < d$ 那么\\
+\rule{15pt}{0pt} 返回 $q$ 和 $r$。\\
+结束如果\\
+令 $q = q + 1$。\\
+令 $r = r - d$。\\
+跳转到 1。\\
+\end{minipage}
+\end{center}
+
+This same algorithm is given in flowchart form in
+Figure~\ref{fig:div_alg}.
+
+同样的算法在图~\ref{fig:div_alg}中以流程图的形式给出。
+
+\begin{figure}[!hbt]
+\begin{center}
+\input{figures/div_alg_flowchart.tex}
+\end{center}
+%\centerline{\includegraphics[scale=.5]{div_alg_flowchart.eps}} 
+\caption{The division algorithm in flowchart form. 除法算法的流程图形式。}
+\label{fig:div_alg}
+\end{figure}
+
+Note that in a flowchart the action of a ``Goto'' statement is clear
+because an arrow points to the location where program flow is being
+redirected.
+
+请注意，在流程图中，“Goto”语句的作用是明确的，因为有一个箭头指向程序流被重定向的位置。
+
+In pseudocode a ``Label'' statement is required which
+indicates a spot where flow can be redirected via subsequent ``Goto''
+statements.
+
+在伪代码中，需要一个“Label”语句来指示一个位置，以便后续的“Goto”语句可以将流程重定向到该位置。
+
+Because of the potential for confusion in complicated
+algorithms that involve multitudes of Goto statements and their
+corresponding Labels, this sort of redirection is now deprecated in
+virtually all popular programming environments.
+
+由于在涉及大量Goto语句及其相应标签的复杂算法中可能引起混淆，这种重定向方式现在在几乎所有流行的编程环境中都已被弃用。
+
+Before we move on to describe the Euclidean algorithm it might be
+useful to describe more explicitly what exactly it's {\em for}.
+
+在继续描述欧几里得算法之前，更明确地说明它究竟是{\em 用来}做什么的可能会有所帮助。
+
+Given a pair of integers, $a$ and $b$, there are two quantities that 
+it is important to be able to compute, the \index{least common multiple}
+\emph{least common multiple}
+or lcm, and the \index{greatest common divisor} 
+\emph{greatest common divisor} or gcd.
+
+给定一对整数 $a$ 和 $b$，有两个重要的量需要能够计算，即\index{least common multiple}\emph{最小公倍数}（lcm）和\index{greatest common divisor}\emph{最大公约数}（gcd）。
+
+The lcm also
+goes by the name {\em lowest common denominator} because it is the
+smallest denominator that could be used as a common denominator in the
+process of adding two fractions that had $a$ and $b$ in their
+denominators.
+
+lcm也称为{\em 最小公分母}，因为在将分母分别为 $a$ 和 $b$ 的两个分数相加的过程中，它是可以用作公分母的最小分母。
+
+The gcd and the lcm are related by the formula 
+\[ \lcm{a}{b} = \frac{ab}{\gcd{a}{b}}, \]
+so they are essentially equivalent as far as representing a
+computational challenge.
+
+gcd和lcm通过公式 $\lcm{a}{b} = \frac{ab}{\gcd{a}{b}}$ 相关联，因此就计算挑战而言，它们基本上是等价的。
+
+The \index{Euclidean algorithm} Euclidean algorithm depends 
+on a rather extraordinary property of
+the gcd.
+
+\index{Euclidean algorithm}欧几里得算法依赖于gcd的一个相当非凡的性质。
+
+Suppose that we are trying to compute $\gcd{a}{b}$ and that
+$a$ is the larger of the two numbers.
+
+假设我们正在尝试计算 $\gcd{a}{b}$，并且 $a$ 是两个数中较大的那个。
+
+We first feed $a$ and $b$ into
+the division algorithm to find $q$ and $r$ such that $a = qb +r $.
+
+我们首先将 $a$ 和 $b$ 输入除法算法，以找到 $q$ 和 $r$ 使得 $a = qb +r$。
+
+It
+turns out that $b$ and $r$ have the {\em same} gcd as did $a$ and
+$b$.
+
+事实证明，$b$ 和 $r$ 的gcd与 $a$ 和 $b$ 的gcd{\em 相同}。
+
+In other words, $\gcd{a}{b} = \gcd{b}{r}$, furthermore these
+numbers are smaller than the ones we started with!
+
+换句话说，$\gcd{a}{b} = \gcd{b}{r}$，此外，这些数比我们开始时处理的数要小！
+
+This is nice
+because it means we're now dealing with an easier version of the same
+problem.
+
+这很好，因为它意味着我们现在正在处理同一个问题的更简单版本。
+
+In designing an algorithm it is important to formulate a
+clear {\em ending criterion}, a condition that tells you you're done.
+
+在设计算法时，制定一个清晰的{\em 结束标准}——一个告诉你已经完成的条件——非常重要。
+
+In the case of the Euclidean algorithm, we know we're done when the
+remainder $r$ comes out $0$.
+
+对于欧几里得算法，我们知道当余数 $r$ 为0时，我们就完成了。
+
+So, here, without further ado is the Euclidean algorithm in
+pseudocode.  A flowchart version is given in Figure~\ref{fig:Euc_alg}.
+
+那么，这里就不再赘述，直接给出欧几里得算法的伪代码。其流程图版本见图~\ref{fig:Euc_alg}。
+
+\medskip
+
+\begin{center}
+\begin{minipage}[b]{.7\textwidth}
+\tt Algorithm: Euclidean\\
+Inputs: integers $a$ and $b$.\\
+Local variables: $q$ and $r$.\\
+\\
+Label 1.\\
+Let $(q,r)  = \mbox{Division}(a,b)$. \\
+If $r = 0$ then\\
+\rule{15pt}{0pt} Return $b$.\\
+End If\\
+Let $a = b$.\\
+Let $b = r$.\\
+Goto 1. \\
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}[b]{.7\textwidth}
+\tt 算法：欧几里得\\
+输入：整数 $a$ 和 $b$。\\
+局部变量：$q$ 和 $r$。\\
+\\
+标签 1。\\
+令 $(q,r) = \mbox{除法}(a,b)$。\\
+如果 $r = 0$ 那么\\
+\rule{15pt}{0pt} 返回 $b$。\\
+结束如果\\
+令 $a = b$。\\
+令 $b = r$。\\
+跳转到 1。\\
+\end{minipage}
+\end{center}
+
+\begin{figure}[!hbt] 
+\begin{center}
+\input{figures/Euc_alg_flowchart.tex}
+\end{center}
+
+%\centerline{\includegraphics[scale=.5]{Euc_alg_flowchart.eps}} 
+\caption{The Euclidean algorithm in flowchart form. 欧几里得算法的流程图形式。}
+\label{fig:Euc_alg}
+\end{figure}
+
+\clearpage 
+
+It should be noted that for small numbers one can find the gcd and lcm
+quite easily by considering their factorizations into primes.
+
+应该注意的是，对于小数，通过考虑它们的素数分解，可以很容易地找到gcd和lcm。
+
+For the
+moment consider numbers that factor into primes but not into prime
+powers (that is, their factorizations don't involve exponents).
+
+暂时考虑那些可以分解为素数但不能分解为素数幂的数（也就是说，它们的分解不涉及指数）。
+
+The
+gcd is the product of the primes that are in common between these
+factorizations (if there are no primes in common it is 1).
+
+gcd是这些分解中共有素数的乘积（如果没有共有素数，则为1）。
+
+The lcm is
+the product of all the distinct primes 
+that appear in the factorizations.
+
+lcm是分解中出现的所有不同素数的乘积。
+
+As an example, consider 30 and 42.
+The factorizations are $30 = 2\cdot 3\cdot 5$ and $42 = 2\cdot 3 \cdot
+7$.
+
+举个例子，考虑30和42。它们的因式分解是 $30 = 2\cdot 3\cdot 5$ 和 $42 = 2\cdot 3 \cdot 7$。
+
+The primes that are common to both factorizations are $2$ and
+$3$, thus $\gcd{30}{42} = 2\cdot 3 = 6$.
+
+两个分解共有的素数是2和3，因此 $\gcd{30}{42} = 2\cdot 3 = 6$。
+
+The set of all the primes 
+that appear in either factorization is $\{2, 3, 5, 7 \}$ so
+$\lcm{30}{42} = 2\cdot 3\cdot 5\cdot 7 = 210$.
+
+任一分解中出现的所有素数的集合是 $\{2, 3, 5, 7 \}$，所以 $\lcm{30}{42} = 2\cdot 3\cdot 5\cdot 7 = 210$。
+
+The technique just described is of little value for numbers having more
+than about 50 decimal digits because it rests {\em a priori} on the
+ability to find the prime factorizations of the numbers involved.
+
+对于超过约50个十进制数字的数，刚刚描述的技术几乎没有价值，因为它{\em 先验地}依赖于找到相关数字的素数分解的能力。
+
+Factoring numbers is easy enough if they're reasonably small,
+especially if some of their prime factors are small, but in general
+the problem is considered so difficult that many cryptographic schemes
+are based on it.
+
+如果数字相当小，分解它们就足够容易，特别是如果它们的一些素因数很小的话，但总的来说，这个问题被认为是如此困难，以至于许多加密方案都基于它。
+
+\newpage
+  
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\input{intro-zh/algo-exer.tex}
+
+\newpage
+
+\section{Rational and irrational numbers 有理数与无理数}
+\label{sec:rat}
+
+When we first discussed the rational numbers in Section~\ref{sec:basic}
+we gave the following definition, which isn't quite right.
+\[ \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and} \;
+b \in \Integers \; \mbox{and} \; b \neq 0 \} \]
+
+当我们在第~\ref{sec:basic}节首次讨论有理数时，我们给出了以下定义，但这不完全正确。
+\[ \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and} \;
+b \in \Integers \; \mbox{and} \; b \neq 0 \} \]
+
+We are now in a position to fix the problem.
+
+我们现在可以来修正这个问题了。
+
+So what was the problem after all?  Essentially this: there are
+many expressions formed with one integer written above another (with an
+intervening fraction bar) that represent the exact same rational
+number.
+
+那么，问题究竟出在哪里呢？本质上是：有很多由一个整数写在另一个整数之上（中间有分数线）构成的表达式，它们代表的是完全相同的有理数。
+
+For example $\frac{3}{6}$ and $\frac{14}{28}$ are distinct
+things that appear in the set defined above, but we all know that they
+both represent the rational number $\frac{1}{2}$.
+
+例如，$\frac{3}{6}$ 和 $\frac{14}{28}$ 在上面定义的集合中是不同的东西，但我们都知道它们都代表有理数 $\frac{1}{2}$。
+
+To eliminate this
+problem with our definition of the rationals we need to add an
+additional condition that ensures that such duplicates don't arise.
+
+为了消除我们有理数定义中的这个问题，我们需要增加一个额外的条件，以确保不会出现这样的重复。
+
+It turns out that what we want is for the numerators and denominators
+of our fractions to have {\em no} factors in common.
+
+事实证明，我们想要的是分数的分子和分母没有公因数。
+
+Another way to
+say this is that the $a$ and $b$ from the definition above should be
+chosen so that $\gcd{a}{b} = 1$.
+
+换句话说，上面定义中的 $a$ 和 $b$ 应该被选择，使得 $\gcd{a}{b} = 1$。
+
+A pair of numbers whose gcd is 1 are
+called \index{relative primality} \emph{relatively prime}.
+
+一对gcd为1的数被称为\index{relative primality}\emph{互质}。
+
+We're ready, at last, to give a good, precise  definition of the set
+of rational numbers.
+
+我们终于准备好给有理数集下一个良好而精确的定义了。
+
+(Although it should be noted that we're not
+quite done fiddling around; an even better definition will be given in
+Section~\ref{sec:eq_rel}.)  
+
+（尽管应该指出，我们还没有完全搞定；在第~\ref{sec:eq_rel}节中会给出一个更好的定义。）
+
+\[ \Rationals = \{ \frac{a}{b} \suchthat a,b \in \Integers \; \mbox{and} \;
+b \neq 0 \; \mbox{and} \; \gcd{a}{b}=1 \}.
+\]
+
+As we have in the past, let's parse this with an English translation in parallel.
+
+像过去一样，让我们用英语翻译来并行解析这个定义。
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\Rationals$ & $=$ & $\{$  \\ \hline
+\rule[-6pt]{0pt}{22pt} The rational numbers & are defined to be & the set of all\\
+\rule[-6pt]{0pt}{22pt} 有理数 & 被定义为 & 所有...的集合\\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\displaystyle \frac{a}{b}$ & $\suchthat$ & $a,b \in \Integers$ \\ \hline
+\rule[-6pt]{0pt}{22pt} fractions of the form $a$ over $b$ & such that
+& $a$ and $b$ are integers \\
+\rule[-6pt]{0pt}{22pt} 形如 $a$ 除以 $b$ 的分数 & 使得 & $a$ 和 $b$ 是整数 \\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c|c|c}
+\rule[-10pt]{0pt}{22pt} and & $b \neq 0$ & and & $\gcd{a}{b}=1$ & $\}$
+\\ \hline
+\rule[-6pt]{0pt}{22pt}  and & $b$ is non-zero & and & $a$ and $b$ are relatively prime. &  \\
+\rule[-6pt]{0pt}{22pt}  并且 & $b$ 是非零的 & 并且 & $a$ 和 $b$ 互质。 & \\
+\end{tabular}
+
+\vspace{.2in}
+
+Finally, we are ready to face a fundamental problem that was
+glossed-over in Section~\ref{sec:basic}.
+
+最后，我们准备好面对在第~\ref{sec:basic}节中被一带而过的一个基本问题。
+
+We defined two sets
+back then, $\Rationals$ and $\Reals$, the hidden assumption that one
+makes in asserting that there are two of something is that the two
+things are distinct.
+
+那时我们定义了两个集合，$\Rationals$ 和 $\Reals$，断言有两样东西时，隐藏的假设是这两样东西是不同的。
+
+Is this really the case?  The reals have been
+defined (unrigorously) as numbers that measure the magnitudes of
+physical quantities, so another way to state the question is this:
+Are there physical quantities (for example lengths) that are {\em not}
+rational numbers?
+
+情况果真如此吗？实数已被（不严格地）定义为测量物理量大小的数，所以换一种方式提问就是：是否存在{\em 不是}有理数的物理量（例如长度）？
+
+The answer is that {\em yes} there are numbers that measure lengths
+which are not rational numbers.
+
+答案是，{\em 是的}，存在一些测量长度的数，它们不是有理数。
+
+With our new and improved definition
+of what is meant by a rational number we are ready to {\em prove} that 
+there is at least one length that can't be expressed as a fraction.
+
+有了我们对有理数含义的新的、改进的定义，我们准备好{\em 证明}至少存在一个不能表示为分数的长度。
+
+Using the Pythagorean theorem it's easy to see that the length of the
+diagonal of a unit square is $\sqrt{\,2}$.
+
+利用勾股定理，很容易看出单位正方形的对角线长度是 $\sqrt{\,2}$。
+
+The proof that $\sqrt{\,2}$ is
+not rational is usually attributed to the followers of Pythagoras (but
+probably not to Pythagoras himself).
+
+关于 $\sqrt{\,2}$ 不是有理数的证明，通常被归功于毕达哥拉斯的追随者（但可能不是毕达哥拉斯本人）。
+
+In any case it is a result of
+great antiquity.  The proof is of a type known as 
+\index{reductio ad absurdam} \emph{reductio ad absurdum}
+\footnote{Reduction to an absurdity -- better known these %
+days as proof by contradiction.}.
+
+无论如何，这是一个非常古老的结果。该证明属于一种被称为\index{reductio ad absurdam}\emph{归谬法}的类型\footnote{归于荒谬——如今更广为人知的名字是反证法。}。
+
+We show that a given assumption
+leads logically to an absurdity, a statement that {\em can't} be true,
+then we know that the original assumption must itself be false.
+
+我们证明一个给定的假设在逻辑上会导致一个谬论，一个{\em 不可能}为真的陈述，然后我们就知道最初的假设本身必定是错误的。
+
+This 
+method of proof is a bit slippery; one has to first assume the 
+\emph{exact opposite} of what one hopes to prove and then argue (on
+purpose) towards a ridiculous conclusion.
+
+这种证明方法有点棘手；人们必须首先假设与希望证明的命题\emph{完全相反}的命题，然后（有意地）朝一个荒谬的结论进行论证。
+
+\begin{thm} The number $\sqrt{\,2}$ is not in the set $\Rationals$ of
+rational numbers.
+\end{thm}
+
+\begin{thm}
+数字 $\sqrt{\,2}$ 不在有理数集合 $\Rationals$ 中。
+\end{thm}
+
+Before we can actually give the proof we should prove an intermediary 
+result -- but we won't, we'll save this proof for the student to do 
+later (heh, heh, heh\ldots).
+
+在我们真正给出证明之前，我们应该证明一个中间结果——但我们不会这样做，我们会把这个证明留给学生以后去做（嘿，嘿，嘿……）。
+
+These sorts of intermediate results, things that don't deserve to be
+called theorems themselves, but that aren't entirely self-evident are
+known as \index{lemmas} lemmas.
+
+这类中间结果，它们本身不配被称为定理，但又不是完全不言自明的，被称为\index{lemmas}引理。
+
+It is often the case that in an 
+attempt at proving a statement we find ourselves in need of some small 
+fact.
+
+通常情况下，在尝试证明一个命题时，我们会发现自己需要某个小的事实。
+
+Perhaps it even seems to be true but it's not clear.
+
+也许它看起来是真的，但并不清晰。
+
+In such 
+circumstances, good form dictates that we first state and prove the 
+lemma then proceed on to our theorem and its proof.
+
+在这种情况下，规范的做法是，我们首先陈述并证明引理，然后再继续进行我们的定理及其证明。
+
+So, here, without 
+its proof is the lemma we'll need.
+
+所以，这里是我们需要的引理，但没有它的证明。
+
+\begin{lem} If the square of an integer is even, then the original
+integer is even.
+\end{lem}
+
+\begin{lem}
+如果一个整数的平方是偶数，那么这个整数本身也是偶数。
+\end{lem}
+
+Given that thoroughness demands that we fill in this gap by actually
+proving the lemma at a later date, we can now proceed with the proof
+of our theorem.
+
+鉴于严谨性要求我们日后通过实际证明该引理来填补这一空白，我们现在可以继续进行我们定理的证明。
+
+\begin{proof}
+Suppose to the contrary that $\sqrt{2}$ {\em is} a rational number.
+Then by the definition of the set of rational numbers, we know that
+there are integers 
+$a$ and $b$ having the following properties: 
+$\displaystyle \sqrt{2} = \frac{a}{b}$ and $\gcd{a}{b} = 1$.
+Consider the expression $\displaystyle \sqrt{2} = \frac{a}{b}$.   
+By squaring both sides of this we obtain
+
+\[ 2 = \frac{a^2}{b^2}.
+\]
+
+This last expression can be rearranged to give
+
+\begin{equation*}
+a^2 = 2 b^2
+\end{equation*}
+
+An immediate consequence of this last equation is that $a^2$ is an
+even number.
+Using the lemma above we now know that $a$ is an even
+integer and hence that there is an integer $m$ such that $a=2m$.
+Substituting this last expression into the previous equation gives
+
+\begin{equation*}
+(2m)^2 = 2 b^2,
+\end{equation*}
+
+thus,
+
+\begin{equation*}
+4m^2 = 2 b^2,
+\end{equation*}
+
+so
+
+\begin{equation*}
+2m^2 = b^2.
+\end{equation*}
+
+This tells us that $b^2$ is even, and hence (by the lemma), $b$ is even.
+Finally, we have arrived at the desired absurdity because if $a$ and
+$b$ are both even then $\gcd{a}{b} \geq 2$, but, on the other hand,
+one of our initial assumptions is that $\gcd{a}{b} = 1$.
+\end{proof}
+
+\begin{proof}
+相反地，假设 $\sqrt{2}$ {\em 是}一个有理数。
+那么根据有理数集合的定义，我们知道存在整数 $a$ 和 $b$ 具有以下性质：$\displaystyle \sqrt{2} = \frac{a}{b}$ 且 $\gcd{a}{b} = 1$。
+考虑表达式 $\displaystyle \sqrt{2} = \frac{a}{b}$。将两边平方，我们得到
+
+\[ 2 = \frac{a^2}{b^2}.
+\]
+
+这个最后的表达式可以重新排列为
+
+\begin{equation*}
+a^2 = 2 b^2
+\end{equation*}
+
+这个最后方程的一个直接推论是 $a^2$ 是一个偶数。
+使用上面的引理，我们现在知道 $a$ 是一个偶数，因此存在一个整数 $m$ 使得 $a=2m$。
+将这个最后的表达式代入前面的方程，得到
+
+\begin{equation*}
+(2m)^2 = 2 b^2,
+\end{equation*}
+
+因此，
+
+\begin{equation*}
+4m^2 = 2 b^2,
+\end{equation*}
+
+所以
+
+\begin{equation*}
+2m^2 = b^2.
+\end{equation*}
+
+这告诉我们 $b^2$ 是偶数，因此（根据引理）$b$ 也是偶数。
+最后，我们得到了期望的谬论，因为如果 $a$ 和 $b$ 都是偶数，那么 $\gcd{a}{b} \geq 2$，但另一方面，我们的一个初始假设是 $\gcd{a}{b} = 1$。
+\end{proof}
+
+\newpage
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\input{intro-zh/rat-exer.tex}
+
+\newpage
+
+\section{Relations 关系}
+\label{sec:rel_intro}
+
+One of the principal ways in which mathematical writing
+differs from ordinary writing is in its incredible brevity.
+
+数学写作与普通写作的主要区别之一在于其惊人的简洁性。
+
+For
+instance, a Ph.D.\ thesis for someone in the humanities would be very 
+suspicious if its length were less than 300 pages, whereas it would
+be quite acceptable for a math doctoral student to submit a thesis
+amounting to less than 100 pages.
+
+例如，一个人文学科博士生的博士论文如果篇幅少于300页会非常可疑，而一个数学博士生提交一篇少于100页的论文则是完全可以接受的。
+
+Indeed, the usual criteria for
+a doctoral thesis (or indeed any scholarly work in mathematics) is
+that it be ``new, true and interesting.''  If one can prove a truly 
+interesting, novel result in a single page -- they'll probably hand over 
+the sheepskin.
+
+实际上，博士论文（或任何数学学术著作）的通常标准是它必须“新颖、真实且有趣”。如果有人能在一页纸上证明一个真正有趣、新颖的结果——他们很可能会因此获得文凭。
+
+How is this great brevity achieved?  By inserting single symbols in place
+of a whole paragraph's worth of words!
+
+这种极大的简洁性是如何实现的呢？通过用单个符号代替整段的文字！
+
+One class of symbols in particular
+has immense power -- so-called \index{relations} relational symbols.
+
+有一类符号尤其具有巨大的威力——所谓的\index{relations}关系符号。
+
+When you place a relational
+symbol between two expressions, you create a sentence that says the
+relation \emph{holds}.
+
+当你在两个表达式之间放置一个关系符号时，你就创造了一个句子，表明这种关系\emph{成立}。
+
+The period at the end of the last sentence should
+probably be pronounced!
+
+上一句话结尾的句号或许应该被读出来！
+
+``The relation holds, period!''  In other words
+when you write down a mathematical sentence involving a relation, you 
+are asserting the relation is True (the capital T is intentional).
+
+“关系成立，句号！”换句话说，当你写下一个涉及关系的数学句子时，你是在断言该关系为真（True的首字母大写是故意的）。
+
+This is why it's okay to write ``$2 < 3$'' but it's \emph{not} okay to
+write ``$3 < 2$.''  The symbol $<$ is a relation symbol and you are
+only supposed to put it between two things when they actually bear this
+relation to one another.
+
+这就是为什么写“$2 < 3$”是可以的，但写“$3 < 2$”是\emph{不可以}的。符号 $<$ 是一个关系符号，你只能在两个事物确实具有这种关系时才将它放在它们之间。
+
+The situation becomes slightly more complicated when we have 
+variables in relational expressions, but before we proceed to
+consider that complication let's make a list of the relations
+we've seen to date:
+
+当关系表达式中含有变量时，情况会变得稍微复杂一些，但在我们继续考虑这种复杂性之前，让我们列出迄今为止我们见过的关系：
+
+\[ =, <, >, \leq, \geq,\; \divides \; , \; \mbox{and} \; \equiv \pmod{m}. \] 
+
+Each of these, when placed between numbers, produces a statement that
+is either true or false.
+
+这些符号中的每一个，当放在数字之间时，都会产生一个或真或假的陈述。
+
+Ordinarily we wouldn't write down the 
+false ones, instead we should express that we know the relation
+\emph{doesn't} hold by negating the relation symbol (often by
+drawing a slash through it, but some of the symbols above are
+negations of others).
+
+通常我们不会写下假的陈述，而是应该通过否定关系符号（通常是在符号上画一条斜线，但上面的一些符号是其他符号的否定）来表示我们知道该关系\emph{不}成立。
+
+So what about expressions involving variables and these relation symbols?
+For example what does $x < y$ really mean?
+
+那么涉及变量和这些关系符号的表达式呢？例如 $x < y$ 到底是什么意思？
+
+Okay, I know that you know 
+what $x < y$ means but, philosophically, a relation symbol involving variables
+is doing something that you may have only been vaguely aware of in the 
+past -- it is introducing a \emph{supposition}.
+
+好的，我知道你知道 $x < y$ 的意思，但是，从哲学上讲，一个涉及变量的关系符号正在做一件你过去可能只是模糊意识到的事情——它正在引入一个\emph{假设}。
+
+Watch out for relation
+symbols involving variables!  Whenever you encounter them it means the 
+rules of the game are being subtly altered -- up until the point where 
+you see $x < y$, $x$ and $y$ are just two random numbers, but after that
+point we must suppose that $x$ is the smaller of the two.
+
+当心涉及变量的关系符号！每当你遇到它们，就意味着游戏规则正在被巧妙地改变——在看到 $x < y$ 之前，$x$ 和 $y$ 只是两个随机的数，但在那之后，我们必须假设 $x$ 是两者中较小的一个。
+
+The relations we've discussed so far are \index{binary relation} 
+\emph{binary} relations, that
+is, they go in between \emph{two} numbers.
+
+到目前为止我们讨论的关系是\index{binary relation}\emph{二元}关系，也就是说，它们位于\emph{两个}数之间。
+
+There are also higher order
+relations.  For example, a famous \index{ternary relation} ternary 
+relation (a relationship between
+three things) is the notion of ``betweenness.''  If $A$, $B$ and $C$ are
+three points which all lie on a single line, we write $A\star B \star C$
+if $B$ falls somewhere on the line segment $\overline{AC}$.
+
+也存在更高阶的关系。例如，一个著名的\index{ternary relation}三元关系（三个事物之间的关系）是“介于”的概念。如果 $A$、$B$ 和 $C$ 是共线的三个点，当 $B$ 落在某个线段 $\overline{AC}$ 上时，我们写作 $A\star B \star C$。
+
+So the
+symbol $A\star B \star C$ is shorthand for the sentence ``Point $B$ lies
+somewhere in between points $A$ and $C$ on the line determined by them.''
+
+所以符号 $A\star B \star C$ 是“点 $B$ 位于由点 $A$ 和 $C$ 决定的直线上，且在它们之间”这句话的简写。
+
+There is a slightly silly tendency these days to define functions as being
+a special class of relations.
+
+如今有一种略显愚蠢的倾向，即将函数定义为关系的一个特殊类别。
+
+(This is slightly silly not because it's wrong
+-- indeed, functions are a special type of relation -- but because it's the 
+least intuitive approach possible, and it is usually foisted-off on middle or
+high school students.)  When this approach is taken, we first define
+a relation to be \emph{any} set of ordered pairs and then state a 
+restriction on the ordered pairs that may be in a relation if it 
+is to be a function.
+
+（这有点傻，不是因为它错了——事实上，函数是一种特殊类型的关系——而是因为这是最不直观的方法，而且通常被强加给初中或高中的学生。）当采用这种方法时，我们首先将关系定义为\emph{任何}有序对的集合，然后规定一个关系要成为函数，其有序对必须满足的限制条件。
+
+Clearly what these Algebra textbook authors 
+are talking about are \emph{binary} relations, a ternary relation 
+would actually be a set of ordered triples, and higher order relations
+might involve ordered 4-tuples or 5-tuples, etc.  A couple of small examples 
+should help to clear up this connection between a relation symbol and 
+some set of tuples.
+
+显然，这些代数教科书的作者谈论的是\emph{二元}关系，一个三元关系实际上是一个有序三元组的集合，而更高阶的关系可能涉及有序四元组或五元组等。几个小例子应该有助于阐明关系符号和某个元组集合之间的这种联系。
+
+Consider the numbers from 1 to 5 and the less-than relation, $<$.
+
+考虑从1到5的数字以及小于关系 $<$。
+
+As a set of ordered pairs, this relation is the set 
+
+作为一个有序对的集合，这个关系是：
+
+\[ \{(1,2), (1,3), (1,4), (1,5), (2,3), (2,4), (2,5), (3,4), (3,5), (4,5) \}.
+\]
+
+The pairs that are \emph{in} the relation are those such that the first is smaller than the second.
+
+关系\emph{中}的序偶是那些第一个元素小于第二个元素的序偶。
+
+An example involving the ternary relation ``betweenness'' can be had 
+from the following diagram.
+
+一个涉及三元关系“介于”的例子可以从下图中得到。
+
+\medskip
+
+\input{figures/betweenness_example.tex}
+\medskip
+
+The betweenness relation on the points in this diagram consists of the 
+following triples.
+
+该图中各点之间的“介于”关系由以下三元组构成。
+
+\begin{gather*} \{ (A,B,C), (A,G,D), (A,F,E), (B,G,E), (C,B,A), (C,G,F), (C,D,E), \\
+(D,G,A), (E,D,C), (E,G,B), (E,F,A), (F,G,C) \}.
+\end{gather*}
+
+\begin{exer}
+When thinking of a function as a special type of relation, the pairs are of
+the form $(x, f(x))$.
+That is, they consist of an input and the corresponding
+output.
+What is the restriction that must be placed on the pairs in a 
+relation if it is to be a function?
+(Hint: think about the so-called 
+vertical line test.)
+\end{exer}
+
+\begin{exer}
+当把函数看作一种特殊类型的关系时，序偶的形式是 $(x, f(x))$。
+也就是说，它们由一个输入和对应的输出组成。
+如果一个关系要成为一个函数，其序偶必须满足什么限制？
+（提示：思考所谓的垂直线测试。）
+\end{exer}
+
+\newpage
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\input{intro-zh/rel-exer.tex}
+
+
+%\newpage
+%\renewcommand{\bibname}{References for chapter 1}
+%\bibliographystyle{plain}
+%\bibliography{main}
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***

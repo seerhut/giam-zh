@@ -1,0 +1,239 @@
+\begin{enumerate}
+    \item Consider the sequence of numbers that are 1 greater than a multiple of 4.
+    (Such numbers are of the form $4j+1$.)
+    
+    考虑一个数列，其中的数比4的倍数大1。（这样的数形式为 $4j+1$。）
+    
+    \[ 1, 5, 9, 13, 17, 21, 25, 29, \ldots \]
+    
+    The sum of the first several numbers in this sequence can be expressed as
+    a polynomial.
+    
+    这个序列前几个数的和可以用一个多项式表示。
+    \[ \sum_{j=0}^n 4j+1 = 2n^2 + 3n + 1 \]
+    
+    Complete the following table in order to provide evidence that the formula
+    above is correct.
+    
+    完成下表，为上述公式的正确性提供证据。
+    \begin{center}
+    \begin{tabular}{c|c|c}
+    $n$ & $\sum_{j=0}^n 4j+1$ & $2n^2 + 3n + 1$ \\ \hline
+     0 & $1$ & $1$ \\
+     1 & $1 + 5 = 6$ &  $2 \cdot 1^2 + 3 \cdot 1 + 1 = 6$ \\
+     2 & $1 + 5 + 9 = \rule{15pt}{0pt}$ \inlinehint{$15$} &  \inlinehint{$2 \cdot 2^2 + 3 \cdot 2 + 1 = 15$}\\
+     3 & \inlinehint{$1 + 5 + 9 + 13 = 28$} &  \inlinehint{$2 \cdot 3^2 + 3 \cdot 3 + 1 = 28$}\\
+     4 & & \\
+    \end{tabular}
+    \end{center}
+    
+    \hint{I'm leaving the very last one for you to do.
+    
+    我把最后一个留给你做。}
+    
+    
+    \item \label{ex:horses} 
+    What is wrong with the following inductive proof of
+    ``all horses are the same color.''?
+    
+    下面这个关于“所有马都是同一种颜色”的归纳证明错在哪里？
+    {\bf Theorem} Let $H$ be a set of $n$ horses, all horses in $H$ 
+    are the same color.
+    
+    {\bf 定理} 设 $H$ 是一个包含 $n$ 匹马的集合， $H$ 中所有的马都是同一种颜色。
+    \begin{proof}
+    We proceed by induction on $n$.
+    
+    我们对 $n$ 进行归纳。
+    
+    \noindent {\bf Basis: } Suppose $H$ is a set containing 1 horse.
+    Clearly
+    this horse is the same color as itself.
+    
+    \noindent {\bf 基础步骤：} 假设 $H$ 是一个只包含1匹马的集合。显然这匹马和它自己是同一种颜色。
+    
+    \noindent {\bf Inductive step: } Given a set of $k+1$ horses $H$ we can 
+    construct two sets of $k$ horses.
+    Suppose $H = \{ h_1, h_2, h_3, \ldots h_{k+1} \}$.
+    Define $H_a = \{ h_1, h_2, h_3, \ldots h_{k} \}$ (i.e.\ $H_a$ contains
+    just the first $k$ horses) and $H_b = \{ h_2, h_3, h_4, \ldots h_{k+1} \}$ 
+    (i.e.\ $H_b$ contains the last $k$ horses).
+    By the inductive hypothesis
+    both these sets contain horses that are ``all the same color.''  Also,
+    all the horses from $h_2$ to $h_k$ are in both sets so both $H_a$ and
+    $H_b$ contain only horses of this (same) color.
+    Finally, we conclude that
+    all the horses in $H$ are the same color.
+    
+    \noindent {\bf 归纳步骤：} 给定一个包含 $k+1$ 匹马的集合 $H$，我们可以构造出两个包含 $k$ 匹马的集合。假设 $H = \{ h_1, h_2, h_3, \ldots h_{k+1} \}$。定义 $H_a = \{ h_1, h_2, h_3, \ldots h_{k} \}$ （即 $H_a$ 只包含前 $k$ 匹马）和 $H_b = \{ h_2, h_3, h_4, \ldots h_{k+1} \}$ （即 $H_b$ 包含后 $k$ 匹马）。根据归纳假设，这两个集合中的马都“是同一种颜色”。并且，从 $h_2$ 到 $h_k$ 的所有马都在这两个集合中，所以 $H_a$ 和 $H_b$ 都只包含这种（相同）颜色的马。最后，我们得出结论，$H$ 中所有的马都是同一种颜色。
+    \end{proof}
+    \medskip
+       
+    \hint{Look carefully at the stage from $n=2$ to $n=3$.
+    
+    仔细观察从 $n=2$ 到 $n=3$ 的阶段。}
+    
+    \wbvfill
+    
+    \workbookpagebreak
+    \hintspagebreak
+    
+    \item For each of the following theorems, write the statement that must be
+    proved for the basis -- then prove it, if you can!
+    
+    对于以下每个定理，写出基础步骤中必须证明的陈述——然后，如果可以的话，证明它！
+    \begin{enumerate}
+    \item The sum of the first $n$ positive integers is $(n^2+n)/2$.
+    
+    前 $n$ 个正整数的和是 $(n^2+n)/2$。
+    \hint{The sum of the first $0$ positive integers is $(0^2 + 0)/2$.
+    Or, if you
+    prefer to start with something rather than nothing: The sum of the first $1$ positive integers
+    is $(1^2+1)/2$.
+    
+    前0个正整数的和是 $(0^2 + 0)/2$。或者，如果你喜欢从有东西开始而不是没有：前1个正整数的和是 $(1^2+1)/2$。
+    }
+    
+    \wbvfill
+    
+    \item The sum of the first $n$ (positive) odd numbers is $n^2$.
+    
+    前 $n$ 个（正）奇数的和是 $n^2$。
+    \hint{The sum of the first $0$ positive odd numbers is $0^2$.
+    Or, the sum of the first $1$ positive odd numbers is $1^2$.
+    
+    前0个正奇数的和是 $0^2$。或者，前1个正奇数的和是 $1^2$。}
+    
+    \wbvfill
+    
+    \item If $n$ coins are flipped, the probability that all of them 
+    are ``heads'' is $1/2^n$.
+    
+    如果抛掷 $n$ 枚硬币，它们全部为“正面”的概率是 $1/2^n$。
+    \hint{If $1$ coin is flipped, the the probability that it is ``heads'' is $1/2$.
+    Or if we try it 
+    when $n=0$, ``If no coins are flipped the probability that all of them are heads is 1.  Does that
+    make sense to you?
+    Is it reasonable that we would say it is 100\% certain that all of the coins
+    are heads in a set that doesn't contain {\em any} coins?
+    
+    如果抛掷1枚硬币，它为“正面”的概率是 $1/2$。或者如果我们尝试 $n=0$ 的情况，“如果不抛掷硬币，它们全部为正面的概率是1。”这对你来说有意义吗？在一个不包含{\em 任何}硬币的集合中，我们说100%确定所有的硬币都是正面，这合理吗？
+    }
+    
+    \wbvfill
+    
+    \item Every $2^n \times 2^n$ chessboard -- with one square removed -- can 
+    be tiled perfectly\footnote{Here, ``perfectly tiled'' means that every trominoe
+    covers 3 squares of the chessboard (nothing hangs over the edge) and that every
+    square of the chessboard is covered by some trominoe. } by L-shaped trominoes.
+    (A trominoe is like a domino but 
+    made up of $3$ little squares.  There are two kinds, straight 
+    \input{figures/straight_trominoe.tex} and L-shaped 
+    \input{figures/L-shaped_trominoe.tex}.  This problem is only concerned with
+    the L-shaped trominoes.)
+    
+    每个 $2^n \times 2^n$ 的棋盘——移除一个方格后——都可以用L形的三格骨牌完美铺设\footnote{这里，“完美铺设”意味着每个三格骨牌覆盖棋盘上的3个方格（没有任何部分悬在边缘之外），并且棋盘上的每个方格都被某个三格骨牌覆盖。}。（三格骨牌像多米诺骨牌，但由3个小方块组成。有两种：直形\input{figures/straight_trominoe.tex}和L形\input{figures/L-shaped_trominoe.tex}。这个问题只关心L形的三格骨牌。）
+    \end{enumerate}
+    
+    \hint{If $n=1$ we have: ``Every $2 \times 2$ chessboard -- with one square removed
+    can be tiled perfectly by L-shaped trominoes.
+    This version is trivial to prove.  Try formulating
+    the $n=0$ case.
+    
+    如果 $n=1$，我们得到：“每个移除一个方格的 $2 \times 2$ 棋盘都可以用L形的三格骨牌完美铺设。”这个版本证明起来很简单。尝试构思 $n=0$ 的情况。}
+    
+    \wbvfill
+      
+    \hintspagebreak
+    \workbookpagebreak
+    
+    \item Suppose that the rules of the game for PMI were changed so that one
+    did the following:
+    \begin{itemize}
+    \item Basis.
+    Prove that $P(0)$ is true.
+    \item Inductive step.  Prove that for all $k$, $P_k$ implies $P_{k+2}$
+    \end{itemize}
+    
+    假设数学归纳法的游戏规则被改变，变为如下操作：
+    \begin{itemize}
+    \item 基础步骤。证明 $P(0)$ 为真。
+    \item 归纳步骤。证明对于所有 $k$，$P_k$ 蕴涵 $P_{k+2}$。
+    \end{itemize}
+    
+    
+    \noindent Explain why this would not constitute a valid proof that $P_n$ holds 
+    for all natural numbers $n$.
+    \noindent How could we change the basis in this outline to obtain a valid proof?
+    
+    \noindent 解释为什么这不能构成一个证明 $P_n$ 对所有自然数 $n$ 成立的有效证明。
+    \noindent 我们如何改变这个大纲中的基础步骤来得到一个有效的证明？
+    \hint{In this modified version, $P(0)$ is not going to imply $P(1)$, and in fact, none of the odd numbered
+    statements will be proven.
+    If we change the 
+    basis so that we prove both $P(0)$ and $P(1)$, all the even statements will be implied by
+    $P(0)$ being true and all the odd statements get forced because $P(1)$ is true.
+    
+    在这个修改后的版本中，$P(0)$ 不会蕴涵 $P(1)$，事实上，所有奇数编号的陈述都不会被证明。如果我们改变基础步骤，使得我们同时证明 $P(0)$ 和 $P(1)$，那么所有偶数陈述将由 $P(0)$ 为真所蕴涵，而所有奇数陈述则因为 $P(1)$ 为真而被确定。}
+    
+    \wbvfill
+    
+    \item If we wanted to prove statements that were indexed by the integers,
+    
+    \[ \forall z \in \Integers, \; P_z, \]
+    
+    \noindent what changes should be made to PMI?
+    
+    如果我们想要证明由整数索引的陈述，
+    \[ \forall z \in \Integers, \; P_z, \]
+    \noindent 应该对数学归纳法做出什么改变？
+    
+    \hint{A quick change would be to replace $\forall k, \; P_k \implies P_{k+1}$ in the inductive
+    step with $\forall k, \; P_k \iff P_{k+1}$.
+    While this would do the trick, a slight improvement 
+    is possible, if we treat the positive and negative cases for $k$ separately.
+    
+    一个快速的改变是在归纳步骤中用 $\forall k, \; P_k \iff P_{k+1}$ 替换 $\forall k, \; P_k \implies P_{k+1}$。虽然这能解决问题，但如果我们分开处理 $k$ 的正负情况，可能会有轻微的改进。}
+    
+     \wbvfill
+     
+     \workbookpagebreak
+     
+     \item In Calculus you learned the {\em power rule} for finding derivatives of powers of $x$.
+     \[ \left( x^p \right)' \; = \; p\cdot x^{p-1}. \] 
+    
+    在微积分中，你学习了求 $x$ 幂次导数的{\em 幂法则}。
+    \[ \left( x^p \right)' \; = \; p\cdot x^{p-1}. \] 
+    
+     The power rule can be proved using mathematical induction.
+     You will need to use the Liebniz rule (a.k.a. the product rule)
+     which states that 
+    
+    幂法则可以用数学归纳法证明。你将需要使用莱布尼茨法则（也叫乘法法则），该法则陈述为
+    
+     \[ \left( f(x) \cdot g(x)\right)' \; = \; f'(x) \cdot g(x) + f(x) \cdot g'(x) \]
+    
+     and a few other basic facts from Calculus.
+    
+    以及一些其他微积分的基本事实。
+     \hint{ To get started, notice that $(x^0)' = 0$, since $x^0$ is really, really close to just being the constant $1$ (the problem is that it's undefined when $x=0$, but other than that one value for $x$, the zero-th power is $1$.)  Does this value ($0$) agree with what the power rule gives us?
+    You'll use the Leibniz rule in the inductive step, by noting that $x^{k+1}$ can be broken up into the product $x^1 \cdot x^k$.
+     
+    首先，注意到 $(x^0)' = 0$，因为 $x^0$ 非常非常接近于常数1（问题在于当 $x=0$ 时它未定义，但除了那个x值，零次幂就是1）。这个值（0）与幂法则给出的结果一致吗？你将在归纳步骤中使用莱布尼茨法则，通过注意到 $x^{k+1}$ 可以分解为乘积 $x^1 \cdot x^k$。
+    }
+    
+    \wbvfill
+     
+    \workbookpagebreak
+    
+    \end{enumerate}
+    
+    
+    %% Emacs customization
+    %% 
+    %% Local Variables: ***
+    %% TeX-master: "GIAM-hw.tex" ***
+    %% comment-column:0 ***
+    %% comment-start: "%% "  ***
+    %% comment-end:"***" ***
+    %% End: ***

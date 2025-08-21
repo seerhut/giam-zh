@@ -23,5 +23,6 @@ figures/*.tex
 .DS_Store
 **.eps
 !GIAM.pdf
+!GIAM-cn.pdf
 !GIAM-hw.pdf
 !GIAM-solutions_manual.pdf

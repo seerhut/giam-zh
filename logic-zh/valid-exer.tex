@@ -1,0 +1,332 @@
+\begin{enumerate}
+  \item Determine the logical form of the following arguments.  Use symbols
+  to express that form and determine whether the form is valid or invalid.
+  If the form is invalid, determine the type of error made.
+  Comment on the 
+  soundness of the argument as well, in particular, determine whether any of
+  the premises are questionable.
+  
+  确定以下论证的逻辑形式。使用符号表达该形式，并判断其有效性。如果形式无效，请确定所犯错误的类型。同时评论论证的可靠性，特别是确定是否有任何前提值得怀疑。
+  \begin{enumerate}
+  \item All who are guilty are in prison. \newline
+    George is not in prison. \newline
+    Therefore, George is not guilty.
+   
+  所有有罪的人都在监狱里。\newline
+  乔治不在监狱里。\newline
+  因此，乔治是无罪的。
+   
+   \wbvfill
+   
+    \hint{ 
+    This looks like modus tollens.
+  Let $G$ refer to ``guilt'' and $P$ refer to ``in prison''
+    
+  这看起来像是否定后件式。设 $G$ 指代“有罪”，$P$ 指代“在监狱里”。
+    
+  \begin{center}
+  \begin{tabular}{cl}
+   & $\forall x, G(x) \implies P(x)$ \\
+   & ${\lnot}P(\mbox{George}) $ \\ \hline
+  $\therefore$ & ${\lnot}G(\mbox{George})$ \\
+  \end{tabular}
+  \end{center}
+  
+  You should note that while the form is valid, there is something terribly wrong with this argument.
+  Is it really true that everyone who is guilty of a crime is in prison?
+  
+  你应该注意到，虽然形式有效，但这个论证有严重的问题。所有犯了罪的人真的都在监狱里吗？
+  }
+  
+  \item If one eats oranges one will have high levels of vitamin C. \newline
+    You do have high levels of vitamin C. \newline
+    Therefore, you must eat oranges.
+  
+  如果一个人吃橙子，他将会有高水平的维生素C。\newline
+  你确实有高水平的维生素C。\newline
+  因此，你一定吃橙子。
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item All fish live in water. \newline
+    The mackerel is a fish. \newline
+    Therefore, the mackerel lives in water. 
+    
+  所有鱼都生活在水中。\newline
+  鲭鱼是一种鱼。\newline
+  因此， mackerel鱼生活在水中。
+    
+    \wbvfill
+  
+  \item If you're lazy, don't take math courses.\newline
+    Everyone is lazy. \newline
+    Therefore, no one should take math courses.
+    
+  如果你懒，就不要上数学课。\newline
+  每个人都懒。\newline
+  因此，没有一个人应该上数学课。
+    
+    \wbvfill
+  
+  \item All fish live in water. \newline
+    The octopus lives in water. \newline
+    Therefore, the octopus is a fish.
+  
+  所有鱼都生活在水中。\newline
+  章鱼生活在水中。\newline
+  因此，章鱼是一种鱼。
+  \wbvfill
+  
+  \item If a person goes into politics, they are a scoundrel.\newline
+    Harold has gone into politics. \newline
+    Therefore, Harold is a scoundrel. 
+  
+  如果一个人从政，他就是个无赖。\newline
+  哈罗德已经从政了。\newline
+  因此，哈罗德是个无赖。
+  \end{enumerate}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Below is a rule of inference that we call extended elimination.
+  
+  下面是我们称之为扩展消去法的推理规则。
+  \begin{tabular}{cl}
+   & $(A \lor B) \lor C$ \\
+   & ${\lnot}A$ \\
+   & ${\lnot}B$ \\ \hline
+  $\therefore$ & $C$ \\
+  \end{tabular}
+  
+  Use a truth table to verify that this rule is valid.
+  
+  使用真值表来验证此规则的有效性。
+  \hint{
+  
+  \vfill
+  
+  In the following truth table the predicate variables occupy the first 3 columns, the argument's 
+  premises are in the next three columns and the conclusion is in the right-most column.
+  The
+  truth values have already been filled-in.  You only need to identify the critical rows and 
+  verify that the conclusion is true in those rows.
+  
+  在下面的真值表中，谓词变量占据前3列，论证的前提在接下来的三列中，结论在最右边的一列。真值已经填好。你只需要识别出关键行并验证在这些行中结论为真。
+  \vfill
+  
+   \newpage
+   
+  \begin{tabular}{|c|c|c||c|c|c||c|} \hline
+  \rule[-8pt]{0pt}{30pt}$A$ & $B$ & $C$ & $(A \lor B) \lor C$ & \rule{20pt}{0pt} ${\lnot}A$ \rule{20pt}{0pt} & \rule{20pt}{0pt} ${\lnot}B$ \rule{20pt}{0pt} & \rule{20pt}{0pt} $C$ \rule{20pt}{0pt} \\ \hline
+  \rule[-8pt]{0pt}{30pt}$T$ & $T$ & $T$ & $T$ & $\phi$ & $\phi$ & $T$  \\ \hline
+  \rule[-8pt]{0pt}{30pt}$T$ & $T$ & $\phi$  & $T$ & $\phi$ & $\phi$ & $\phi$   \\ \hline
+  \rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $T$ & $T$ & $\phi$ & $T$  & $T$  \\ \hline
+  \rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $\phi$  & $T$ & $\phi$ & $T$ & $\phi$   \\  \hline
+  \rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $T$ & $T$ & $T$ & $\phi$ &  $T$ \\ \hline
+  \rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $\phi$  & $T$ & $T$ & $\phi$ & $\phi$  \\ \hline
+  \rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $T$ & $T$ & $T$ & $T$ & $T$  \\ \hline
+  \rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $\phi$  & $\phi$ & $T$ & $T$ & $\phi$  \\  \hline
+  \end{tabular}
+  
+  \vfill
+  }
+  
+  \workbookpagebreak
+  
+  \item If we allow quantifiers and open sentences in an argument form we
+  get a couple of new argument forms.
+  Arguments involving existentially quantified 
+  premises are rare -- the new forms we are speaking of are called ``universal modus 
+  ponens'' and ``universal modus tollens.''   The minor premises may also be quantified
+  or they may involve particular elements of the universe of discourse -- this leads
+  us to distinguish argument subtypes that are termed ``universal'' and ``particular.''
+  
+  如果我们在论证形式中允许量词和开放句，我们会得到几个新的论证形式。涉及存在量化前提的论证很少见——我们所说的新形式被称为“全称肯定前件式”和“全称否定后件式”。小前提也可能被量化，或者它们可能涉及论域的特定元素——这导致我们区分被称为“全称”和“特称”的论证子类型。
+  
+  For example  \begin{tabular}{cl}
+   & $\forall x, A(x) \implies B(x)$ \\
+   & $A(p)$ \\ \hline
+  $\therefore$ & $B(p)$ \\
+  \end{tabular}  is the particular form of universal modus ponens (here, $p$
+  is not a variable -- it stands for some particular element of the universe of
+  discourse)
+  and \begin{tabular}{cl}
+   & $\forall x, A(x) \implies B(x)$ \\
+   & $\forall x, {\lnot}B(x)$ \\ \hline
+  $\therefore$ & $\forall x, {\lnot}A(x)$ \\
+  \end{tabular} is the universal form of (universal) modus tollens.
+  
+  例如 \begin{tabular}{cl}
+   & $\forall x, A(x) \implies B(x)$ \\
+   & $A(p)$ \\ \hline
+  $\therefore$ & $B(p)$ \\
+  \end{tabular} 是全称肯定前件式的特称形式（这里，$p$ 不是一个变量——它代表论域中的某个特定元素）
+  而 \begin{tabular}{cl}
+   & $\forall x, A(x) \implies B(x)$ \\
+   & $\forall x, {\lnot}B(x)$ \\ \hline
+  $\therefore$ & $\forall x, {\lnot}A(x)$ \\
+  \end{tabular} 是（全称）否定后件式的全称形式。
+  
+  Reexamine the arguments from problem (1), determine their forms
+  (including quantifiers) and whether they are universal or particular.
+  
+  重新检查问题(1)中的论证，确定它们的形式（包括量词）以及它们是全称的还是特称的。
+  \hint{
+  Hint: All of them except for one are the particular form -- number 4 is the exception.
+  Here's an analysis of number 5:
+  
+  提示：除了一个之外，它们都是特称形式——第4个是例外。以下是对第5个的分析：
+  
+  All fish live in water. \newline
+  The octopus lives in water. \newline
+  Therefore, the octopus is a fish. \newline
+  
+  所有鱼都生活在水中。\newline
+  章鱼生活在水中。\newline
+  因此，章鱼是鱼。\newline
+  
+  Let $F(x)$ be the open sentence ``x is a fish'' and let $W(x)$ be the open sentence ``x lives in water.''
+  
+  设 $F(x)$ 为开放句“x是鱼”，设 $W(x)$ 为开放句“x生活在水中”。
+  
+  Our argument has the form
+  
+  我们的论证形式为
+  
+   \begin{center}
+  \begin{tabular}{cl}
+   & $\forall x, F(x) \implies W(x)$ \\
+   & $W(\mbox{the octopus}) $ \\ \hline
+  $\therefore$ & $F(\mbox{the octopus})$ \\
+  \end{tabular}
+  \end{center}
+  
+  Clearly something is wrong -- a converse error has been made -- if everything that lived in water was necessarily a fish the argument would be OK (in fact it would then be the particular form of universal modus ponens).
+  But that is the converse of the major premise given.    
+  
+  显然有问题——犯了逆命题错误——如果所有生活在水里的都必然是鱼，那么这个论证就没问题（实际上，它将是全称肯定前件式的特称形式）。但那是给定大前提的逆命题。
+  }
+  
+  \workbookpagebreak
+  
+  \rule{0pt}{0pt}
+  
+  \workbookpagebreak
+  
+  \item Identify the rule of inference being used.
+  
+  识别所使用的推理规则。
+  \begin{enumerate}
+  \item The Buley Library is very tall.\\
+  Therefore, either the Buley Library is very tall or it has many
+  levels underground.
+  
+  Buley图书馆非常高。\newline
+  因此，Buley图书馆要么非常高，要么地下有很多层。
+  \hint{disjunctive addition (析取附加)}
+  \wbvfill
+  
+  \item The grass is green.\\
+  The sky is blue.\\
+  Therefore, the grass is green and the sky is blue.
+  
+  草是绿的。\newline
+  天是蓝的。\newline
+  因此，草是绿的，天是蓝的。
+  \hint{conjunctive addition (合取附加)}
+  \wbvfill
+  
+  \item $g$ has order 3 or it has order 4.\\
+  If $g$ has order 3, then $g$ has an inverse.\\
+  If $g$ has order 4, then $g$ has an inverse.\\
+  Therefore, $g$ has an inverse.
+  
+  $g$的阶是3或4。\newline
+  如果$g$的阶是3，那么$g$有逆元。\newline
+  如果$g$的阶是4，那么$g$有逆元。\newline
+  因此，$g$有逆元。
+  \hint{constructive dilemma (构造性二难)}
+  \wbvfill
+  
+  \item $x$ is greater than 5 and $x$ is less than 53.\\
+  Therefore, $x$ is less than 53.
+  
+  $x$大于5且$x$小于53。\newline
+  因此，$x$小于53。
+  
+  \hint{conjunctive simplification (合取简化)}
+  \wbvfill
+  
+  \item If $a|b$, then $a$ is a perfect square.\\
+  If $a|b$, then $b$ is a perfect square.\\
+  Therefore, if $a|b$, then $a$ is a perfect square and $b$ is
+  a perfect square.
+  
+  如果 $a|b$，那么 $a$ 是一个完全平方数。\newline
+  如果 $a|b$，那么 $b$ 是一个完全平方数。\newline
+  因此，如果 $a|b$，那么 $a$ 是一个完全平方数且 $b$ 是一个完全平方数。
+  \hint{Note that the conclusion could be re-expressed as the conjunction of the two conditionals that
+  are found in the premises.
+  This is conjunctive addition with a bit of ``window dressing.''}
+  
+  注意，结论可以重新表述为前提中两个条件句的合取。这是带有少许“修饰”的合取附加。
+  \wbvfill
+  
+  \end{enumerate}
+  
+  \workbookpagebreak
+  
+  \item Read the following proof that the sum of two odd numbers is even.
+  Discuss the rules of inference used.\\
+  
+  阅读以下关于两个奇数之和为偶数的证明。讨论所使用的推理规则。\\
+  \begin{proof}
+  Let $x$ and $y$ be odd numbers.
+  Then $x=2k+1$
+  and $y=2j+1$ for some integers $j$ and $k$.  By algebra,
+  \[
+  x+y = 2k+1 + 2j+1 = 2(k+j+1).
+  \]
+  
+  Note that $k+j+1$ is an integer because $k$ and $j$ are integers.
+  Hence $x+y$ is even.
+  
+  设 $x$ 和 $y$ 为奇数。那么对于某些整数 $j$ 和 $k$，$x=2k+1$ 且 $y=2j+1$。根据代数，
+  \[
+  x+y = 2k+1 + 2j+1 = 2(k+j+1).
+  \]
+  注意 $k+j+1$ 是一个整数，因为 $k$ 和 $j$ 是整数。因此 $x+y$ 是偶数。
+  \end{proof}
+  
+  \hint{The definition for ``odd'' only involves the oddness of a single integer, but the first line of our
+  proof is a conjunction claiming that $x$ and $y$ are both odd.
+  It seems that two conjunctive simplifications, followed by applications of the definition, followed by a conjunctive addition have been used in order to
+  go from the first sentence to the second.
+  
+  “奇数”的定义只涉及单个整数的奇偶性，但我们证明的第一行是一个声称 $x$ 和 $y$ 都是奇数的合取。为了从第一句到第二句，似乎使用了两次合取简化，接着是定义的应用，然后是一次合取附加。}
+   
+   \wbvfill
+   
+   \rule{0pt}{0pt}
+   
+   \wbvfill
+   
+  \workbookpagebreak
+  
+  \item Sometimes in constructing a proof we find it necessary to ``weaken'' an inequality.
+  For example,
+  we might have already deduced that $x < y$ but what we need in our argument is that $x \leq y$.
+  It is
+  okay to deduce $x \leq y$ from $x < y$ because the former is just shorthand for $x<y \lor x=y$.
+  What
+  rule of inference are we using in order to deduce that $x \leq y$ is true in this situation?
+  
+  有时在构建证明时，我们发现有必要“弱化”一个不等式。例如，我们可能已经推断出 $x < y$，但我们在论证中需要的是 $x \leq y$。从 $x < y$ 推断出 $x \leq y$ 是可以的，因为前者只是 $x<y \lor x=y$ 的简写。在这种情况下，我们使用什么推理规则来推断 $x \leq y$ 为真？
+  \hint{disjunctive addition (析取附加)}
+  
+  \wbvfill
+  
+  \end{enumerate}

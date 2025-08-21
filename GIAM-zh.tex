@@ -1,0 +1,123 @@
+\documentclass[12pt,twoside]{book}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+% \setCJKmainfont{STSong}
+% \setmainfont{Times New Roman}
+\RequirePackage{hyperref}
+
+\usepackage[english]{babel} %language selection
+% \selectlanguage{english}
+
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{array}
+\usepackage{ifthen}
+
+
+%All my customized LaTeX commands are in this file:
+
+\input{my_latex_definitions.tex}
+
+%set up the booleans (we are doing the textbook here).
+\setboolean{InTextBook}{true}
+\setboolean{InWorkBook}{false}
+\setboolean{InHints}{false}
+
+%Things that effect the size and placement of text on the page
+
+\renewcommand{\baselinestretch}{1.3}
+\renewcommand{\arraystretch}{.77}
+
+\addtolength{\textheight}{.25in}
+\addtolength{\oddsidemargin}{.75in}
+\addtolength{\evensidemargin}{-.75in}
+
+\makeindex
+
+\begin{document}
+
+\frontmatter
+
+\title{A Gentle Introduction to the Art of Mathematics \\ 数学艺术入门 \\{\small Version \versionNum \ifthenelse{\boolean{LNotIsSim}}{S}{}\ifthenelse{\boolean{ZeroInNaturals}}{}{N} }}
+\author{Joe Fields}
+\date{Southern Connecticut State University \\ 南康涅狄格州立大学}
+
+\maketitle
+
+\clearpage
+
+\input{legalpage-zh.tex}
+
+\clearpage
+
+\rule{0pt}{0pt}
+
+\vfill
+
+\begin{quote}
+  {\Large \bf Acknowledgments 致谢}
+
+  This is version \versionNum of {\em A Gentle Introduction to the Art of Mathematics}.
+  Earlier versions were used and classroom tested by several colleagues:
+  Robert Vaden-Goad, John Kavanagh, Ross Gingrich, Aaron Clark.
+  I thank you all.
+  A particular debt of gratitude is owed to Len Brin whose keen eyes caught
+  a number of errors and inconsistencies, and who contributed many new
+  exercises -- thanks, Len.
+
+  这是《数学艺术入门指南》的 \versionNum 版本。
+  早期版本曾由几位同事使用并进行了课堂测试：Robert Vaden-Goad, John Kavanagh, Ross Gingrich, Aaron Clark。
+  我感谢你们所有人。
+  尤其要感谢Len Brin，他敏锐的眼光发现了一些错误和不一致之处，并贡献了许多新的练习题——谢谢你，Len。
+\end{quote}
+
+\vfill
+
+
+\clearpage
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+%\input{pref1}
+%\input{pref2}
+
+\mainmatter
+
+\include{intro-zh/intro}
+\include{logic-zh/logic}
+\include{proof1-zh/proof1}
+\include{sets-zh/sets}
+\include{proof2-zh/proof2}
+\include{rel-zh/rel}
+\include{proof3-zh/proof3}
+\include{card-zh/card}
+\include{proof4-zh/proof4}
+
+\bibliographystyle{plain}
+\bibliography{main}
+\addcontentsline{toc}{chapter}{References 参考文献}
+\phantomsection
+\markboth{REFERENCES}{REFERENCES}%
+
+%\addcontentsline{toc}{chapter}{GNU Free Documentation License}
+%\phantomsection 
+%\markboth{GFDL}{GFDL}%
+
+%\include{fdl-1.3}
+
+\addcontentsline{toc}{chapter}{Index 索引}
+\phantomsection
+\markboth{INDEX}{INDEX}
+\printindex
+
+\end{document}

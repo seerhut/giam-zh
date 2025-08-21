@@ -1,4 +1,6 @@
+.PHONY: all zh GIAM-zh GIAM-hw-zh GIAM-solutions_manual-zh
 all: GIAM.pdf GIAM-hw.pdf GIAM-solutions_manual.pdf
+zh: GIAM-zh GIAM-hw-zh GIAM-solutions_manual-zh
 
 GIAM.pdf: GIAM.aux
 	pdflatex GIAM
@@ -18,8 +20,20 @@ GIAM-solutions_manual.pdf: GIAM-solutions_manual.aux
 GIAM-solutions_manual.aux: *.tex */*.tex
 	pdflatex GIAM-solutions_manual
 clean::
-	rm *.aux *~ *.bak *.log *.pdf *.out *.bbl *.blg *.idx *.ilg *.ind *.lof *.lot *.toc
-	rm */*.aux */*~ */*.bak */*.log */*.pdf */*.synctex.gz
+	-rm *.aux *~ *.bak *.log *.out *.bbl *.blg *.idx *.ilg *.ind *.lof *.lot *.toc *.pdf
+	rm */*.aux */*~ */*.bak */*.log */*.synctex.gz
 	cd figures; make clean
 	cd slides; make clean
 	cd activities; make clean
+
+
+GIAM-zh: 
+	xelatex GIAM-zh
+	xelatex GIAM-zh
+	makeindex GIAM-zh
+	bibtex GIAM-zh
+	xelatex GIAM-zh
+GIAM-hw-zh: 
+	xelatex GIAM-hw-zh
+GIAM-solutions_manual-zh: 
+	xelatex GIAM-solutions_manual-zh

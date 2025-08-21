@@ -1,0 +1,453 @@
+\begin{enumerate}
+  \item Write an inductive proof of the formula for the sum 
+  of the first $n$ cubes.
+  
+  写出前 $n$ 个立方数之和公式的归纳证明。
+  \hint{
+  \begin{thm*}
+  \[ \forall n \in \Naturals, \; \sum_{k=1}^n k^3 \;= \; \left( \frac{n(n+1)}{2} \right)^2 \]
+  \end{thm*}
+  
+  \begin{proof} (By mathematical induction)
+  
+  (通过数学归纳法)
+  
+  {\bf Base case:} ($n=1$)
+  
+  {\bf 基础情形：} ($n=1$)
+  For the base case, note that when $n=1$ we have
+  
+  对于基础情形，注意到当 $n=1$ 时我们有
+  
+  \[ \sum_{k=1}^n k^3 \; = \; 1 \]
+  
+  \noindent and 
+  
+  \noindent 且
+  
+  \[ \left( \frac{n(n+1)}{2} \right)^2  \; = \; 1.\]
+  
+  {\bf Inductive step:}
+  
+  {\bf 归纳步骤：}
+  
+  Suppose that $m>1$ is an integer such that 
+  
+  假设 $m>1$ 是一个整数，使得
+  
+  \[ \sum_{k=1}^m k^3 \; = \; \left( \frac{m(m+1)}{2} \right)^2 \]
+  
+  \noindent Add $(m+1)^3$ to both sides to obtain
+  
+  \noindent 两边同时加上 $(m+1)^3$ 得到
+  
+  \[ (m+1)^3 + \sum_{k=1}^m k^3 \;= \; \left( \frac{m(m+1)}{2} \right)^2 + (m+1)^3. \]
+  
+  \noindent Thus
+  
+  \noindent 因此
+  
+  \begin{gather*} 
+  \sum_{k=1}^{m+1} k^3 \;= \; \left( \frac{m^2(m+1)^2}{4} \right) + \frac{4(m+1)^3}{4} \\
+  \;= \; \left( \frac{m^2(m+1)^2 + 4 (m+1)^3}{4} \right)\\
+  \; = \; \left( \frac{(m+1)^2 (m^2 + 4(m+1))}{4} \right)\\
+  \; = \; \left( \frac{(m+1)^2 (m^2 + 4m +4)}{4} \right)\\
+  \; = \; \left( \frac{(m+1)^2 (m+2)^2}{4} \right)\\
+  \; = \; \left( \frac{(m+1)(m+2)}{2} \right)^2
+  \end{gather*}
+  
+   \end{proof}
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+    
+  \item Find a formula for the sum of the first $n$ fourth powers.
+  
+  找出前 $n$ 个四次方数之和的公式。
+  \hint{\[ \frac{n\cdot(n+1)\cdot(2n+1)\cdot(3n^2+3n-1)}{30}\] } 
+  
+  \wbvfill
+  
+  \workbookpagebreak
+   
+  \item The sum of the first $n$ natural numbers is sometimes called
+  the $n$-th triangular number \index{triangular numbers}$T_n$.
+  Triangular numbers are so-named
+  because one can represent them with triangular shaped arrangements 
+  of dots.
+  
+  前 $n$ 个自然数的和有时被称为第 $n$ 个三角数\index{triangular numbers}$T_n$。三角数因此得名，因为可以用三角形排列的点来表示它们。
+  \begin{center} \input{figures/triangular_numbers.tex} \end{center}
+  
+  The first several triangular numbers are 1, 3, 6, 10, 15, et cetera.
+  Determine a formula for the sum of the first $n$ triangular numbers $\displaystyle \left( \sum_{i=1}^n T_i \right)$ and prove it using PMI.
+  
+  前几个三角数是 1, 3, 6, 10, 15, 等等。确定前 $n$ 个三角数之和 $\displaystyle \left( \sum_{i=1}^n T_i \right)$ 的公式，并用数学归纳法证明它。
+  \hint{The formula is $\frac{n(n+1)(n+2)}{6}$.
+  
+  公式是 $\frac{n(n+1)(n+2)}{6}$。}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Consider the alternating sum of squares:
+  
+  考虑平方数的交错和：
+  \begin{gather*}
+  1 \\
+  1 - 4 = -3 \\
+  1 - 4 + 9 = 6 \\
+  1 - 4 + 9 - 16 = -10 \\
+  \mbox{et cetera}
+  \end{gather*}
+  Guess a general formula for $\sum_{i=1}^n (-1)^{i-1} i^2$, and prove it using PMI.
+  
+  猜测 $\sum_{i=1}^n (-1)^{i-1} i^2$ 的通用公式，并用数学归纳法证明它。
+  \hint{
+  \begin{thm*}
+  \[ \forall n \in \Naturals, \; \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; (-1)^{n-1} \frac{n(n+1)}{2}  \]
+  \end{thm*}
+  
+  \begin{proof} (By mathematical induction)
+  
+  (通过数学归纳法)
+  
+  {\bf Base case:} ($n=1$)
+  
+  {\bf 基础情形：} ($n=1$)
+  For the base case, note that when $n=1$ we have
+  
+  对于基础情形，注意到当 $n=1$ 时我们有
+  
+  \[\sum_{i=1}^n (-1)^{i-1} i^2 \;= \; 1 \]
+  
+  \noindent and also
+  
+  \noindent 并且
+  
+  \[ (-1)^{n-1} \frac{n(n+1)}{2} \;= \; 1. \]
+  
+  {\bf Inductive step:}
+  
+  {\bf 归纳步骤：}
+  
+  Suppose that $k>1$ is an integer such that 
+  
+  假设 $k>1$ 是一个整数，使得
+  
+  \[ \sum_{i=1}^k (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2}.  \]
+  
+  Adding $(-1)^{k} (k+1)^2$ to both sides gives
+  
+  两边同时加上 $(-1)^{k} (k+1)^2$ 得到
+  
+  \begin{gather*} 
+  \sum_{i=1}^{k+1} (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2} + (-1)^{k} (k+1)^2 \\
+  \;= \; (-1)^{k-1} \frac{k(k+1)}{2} - (-1)^{k-1} (k+1)^2 \\ 
+  \;= \; (-1)^{k-1} \left( \frac{k(k+1)}{2} -  \frac{2(k+1)^2}{2} \right) \\ 
+  \;= \; (-1)^{k} \left( \frac{2(k+1)^2}{2} - \frac{k(k+1)}{2} \right) \\
+  \;= \; (-1)^{k} \frac{(k+1)(2(k+1)-k)}{2} \\
+  \;= \; (-1)^{k} \frac{(k+1)(k+2)}{2} \\
+  \end{gather*}
+  \end{proof}
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Prove the following formula for a product.
+  
+  证明以下乘积公式。
+  \[ \prod_{i=2}^n \left(1 - \frac{1}{i}\right) =  \frac{1}{n} \]
+  
+  \hint{
+  Notice that the problem statement didn't specify the domain -- but the smallest value of $n$ that gives
+  a non-empty product on the left-hand side is $n=2$.
+  
+  注意到题目陈述没有指定定义域——但使左边乘积非空的最小 $n$ 值是 $n=2$。
+  \newpage
+  
+  \begin{proof} (By mathematical induction)
+  
+  (通过数学归纳法)
+  
+  {\bf Base case:} ($n=2$)
+  
+  {\bf 基础情形：} ($n=2$)
+  For the base case, note that when $n=2$ we have
+  
+  对于基础情形，注意到当 $n=2$ 时我们有
+  
+  \[ \prod_{i=2}^2 \left(1 - \frac{1}{i}\right) \quad = \quad  \left(1 - \frac{1}{2}\right) \quad = \quad 1/2 \]
+  
+  \noindent and, when $n=2$, the right-hand side ($1/n$) also evaluates to $1/2$.
+  
+  \noindent 并且，当 $n=2$ 时，右边 ($1/n$) 的值也是 $1/2$。
+  {\bf Inductive step:}
+  
+  {\bf 归纳步骤：}
+  
+  Suppose that $k\geq2$ is an integer such that 
+  
+  假设 $k\geq2$ 是一个整数，使得
+  
+  \[ \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}.
+  \]
+  
+  Then,
+  
+  那么，
+  
+  \begin{gather*}
+  \prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right) \\
+  = \left(1 - \frac{1}{k+1}\right) \; \cdot \; \prod_{i=2}^{k} \left(1 - \frac{1}{i}\right) \\
+  = \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k} \\
+  = \frac{1}{k+1}.
+  \end{gather*}
+  \end{proof}
+  
+  The final line skips over a tiny bit of algebraic detail.
+  You may feel more comfortable if you fill in those steps.
+  
+  最后一行跳过了一点代数细节。如果你补上这些步骤，可能会感觉更舒服。
+  
+  \newpage
+  }
+  
+  
+  \item Prove $\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1$ for all
+  integers $n \geq 0$.
+  
+  证明对于所有整数 $n \geq 0$，$\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1$ 成立。
+  
+  \hint{
+  \begin{proof} (By mathematical induction)
+  
+  (通过数学归纳法)
+  
+  {\bf Base case:} ($n=0$)
+  
+  {\bf 基础情形：} ($n=0$)
+  For the base case, note that when $n=0$ we have
+  
+  对于基础情形，注意到当 $n=0$ 时我们有
+  
+  \[ \sum_{j=0}^{n}(4j+1) \; = \; (4\cdot 0 + 1 \; = \; 1 \]
+  
+  \noindent also, when $n=0$,
+  
+  \noindent 同样，当 $n=0$ 时，
+  
+  \[ 2n^2+3n+1 \; = \; 2\cdot 0^2 +3\cdot 0 + 1 \; = \; 1. \]
+  
+  {\bf Inductive step:}
+  
+  {\bf 归纳步骤：}
+  
+  Suppose that $k \geq 0$ is an integer such that 
+  
+  假设 $k \geq 0$ 是一个整数，使得
+  
+  \[  \sum_{j=0}^{k}(4j+1) \; = \; 2k^{2}+3k+1. \]
+  
+  (We want to show that $\displaystyle \sum_{j=0}^{k+1}(4j+1) \; = \; 2(k+1)^{2}+3(k+1)+1$.)
+  
+  （我们想要证明 $\displaystyle \sum_{j=0}^{k+1}(4j+1) \; = \; 2(k+1)^{2}+3(k+1)+1$。）
+  
+  So consider the sum $\displaystyle \sum_{j=0}^{k+1}(4j+1)$:
+  
+  那么考虑和 $\displaystyle \sum_{j=0}^{k+1}(4j+1)$：
+  
+  \begin{gather*}
+  \sum_{j=0}^{k+1}(4j+1) \\
+  = \; 4(k+1)+1 \; + \; \sum_{j=0}^{k}(4j+1) \\
+  = \;  4(k+1)+1 \; + \; 2k^{2}+3k+1 \\
+  = \; \rule{0pt}{18pt} \rule{2in}{0in} \\
+  = \; \rule{0pt}{18pt} \rule{2in}{0in} \\
+  = \; \rule{0pt}{18pt} \rule{2 in}{0in} \\
+  \end{gather*}
+  \end{proof}
+  
+  
+  Notice that the last line given in the proof 
+  is where the inductive hypothesis gets used.  The actual last line of the proof is fairly easy to determine (hint: it is given in the "We want to show" sentence.)  So now you just have to fill in the gaps\ldots
+  
+  注意到证明中给出的倒数第二行是使用归纳假设的地方。证明的实际最后一行是相当容易确定的（提示：它在“我们想要证明”的句子中给出）。所以现在你只需要填补空白……
+  
+  \rule{0pt}{12pt}
+  
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Prove $\displaystyle \sum_{i=1}^{n}\frac{1}{(2i-1)(2i+1)} \; = \; \frac{n}{2n+1}$ for all natural numbers $n$.
+  
+  证明对于所有自然数 $n$，$\displaystyle \sum_{i=1}^{n}\frac{1}{(2i-1)(2i+1)} \; = \; \frac{n}{2n+1}$ 成立。
+  
+  \hint{
+  \begin{proof} (By mathematical induction)
+  
+  (通过数学归纳法)
+  
+  {\bf Base case:} ($n=0$)
+  
+  {\bf 基础情形：} ($n=0$)
+  For the base case, note that when $n=0$ 
+  
+  对于基础情形，注意到当 $n=0$ 时
+  
+  \[ \sum_{j=0}^{n} \frac{1}{(2i-1)(2i+1)} \]
+  
+  contains no terms.
+  Thus its value is 0.
+  
+  不包含任何项。因此其值为0。
+  
+  And, $\displaystyle \frac{n}{2n+1}$ also evaluates to 0 when $n=0$.
+  
+  并且，当 $n=0$ 时 $\displaystyle \frac{n}{2n+1}$ 的值也为0。
+  {\bf Inductive step:}
+  
+  {\bf 归纳步骤：}
+  
+  By the inductive hypothesis we may write
+  
+  根据归纳假设，我们可以写出
+  
+  \[ \sum_{i=1}^{k} \frac{1}{(2i-1)(2i+1)} \; = \; \frac{k}{2k+1}.
+  \]
+  
+  Adding $\displaystyle  \frac{1}{(2(k+1)-1)(2(k+1)+1)}$ to both side of this gives
+  
+  两边同时加上 $\displaystyle  \frac{1}{(2(k+1)-1)(2(k+1)+1)}$ 得到
+  
+  \[ \sum_{i=1}^{k+1} \frac{1}{(2i-1)(2i+1)} \; = \; \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)}.
+  \]
+  
+  To complete the proof we must verify that 
+  
+  为了完成证明，我们必须验证
+  
+  \[ \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)} = \frac{k+1}{2(k+1)+1}. \]
+  
+  Note that
+  
+  注意到
+  
+  \begin{gather*}
+  \rule{0pt}{23pt} \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)} \\
+  \rule{0pt}{23pt} = \frac{k}{2k+1} \; + \; \frac{1}{(2k+1)(2k+3)}\\
+  \rule{0pt}{23pt} = \frac{k(2k+3)}{(2k+1)(2k+3)} \; + \; \frac{1}{(2k+1)(2k+3)}\\
+  \rule{0pt}{23pt} = \frac{k(2k+3)+1}{(2k+1)(2k+3)} \\
+  \rule{0pt}{23pt} = \frac{2k^2+3k+1}{(2k+1)(2k+3)} \\
+  \rule{0pt}{23pt} = \frac{(2k+1)(k+1)}{(2k+1)(2k+3)} \\
+  \rule{0pt}{23pt} = \frac{k+1}{2k+3} \; = \; \frac{k+1}{2(k+1)+1}
+  \end{gather*}
+  
+  \noindent as desired.
+  
+  \noindent 如所愿。
+  \end{proof}
+  
+  }
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item The \index{Fibonacci numbers} \emph{Fibonacci numbers} are a sequence of integers defined by
+  the rule that a number in the sequence is the sum of the two that 
+  precede it.
+  
+  \index{Fibonacci numbers}\emph{斐波那契数}是一个整数序列，其定义规则是序列中的一个数是它前面两个数的和。
+  
+  \[ F_{n+2} = F_n + F_{n+1}  \]
+  
+  \noindent The first two Fibonacci numbers (actually the zeroth and the first) 
+  are both 1.  
+  
+  \noindent 前两个斐波那契数（实际上是第零个和第一个）都是1。
+  
+  \noindent Thus, the first several Fibonacci numbers are
+  
+  \noindent 因此，前几个斐波那契数是
+  
+  \[ F_0 = 1, F_1=1, F_2=2, F_3=3, F_4=5, F_5=8, F_6=13, F_7=21, \; \mbox{et cetera} \]
+  
+  Use mathematical induction to prove the following formula involving
+  Fibonacci numbers.
+  
+  使用数学归纳法证明以下涉及斐波那契数的公式。
+  \[ \sum_{i=0}^n (F_i)^2 \, = \, F_n \cdot F_{n+1} \]
+  
+  \hint{
+  \begin{proof} (by induction)
+  
+  (通过归纳法)
+  
+  {\bf Base case:} ($n=0$)
+  
+  {\bf 基础情形：} ($n=0$)
+  
+  For the base case, note that when $n=0$ 
+  
+  对于基础情形，注意到当 $n=0$ 时
+  
+  \[ \sum_{i=0}^{n} (F_i)^2 \; = \; 1. \]
+  
+  And, $\displaystyle F_n \cdot F_{n+1} \; = \; F_0 \cdot F_1 \; = \; 1 \cdot 1 \; = \; 1$. 
+  
+  且，$\displaystyle F_n \cdot F_{n+1} \; = \; F_0 \cdot F_1 \; = \; 1 \cdot 1 \; = \; 1$。
+  
+  {\bf Inductive step:}
+  
+  {\bf 归纳步骤：}
+  
+  By the inductive hypothesis we may write
+  
+  根据归纳假设，我们可以写出
+  
+  \[ \sum_{i=0}^k (F_i)^2 \; = \; F_k \cdot F_{k+1}. \]
+  
+  Adding $(F_{k+1})^2$ to both sides gives
+  
+  两边同时加上 $(F_{k+1})^2$ 得到
+  
+  \[ \sum_{i=0}^{k+1} (F_i)^2 \; = \; F_k \cdot F_{k+1} + (F_{k+1})^2. \]
+  
+  Finally, note that (using factoring and the defining property of the Fibonacci numbers)
+  we can show that
+  
+  最后，注意到（使用因式分解和斐波那契数的定义属性）我们可以证明
+  
+  \begin{gather*}
+   F_k \cdot F_{k+1} + (F_{k+1})^2 \\
+    = \; F_{k+1} \cdot (F_k + F_{k+1}) \\
+    = \; F_{k+1} \cdot F_{k+2}
+  \end{gather*}
+  
+  So the inductive step has been proved and the result follows by PMI.
+  
+  所以归纳步骤已经证明，结果由数学归纳法原理得出。
+  \end{proof}
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \end{enumerate}
+  
+  %% Emacs customization
+  %% 
+  %% Local Variables: ***
+  %% TeX-master: "GIAM-hw.tex" ***
+  %% comment-column:0 ***
+  %% comment-start: "%% "  ***
+  %% comment-end:"***" ***
+  %% End: ***

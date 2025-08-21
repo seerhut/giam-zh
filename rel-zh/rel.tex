@@ -1,0 +1,3306 @@
+\chapter{Relations and functions 关系与函数}
+\label{ch:rel}
+
+{\em If evolution really works, how come mothers only have two hands?
+--Milton Berle}
+
+{\em 如果进化论真的管用，为什么妈妈们只有两只手？
+——米尔顿·伯利}
+
+
+
+\section{Relations 关系}
+\label{sec:rels}
+
+A \emph{relation} in mathematics is a symbol that can be placed between
+two numbers (or variables) to create a logical statement (or open sentence).
+The main point here is that the insertion of a relation symbol between 
+two numbers creates a statement whose value is either true or false.
+
+数学中的\emph{关系}是一个可以放在两个数字（或变量）之间以创建一个逻辑陈述（或开放句子）的符号。
+这里的要点是，在两个数字之间插入一个关系符号会创建一个值为真或假的陈述。
+
+For example, we have previously seen the divisibility symbol ($\mid$) and noted
+the common error of mistaking it for the division symbol ($/$);
+one of these
+tells us to perform an arithmetic operation, the other asks us whether 
+\emph{if} such an operation were performed there would be a remainder.
+
+例如，我们之前见过整除符号（$\mid$），并指出了将其误认为是除法符号（$/$）的常见错误；
+其中一个告诉我们执行算术运算，另一个则问我们\emph{如果}执行了这样的运算，是否会有余数。
+
+There are many other symbols that we have seen which have this characteristic,
+the most important is probably $=$, but there are lots: $\neq$, $<$, $\leq$, 
+$>$, $\geq$ all work this way -- if we place them between two numbers
+we get a Boolean thing, it's either true or false.
+
+我们见过的还有许多其他具有此特征的符号，
+最重要的可能就是 $=$，但还有很多：$\neq$, $<$, $\leq$, 
+$>$, $\geq$ 都以这种方式工作——如果我们将它们放在两个数字之间，
+我们会得到一个布尔值的东西，它要么是真的，要么是假的。
+
+If, instead of numbers, 
+we think of placing sets on either side of a relation symbol, then
+ $=$, $\subseteq$  and $\supseteq$ are valid relation symbols.
+
+如果，我们考虑的不是数字，而是在关系符号的两边放置集合，那么
+$=$, $\subseteq$ 和 $\supseteq$ 都是有效的关系符号。
+
+If we think 
+of placing logical expressions on either side of a relation then, 
+honestly, \emph{any} of the logical symbols is a relation, but we normally
+think of $\land$ and $\lor$ as operators and give things like $\equiv$, 
+$\implies$ and $\iff$ the status of relations.
+
+如果我们考虑在关系的任意一边放置逻辑表达式，那么，
+老实说，\emph{任何}逻辑符号都是一个关系，但我们通常
+认为 $\land$ 和 $\lor$ 是运算符，而给予像 $\equiv$、
+$\implies$ 和 $\iff$ 这样的东西以关系的地位。
+
+In the examples we've looked at the things on either side of a relation
+are of the same type.
+
+在我们看过的例子中，关系两边的事物
+属于同一类型。
+
+This is usually, but not always, the case.  The 
+prevalence of relations with the same kind of things being compared has
+even lead to the aphorism ``Don't compare apples and oranges.''  Think 
+about the symbol $\in$ for a moment.
+
+这通常是，但并非总是如此。比较同类事物的关系普遍存在，
+甚至产生了一句格言：“不要拿苹果和橘子作比较。” 思考一下符号 $\in$。
+
+As we've seen previously, it
+isn't usually appropriate to put \emph{sets} on either side of this,
+we might have numbers or other objects on the left and sets on the right.
+
+正如我们之前所见，
+通常不适合将\emph{集合}放在这个符号的两边，
+我们可能会在左边放数字或其他对象，在右边放集合。
+
+Let's look at a small example.  Let $A = \{1,2,3,a,b\}$ and let 
+$B=\{ \{1,2,a\}, \{1,3,5,7,\ldots\}, \{1\} \}$.
+The ``element of'' 
+relation, $\in$, is a \emph{relation from $A$ to $B$}.
+
+我们来看一个小例子。设 $A = \{1,2,3,a,b\}$ 且
+$B=\{ \{1,2,a\}, \{1,3,5,7,\ldots\}, \{1\} \}$。
+“属于”关系，$\in$，是一个\emph{从 $A$ 到 $B$ 的关系}。
+
+\begin{figure}[!hbtp]
+\input{figures/first_relation.tex}
+\caption[An example of a relation.]{The ``element of'' relation %
+is an example of a relation that goes \emph{from} one set \emph{to} a %
+different set.}
+\caption[一个关系的例子。]{“属于”关系是
+一个从一个集合\emph{到}另一个不同集合的关系的例子。}
+\label{fig:rel1} 
+\end{figure}
+
+A diagram such as we have given in Figure~\ref{fig:rel1} seems like a 
+very natural thing.
+
+我们在图~\ref{fig:rel1}中给出的这样的图表看起来非常自然。
+
+Such pictures certainly give us an easy visual 
+tool for thinking
+about relations.  But we should point out certain hidden assumptions.
+
+这样的图片无疑为我们思考关系提供了一个简单的视觉工具。但我们应该指出一些隐藏的假设。
+
+First, they'll only work if we are dealing with finite sets, or sets
+like the odd numbers in our example (sets that are infinite but could
+in principle be listed).
+
+首先，它们只适用于我们处理有限集合，或者像我们例子中的奇数那样的集合（这些集合是无限的，但原则上可以被列出）。
+
+Second, by drawing the two sets separately,
+it seems that we are assuming they are not only different, but 
+\emph{disjoint}.
+
+其次，通过将两个集合分开绘制，我们似乎在假设它们不仅不同，而且是\emph{不相交}的。
+
+The sets not only need not be disjoint, but often
+(most of the time!) we have relations that go from a set to itself
+so the sets in a picture like this may be identical.
+
+这两个集合不仅不必是不相交的，而且常常（大多数时候！）我们的关系是从一个集合到其自身的，所以像这样的图中的集合可能是相同的。
+
+In Figure~\ref{fig:rel2}
+we illustrate the divisibility relation on the set of all divisors of
+6 --- this is an example in which the sets on either side of the relation
+are the same.
+
+在图~\ref{fig:rel2}中，我们展示了在6的所有因子集合上的整除关系——这是一个关系两边的集合相同的例子。
+
+Notice the linguistic distinction, we can talk about
+either ``a relation from $A$ to $B$'' (when there are really two 
+different sets) or ``a relation on $A$'' (when there is only one).
+
+注意语言上的区别，我们可以说“一个从 $A$到$B$ 的关系”（当确实有两个不同的集合时）或者“一个在 $A$ 上的关系”（当只有一个集合时）。
+
+\begin{figure}[!hbtp]
+\input{figures/2nd_relation.tex}
+\caption[An example of the ``divides'' relation.]{The ``divides'' relation %
+is an example of a relation that goes from a set to itself.
+In this example %
+we say that we have a relation \emph{on} the set of divisors of 6.}
+\caption[一个“整除”关系的例子。]{“整除”关系是一个从一个集合到其自身的关系的例子。
+在这个例子中，我们说我们在6的因子集合上有一个关系。}
+\label{fig:rel2} 
+\end{figure}
+ 
+Purists will note that it is really inappropriate to represent the same set
+in two different places in a Venn diagram.
+
+纯粹主义者会注意到，在文氏图中用两个不同的地方表示同一个集合是十分不妥的。
+
+The diagram in Figure~\ref{fig:rel2}
+should really look like this:
+
+图~\ref{fig:rel2}中的图表实际上应该看起来是这样的：
+
+\begin{center}
+\input{figures/2nd_relation_v2.tex}
+\end{center}
+
+Indeed, this representation is definitely preferable, although it may be more crowded.
+
+确实，这种表示方式无疑更可取，尽管它可能会显得更拥挤。
+
+A picture such as this is
+known as the \index{directed graph}\emph{directed graph} (a.k.a. \index{digraph}\emph{digraph})
+of the relation.
+
+这样的图被称为关系的\index{directed graph}\emph{有向图}（也称为\index{digraph}\emph{digraph}）。
+
+Recall that when we were discussing sets we said the best way to describe 
+a set is simply to list all of its elements.
+
+回想一下，当我们讨论集合时，我们说过描述一个集合的最好方法就是简单地列出它的所有元素。
+
+Well, what is the best
+way to describe a relation?  In the same spirit, it would seem we should
+explicitly list all the things that make the relation true.
+
+那么，描述一个关系的最好方法是什么？本着同样的精神，我们似乎应该明确地列出所有使关系为真的事物。
+
+But it takes
+a \emph{pair} of things, one to go on the left side and one to go on the 
+right, to make a relation true (or for that matter false!).
+
+但是，需要一\emph{对}事物，一个放在左边，一个放在右边，才能使一个关系为真（或者为假！）。
+
+Also it should 
+be evident that order is important in this context, for example $2<3$ is true
+but $3<2$ isn't.
+
+同样，显而易见，在这种情况下顺序很重要，例如 $2<3$ 是真的，但 $3<2$ 不是。
+
+The identity of a relation is so intimately tied up with
+the set of ordered pairs that make it true, that when dealing with abstract
+relations we \emph{define them} as sets of ordered pairs.
+
+一个关系的身份与使其为真的有序对集合紧密相连，以至于在处理抽象关系时，我们将其\emph{定义}为有序对的集合。
+
+Given two sets, $A$ and $B$, the \index{Cartesian product}
+\emph{Cartesian product of $A$ and $B$} 
+is the set of all ordered pairs $(a,b)$ where $a$ is in $A$ and $b$ is in $B$.
+
+给定两个集合，$A$ 和 $B$，\index{Cartesian product}
+$A$ 和 $B$ 的\emph{笛卡尔积}是所有有序对 $(a,b)$ 的集合，其中 $a$ 在 $A$ 中，$b$ 在 $B$ 中。
+
+We denote the Cartesian product using the symbol $\times$.  
+
+我们用符号 $\times$ 来表示笛卡尔积。
+
+\[ A \times B = \{ (a,b) \suchthat a \in A \land b \in B \} \]
+
+\noindent From here on out
+in your mathematical career you'll need to take note of the context that
+the symbol $\times$ appears in.  If it appears between numbers go ahead and
+multiply, but if it appears between sets you're doing something different --
+forming the Cartesian product.
+
+\noindent 从现在开始，在你的数学学习生涯中，你需要注意符号 $\times$ 出现的上下文。如果它出现在数字之间，那就进行乘法运算；但如果它出现在集合之间，你就在做一件不同的事——形成笛卡尔积。
+
+The familiar $x$--$y$ plane, is often called the Cartesian plane.  This
+is done for two reasons.
+
+我们熟悉的 $x$--$y$ 平面，通常被称为笛卡尔平面。这样做有两个原因。
+
+\index{Descartes, Rene}Rene Descartes, the famous
+mathematician and philosopher, was the first to consider coordinatizing
+the plane and thus is responsible for our current understanding of the
+relationship between geometry and algebra.
+
+\index{Descartes, Rene}著名的数学家和哲学家勒内·笛卡尔，是第一个考虑给平面坐标化的人，因此他对我们目前对几何与代数之间关系的理解负有责任。
+
+Rene Descartes' name is also
+memorialized in the definition of the Cartesian product of sets, and the
+plane is nothing more than the product $\Reals \times \Reals$.
+
+勒内·笛卡尔的名字也因集合的笛卡尔积的定义而被纪念，而平面不过是 $\Reals \times \Reals$ 的积。
+
+Indeed,
+the plane provided the very first example of the concept that was later
+generalized to the Cartesian product of sets.
+
+的确，平面提供了后来被推广为集合的笛卡尔积这一概念的第一个例子。
+
+\begin{exer}
+Suppose $A = \{1,2,3\}$ and $B = \{a,b,c\}$.  Is $(a,1)$ in the Cartesian
+product $A \times B$?
+List all elements of $A \times B$.
+\end{exer} 
+
+\begin{exer}
+假设 $A = \{1,2,3\}$ 且 $B = \{a,b,c\}$。$(a,1)$ 是否在笛卡尔积 $A \times B$ 中？
+列出 $A \times B$ 的所有元素。
+\end{exer}
+
+In the abstract, we can define a relation as \emph{any} subset of an
+appropriate Cartesian product.
+
+在抽象层面上，我们可以将关系定义为适当笛卡尔积的\emph{任何}子集。
+
+So an abstract relation $\relR$ from a set 
+$A$ to a set $B$ is just some subset of $A \times B$.
+
+因此，一个从集合 $A$ 到集合 $B$ 的抽象关系 $\relR$ 只是 $A \times B$ 的某个子集。
+
+Similarly, a
+relation $\relR$ on a set $S$ is defined by a subset of $S \times S$.
+
+类似地，在集合 $S$ 上的一个关系 $\relR$ 是由 $S \times S$ 的一个子集定义的。
+
+This definition looks a little bit strange when we apply it to an
+actual (concrete) relation that we already know about.
+
+当我们将这个定义应用于一个我们已经知道的实际（具体）关系时，它看起来有点奇怪。
+
+Consider the
+relation ``less than.''   To describe ``less than'' as a subset of
+a Cartesian product we must write
+
+考虑“小于”这个关系。要将“小于”描述为笛卡尔积的一个子集，我们必须写成
+
+\[ < \;
+= \; \{ (x,y) \in \Reals \times \Reals \suchthat y-x \in \Reals^+ \}.\] 
+\noindent This looks funny.
+
+\noindent 这看起来很奇怪。
+
+Also, if we have defined some relation $\relR \subseteq A \times B$, then in order
+to say that a particular pair, $(a,b)$, of things make the relation true we
+have to write 
+
+此外，如果我们定义了某个关系 $\relR \subseteq A \times B$，那么为了说某一对事物 $(a,b)$ 使这个关系为真，我们必须写成
+
+\[ a\relR b.
+\]
+
+\noindent This looks funny too.  
+
+\noindent 这看起来也很奇怪。
+
+Despite the strange appearances, these 
+examples do express the correct way to deal with relations.
+
+尽管外表奇怪，这些例子确实表达了处理关系的正确方式。
+
+Let's do a completely made-up example.  Suppose $A$ is the set
+$\{a,e,i,o,u\}$ and $B$ is the set $\{r,s,t,l,n\}$ and we define 
+a relation from $A$ to $B$ by
+
+我们来举一个完全虚构的例子。假设 $A$ 是集合 $\{a,e,i,o,u\}$，$B$ 是集合 $\{r,s,t,l,n\}$，我们定义一个从 $A$ 到 $B$ 的关系为
+
+\[ \relR = \{ (a,s), (a,t), (a,n), (e,t), (e,l), (e,n), (i,s), (i,t), (o,r), (o,n), (u,s) \}.
+\]
+
+Then, for example, because $(e,t) \in \relR$ we can write $e \relR t$.
+
+那么，例如，因为 $(e,t) \in \relR$，我们可以写成 $e \relR t$。
+
+We indicate the
+negation of the concept that two elements are related by drawing a slash 
+through the name of the relation, for example the notation $\neq$ is certainly
+familiar to you, as is $\nless$ (although in this latter case we 
+would normally write $\geq$ instead).
+
+我们通过在关系名称上画一条斜线来表示两个元素不相关的概念的否定，例如，符号 $\neq$ 对你来说肯定很熟悉，$\nless$ 也一样（尽管在后一种情况下我们通常会写成 $\geq$）。
+
+We can denote the fact that
+$(a,l)$ is not a pair that makes the relation true by writing $a \nrelR l$.
+
+我们可以通过写 $a \nrelR l$ 来表示 $(a,l)$ 不是一个使关系为真的对。
+
+We should mention another way of visualizing
+relations.  When we are dealing with a relation on $\Reals$, the
+relation is actually a subset of $\Reals \times \Reals$, that means 
+we can view the relation as a subset of the $x$--$y$ plane.
+
+我们应该提及另一种可视化关系的方法。当我们处理 $\Reals$ 上的一个关系时，这个关系实际上是 $\Reals \times \Reals$ 的一个子集，这意味着我们可以将这个关系看作是 $x$--$y$ 平面的一个子集。
+
+In other 
+words, we can graph it.  The graph of the ``$<$'' relation is
+given in Figure~\ref{fig:lt_graph}.
+
+换句话说，我们可以把它画出来。“$<$”关系的图像在图~\ref{fig:lt_graph}中给出。
+
+\begin{figure}[!hbtp]
+\begin{center}
+\input{figures/less_than_on_RxR.tex}
+\end{center}
+\caption[The graph of the ``less than'' relation.]{The ``less than'' relation %
+can be viewed as a subset of $\Reals \times \Reals$, i.e.\ it can be graphed.}
+\caption[“小于”关系的图像。]{“小于”关系可以被看作是 $\Reals \times \Reals$ 的一个子集，也就是说，它可以被画出来。}
+\label{fig:lt_graph} 
+\end{figure}
+  
+A relation on any set that is a subset of $\Reals$ can likewise be
+graphed.
+
+在任何是 $\Reals$ 子集的集合上的关系同样可以被图形化。
+
+The graph of the ``$\mid$'' relation is
+given in Figure~\ref{fig:div_graph}.
+
+“$\mid$”关系的图像在图~\ref{fig:div_graph}中给出。
+
+\begin{figure}[!hbtp]
+\begin{center}
+\input{figures/divides_on_NxN.tex}
+\end{center}
+\caption[The graph of the divisibility relation.]{The divisibility relation %
+can be graphed.
+Only those points (as indicated) with integer coordinates %
+are in the graph.}
+\caption[整除关系的图像。]{整除关系可以被图形化。
+只有那些（如图所示）具有整数坐标的点才在图中。}
+\label{fig:div_graph} 
+\end{figure}
+ 
+Eventually, we will get around to defining functions as relations that
+have a certain nice property.
+
+最终，我们将把函数定义为具有某种良好性质的关系。
+
+For the moment, we'll just note that
+some of the operations that you are used to using with functions
+also apply with relations.
+
+目前，我们只指出一些你习惯于在函数中使用的运算也适用于关系。
+
+When one function ``undoes'' what another
+function ``does'' we say the functions are inverses.
+
+当一个函数“撤销”另一个函数所“做”的事时，我们说这两个函数是互逆的。
+
+For example,
+the function $f(x)=2x$ (i.e.\ doubling) and the function $g(x)=x/2$ (halving)
+are inverse functions because, no matter what number we start with, if we
+double it and then halve that result, we end up with the original number.
+
+例如，函数 $f(x)=2x$（即加倍）和函数 $g(x)=x/2$（即减半）是互逆函数，因为无论我们从哪个数开始，如果我们先将其加倍，然后将结果减半，我们最终都会得到原始的数字。
+
+The \index{inverse, of a relation}inverse of a relation $\relR$ is written $\relR^{-1}$ and it consists of
+the reversals of the pairs in $\relR$,
+
+一个关系 $\relR$ 的\index{inverse, of a relation}逆关系写作 $\relR^{-1}$，它由 $\relR$ 中所有对的反转组成，
+
+\[ \relR^{-1} = \{ (b,a) \suchthat (a,b) \in \relR \}.
+\]
+
+This can also be expressed by writing
+
+这也可以通过写成
+
+\[ b\relR^{-1}a \; \iff \; a\relR b.
+\]
+
+The process of ``doing one function and then doing another'' is known
+as \index{composition, of functions}functional composition.
+
+“先执行一个函数，再执行另一个函数”的过程被称为\index{composition, of functions}函数复合。
+
+For instance,
+if $f(x) = 2x+1$ and $g(x) = \sqrt{x}$, then we can compose them (in two
+different orders) to obtain either $f(g(x)) = 2\sqrt{x}+1$ or 
+$g(f(x)) = \sqrt{2x+1}$.
+
+例如，如果 $f(x) = 2x+1$ 且 $g(x) = \sqrt{x}$，那么我们可以（以两种不同的顺序）复合它们，得到 $f(g(x)) = 2\sqrt{x}+1$ 或 $g(f(x)) = \sqrt{2x+1}$。
+
+When composing functions there is an ``intermediate
+result'' that you get by applying the first function to your input, and then
+you calculate the second function's value at the intermediate result.
+
+在复合函数时，会有一个“中间结果”，你通过将第一个函数应用于你的输入得到它，然后你在这个中间结果上计算第二个函数的值。
+
+(For example, in calculating $g(f(4))$ we get the intermediate result
+$f(4) = 9$ and then we go on to calculate $g(9) = 3$.)
+
+（例如，在计算 $g(f(4))$ 时，我们得到中间结果 $f(4) = 9$，然后我们继续计算 $g(9) = 3$。）
+
+The definition of the \index{composition, of relations}\emph{composite}
+of two relations focuses very much on this idea
+of the intermediate result.
+
+两个关系\index{composition, of relations}\emph{复合}的定义非常关注这个中间结果的概念。
+
+Suppose $\relR$ is a relation from
+$A$ to $B$ and $\relS$ is a relation from $B$ to $C$ then the composite
+$\relS \circ \relR$ is given by
+
+假设 $\relR$ 是一个从 $A$ 到 $B$ 的关系，$\relS$ 是一个从 $B$ 到 $C$ 的关系，那么复合 $\relS \circ \relR$ 由下式给出
+
+\[  \relS \circ \relR \;
+= \; \{ (a,c) \suchthat \exists b \in B, (a,b) \in \relR \, \land (b,c) \in \relS \}.
+\]
+
+In this definition, $b$ is the ``intermediate result,'' if there is no such
+$b$ that serves to connect $a$ to $c$ then $(a,c)$ won't be in the composite.
+
+在这个定义中，$b$ 是“中间结果”，如果没有这样的 $b$ 来连接 $a$ 到 $c$，那么 $(a,c)$ 就不会在复合关系中。
+
+Also, notice that this is the composition $\relR$ first, then $\relS$, but
+it is written as $\relS \circ \relR$  -- watch out for this!
+
+另外，请注意，这是先 $\relR$ 后 $\relS$ 的复合，但它被写作 $\relS \circ \relR$——要注意这一点！
+
+The 
+compositions of relations should be read from right to left.
+
+关系的复合应该从右到左读。
+
+This convention
+makes sense when you consider functional composition, $f(g(x))$ means $g$ 
+first, then $f$ so if we use the ``little circle'' notation for the
+composition of relations we have $f \circ g (x) = f(g(x))$ which is nice
+because the symbols $f$ and $g$ appear in the same order.
+
+当你考虑函数复合时，这个约定是有意义的，$f(g(x))$ 意味着先 $g$ 后 $f$，所以如果我们用“小圆圈”符号来表示关系的复合，我们有 $f \circ g (x) = f(g(x))$，这很好，因为符号 $f$ 和 $g$ 以相同的顺序出现。
+
+But beware! there
+are atavists out there who write their compositions the other way around.
+
+但要当心！有些守旧的人会反过来写他们的复合。
+
+You should probably have a diagram like the following in mind while thinking
+about the composition of relations.
+
+在思考关系的复合时，你脑海中可能应该有下面这样的图。
+
+Here, we have the set $A=\{1,2,3,4\}$,
+the set $B$ is $\{a,b,c,d\}$ and $C=\{w,x,y,z\}$.
+
+这里，我们有集合 $A=\{1,2,3,4\}$，集合 $B$ 是 $\{a,b,c,d\}$，而 $C=\{w,x,y,z\}$。
+
+The relation
+$\relR$ goes from $A$ to $B$ and consists of the following set of pairs,
+
+关系 $\relR$ 从 $A$ 到 $B$，由以下序对集合构成：
+
+\[ \relR \; = \;
+\{(1,a), (1,c), (2,d), (3,c), (3,d) \}. \]
+
+And 
+
+和
+
+\[ \relS \; = \; \{(a,y), (b,w), (b,x), (b,z) \}.
+\]
+
+\vfill
+
+\input{figures/composite_relation.tex}
+
+\begin{exer}
+Notice that the composition $\relR \circ \relS$ is impossible (or, more
+properly, it is empty).  Why?
+
+\begin{exer}
+注意，复合 $\relR \circ \relS$ 是不可能的（或者更确切地说，是空的）。为什么？
+
+What is the (only) pair in the composition $\relS \circ \relR$ ?
+\end{exer}
+
+复合 $\relS \circ \relR$ 中（唯一）的序对是什么？
+\end{exer}
+
+\newpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{rel-zh/rel-exer.tex}
+
+
+\newpage
+
+\section{Properties of relations 关系的性质}
+\label{sec:rel_props}
+
+There are two special classes of relations that we will study
+in the next two sections, equivalence relations and ordering relations.
+
+在接下来的两节中，我们将学习两类特殊的关系：等价关系和序关系。
+
+The prototype for an equivalence relation is the ordinary notion
+of numerical equality, $=$.  The prototypical ordering relation
+is $\leq$.
+
+等价关系的原型是普通的数值相等概念，$=$。原型序关系是 $\leq$。
+
+Each of these has certain salient properties that are the
+root causes of their importance.
+
+它们各自都有一些显著的性质，这些性质是其重要性的根本原因。
+
+In this section we will study a 
+compendium of properties that a relation may or may not have.
+
+在本节中，我们将研究一个关系可能具有或不具有的性质纲要。
+
+A relation that has three of the properties we'll discuss:
+
+一个具有我们即将讨论的三个性质的关系：
+
+\begin{enumerate}
+\item \index{reflexivity} reflexivity 
+\noindent  \index{reflexivity} 自反性
+\item \index{symmetry}symmetry 
+\noindent  \index{symmetry}对称性
+\item \index{transitivity}transitivity
+\noindent  \index{transitivity}传递性
+\end{enumerate}
+
+\noindent is said to be an equivalence relation;
+it will in some ways resemble
+$=$.
+
+\noindent 被称为等价关系；它在某些方面会类似于 $=$。
+
+A relation that has another set of three properties:
+
+一个具有另外三个性质的关系：
+
+\begin{enumerate}
+\item \index{reflexivity}reflexivity 
+\noindent  \index{reflexivity}自反性
+\item \index{anti-symmetry}anti-symmetry 
+\noindent  \index{anti-symmetry}反对称性
+\item \index{transitivity}transitivity
+\noindent  \index{transitivity}传递性
+\end{enumerate}
+
+\noindent is called an ordering relation;
+it will resemble $\leq$.
+
+\noindent 被称为序关系；它会类似于 $\leq$。
+
+Additionally, there is a property known as irreflexivity that many
+relations have.
+
+此外，还有一个称为非自反性的性质，许多关系都具有这个性质。
+
+There are a total of 5 properties that we have named, and we will discuss
+them all more thoroughly.
+
+我们总共命名了5个性质，我们将更深入地讨论它们。
+
+But first, we'll state the formal definitions.
+Take note that these properties are all stated for a relation that goes
+from a set to itself, indeed, most of them wouldn't even make sense if
+we tried to define them for a relation from a set to a different set.
+
+但首先，我们将陈述正式的定义。请注意，这些性质都是针对从一个集合到其自身的关系来陈述的，事实上，如果我们试图为一个从一个集合到另一个不同集合的关系定义它们，大多数性质甚至没有意义。
+
+\clearpage
+
+\begin{table}[hbt] 
+\begin{center}
+\begin{tabular}{|c|} \hline
+\begin{minipage}{.95\textwidth} \centerline{\rule{0pt}{15pt} A relation $\relR$ on a set $S$ is {\bf reflexive} iff} 
+\centerline{\rule{0pt}{15pt} 集合 $S$ 上的关系 $\relR$ 是{\bf 自反的}，当且仅当}
+\rule{0pt}{15pt} \centerline{ $\displaystyle \forall a \in S, \quad a \relR a $} 
+\rule[-6pt]{0pt}{21pt} ``Everything is related to itself.''
+\rule[-6pt]{0pt}{21pt} “每个事物都与自身相关。”
+\end{minipage} \\ \hline
+\begin{minipage}{.95\textwidth} \centerline{\rule{0pt}{15pt}A relation $\relR$ on a set $S$ is {\bf irreflexive} iff}
+\centerline{\rule{0pt}{15pt}集合 $S$ 上的关系 $\relR$ 是{\bf 非自反的}，当且仅当}
+\rule{0pt}{15pt} \centerline{ $\displaystyle \forall a \in S, \quad a \nrelR a $ }
+\rule[-6pt]{0pt}{21pt} ``Nothing is related to itself.''
+\rule[-6pt]{0pt}{21pt} “没有事物与自身相关。”
+\end{minipage} \\ \hline
+\begin{minipage}{.95\textwidth} \centerline{\rule{0pt}{15pt}A relation $\relR$ on a set $S$ is {\bf symmetric} iff}
+\centerline{\rule{0pt}{15pt}集合 $S$ 上的关系 $\relR$ 是{\bf 对称的}，当且仅当}
+\rule{0pt}{15pt} \centerline{ $\displaystyle \forall a,b \in S, \quad a \relR b \;
+\implies \; b \relR a $ }
+\rule[-6pt]{0pt}{21pt} ``No one-way streets.'' 
+\rule[-6pt]{0pt}{21pt} “没有单行道。”
+\end{minipage} \\ \hline
+\begin{minipage}{.95\textwidth} \centerline{\rule{0pt}{15pt}A relation $\relR$ on a set $S$ is {\bf anti-symmetric} iff}
+\centerline{\rule{0pt}{15pt}集合 $S$ 上的关系 $\relR$ 是{\bf 反对称的}，当且仅当}
+\rule{0pt}{15pt} \centerline{ $\displaystyle \forall a,b \in S, \quad a \relR b \;
+\land b \relR a \quad \implies \quad a=b $}
+\rule[-6pt]{0pt}{21pt} ``Only one-way streets.''
+\rule[-6pt]{0pt}{21pt} “只有单行道。”
+\end{minipage} \\ \hline
+\begin{minipage}{.95\textwidth} \centerline{\rule{0pt}{15pt}A relation $\relR$ on a set $S$ is {\bf transitive} iff}
+\centerline{\rule{0pt}{15pt}集合 $S$ 上的关系 $\relR$ 是{\bf 传递的}，当且仅当}
+\rule{0pt}{15pt} \centerline{ $\displaystyle \forall a,b,c \in S, \quad a \relR b \;
+\land \; b \relR c \quad \implies \quad a \relR c$ }
+\rule[-6pt]{0pt}{21pt} ``Whenever there's a roundabout route, there's a direct route.''
+\rule[-6pt]{0pt}{21pt} “只要有迂回路线，就有直达路线。”
+\end{minipage} \\ \hline
+\end{tabular} 
+\end{center} 
+\caption[Properties of relations.]{Properties that relations may (or may not) have.}
+\caption[关系的性质。]{关系可能（或可能不）具有的性质。}
+\index{Properties of relations}
+\label{tab:rel_props}
+\end{table}
+
+
+The digraph of a relation that is reflexive will have little loops at every vertex.
+
+自反关系的数字图在每个顶点上都会有小环。
+
+The digraph of a relation that is irreflexive will contain no loops at all.
+
+非自反关系的数字图完全不包含环。
+
+Hopefully it is clear that these concepts represent extreme opposite possibilities --
+they are \emph{not} however negations of one another.
+
+希望很清楚，这些概念代表了极端的对立可能性——然而，它们并\emph{不}是彼此的否定。
+
+\begin{exer}
+Find the logical denial of the property that says a relation is reflexive
+
+\begin{exer}
+找出称关系是自反的这一性质的逻辑否定
+
+\[ {\lnot}(\forall a \in S, \quad a \relR a).
+\]
+
+How does this differ from the defining property for ``irreflexive''?
+\end{exer}
+
+这与“非自反”的定义性质有何不同？
+\end{exer}
+
+If a relation $\relR$ is defined on some subset $S$ of the reals, then it can be graphed
+in the Euclidean plane.
+
+如果一个关系 $\relR$ 定义在实数的某个子集 $S$ 上，那么它可以在欧几里得平面上被图形化。
+
+Reflexivity for $\relR$ can be interpreted in terms of the line
+$L$ defined by the equation $y=x$.
+
+$\relR$ 的自反性可以用由方程 $y=x$ 定义的直线 $L$ 来解释。
+
+Every point in $(S \times S) \cap L$
+must be in $\relR$.
+
+$(S \times S) \cap L$ 中的每个点都必须在 $\relR$ 中。
+
+A similar statement can be made concerning the irreflexive property.
+
+关于非自反性质，可以做出类似的陈述。
+
+If a relation $\relR$ is irreflexive its graph completely avoids the line $y=x$.
+
+如果一个关系 $\relR$ 是非自反的，它的图像完全避开直线 $y=x$。
+
+Note that the reflexive and irreflexive properties are defined with a single quantified
+variable.
+
+注意，自反和非自反性质是用单个量化变量定义的。
+
+Symmetry and anti-symmetry require two universally quantified variables for
+their definitions.
+
+对称性和反对称性在其定义中需要两个全称量化的变量。
+
+\begin{quote}
+A relation $\relR$ on a set $S$ is {\bf symmetric} iff
+\[ \forall a,b \in S, \quad a \relR b \;
+\implies \; b \relR a. \] 
+\end{quote}
+
+\begin{quote}
+集合 $S$ 上的关系 $\relR$ 是{\bf 对称的}，当且仅当
+\[ \forall a,b \in S, \quad a \relR b \;
+\implies \; b \relR a. \] 
+\end{quote}
+
+\noindent This can be interpreted in terms of digraphs as follows:  If a connection
+from $a$ to $b$ exists in the digraph of $\relR$, then there must also be a connection
+from $b$ to $a$.
+
+\noindent 这可以用有向图来解释如下：如果在 $\relR$ 的有向图中存在从 $a$ 到 $b$ 的连接，那么也必须存在从 $b$ 到 $a$ 的连接。
+
+In Table~\ref{tab:rel_props} this is interpreted as ``no one-way streets''
+and while that's not quite what it says, that \emph{is} the effect of this definition.
+
+在表~\ref{tab:rel_props}中，这被解释为“没有单行道”，虽然这不是它的字面意思，但这\emph{是}这个定义的效果。
+
+Since \emph{if} a connection exists in one direction, there must also be a connection 
+in the other direction, it follows that we will never see a one-way connection.
+
+因为\emph{如果}一个方向上存在连接，那么另一个方向上也必须存在连接，因此我们永远不会看到单向连接。
+
+Because most of the properties we are studying are defined using conditional statements
+it is often the case that a relation has a property for vacuous reasons.
+
+因为我们研究的大多数性质都是用条件语句定义的，所以关系常常因为空洞的原因而具有某个性质。
+
+When the ``if'' part
+doesn't happen, there's no need for its corresponding ``then'' part to happen either -- the 
+conditional is still true.
+
+当“如果”部分不发生时，其对应的“那么”部分也不需要发生——这个条件语句仍然是真的。
+
+In the context of our discussion on the symmetry property of
+a relation this means that the following digraph \emph{is} the digraph of a symmetric
+relation (although it is neither reflexive nor irreflexive).
+
+在我们讨论关系的对称性质的背景下，这意味着下面的有向图\emph{是}一个对称关系的有向图（尽管它既不是自反的也不是非自反的）。
+
+\begin{center}
+\input{figures/vacuously_symmetric.tex}
+\end{center}
+
+Anti-symmetry is described as meaning ``only one-way streets'' but the definition is given
+as:
+
+反对称性被描述为“只有单行道”，但其定义如下：
+
+\begin{quote}
+A relation $\relR$ on a set $S$ is {\bf anti-symmetric} iff \newline
+\centerline{ $\displaystyle \forall a,b \in S, \quad a \relR b \;
+\land b \relR a \quad \implies \quad a=b$.}
+\end{quote}
+
+\begin{quote}
+集合 $S$ 上的关系 $\relR$ 是{\bf 反对称的}，当且仅当 \newline
+\centerline{ $\displaystyle \forall a,b \in S, \quad a \relR b \;
+\land b \relR a \quad \implies \quad a=b$.}
+\end{quote}
+
+It may be hard at first to understand why the definition we use for anti-symmetry is the one above.
+
+起初可能很难理解为什么我们用上面的定义来定义反对称性。
+
+If one wanted to insure that there were never two-way connections between elements of the set it
+might seem easier to define anti-symmetry as follows:
+
+如果想确保集合元素之间绝不存在双向连接，用以下方式定义反对称性似乎更容易：
+
+\begin{quote}
+(Alternate definition) A relation $\relR$ on a set $S$ is {\bf anti-symmetric} iff \newline
+\centerline{ $\displaystyle \forall a,b \in S, \quad a \relR b \;
+\implies \; b \nrelR a$.}
+\end{quote}
+
+\begin{quote}
+（备用定义）集合 $S$ 上的关系 $\relR$ 是{\bf 反对称的}，当且仅当 \newline
+\centerline{ $\displaystyle \forall a,b \in S, \quad a \relR b \;
+\implies \; b \nrelR a$.}
+\end{quote}
+
+This definition may seem more straight-forward, but it turns out the original definition is
+easier to use in proofs.
+
+这个定义可能看起来更直接，但事实证明，原始定义在证明中更容易使用。
+
+We need to convince ourselves that the (first) definition really
+accomplishes what we want.
+
+我们需要说服自己，（第一个）定义确实达到了我们想要的目的。
+
+Namely, if a relation $\relR$ satisfies the property that
+$\displaystyle \forall a,b \in S, \quad a \relR b \; \land \;
+b \relR a \quad \implies \quad a=b$,
+then there will not actually be any pair of elements that are related in both orders.
+
+即，如果一个关系 $\relR$ 满足性质 $\displaystyle \forall a,b \in S, \quad a \relR b \; \land \; b \relR a \quad \implies \quad a=b$，那么实际上就不会有任何一对元素以两种顺序相关。
+
+One
+way to think about it is this: suppose that $a$ and $b$ are distinct elements of $S$ and
+that both $a \relR b$ and $b \relR a$ are true.
+
+一种思考方式是：假设 $a$ 和 $b$ 是 $S$ 的不同元素，并且 $a \relR b$ 和 $b \relR a$ 都为真。
+
+The property now guarantees that $a=b$
+which contradicts the notion that $a$ and $b$ are distinct.
+
+这个性质现在保证了 $a=b$，这与 $a$ 和 $b$ 是不同的这个概念相矛盾。
+
+This is a miniature proof
+by contradiction; if you assume there \emph{are} a pair of distinct elements that are
+related in both orders you get a contradiction, so there \emph{aren't}!
+
+这是一个小型的反证法；如果你假设\emph{存在}一对不同的元素以两种顺序相关，你就会得到一个矛盾，所以\emph{不存在}！
+
+A funny thing about the anti-symmetry property is this:  When it is true of a relation it 
+is \emph{always} vacuously true!
+
+关于反对称性质，有一个有趣的事情：当一个关系具有这个性质时，它\emph{总是}空洞地为真！
+
+The property is engineered in such a way that when it is
+true, it forces that the statement in its antecedent never really happens.
+
+这个性质被设计成这样一种方式，当它为真时，它迫使其先行条件中的陈述永远不会真正发生。
+
+Transitivity is an extremely useful property as witnessed by the fact that both equivalence
+relations and ordering relations must have this property.
+
+传递性是一个极其有用的性质，等价关系和序关系都必须具有这个性质就证明了这一点。
+
+When speaking of the transitive
+property of equality we say ``Two things that are equal to a third, are equal to each other.''
+When dealing with ordering we may encounter statements like the following.
+
+在谈到等号的传递性时，我们说“等于同一个量的两个量相等”。在处理排序时，我们可能会遇到如下陈述。
+
+``Since `Aardvark' precedes `Bulwark'  %
+in the dictionary, and since `Bulwark' precedes `Catastrophe', it is plainly true that `Aardvark'  %
+comes before `Catastrophe' in the dictionary.''
+
+“因为‘Aardvark’在字典中排在‘Bulwark’之前，而‘Bulwark’又排在‘Catastrophe’之前，所以很明显‘Aardvark’在字典中排在‘Catastrophe’之前。”
+
+Again, the definition of transitivity involves a conditional.
+
+再次，传递性的定义涉及一个条件句。
+
+Also, transitivity may be viewed 
+as the most complicated of the properties we've been studying;
+it takes three universally 
+quantified variables to state the property.
+
+此外，传递性可能被视为我们研究过的性质中最复杂的；它需要三个全称量化的变量来陈述这个性质。
+
+\begin{quote}
+A relation $\relR$ on a set $S$ is {\bf transitive} iff \newline
+\centerline{ $\displaystyle \forall a,b,c \in S, \quad a \relR b \;
+\land \; b \relR c \quad \implies \quad a \relR c$ }
+\end{quote}
+
+\begin{quote}
+集合 $S$ 上的关系 $\relR$ 是{\bf 传递的}，当且仅当 \newline
+\centerline{ $\displaystyle \forall a,b,c \in S, \quad a \relR b \;
+\land \; b \relR c \quad \implies \quad a \relR c$ }
+\end{quote}
+
+We paraphrased transitivity as  ``Whenever there's a roundabout route, there's a direct route.''
+In particular, what the definition says is that \emph{if} there's a connection from $a$ to $b$ and from
+$b$ to $c$ (the roundabout route from $a$ to $c$) then there must be a connection from $a$ to $c$ (the direct
+route).
+
+我们将传递性解释为“只要有迂回路线，就有直达路线”。特别地，这个定义说的是，\emph{如果}存在从 $a$ 到 $b$ 和从 $b$ 到 $c$ 的连接（从 $a$ 到 $c$ 的迂回路线），那么就必须存在从 $a$ 到 $c$ 的连接（直达路线）。
+
+You'll really need to watch out for relations that are transitive for vacuous reasons.
+
+你真的需要注意那些因为空洞的原因而具有传递性的关系。
+
+So long as one
+never has three elements $a$, $b$ and $c$ with $a \relR b$ and $b \relR c$ the statement that defines
+transitivity is automatically true.
+
+只要不存在三个元素 $a$、$b$ 和 $c$ 满足 $a \relR b$ 和 $b \relR c$，那么定义传递性的陈述就自动为真。
+
+A very useful way of thinking about these various properties that relations may have is in terms of 
+what \emph{doesn't} happen when a relation has them.
+
+思考关系可能具有的这些不同性质的一个非常有用的方法是，从当关系具有这些性质时，什么事情\emph{不会}发生。
+
+Before we proceed, it is important that 
+you do the following
+
+在我们继续之前，你必须完成以下任务
+
+\begin{exer}
+Find logical negations for the formal properties defining each of the five
+properties.
+\end{exer}
+
+\begin{exer}
+找出定义这五个性质的每个形式性质的逻辑否定。
+\end{exer}
+
+\newpage
+
+If a relation $\relR$ is reflexive we will never see a node that doesn't have a loop.
+
+如果一个关系 $\relR$ 是自反的，我们永远不会看到一个没有环的节点。
+
+\begin{center}
+\input{figures/not_reflexive.tex}
+\end{center}
+
+\vfill
+
+If a relation $\relR$ is irreflexive we will never see a node that \emph{does} have a loop!
+
+如果一个关系 $\relR$ 是非自反的，我们永远不会看到一个\emph{有}环的节点！
+
+\begin{center}
+\input{figures/not_irreflexive.tex}
+\end{center}
+
+\vfill
+
+If a relation $\relR$ is symmetric we will never see a pair of nodes that are connected in one
+direction only.
+
+如果一个关系 $\relR$ 是对称的，我们永远不会看到一对只在一个方向上连接的节点。
+
+\begin{center}
+\input{figures/not_symmetric.tex}
+\end{center}
+
+\vfill
+
+\newpage
+
+If a relation $\relR$ is anti-symmetric we will never see a pair of nodes that are connected in both
+directions.
+
+如果一个关系 $\relR$ 是反对称的，我们永远不会看到一对在两个方向上都连接的节点。
+
+\begin{center}
+\input{figures/not_anti-symmetric.tex}
+\end{center}
+
+\vfill
+
+If a relation $\relR$ is transitive the thing we will never see is a bit harder to describe.
+
+如果一个关系 $\relR$ 是传递的，我们永远不会看到的东西就有点难描述了。
+
+There will never be a pair of arrows meeting head to tail \emph{without} there also being an
+arrow going from the tail of the first to the head of the second.
+
+绝不会有一对箭头首尾相接，而\emph{没有}一条从第一个箭头的尾部指向第二个箭头的头部的箭头。
+
+\begin{center}
+\input{figures/not_transitive.tex}
+\end{center}
+
+\vfill
+
+\newpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{rel-zh/properties-exer.tex}
+
+\newpage
+
+\section{Equivalence relations 等价关系}
+\label{sec:eq_rel}
+
+The main idea of an equivalence relation is that it is something like
+equality, but not quite.
+
+等价关系的主要思想是，它有点像等号，但又不完全是。
+
+Usually there is some property that 
+we can name, so that equivalent things share that property.
+
+通常会有某个我们可以命名的性质，使得等价的事物共享该性质。
+
+For 
+example Albert Einstein and Adolf Eichmann were two entirely
+different human beings, if you consider all the different criteria
+that one can use to distinguish human beings there is little they
+have in common.
+
+例如，阿尔伯特·爱因斯坦和阿道夫·艾希曼是两个完全不同的人，如果你考虑所有可以用来区分人类的不同标准，他们几乎没有共同之处。
+
+But, if the only thing one was interested in was
+a person's initials, one would have to say that Einstein and Eichmann
+were equivalent.
+
+但是，如果一个人唯一感兴趣的是一个人的姓名首字母，那么就不得不说爱因斯坦和艾希曼是等价的。
+
+Future examples of equivalence relations will
+be less frivolous\ldots  But first, the formal definition:
+
+未来的等价关系例子将不那么轻浮……但首先，是正式定义：
+
+\begin{defi} A relation $\relR$ on a set $S$ is an \index{equivalence relation}\emph{equivalence relation}
+iff $\relR$ is reflexive, symmetric and transitive.
+\end{defi}
+
+\begin{defi} 集合 $S$ 上的一个关系 $\relR$ 是一个\index{equivalence relation}\emph{等价关系}，当且仅当 $\relR$ 是自反的、对称的和传递的。
+\end{defi}
+
+Probably the most important equivalence relation we've seen to date
+is ``congruence mod $m$'' which we will denote using the symbol $\equiv_m$.
+
+可能我们迄今为止见过的最重要的等价关系是“模 $m$ 同余”，我们将用符号 $\equiv_m$ 来表示它。
+
+This relation may even be more interesting than
+actual equality!   The reason for this seemingly odd statement is that
+``congruence mod $m$'' gives us non-trivial \index{equivalence class} equivalence classes.
+
+这个关系甚至可能比实际的等号更有趣！这个看似奇怪的说法的原因是，“模 $m$ 同余”给了我们非平凡的\index{equivalence class}等价类。
+
+Equivalence
+classes are one of the most potent ideas in modern mathematics and it's essential
+that you understand them, so we'll start with an example.
+
+等价类是现代数学中最有力的思想之一，理解它们至关重要，所以我们从一个例子开始。
+
+Consider congruence
+mod $5$.  What other numbers is (say) 11 equivalent to?  There are many!
+
+考虑模5同余。比如说，11与哪些其他数字等价？有很多！
+
+Any 
+number that leaves the same remainder as 11 when we divide it by 5.  This collection
+is called the equivalence class of 11 and is usually denoted using an overline --- 
+$\overline{11}$, another notation that is often seen for the set of things equivalent 
+to 11 is $11/\equiv_5$.
+
+任何除以5余数与11相同的数字。这个集合被称为11的等价类，通常用上划线表示——$\overline{11}$，另一种常见的表示与11等价的集合的符号是$11/\equiv_5$。
+
+\[ \overline{11} = \{ \ldots, -9, -4, 1, 6, 11, 16, \ldots \} \]
+
+It's easy to see that we will get the exact same set if we choose any other element
+of the equivalence class (in place of 11), which leads us to an infinite list of set
+equalities,
+
+很容易看出，如果我们选择等价类中的任何其他元素（代替11），我们将得到完全相同的集合，这导致了一个无限的集合等式列表，
+
+\[   \overline{1} = \overline{6} = \overline{11} = \ldots \]
+
+\noindent And similarly, 
+
+\noindent 以及类似地，
+
+\[   \overline{2} = \overline{7} = \overline{12} = \ldots \]
+
+\noindent In fact, there are really just 5 different sets that form the
+equivalence classes mod 5:  $\overline{0}$, $\overline{1}$, $\overline{2}$, $\overline{3}$, 
+and $\overline{4}$.
+
+\noindent 事实上，构成模5等价类的只有5个不同的集合：$\overline{0}$, $\overline{1}$, $\overline{2}$, $\overline{3}$, 和 $\overline{4}$。
+
+(Note: we have followed the usual convention of using the smallest
+ possible non-negative integers as the representatives for our equivalence classes.)
+
+（注意：我们遵循了使用最小的非负整数作为等价类代表的通常惯例。）
+
+What we've been discussing here is one of the first examples of a \index{quotient structure}
+\emph{quotient structure}.
+
+我们在这里讨论的是\index{quotient structure}\emph{商结构}的最初例子之一。
+
+We start with the integers and ``mod out'' by an equivalence relation.
+
+我们从整数开始，通过一个等价关系进行“模除”。
+
+In doing so, we
+``move to the quotient'' which means (in this instance) that we go from $\Integers$ to a much simpler set
+having only five elements: $\{ \overline{0}, \overline{1}, \overline{2}, \overline{3}, 
+\overline{4} \}$.
+
+这样做，我们“移到商集”，这意味着（在这种情况下）我们从 $\Integers$ 转移到一个更简单的集合，它只有五个元素：$\{ \overline{0}, \overline{1}, \overline{2}, \overline{3}, \overline{4} \}$。
+
+In moving to the quotient we will generally lose a lot of information, 
+but greatly highlight some particular feature -- in this example, properties related to 
+divisibility by 5.
+
+在转移到商集的过程中，我们通常会丢失大量信息，但会极大地凸显某个特定特征——在这个例子中，就是与5的可除性相关的性质。
+ 
+Given some equivalence relation $\relR$ defined on a set $S$ the set of equivalence classes
+of $S$ under $\relR$ is denoted $S/\relR$ (which is read ``$S$ mod $\relR$'').
+
+给定定义在集合 $S$ 上的某个等价关系 $\relR$，$S$ 在 $\relR$ 下的等价类集合记为 $S/\relR$（读作“$S$ 模 $\relR$”）。
+
+This use of the
+slash -- normally reserved for division -- shouldn't cause any confusion since those aren't 
+numbers on either side of the slash but rather a set and a relation.
+
+这种斜杠的用法——通常为除法保留——不应引起任何混淆，因为斜杠两边的不是数字，而是一个集合和一个关系。
+
+This
+notation may also clarify why some people denote the equivalence classes above
+by $0/\equiv_5$, $1/\equiv_5$, $2/\equiv_5$, $3/\equiv_5$ and  $4/\equiv_5$.
+
+这个符号也可能阐明了为什么有些人将上面的等价类表示为 $0/\equiv_5$, $1/\equiv_5$, $2/\equiv_5$, $3/\equiv_5$ 和 $4/\equiv_5$。
+
+The set of equivalence
+classes forms a \index{partition} \emph{partition} of the set $S$.
+
+等价类的集合构成了集合 $S$ 的一个\index{partition}\emph{划分}。
+
+\begin{defi} A \emph{partition} $P$ of a set $S$ is a set of sets such that
+
+\[ S = \bigcup_{X \in P} X \qquad \mbox{and} \qquad %
+\forall X, Y \in P, \;
+X \neq Y \, \implies \, X \cap Y = \emptyset.
+\]
+
+\end{defi}
+
+\begin{defi} 一个集合 $S$ 的\emph{划分} $P$ 是一个集合的集合，使得
+
+\[ S = \bigcup_{X \in P} X \qquad \mbox{且} \qquad %
+\forall X, Y \in P, \;
+X \neq Y \, \implies \, X \cap Y = \emptyset.
+\]
+
+\end{defi}
+ 
+In words, if you take the union of all the pieces of the partition you'll get the
+set $S$, and any pair of sets from the partition that aren't identical are disjoint.
+
+换句话说，如果你取划分中所有部分的并集，你会得到集合 $S$，并且划分中任何一对不相同的集合都是不相交的。
+
+Partitions are an inherently useful way of looking at things, although in the real world
+there are often problems (sets we thought were disjoint turn out to have elements in common,
+or we discover something that doesn't fit into any of the pieces of our partition), in
+mathematics we usually find that partitions do just what we would want them to do.
+
+划分是看待事物的一种内在有用的方式，尽管在现实世界中常常存在问题（我们认为不相交的集合结果有共同的元素，或者我们发现某个东西不适合我们划分的任何部分），在数学中我们通常发现划分正如我们所愿。
+
+Partitions divide some set up into a number of convenient pieces in such a way that we're
+guaranteed that every element of the set is in one of the pieces and also so that none of
+the pieces overlap.
+
+划分将某个集合分成若干个方便的部分，这样我们保证集合中的每个元素都在其中一个部分中，并且这些部分之间没有重叠。
+
+Partitions are a useful way of dissecting sets, and equivalence relations
+(via their equivalence classes) give us an easy way of creating partitions --
+usually with some additional structure to boot!
+
+划分是剖析集合的一种有用方法，而等价关系（通过其等价类）为我们提供了一种创建划分的简单方法——通常还带有一些额外的结构！
+
+The 
+properties that make a relation an equivalence relation (reflexivity, symmetry and 
+transitivity) are designed to ensure that equivalence classes exist and do provide us
+with the desired partition.
+
+使关系成为等价关系的性质（自反性、对称性和传递性）被设计用来确保等价类的存在，并为我们提供所需的划分。
+
+For the beginning proof writer this all may seem very complicated,
+but take heart!
+
+对于初学证明的人来说，这一切可能看起来非常复杂，但请振作起来！
+
+Most of the work has already been done for you by those who created
+the general theory of equivalence relations and quotient structures.
+
+大部分工作已经由那些创建等价关系和商结构一般理论的人为你完成了。
+
+All you have
+to do (usually) is prove that a given relation is an equivalence relation by verifying
+that it is indeed reflexive, symmetric and transitive.
+
+你（通常）所要做的就是通过验证一个给定的关系确实是自反的、对称的和传递的，来证明它是一个等价关系。
+
+Let's have a look at another
+example.
+
+我们来看另一个例子。
+
+In Number Theory, the \index{square-free part, of an integer} square-free part of an integer is what remains after we divide-out
+the largest perfect square that divides it.
+
+在数论中，一个整数的\index{square-free part, of an integer}无平方因子部分是指我们将能整除它的最大完全平方数除掉后剩下的部分。
+
+(This is also known as the 
+\index{radical, of an integer}\emph{radical} of an integer.)  
+The following table gives the
+square-free part, $sf(n)$, for the first several values of $n$.
+
+（这也被称为整数的\index{radical, of an integer}\emph{根基}。）
+下表给出了前几个 $n$ 值的无平方因子部分 $sf(n)$。
+
+\begin{center}
+\begin{tabular}{c|cccccccccccccccccccc}
+$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+$sf(n)$ & 1 & 2 & 3 & 1& 5 & 6 & 7  & 2  & 1 & 10 & 11  & 3 & 13 & 14 & 15 & 1 & 17 & 2  & 19 & 5 \\
+\end{tabular}
+\end{center}  
+
+It's easy to compute the square-free part of an integer if you 
+know its prime factorization
+-- just reduce all the exponents mod 2.  For example\footnote{This is the size of largest 
+sporadic finite simple group, known as ``the Monster.''}
+
+如果你知道一个整数的素数分解，计算它的无平方因子部分就很容易了——只需将所有指数模2。例如\footnote{这是被称为“魔群”的最大的散在有限单群的大小。}
+
+\begin{gather*} 
+808017424794512875886459904961710757005754368000000000 \\ 
+ = 2^{46}\cdot 3^{20}\cdot 5^9\cdot7^6\cdot 11^2\cdot 13^3\cdot 17
+\cdot 19\cdot 23\cdot 29\cdot 31\cdot 41\cdot 47\cdot 59\cdot 71
+\end{gather*}
+
+\noindent the square-free part of this number is 
+
+\noindent 这个数的无平方因子部分是
+
+\begin{gather*} 
+5\cdot 13\cdot 17\cdot 19\cdot 23\cdot 29\cdot 31\cdot 41\cdot 47\cdot 59\cdot 71\\
+ = 3504253225343845
+\end{gather*}
+
+\noindent which, while it is still quite a large number, is certainly a good
+bit smaller than the original!
+
+\noindent 虽然这仍然是一个相当大的数，但肯定比原来的数小了不少！
+
+We will define an equivalence relation $\relS$ on the set of natural numbers
+by using the square-free part:  
+
+我们将通过使用无平方因子部分，在自然数集合上定义一个等价关系 $\relS$：
+
+\[ \forall x, y \in \Naturals, \;
+x \relS y \; \iff sf(x) = sf(y) \]
+
+In other words, two natural numbers will be $\relS$-related if they have the
+same square-free parts.
+
+换句话说，如果两个自然数有相同的无平方因子部分，它们就是$\relS$相关的。
+
+\begin{exer}
+What is $1/\relS$?
+\end{exer}
+
+\begin{exer}
+$1/\relS$是什么？
+\end{exer}
+
+Before we proceed to the proof that $\relS$ is an equivalence relation we'd like 
+you to be cognizant of a bigger picture as you read.
+
+在我们继续证明 $\relS$ 是一个等价关系之前，我们希望你在阅读时能意识到一个更大的图景。
+
+Each of the three parts of
+the proof will have a similar structure.
+
+证明的三个部分都将有相似的结构。
+
+We will show that $\relS$ has one of the 
+three properties by using the fact that $=$ has that property.
+
+我们将通过利用 $=$ 具有该性质的事实来证明 $\relS$ 具有这三个性质之一。
+
+In more advanced
+work this entire proof could be omitted or replaced by the phrase ``$\relS$ inherits
+reflexivity, symmetry and transitivity from equality, and is therefore an equivalence
+relation.''  (Nice trick isn't it?  But before you're allowed to use it you have
+to show that you can do it the hard way \ldots)
+
+在更高级的工作中，整个证明可以被省略或替换为“$\relS$ 从等号继承了自反性、对称性和传递性，因此是一个等价关系。”（这招不错吧？但在你被允许使用它之前，你必须展示你能用更难的方法做到……）
+
+\begin{thm} 
+The relation $\relS$ defined by
+\[ \forall x, y \in \Naturals, \;
+x \relS y \; \iff sf(x) = sf(y) \]
+\noindent is an equivalence relation on $\Naturals$.
+\end{thm}
+
+\begin{thm} 
+由
+\[ \forall x, y \in \Naturals, \;
+x \relS y \; \iff sf(x) = sf(y) \]
+\noindent 定义的关系 $\relS$ 是 $\Naturals$ 上的一个等价关系。
+\end{thm}
+
+\begin{proof}
+We must show that $\relS$ is reflexive, symmetric and transitive.
+
+我们必须证明 $\relS$ 是自反的、对称的和传递的。
+
+{\bf reflexive} --- (Here we must show that $\forall x \in \Naturals, \; x \relS x$.)
+Let $x$ be an arbitrary natural number.
+
+{\bf 自反性} --- （这里我们必须证明 $\forall x \in \Naturals, \; x \relS x$。）
+设 $x$ 是一个任意的自然数。
+
+Since $sf(x) = sf(x)$ (this is the reflexive 
+property of $=$) it follows from the definition of $\relS$ that $x \relS x$.
+
+因为 $sf(x) = sf(x)$（这是 $=$ 的自反性），所以根据 $\relS$ 的定义，可以得出 $x \relS x$。
+
+{\bf symmetric} --- (Here we must show that  $\forall x,y \in \Naturals, \; x \relS y \, 
+\implies \, y \relS x$.)
+Let $x$ and $y$ be arbitrary natural numbers, and further suppose that $x \relS y$.
+
+{\bf 对称性} --- （这里我们必须证明 $\forall x,y \in \Naturals, \; x \relS y \, \implies \, y \relS x$。）
+设 $x$ 和 $y$ 是任意的自然数，并进一步假设 $x \relS y$。
+
+Since $x \relS y$, it follows from the definition of $\relS$ that $sf(x) = sf(y)$,
+obviously then $sf(y) = sf(x)$ (this is the symmetric property of $=$) and so 
+$y \relS x$.
+
+因为 $x \relS y$，所以根据 $\relS$ 的定义，可以得出 $sf(x) = sf(y)$，显然地 $sf(y) = sf(x)$（这是 $=$ 的对称性），因此 $y \relS x$。
+
+{\bf transitive} --- (Here we must show that  $\forall x,y,z \in \Naturals, \; x \relS y \,
+\land \, y \relS z \; \implies \; x \relS z$.)
+Let $x$, $y$ and $z$ be arbitrary natural numbers, and further suppose that both 
+$x \relS y$ and $y \relS z$.
+
+{\bf 传递性} --- （这里我们必须证明 $\forall x,y,z \in \Naturals, \; x \relS y \, \land \, y \relS z \; \implies \; x \relS z$。）
+设 $x$、$y$ 和 $z$ 是任意的自然数，并进一步假设 $x \relS y$ 和 $y \relS z$ 都成立。
+
+From the definition of $\relS$ we deduce that 
+$sf(x) = sf(y)$ and $sf(y) = sf(z)$.
+
+根据 $\relS$ 的定义，我们推断出 $sf(x) = sf(y)$ 且 $sf(y) = sf(z)$。
+
+Clearly, $sf(x) = sf(z)$ (this deduction comes
+from the transitive property of $=$), so $x \relS z$.
+
+
+显然，$sf(x) = sf(z)$（这个推论来自于 $=$ 的传递性），所以 $x \relS z$。
+\end{proof}
+ 
+We'll end this section with an example of an equivalence relation that
+doesn't ``inherit'' the three properties from equality.
+
+我们将以一个不从等号“继承”这三个性质的等价关系的例子来结束本节。
+
+A \index{graph} \emph{graph} is a mathematical structure consisting of
+two sets, a set $V$ of points (a.k.a.\ vertices) and a set\footnote{Technically, $E$ is a so-called
+multiset in many instances -- there may be several edges that connect the same pair of vertices.} $E$ of edges.
+
+一个\index{graph}\emph{图}是一个由两个集合组成的数学结构，一个点集 $V$（也称为顶点）和一个边集\footnote{技术上，在许多情况下，$E$ 是一个所谓的多重集——可能有多条边连接同一对顶点。} $E$。
+
+The elements of $E$ may be either ordered or unordered pairs from $V$.
+
+$E$ 的元素可以是来自 $V$ 的有序对或无序对。
+
+If $E$ consists of ordered pairs we have a \index{digraph} 
+\emph{directed graph} or \emph{digraph} -- the diagrams we have been using to visualize
+relations!
+
+如果 $E$ 由有序对组成，我们就有了一个\index{digraph}\emph{有向图}——我们一直用来可视化关系的图！
+
+If $E$ consists of unordered 
+pairs then we are dealing with an \emph{undirected graph}.
+
+如果 $E$ 由无序对组成，那么我们处理的就是一个\emph{无向图}。
+
+Since the
+undirected case is actually the more usual, if the word ``graph'' appears without
+a modifier it is assumed that we are talking about an undirected graph.
+
+由于无向的情况实际上更常见，如果“图”这个词出现时没有修饰语，就假定我们谈论的是一个无向图。
+
+The previous paragraph gives a relatively precise definition of a graph
+in terms of sets, however the real way to think of graphs is in terms
+of diagrams where a set of dots are connected by paths.
+
+上一段用集合的方式给出了图的一个相对精确的定义，然而，思考图的真正方式是通过图表，其中一组点由路径连接。
+
+(The paths will, 
+of course, need to
+have arrows on them in digraphs.)  Below are a few examples of the 
+diagrams that are used to represent graphs.
+
+（当然，在有向图中，路径上需要有箭头。）下面是一些用来表示图的图表示例。
+
+\begin{center}
+\input{figures/graph_examples.tex}
+\end{center}
+
+Two graphs are said to be \index{graph isomorphism} \emph{isomorphic} if they
+represent the same connections.
+
+如果两个图表示相同的连接，则称它们是\index{graph isomorphism}\emph{同构的}。
+
+There must first of all be a one-to-one correspondence
+between the vertices of the two graphs, and further, a pair of vertices in one
+graph are connected by some number of edges if and only if the corresponding vertices in the other graph
+are connected by the same number of edges.
+
+首先，两个图的顶点之间必须存在一一对应关系，此外，一个图中的一对顶点由若干条边连接，当且仅当另一个图中对应的顶点由相同数量的边连接。
+
+\begin{exer}
+The four examples of graphs above actually are two pairs of isomorphic graphs.
+Which pairs are isomorphic?
+\end{exer}
+
+\begin{exer}
+上面四个图的例子实际上是两对同构的图。哪几对是同构的？
+\end{exer}
+
+This word ``isomorphic'' has a nice etymology.  It means ``same shape.''  Two graphs are
+isomorphic if they have the same shape.
+
+“同构”这个词有一个很好的词源。它的意思是“相同的形状”。如果两个图有相同的形状，那么它们是同构的。
+
+We don't have the tools right now to do a formal
+proof (in fact we need to look at some further prerequisites before we can really precisely
+define isomorphism), but isomorphism of graphs is an equivalence relation.
+
+我们现在还没有工具来进行正式的证明（事实上，在我们可以真正精确地定义同构之前，我们需要看一些进一步的先决条件），但图的同构是一个等价关系。
+
+Let's at least 
+verify this informally.
+
+我们至少非正式地验证一下。
+
+{\bf Reflexivity}  Is a graph isomorphic to itself?
+
+{\bf 自反性} 一个图与自身同构吗？
+
+That is, does a graph have the ``same 
+shape'' as itself?  Clearly!
+
+也就是说，一个图是否与自身有“相同的形状”？显然是！
+
+{\bf Symmetry}  If graph $A$ is isomorphic to graph $B$, is it also the case that graph $B$
+is isomorphic to graph $A$?
+
+{\bf 对称性} 如果图A与图B同构，那么图B也与图A同构吗？
+
+I.e.\ if $A$ has the ``same shape'' as $B$, doesn't $B$ have the
+same shape as $A$?  Of course!
+
+也就是说，如果A和B有“相同的形状”，那么B和A不也有相同的形状吗？当然！
+
+{\bf Transitivity}  Well \ldots the answer here is going to be ``Naturally!'' but let's wait
+to delve into this issue when we have a usable formal definition for graph isomorphism.
+
+{\bf 传递性} 嗯……这里的答案将是“自然是！”但让我们等到有了一个可用的图同构的正式定义时再深入探讨这个问题。
+
+The
+question at this stage should be clear though: If $A$ is isomorphic to $B$ and $B$ is isomorphic 
+to $C$, then isn't $A$ isomorphic to $C$?
+
+然而，现阶段的问题应该是清楚的：如果A同构于B，B同构于C，那么A不也同构于C吗？
+
+\newpage
+
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{rel-zh/equiv-exer.tex}
+
+\newpage
+
+\section{Ordering relations 序关系}
+\label{sec:ord_rel}
+
+The prototype for ordering relations is $\leq$.  Although a case
+could be made for using $<$ as the prototypical ordering relation.
+
+序关系的原型是 $\leq$。尽管也有人主张使用 $<$ 作为原型序关系。
+
+These two relations differ in one important sense: $\leq$ is reflexive
+and $<$ is irreflexive.
+
+这两种关系在一个重要意义上有所不同：$\leq$ 是自反的，而 $<$ 是反自反的。
+
+Various authors, having made different 
+choices as to which of these is the more prototypical, have
+defined ordering relations in slightly different ways.
+
+不同的作者在选择哪一个更具原型性上做出了不同的选择，因此以略微不同的方式定义了序关系。
+
+The 
+majority view seems to be that an ordering relation is
+reflexive (which means that 
+ordering relations are modeled after $\leq$).
+
+主流观点似乎认为序关系是自反的（这意味着序关系是模仿 $\leq$ 建立的）。
+
+We would really like to take the contrary position -- we always
+root for the underdog -- but one of our favorite ordering
+relation (divisibility) is reflexive and it would be eliminated
+if we made the other choice\footnote{If you insist on making the other %
+choice, you will have a ``strict ordering relation'' a.k.a.\ an ``irreflexive %
+ordering relation''}.
+
+我们真的很想采取相反的立场——我们总是支持弱者——但我们最喜欢的一个序关系（整除性）是自反的，如果我们做出另一个选择，它将被排除在外\footnote{如果你坚持做出另一个选择，你将得到一个“严格序关系”，也就是“反自反序关系”。}。
+
+So\ldots
+
+所以……
+
+\begin{defi}
+A relation $\relR$ on a set $S$ is an 
+\index{ordering relation}\emph{ordering relation}
+iff $\relR$ is reflexive, anti-symmetric and transitive.
+\end{defi}
+
+\begin{defi}
+一个集合 $S$ 上的关系 $\relR$ 是一个
+\index{ordering relation}\emph{序关系}
+当且仅当 $\relR$ 是自反的、反对称的和传递的。
+\end{defi}
+
+Now, we've used $\leq$ to decide what properties an ordering relation
+should have, but we should point out that most ordering relations
+don't do nearly as good a job as $\leq$ does.
+
+现在，我们已经用 $\leq$ 来决定一个序关系应该具有哪些性质，但我们应该指出，大多数序关系远不如 $\leq$ 做得好。
+
+The $\leq$ relation
+imposes what is known as a \index{total order}\emph{total order}
+on the sets that it acts on (you should note that it can't be used
+to compare complex numbers, but it can be placed between reals or
+any of the sets of numbers that are contained in $\Reals$.)  Most
+ordering relations only create what is known as a \index{partial order}
+\emph{partial order} on the sets they act on.
+
+关系 $\leq$ 在其作用的集合上施加了一种被称为 \index{total order}\emph{全序} 的结构（你应该注意它不能用来比较复数，但可以用于实数或任何包含在 $\Reals$ 中的数集之间）。大多数序关系只在它们作用的集合上创建一种被称为 \index{partial order}\emph{偏序} 的结构。
+
+In a total ordering
+(a.k.a.\ a linear ordering) every pair of elements can be compared
+and we can use the ordering relation to decide which order they go
+in.  In a partial ordering there may be elements that are incomparable.
+
+在全序（也称为线性排序）中，每一对元素都可以进行比较，我们可以使用序关系来决定它们的顺序。在偏序中，可能存在不可比较的元素。
+
+\begin{defi}
+If $x$ and $y$ are elements of a set $S$ and $\relR$ is an ordering
+relation on $S$ then we say $x$ and $y$ are \emph{comparable} if
+$x\relR y \; \lor \; y\relR x$.
+\end{defi}
+
+\begin{defi}
+如果 $x$ 和 $y$ 是集合 $S$ 中的元素，且 $\relR$ 是 $S$ 上的一个序关系，那么如果 $x\relR y \; \lor \; y\relR x$ 成立，我们就说 $x$ 和 $y$ 是\emph{可比的}。
+\end{defi}
+
+\begin{defi}
+If $x$ and $y$ are elements of a set $S$ and $\relR$ is an ordering
+relation on $S$ then we say $x$ and $y$ are \emph{incomparable} if
+neither $x\relR y$ nor $y\relR x$ is true.
+\end{defi}
+
+\begin{defi}
+如果 $x$ 和 $y$ 是集合 $S$ 中的元素，且 $\relR$ 是 $S$ 上的一个序关系，那么如果 $x\relR y$ 和 $y\relR x$ 都不成立，我们就说 $x$ 和 $y$ 是\emph{不可比的}。
+\end{defi}
+
+Consider the set $S = \{1, 2, 3, 4, 6, 12 \}$.
+
+考虑集合 $S = \{1, 2, 3, 4, 6, 12 \}$。
+
+If we look at the
+relation $\leq$ on this set we get the following digraph.
+
+如果我们考察这个集合上的关系 $\leq$，我们会得到以下有向图。
+
+\begin{center}
+\input{figures/total_order.tex}
+\end{center}
+
+On the other hand, perhaps you noticed these numbers are the 
+divisors of $12$.
+
+另一方面，也许你注意到了这些数是 $12$ 的因子。
+
+The divisibility relation will give us our
+first example of a partial order.
+
+整除关系将为我们提供第一个偏序的例子。
+
+\begin{center}
+\input{figures/partial_order.tex}
+\end{center}
+
+\begin{exer}
+Which elements in the above partial order are incomparable?
+\end{exer}
+
+\begin{exer}
+在上述偏序中，哪些元素是不可比的？
+\end{exer}
+
+A set together with an ordering relation creates a mathematical 
+structure known as a \index{partially ordered set}\emph{partially
+ordered set}.
+
+一个集合与一个序关系共同构成一个数学结构，称为 \index{partially ordered set}\emph{偏序集}。
+
+Since that is a bit of a mouthful, the abbreviated
+form \index{poset}\emph{poset} is actually heard more commonly.
+
+因为这个词有点拗口，所以其缩写形式 \index{poset}\emph{poset} 实际上更常用。
+
+If one wishes to refer to a poset it is necessary to identify
+both the set and the ordering relation.
+
+如果要指代一个偏序集，必须同时指明集合和序关系。
+
+Thus, if $S$ is a set
+and $\relR$ is an ordering relation, we write $(S, \relR)$ to
+denote the corresponding poset.
+
+因此，如果 $S$ 是一个集合，$\relR$ 是一个序关系，我们用 $(S, \relR)$ 来表示相应的偏序集。
+
+The digraphs given above for two posets having the same underlying
+set provide an existence proof -- the same set may have different 
+orders imposed upon it.
+
+上面给出的两个具有相同基础集的偏序集的有向图提供了一个存在性证明——同一个集合可以被赋予不同的序。
+
+They also highlight another issue -- these
+digraphs for ordering relations get pretty crowded!
+
+它们也凸显了另一个问题——这些序关系的有向图会变得非常拥挤！
+
+\index{Hasse diagrams}
+Hasse diagrams
+for posets (named after the famous German mathematician 
+\index{Hasse, Helmut}Helmut Hasse) are a way of displaying all the 
+information in a poset's digraph, but much more succinctly.
+
+\index{Hasse diagrams}
+偏序集的哈斯图（以著名的德国数学家 \index{Hasse, Helmut}赫尔穆特·哈斯命名）是一种以更简洁的方式显示偏序集有向图中所有信息的方法。
+
+There
+are features of a Hasse diagram that correspond to each of the 
+properties that an ordering relation must have.
+
+哈斯图的特征对应于序关系必须具有的每一种性质。
+
+Since ordering relations are always reflexive, there will always 
+be loops at every vertex in the digraph.
+
+由于序关系总是自反的，所以在有向图的每个顶点上总会有循环。
+
+In a Hasse diagram we
+leave out the loops.
+
+在哈斯图中，我们省略了这些循环。
+
+Since ordering relations are anti-symmetric, every edge in the digraph
+will go in one direction or the other.
+
+由于序关系是反对称的，有向图中的每条边都会有一个方向。
+
+In a Hasse diagram we arrange
+the vertices so that that direction is \emph{upward} -- that way we
+can leave out all the arrowheads without losing any information.
+
+在哈斯图中，我们将顶点排列成使方向\emph{向上}——这样我们就可以省略所有的箭头而不丢失任何信息。
+
+The final simplification that we make in creating a Hasse diagram for
+a poset has to do with the transitivity property -- we leave out any
+connections that could be deduced because of transitivity.
+
+我们在创建偏序集的哈斯图时所做的最后简化与传递性有关——我们省略了任何因传递性而可以推断出的连接。
+
+Hasse diagrams for the two orderings that we've been discussing are 
+shown in Figure~\ref{fig:hasse_diag}
+
+我们一直在讨论的两种序的哈斯图如图~\ref{fig:hasse_diag}所示。
+
+\begin{figure}[!hbt]
+\input{figures/Hasse_diagram.tex}
+\caption[Some simple Hasse diagrams.]{Hasse diagrams of the set $\{1,2,3,4,6,12\}$ %
+totally ordered by $\leq$ and partially ordered by $\mid$.}
+\caption[一些简单的哈斯图。]{集合 $\{1,2,3,4,6,12\}$ 在 $\leq$ 全序和 $\mid$ 偏序下的哈斯图。}
+\label{fig:hasse_diag} 
+\end{figure}
+
+Often there is some feature of the elements of the set being ordered
+that allows us to arrange a Hasse diagram in ``ranks.''  For example,
+consider ${\mathcal P}(\{1,2,3\})$, the set of all subsets of a three
+element set -- this set can be partially ordered using the $\subseteq$ 
+relation.
+
+通常，被序集合的元素具有某些特征，使我们能够按“秩”来排列哈斯图。例如，考虑 ${\mathcal P}(\{1,2,3\})$，即一个三元素集合的所有子集的集合——这个集合可以用 $\subseteq$ 关系进行偏序。
+
+(Technically, we should verify that this relation is reflexive,
+anti-symmetric and transitive before proceeding, but by now you know
+why subset containment is denoted using a rounded version of $\leq$.)
+Subsets of the same size can't possibly be included one in the other
+unless they happen to be equal!
+
+（从技术上讲，在继续之前我们应该验证这个关系是自反的、反对称的和传递的，但现在你知道为什么子集包含关系用一个圆形的 $\leq$ 符号来表示了。）同样大小的子集不可能一个包含另一个，除非它们恰好相等！
+
+This allows us to draw the Hasse 
+diagram for this set with the nodes arranged in four rows.
+
+这使我们能够将这个集合的哈斯图的节点排列成四行来绘制。
+
+(See Figure~\ref{fig:subset_hasse}.)  
+
+（见图~\ref{fig:subset_hasse}。）
+
+\begin{figure}[!hbtp]
+\input{figures/Hasse_for_subsets.tex}
+\caption[Hasse diagram for $({\mathcal P}(\{1,2,3\}), \subseteq)$.]{Hasse %
+diagram for the power set of $\{1,2,3\}$ partially ordered by %
+set containment.}
+\caption[$({\mathcal P}(\{1,2,3\}), \subseteq)$ 的哈斯图。]{集合 $\{1,2,3\}$ 的幂集在集合包含关系下偏序的哈斯图。}
+\label{fig:subset_hasse} 
+\end{figure}
+
+\begin{exer}
+Try drawing a Hasse diagram for the partially ordered set 
+
+\[ ({\mathcal P}(\{1,2,3,4\}),\subseteq). \]
+
+\end{exer}
+
+\begin{exer}
+尝试为偏序集
+
+\[ ({\mathcal P}(\{1,2,3,4\}),\subseteq) \]
+
+绘制一个哈斯图。
+\end{exer}
+
+
+Posets like $({\mathcal P}(\{1,2,3\}), \subseteq)$ that can be laid out
+in ranks are known as \index{graded poset} \emph{graded posets}.
+
+像 $({\mathcal P}(\{1,2,3\}), \subseteq)$ 这样可以按秩排列的偏序集被称为 \index{graded poset} \emph{分级偏序集}。
+
+Things
+in a graded poset that have the same rank are always incomparable.
+
+在分级偏序集中，具有相同秩的元素总是不可比的。
+
+\begin{defi}
+A \emph{graded poset} is a triple $(S, \relR, \rho)$, where $S$ is a set,
+$\relR$ is an ordering relation, and $\rho$ is a function from $S$ to $\Integers$.
+\end{defi}
+
+\begin{defi}
+一个 \emph{分级偏序集} 是一个三元组 $(S, \relR, \rho)$，其中 $S$ 是一个集合，$\relR$ 是一个序关系，而 $\rho$ 是一个从 $S$到 $\Integers$ 的函数。
+\end{defi}
+
+In the example we've been considering (the graded poset of subsets of a set
+partially ordered by set inclusion), the grading function $\rho$ takes a
+subset to its size.
+
+在我们一直在考虑的例子中（由集合包含关系偏序的子集构成的分级偏序集），分级函数 $\rho$ 将一个子集映射到它的大小。
+
+That is, $\rho(A) = |A|$.  Another nice example of
+a graded poset is the set of divisors of some number partially ordered
+by the divisibility relation ($\mid$).
+
+即 $\rho(A) = |A|$。分级偏序集的另一个很好的例子是某个数的所有因子组成的集合，按整除关系（$\mid$）进行偏序。
+
+In this case the grading function
+takes a number to its total degree -- the sum of all the exponents
+appearing in its prime factorization.
+
+在这种情况下，分级函数将一个数映射到它的总次数——即其素数分解中所有指数的和。
+
+In Figure~\ref{fig:divisors_of_72}
+we show the poset of divisors of $72$ and indicate the grading.
+
+在图~\ref{fig:divisors_of_72}中，我们展示了 $72$ 的因子的偏序集，并标明了分级。
+
+\begin{figure}[!hbtp]
+\input{figures/divisors_of_72.tex}
+\caption[Hasse diagram of divisors of 72.]{Hasse %
+diagram for the divisors of $72$, partially ordered by %
+divisibility. This is a graded poset.}
+\caption[72的因子的哈斯图。]{72的因子的哈斯图，按整除性偏序。这是一个分级偏序集。}
+\label{fig:divisors_of_72} 
+\end{figure}
+
+We will end this section by giving a small collection of terminology
+relevant to partially ordered sets.
+
+我们将通过介绍一些与偏序集相关的术语来结束本节。
+
+A \index{chain}\emph{chain} in a poset is a subset of the elements, all 
+of which are comparable.
+
+偏序集中的一个 \index{chain}\emph{链} 是元素的一个子集，其中所有元素都是可比的。
+
+If you restrict your attention to a chain within 
+a poset, you will be looking at a total order.
+
+如果你将注意力限制在偏序集内的一条链上，你将看到一个全序。
+
+An \index{antichain}\emph{antichain} in a poset is a subset
+of the elements, none of which are comparable.
+
+偏序集中的一个 \index{antichain}\emph{反链} 是元素的一个子集，其中任意两个元素都是不可比的。
+
+Thus, for example, a subset
+of elements having the same rank (in a graded poset) is an antichain.
+
+因此，例如，在一个分级偏序集中，具有相同秩的元素子集就是一个反链。
+
+Chains and antichains are said to be \emph{maximal} if it
+is not possible to add further elements to them (whilst maintaining the 
+properties that make them chains and/or antichains).
+
+如果不能向链和反链中添加更多元素（同时保持其作为链或反链的性质），则称它们是\emph{极大的}。
+
+An element $x$, that 
+appears above another element $y$ -- and connected to it -- in a Hasse
+diagram is said to \index{cover, in a poset}\emph{cover} it.
+
+在哈斯图中，如果一个元素 $x$ 出现在另一个元素 $y$ 的上方——并与之相连——则称 $x$ \index{cover, in a poset}\emph{覆盖} $y$。
+
+In this situation
+you may also say that $x$ is an \index{successor}\emph{immediate successor} of
+$y$.
+
+在这种情况下，你也可以说 $x$ 是 $y$ 的一个 \index{successor}\emph{直接后继}。
+
+A \index{maximal element, in a poset}\emph{maximal element} is an element that is not covered by any other element.
+
+一个 \index{maximal element, in a poset}\emph{极大元} 是不被任何其他元素覆盖的元素。
+
+Similarly, a 
+\index{minimal element, in a poset}\emph{minimal element} is an element that is not a cover of any other element.
+
+类似地，一个 \index{minimal element, in a poset}\emph{极小元} 是不覆盖任何其他元素的元素。
+
+If a chain is maximal, it follows that it
+must contain both a maximal and a minimal element (with respect to the
+surrounding poset).
+
+如果一条链是极大的，那么它必须包含一个极大元和一个极小元（相对于整个偏序集而言）。
+
+The collection of all maximal elements forms an antichain,
+as does (separately) the collection of all minimal elements.
+
+所有极大元的集合构成一个反链，同样地，所有极小元的集合也（单独地）构成一个反链。
+
+Finally,
+we have the notions of \index{greatest element, in a poset} 
+\emph{greatest element} (a.k.a. \index{top, in a poset}top) and 
+\index{least element, in a poset}\emph{least element} (a.k.a. 
+\index{bottom, in a poset}bottom) -- the greatest element is greater than every
+other element in the poset,  the least element is smaller than every other element.
+
+最后，我们有 \index{greatest element, in a poset}\emph{最大元}（也称为 \index{top, in a poset}顶）和 \index{least element, in a poset}\emph{最小元}（也称为 \index{bottom, in a poset}底）的概念——最大元大于偏序集中的所有其他元素，最小元小于所有其他元素。
+
+Please be careful to distinguish these
+concepts from maximal and minimal elements -- a greatest element is 
+automatically maximal, and a least element is always minimal, but it 
+is possible to have a poset with no greatest element that nevertheless 
+has one or more maximal elements, and it is possible to have a poset with no
+least element that has one or more minimal elements.
+
+请注意区分这些概念与极大元和极小元——最大元自动是极大元，最小元总是极小元，但一个偏序集可能没有最大元却有一个或多个极大元，也可能没有最小元却有一个或多个极小元。
+
+In the poset of divisors of $72$, the subset $\{2, 6, 12, 24\}$ is a chain.
+
+在72的因子的偏序集中，子集 $\{2, 6, 12, 24\}$ 是一条链。
+
+Since it would be possible to add both $1$ and $72$ to this chain and still 
+have a chain, this chain is not maximal.
+
+因为可以同时将 $1$ 和 $72$ 添加到这条链中而仍然保持为一条链，所以这条链不是极大的。
+
+(But, of course, 
+$\{1, 2, 6, 12, 24, 72\}$ is.)  On the other hand, 
+$\{8, 12, 18\}$ is an antichain (indeed, this is a maximal antichain).
+
+（但是，当然，$\{1, 2, 6, 12, 24, 72\}$ 是极大的。）另一方面，$\{8, 12, 18\}$ 是一个反链（实际上，这是一个极大反链）。
+
+This poset has both a top and a bottom -- $1$ is the least element
+and $72$ is the greatest element.
+
+这个偏序集既有顶又有底——$1$ 是最小元，$72$ 是最大元。
+
+Notice that the elements which cover
+$1$ (the least element) are the prime divisors of $72$.
+
+注意，覆盖 $1$（最小元）的元素是 $72$ 的素因子。
+
+\newpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{rel-zh/order-exer.tex}
+
+\newpage
+
+\section{Functions 函数}
+\label{sec:functions}
+
+The concept of a function is one of the most useful abstractions
+in mathematics.
+
+函数的概念是数学中最有用的抽象之一。
+
+In fact it is an abstraction that can be further
+abstracted!
+
+事实上，它是一个可以被进一步抽象的抽象！
+
+For instance an \index{operator}\emph{operator} 
+is an entity which takes functions as inputs and produces functions
+as outputs, thus an operator is to functions as functions themselves
+are to numbers.
+
+例如，一个 \index{operator}\emph{算子} 是一个以函数为输入并产生函数为输出的实体，因此算子之于函数，正如函数本身之于数。
+
+There are many operators that you have certainly
+encountered already -- just not by that name.
+
+你肯定已经遇到过许多算子——只是没有用这个名字称呼它们。
+
+One of the most
+famous operators is ``differentiation,'' when you take the derivative
+of some function, the answer you obtain is another function.
+
+最著名的算子之一是“微分”，当你对某个函数求导时，你得到的答案是另一个函数。
+
+If two different people are given the same differentiation problem
+and they come up with different answers, we \emph{know} that at least
+one of them has made a mistake!
+
+如果两个人被给予相同的微分问题，而他们得出了不同的答案，我们\emph{知道}他们中至少有一个人犯了错误！
+
+Similarly, if two calculations of the
+value of a function are made for the same input, they \emph{must} match.
+
+同样，如果对同一个输入进行了两次函数值的计算，它们\emph{必须}匹配。
+
+The property we are discussing used to be captured by saying that a 
+function needs to be ``well-defined.''  The old school definition of a 
+function was: 
+
+我们正在讨论的这个性质过去是通过说一个函数需要是“良定义的”来捕捉的。函数的旧式定义是：
+
+\begin{defi}
+ A \emph{function} $f$ is a well-defined rule, that, given any input
+value $x$ produces a unique output\footnote{The use of the notation %
+$f(x)$ to indicate the output of function $f$ associated with input $x$ %
+was instituted by Leonard Euler, and so it is known as Euler notation.} 
+value $f(x)$.
+\end{defi}
+
+\begin{defi}
+一个\emph{函数} $f$ 是一个良定义的规则，对于任何给定的输入值 $x$，它会产生一个唯一的输出值 $f(x)$\footnote{使用符号 $f(x)$ 来表示与输入 $x$ 相关联的函数 $f$ 的输出是由莱昂哈德·欧拉创立的，因此被称为欧拉符号。}。
+\end{defi}
+
+A more modern definition of a function is the following.
+
+一个更现代的函数定义如下。
+
+\begin{defi}
+ A \emph{function} is a binary relation which does not contain
+distinct pairs having the same initial element.
+\end{defi}
+
+\begin{defi}
+一个\emph{函数}是一个二元关系，其中不包含具有相同初始元素的不同序对。
+\end{defi}
+
+When we think of a function as a special type of binary relation, 
+the pairs that are ``in'' the function have the form $(x, f(x))$,
+that is, they consist of an input and the corresponding output.
+
+当我们把函数看作一种特殊的二元关系时，函数“中”的序对具有 $(x, f(x))$ 的形式，也就是说，它们由一个输入和相应的输出组成。
+
+We have gotten relatively used to relations ``on'' a set, but recall
+that the more general situation is that a binary relation is 
+a subset of $A \times B$.
+
+我们已经相对习惯于一个集合“上”的关系，但请回想一下，更一般的情况是，一个二元关系是 $A \times B$ 的一个子集。
+
+In this setting, if the relation is 
+actually a function $f$, we say that $f$ is a function \emph{from} $A$
+\emph{to} $B$.
+
+在这种情况下，如果这个关系实际上是一个函数 $f$，我们就说 $f$ 是一个\emph{从} $A$ \emph{到} $B$ 的函数。
+
+Now, quite often there are input values  that simply don't 
+work for a given function (for instance the well-known ``you can't take
+the square root of a negative'' rule).
+
+现在，很常见的是，对于一个给定的函数，有些输入值根本不起作用（例如，众所周知的“不能对负数取平方根”的规则）。
+
+Also, it is often the case that
+certain outputs just can't happen.
+
+此外，通常情况下，某些输出就是不可能发生的。
+
+So, when dealing with a function
+as a relation contained in $A \times B$ there are actually four sets
+that are of interest -- the sets $A$ and $B$ (of course) but also some
+sets that we'll denote by $A'$ and $B'$.
+
+所以，当处理一个包含在 $A \times B$ 中的关系形式的函数时，实际上有四个我们感兴趣的集合——集合 $A$ 和 $B$（当然），以及我们用 $A'$ 和 $B'$ 表示的一些集合。
+
+The set $A'$ consists of those
+elements of $A$ that actually appear as the first coordinate of a pair
+in the relation $f$.
+
+集合 $A'$ 由 $A$ 中那些实际作为关系 $f$ 中序对的第一个坐标出现的元素组成。
+
+The set $B'$ consists of those elements of $B$
+that actually appear as the second coordinate of a pair in the relation $f$.
+
+集合 $B'$ 由 $B$ 中那些实际作为关系 $f$ 中序对的第二个坐标出现的元素组成。
+
+A generic example of how these four sets might look is given in Figure~\ref{fig:generic_function}.
+
+这四个集合可能看起来的一个通用例子在图~\ref{fig:generic_function}中给出。
+
+\begin{figure}[!hbtp]
+\input{figures/generic_function.tex}
+\caption{The sets related to an arbitrary function.}
+\caption{与任意函数相关的集合。}
+\label{fig:generic_function} 
+\end{figure}
+
+Sadly, only three of the sets we have just discussed are known to
+the mathematical world.
+
+遗憾的是，我们刚才讨论的这些集合中，只有三个为数学界所知。
+
+The set we have denoted $A'$ is called the
+\emph{domain} of the function $f$.
+
+我们记为 $A'$ 的集合称为函数 $f$ 的\emph{定义域}。
+
+The set we have denoted $B'$ is 
+known as the \emph{range} of the function $f$.
+
+我们记为 $B'$ 的集合称为函数 $f$ 的\emph{值域}。
+
+The set we have denoted
+$B$ is called the \emph{codomain} of the function $f$.
+
+我们记为 $B$ 的集合称为函数 $f$ 的\emph{上域}。
+
+The set we 
+have been calling $A$ does not have a name.
+
+我们一直称之为 $A$ 的集合没有名字。
+
+In fact, the formal
+definition of the term ``function'' has been rigged so that there
+is no difference between the sets $A$ and $A'$.
+
+事实上，“函数”这个术语的正式定义被设计成使得集合 $A$ 和 $A'$ 之间没有区别。
+
+This seems a shame,
+if you think of range and domain as being primary, doesn't it seem
+odd that we have a way to refer to a superset of the range (i.e.\ the 
+codomain) but no way of referring to a superset of the domain?
+
+这似乎很可惜，如果你认为值域和定义域是主要的，那么我们有一种方式来指代值域的超集（即上域），却没有方式来指代定义域的超集，这不是很奇怪吗？
+
+Nevertheless, this is just the way it is \ldots  There is only one
+set on the input side -- the domain of our function.
+
+然而，事实就是如此…… 在输入端只有一个集合——我们函数的定义域。
+
+The domain of
+any relation is expressed by writing $\Dom{\relR}$.  Which is 
+defined as follows.
+
+任何关系的定义域通过写作 $\Dom{\relR}$ 来表示。其定义如下。
+
+\begin{defi}
+If $\relR$ is a relation from $A$ to $B$ then $\Dom{\relR}$ is
+a subset of $A$ defined by
+
+\[ \Dom{\relR} = \{a \in A \suchthat \exists b \in B, (a,b) \in \relR \} 
+\]
+
+\end{defi}
+
+\begin{defi}
+如果 $\relR$ 是从 $A$ 到 $B$ 的一个关系，那么 $\Dom{\relR}$ 是 $A$ 的一个子集，定义为
+
+\[ \Dom{\relR} = \{a \in A \suchthat \exists b \in B, (a,b) \in \relR \} 
+\]
+
+\end{defi}
+
+We should point out that the notation just given for the domain of a 
+relation $\relR$, ($\Dom{\relR}$) has analogs for the other 
+sets that are involved with a relation.
+
+我们应该指出，刚刚给出的关系 $\relR$ 定义域的记法（$\Dom{\relR}$）对于与关系相关的其他集合也有类似的记法。
+
+We write $\Cod{\relR}$
+to refer the the codomain of the relation, and $\Rng{\relR}$
+to refer to the range.
+
+我们用 $\Cod{\relR}$ 来指代关系的上域，用 $\Rng{\relR}$ 来指代值域。
+
+Since we are now thinking of functions as special classes of relations, it follows that a function is just 
+a set of ordered pairs.
+
+由于我们现在将函数视为关系的特殊类别，因此一个函数仅仅是一个有序对的集合。
+
+This means that the identity of a function is
+tied up, not just with a formula that gives the output for a given input,
+but also with what values can be used for those inputs.
+
+这意味着一个函数的身份不仅与给出给定输入对应输出的公式有关，还与哪些值可以作为这些输入有关。
+
+Thus the function
+$f(x)=2x$ defined on $\Reals$ is a completely different animal from 
+the function $f(x)=2x$ defined on $\Naturals$.
+
+因此，在 $\Reals$ 上定义的函数 $f(x)=2x$ 与在 $\Naturals$ 上定义的函数 $f(x)=2x$ 是完全不同的。
+
+If you really want to
+specify a function precisely you must give its domain as well as a 
+formula for it.
+
+如果你想精确地指定一个函数，你必须给出它的定义域以及它的公式。
+
+Usually, one does this by writing a formula, then a 
+semicolon, then the domain.
+
+通常，人们通过写一个公式，然后是一个分号，再然后是定义域来做到这一点。
+
+(E.g.\ $f(x)=x^2; \quad x \geq 0$.)
+
+（例如 $f(x)=x^2; \quad x \geq 0$。）
+
+Okay, so, finally, we are prepared to give the real
+definition of a function.
+
+好的，那么，最后，我们准备给出函数的真正定义。
+
+\begin{defi}
+If $A$ and $B$ are sets, then $f$ is a function from $A$ to $B$ (which
+is expressed symbolically by $f:A\longrightarrow B$), if and only if
+$f$ is a subset of $A\times B$, $\Dom{f}=A$ and $((a,b) \in f \; \land \; (a,c) \in f) \;
+\implies \; b=c$.
+\end{defi}
+
+\begin{defi}
+如果 $A$ 和 $B$ 是集合，那么 $f$ 是一个从 $A$ 到 $B$ 的函数（符号表示为 $f:A\longrightarrow B$），当且仅当 $f$ 是 $A\times B$ 的一个子集，$\Dom{f}=A$ 并且 $((a,b) \in f \; \land \; (a,c) \in f) \; \implies \; b=c$。
+\end{defi}
+
+Recapping, a function \emph{must} have its domain equal to the set $A$
+where its inputs come from.
+
+概括一下，一个函数的定义域\emph{必须}等于其输入来源的集合 $A$。
+
+This is sometimes expressed by saying that
+a function is \emph{defined} on its domain.
+
+这有时被表述为函数在其定义域上是\emph{有定义的}。
+
+A function's range and codomain
+may be different however.  In the event that the range and codomain \emph{are}
+the same ($\Cod{\relR} = \Rng{\relR}$)
+we have a rather special situation and the function is graced by
+the appellation ``surjection.''  The term ``onto'' is also commonly used
+to describe a surjective function.
+
+然而，函数的值域和上域可能不同。如果值域和上域\emph{相同}（$\Cod{\relR} = \Rng{\relR}$），我们有一个相当特殊的情况，该函数被冠以“满射”的称号。“映上”这个术语也常用来描述一个满射函数。
+
+\begin{exer}
+There is an expression in mathematics, ``Every function is onto its %
+range.'' that really doesn't say very much.  Why not?
+\end{exer}
+
+\begin{exer}
+数学中有一个说法，“每个函数都是到其值域上的满射。”，这句话其实没有太多信息量。为什么？
+\end{exer}
+
+If one has elements $x$ and $y$, of the domain and codomain, (respectively)
+and $y = f(x)$\footnote{Or, equivalently, $(x,y) \in f$.} then one may 
+say that ``$y$ is the image of $x$'' or that
+``$x$ is a preimage of $y$.''  Take careful note of the articles used in
+these phrases -- we say  ``$y$ is {\bf the} image of $x$'' but 
+``$x$ is {\bf a} preimage of $y$.''  This is because $y$ is uniquely determined
+by $x$, but not vice versa.
+
+如果一个人有定义域和上域的元素 $x$ 和 $y$（分别地），并且 $y = f(x)$\footnote{或者等价地，$(x,y) \in f$。}，那么可以说“$y$ 是 $x$ 的\textbf{像}”或者“$x$ 是 $y$ 的\textbf{一个}原像”。请仔细注意这些短语中使用的冠词——我们说“$y$ 是 $x$ 的\textbf{那个}像”，但“$x$ 是 $y$ 的\textbf{一个}原像”。这是因为 $y$ 是由 $x$ 唯一确定的，但反之则不然。
+
+For example, since the squares of $2$ and $-2$ are
+both $4$, if we consider the function $f(x) = x^2$, the image of (say) $2$ 
+is $4$, but a preimage for $4$ could be either $2$ or $-2$.
+
+例如，因为 $2$ 和 $-2$ 的平方都是 $4$，如果我们考虑函数 $f(x) = x^2$，那么（比如说）$2$ 的像是 $4$，但 $4$ 的一个原像可以是 $2$ 或者 $-2$。
+
+It would be pleasant if there were a nice way to refer to the preimage of
+some element, $y$, of the range.
+
+如果有一种好的方式来指代值域中某个元素 $y$ 的原像，那将是件愉快的事。
+
+One notation that you have probably 
+seen before is ``$f^{-1}(y)$.''  There is a major difficulty with writing 
+down such a thing.
+
+你可能以前见过的一个记法是“$f^{-1}(y)$”。写下这样的东西有一个主要困难。
+
+By writing ``$f^{-1}$'' you are making a rather
+vast presumption -- that there actually is a function that serves as an
+inverse for $f$.
+
+通过写“$f^{-1}$”，你做出了一个相当大的假设——即实际上存在一个函数作为 $f$ 的逆。
+
+Usually, there is not.  
+
+通常，并不存在。
+
+One can define an inverse for any relation, the inverse is formed by
+simply exchanging the elements in the ordered pairs that make up $\relR$.
+
+可以为任何关系定义一个逆关系，逆关系是通过简单地交换构成 $\relR$ 的有序对中的元素来形成的。
+
+\begin{defi}
+The \index{inverse relation}\emph{inverse relation} of a relation $\relR$
+is denoted $\relR^{-1}$ and 
+
+\[ \relR^{-1} = \{ (y,x) \suchthat (x,y) \in \relR \}. \]
+\end{defi}
+
+\begin{defi}
+一个关系 $\relR$ 的 \index{inverse relation}\emph{逆关系} 记为 $\relR^{-1}$，并且
+
+\[ \relR^{-1} = \{ (y,x) \suchthat (x,y) \in \relR \}. \]
+\end{defi}
+
+In terms of graphs, the inverse and the original relation are related
+by being reflections in the line $y=x$.
+
+在图形上，逆关系和原关系通过关于直线 $y=x$ 的反射相关联。
+
+It is possible for one, both,
+or neither of these to be functions.
+
+这两者中可能有一个、两个都是函数，或者都不是函数。
+
+The canonical example to keep
+in mind is probably $f(x) = x^2$ and its inverse.
+
+需要记住的典型例子可能是 $f(x) = x^2$ 及其逆关系。
+
+\begin{center}
+\includegraphics[scale=.5]{figures/square.pdf} \hspace{.5in} \includegraphics[scale=.5]{figures/squareroot.pdf}
+\end{center}
+
+The graph that we obtain by reflecting $y=f(x)=x^2$ in the line $y=x$ doesn't
+pass the vertical line test and so it is the graph of (merely) a relation 
+-- not of a function.
+
+我们通过将 $y=f(x)=x^2$ 关于直线 $y=x$ 反射得到的图形没有通过垂直线测试，因此它（仅仅）是一个关系的图形——而不是一个函数的图形。
+
+The function $g(x) = \sqrt{x}$ that we all know 
+and love is not truly the inverse of $f(x)$.
+
+我们都熟悉并喜爱的函数 $g(x) = \sqrt{x}$ 并非 $f(x)$ 的真正逆函数。
+
+In fact this function is
+defined to make a specific (and natural) choice -- it returns the positive
+square root of a number.
+
+实际上，这个函数被定义为做出一个特定（且自然）的选择——它返回一个数的正平方根。
+
+But this leads to a subtle problem; if we start
+with a negative number (say $-3$) and square it we get a positive number ($9$)
+and if we then come along and take the square root we get another positive
+number ($3$).
+
+但这导致了一个微妙的问题；如果我们从一个负数（比如 $-3$）开始，对它平方得到一个正数（$9$），然后我们再取平方根，会得到另一个正数（$3$）。
+
+This is problematic since we didn't end up where we started
+which is what ought to happen if we apply a function followed by its inverse.
+
+这是有问题的，因为我们没有回到起点，而这正是在应用一个函数及其逆函数后应该发生的事情。
+
+We'll try to handle the general situation in a bit, but for the moment let's
+consider the nice case: when the inverse of a function is also a function.
+
+我们稍后会尝试处理一般情况，但现在让我们考虑一个好的情况：当一个函数的逆也是一个函数时。
+
+When exactly does this happen?  Well, we have just seen that the inverse
+of a function doesn't necessarily pass the vertical line test, and it turns
+out that that is the predominant issue.
+
+这到底什么时候发生呢？嗯，我们刚刚看到一个函数的逆不一定能通过垂直线测试，而事实证明这正是主要问题。
+
+So, under what circumstances does
+the inverse pass the vertical line test?
+
+那么，在什么情况下，逆关系能通过垂直线测试呢？
+
+When the original function 
+passes the so-called horizontal line test (every horizontal line
+intersects the graph at most once).
+
+当原函数通过所谓的水平线测试时（即每条水平线最多与图形相交一次）。
+
+Thinking again about $f(x)=x^2$, there
+are some horizontal lines that miss the graph entirely, but all horizontal
+lines of the form $y=c$ where $c$ is positive will intersect the graph twice.
+
+再次思考 $f(x)=x^2$，有一些水平线完全不与图形相交，但所有形式为 $y=c$（其中 $c$ 为正）的水平线将与图形相交两次。
+
+There are many functions that \emph{do} pass the horizontal line test, for 
+instance, consider $f(x) = x^3$.
+
+有很多函数\emph{确实}能通过水平线测试，例如，考虑 $f(x) = x^3$。
+
+Such functions are known as 
+\index{injection}\emph{injections}, this is the same thing as 
+saying a function is ``one-to-one.''   Injective functions can be inverted --
+the domain of the inverse function of $f$ will only be the range, $\Rng{f}$,
+which as we have seen may fall short of the being the entire codomain, since 
+$\Rng{f} \subseteq \Cod{f}$.
+
+这类函数被称为 \index{injection}\emph{单射}，这与说一个函数是“一对一”是同一回事。单射函数可以求逆——逆函数的定义域将只是原函数的值域 $\Rng{f}$，正如我们所见，它可能小于整个上域，因为 $\Rng{f} \subseteq \Cod{f}$。
+
+Let's first define injections in a way that is divorced from thinking
+about their graphs.
+
+让我们首先以一种脱离图形思考的方式来定义单射。
+
+\begin{defi}
+A function $f(x)$ is an \emph{injection} iff for all pairs of 
+inputs $x_1$ and $x_2$, if $f(x_1) = f(x_2)$ then $x_1=x_2$.
+\end{defi}
+
+\begin{defi}
+一个函数 $f(x)$ 是一个\emph{单射}，当且仅当对于所有输入对 $x_1$ 和 $x_2$，如果 $f(x_1) = f(x_2)$，则 $x_1=x_2$。
+\end{defi}
+
+This is another of those defining properties that is designed so
+that when it is true it is vacuously true.
+
+这是另一个被设计成当它为真时是空洞为真的定义性质。
+
+An injective function
+never takes two distinct inputs to the same output.
+
+一个单射函数绝不会将两个不同的输入映射到相同的输出。
+
+Perhaps the 
+cleanest way to think about injective functions is in terms of 
+preimages -- when a function is injective, preimages are unique.
+
+也许思考单射函数最清晰的方式是根据原像——当一个函数是单射时，原像是唯一的。
+
+Actually, this is a good time to mention something about surjective
+functions and preimages -- if a function is surjective, every element
+of the codomain \emph{has} a preimage.
+
+实际上，现在是提及关于满射函数和原像的好时机——如果一个函数是满射的，那么上域中的每一个元素都\emph{有}一个原像。
+
+So, if a function has both 
+of these properties it means that every element of the codomain
+has one (and only one) preimage.
+
+所以，如果一个函数同时具有这两种性质，这意味着上域中的每一个元素都有一个（且仅有一个）原像。
+
+A function that is both injective and surjective (one-to-one and onto)
+is known as a \index{bijection}\emph{bijection}.
+
+一个既是单射又是满射（一对一且映上）的函数被称为 \index{bijection}\emph{双射}。
+
+Bijections are tremendously
+important in mathematics since they provide a way of perfectly matching
+up the elements of two sets.
+
+双射在数学中极为重要，因为它们提供了一种完美匹配两个集合元素的方法。
+
+You will probably spend a good bit of time 
+in the future devising maps between sets and then proving that they are
+bijections, so we will start practicing that skill now\ldots  
+
+你将来可能会花很多时间在集合之间设计映射，然后证明它们是双射，所以我们现在就开始练习这项技能……
+
+Ordinarily, we will show that a function is a bijection by proving 
+separately that it is both a surjection and an injection.
+
+通常，我们会通过分别证明一个函数既是满射又是单射来证明它是一个双射。
+
+To show that a function is surjective we need to show that it is 
+possible to find a preimage for every element of the codomain.
+
+要证明一个函数是满射的，我们需要证明对于上域中的每一个元素都能找到一个原像。
+
+If
+we happen to know what the inverse function is, then it is easy to
+find a preimage for an arbitrary element.
+
+如果我们碰巧知道逆函数是什么，那么就很容易为任意一个元素找到原像。
+
+In terms of the taxonomy
+for proofs that was introduced in Chapter~\ref{ch:proof1}, we are talking
+about a constructive proof of an existential statement.
+
+根据第~\ref{ch:proof1}章介绍的证明分类法，我们正在讨论的是一个存在性陈述的构造性证明。
+
+A function $f$
+is surjective iff $\forall y \in \Cod{f}, \exists x \in \Dom{f}, 
+y = f(x)$, so to prove surjectivity is to find the $x$ that ``works'' for an 
+arbitrary $y$.
+
+一个函数 $f$ 是满射的，当且仅当 $\forall y \in \Cod{f}, \exists x \in \Dom{f}, y = f(x)$，所以要证明满射性，就是要为任意一个 $y$ 找到那个“有效”的 $x$。
+
+If this is done by literally naming $x$, we have 
+proved the statement constructively.
+
+如果这是通过直接给出 $x$ 来完成的，我们就构造性地证明了这个陈述。
+
+To show that a function
+is an injection, we traditionally prove that the property used in the 
+definition of an injective function is true.
+
+要证明一个函数是单射，我们传统上是证明单射函数定义中使用的性质为真。
+
+Namely, we suppose that
+$x_1$ and $x_2$ are distinct elements of $\Dom{f}$ and that
+$f(x_1)=f(x_2)$ and then we show that actually $x_1 = x_2$.
+
+也就是说，我们假设 $x_1$ 和 $x_2$ 是 $\Dom{f}$ 中的不同元素，并且 $f(x_1)=f(x_2)$，然后我们证明实际上 $x_1 = x_2$。
+
+This is
+in the spirit of a proof by contradiction -- if there were actually
+distinct elements that get mapped to the same value then $f$ would \emph{not}
+be injective, but by deducing that $x_1=x_2$ we are contradicting that 
+presumption and so, are showing that $f$ is indeed an injection.
+
+这符合反证法的精神——如果真的存在不同的元素被映射到同一个值，那么 $f$ 将\emph{不是}单射的，但通过推导出 $x_1=x_2$，我们与这个假设产生了矛盾，因此证明了 $f$ 确实是一个单射。
+
+Let's start by looking at a very simple example, 
+$f(x)=2x-1; \; x \in \Zplus$.
+
+让我们从一个非常简单的例子开始，$f(x)=2x-1; \; x \in \Zplus$。
+
+Clearly this function 
+is not a surjection if we are thinking that $\Cod{f}=\Naturals$
+since the outputs are always odd.
+
+显然，如果我们认为 $\Cod{f}=\Naturals$，这个函数不是满射，因为输出总是奇数。
+
+Let ${\mathcal O} = \{1, 3, 5, 7, \ldots \}$
+be the set of odd naturals.
+
+设 ${\mathcal O} = \{1, 3, 5, 7, \ldots \}$ 为奇自然数集。
+
+\begin{thm}
+The function $f:\Zplus \longrightarrow {\mathcal O}$ defined by
+$f(x) = 2x-1$ is a bijection from $\Zplus$ to ${\mathcal O}$.
+\end{thm}
+
+\begin{thm}
+由 $f(x) = 2x-1$ 定义的函数 $f:\Zplus \longrightarrow {\mathcal O}$ 是一个从 $\Zplus$ 到 ${\mathcal O}$ 的双射。
+\end{thm}
+
+\begin{proof}
+First we will show that $f$ is surjective.  Consider an arbitrary element
+$y$ of the set $\mathcal O$.
+
+首先，我们将证明 $f$ 是满射的。考虑集合 $\mathcal O$ 的一个任意元素 $y$。
+
+Since $y \in {\mathcal O}$ it follows that
+$y$ is both positive and odd.
+
+由于 $y \in {\mathcal O}$，因此 $y$ 既是正数也是奇数。
+
+Thus there is an integer $k$, such that 
+$y=2k+1$, but also $y>0$.
+
+因此存在一个整数 $k$，使得 $y=2k+1$，并且 $y>0$。
+
+From this it follows that  $2k+1 >0$ and so
+$k > -1/2$.
+
+由此可知 $2k+1 > 0$，所以 $k > -1/2$。
+
+Since $k$ is also an integer, this last inequality implies
+that $k \in \Znoneg$.
+
+由于 $k$ 也是一个整数，最后一个不等式意味着 $k \in \Znoneg$。
+
+(Recall that $\Znoneg = \{0,1,2,3, \ldots \}$.)  We can easily verify that a preimage 
+for $y$ is $k+1$, since $f(k+1) = 2(k+1)-1 = 2k+2-1 = 2k+1 = y$.
+
+（回想一下 $\Znoneg = \{0,1,2,3, \ldots \}$。）我们可以很容易地验证 $y$ 的一个原像是 $k+1$，因为 $f(k+1) = 2(k+1)-1 = 2k+2-1 = 2k+1 = y$。
+
+Next we show that $f$ is injective.  Suppose that there are two input
+values, $x_1$ and $x_2$ such that $f(x_1) = f(x_2)$.
+
+接下来我们证明 $f$ 是单射的。假设有两个输入值 $x_1$ 和 $x_2$，使得 $f(x_1) = f(x_2)$。
+
+Then $2x_1-1 = 2x_2-1$
+and simple algebra leads to $x_1=x_2$.
+
+那么 $2x_1-1 = 2x_2-1$，简单的代数运算可得 $x_1=x_2$。
+\end{proof}
+ 
+For a slightly more complicated example 
+consider the function from $\Naturals$ to $\Integers$ defined by
+
+\[ f(x) = \left\{ \begin{array}{cl} x/2 & \mbox{if $x$ is even} \\ -(x+1)/2 & \mbox{if $x$ is odd} \end{array} \right. \]
+
+作为一个稍微复杂一点的例子，考虑从 $\Naturals$ 到 $\Integers$ 定义的函数
+
+\[ f(x) = \left\{ \begin{array}{cl} x/2 & \mbox{如果 $x$ 是偶数} \\ -(x+1)/2 & \mbox{如果 $x$ 是奇数} \end{array} \right. \]
+
+This function does quite a handy little job, it matches up the natural
+numbers and the integers in pairs.
+
+这个函数做了一件很巧妙的小工作，它将自然数和整数成对地匹配起来。
+
+Every even natural gets matched with
+a non-negative integer and every odd natural gets matched with a 
+negative integer.
+
+每个偶自然数与一个非负整数匹配，每个奇自然数与一个负整数匹配。
+
+This function is really doing 
+something remarkable -- common sense would seem to indicate that the integers
+must be a larger set than the naturals (after all $\Naturals$ is completely
+contained inside of $\Integers$), but the function $f$ defined above serves
+to show that these two sets are \emph{exactly the same size!}
+
+这个函数确实做了一件了不起的事情——常识似乎表明整数集必须比自然数集更大（毕竟 $\Naturals$ 完全包含在 $\Integers$ 内部），但上面定义的函数 $f$ 表明这两个集合的大小\emph{完全相同}！
+
+\begin{thm}
+The function $f$ defined above is bijective.
+\end{thm}
+
+\begin{thm}
+上面定义的函数 $f$ 是双射的。
+\end{thm}
+
+\begin{proof}
+First we will show that $f$ is surjective.
+ 
+首先，我们将证明 $f$ 是满射的。
+
+It suffices to find a preimage for an arbitrary element of $\Integers$.
+
+只需为 $\Integers$ 中的任意元素找到一个原像即可。
+
+Suppose that $y$ is a particular but arbitrarily chosen integer.  There 
+are two cases to consider: $y<0$ and $y\geq0$.
+
+假设 $y$ 是一个特定但任意选择的整数。有两种情况需要考虑：$y<0$ 和 $y\geq0$。
+
+If $y\geq0$ then $x=2y$ is a preimage for $y$.  This follows easily since
+$x=2y$ is obviously even and so $x$'s image will be
+defined by the first case in the definition of $f$.
+
+如果 $y\geq0$，那么 $x=2y$ 是 $y$ 的一个原像。这很容易得出，因为 $x=2y$ 显然是偶数，所以 $x$ 的像将由 $f$ 定义的第一个情况确定。
+
+Thus $f(x) = f(2y) =
+(2y)/2 = y$.
+
+因此 $f(x) = f(2y) = (2y)/2 = y$。
+
+If $y < 0$ then $x=-(1+2y)$ is a preimage for $y$.
+
+如果 $y < 0$，那么 $x=-(1+2y)$ 是 $y$ 的一个原像。
+
+Clearly, $-(1+2y)$ is odd
+whenever $y$ is an integer, thus this value for $x$ will fall into the second 
+case in the definition of $f$.
+
+显然，当 $y$ 是整数时，$-(1+2y)$ 是奇数，因此这个 $x$ 的值将属于 $f$ 定义中的第二种情况。
+
+So, $f(x) = f(-(1+2y)) = -(-(1+2y)+1)/2 = -(-2y)/2 = y$.
+
+所以，$f(x) = f(-(1+2y)) = -(-(1+2y)+1)/2 = -(-2y)/2 = y$。
+
+Since the cases $y>0$ and $y\leq 0$ are exhaustive (that is, every $y$ in 
+$\Integers$ falls into one or the other of these cases), and we have found
+a preimage for $y$ in both cases, it follows that $f$ is surjective.
+
+由于情况 $y \geq 0$ 和 $y < 0$ 是穷尽的（也就是说，$\Integers$ 中的每一个 $y$ 都属于这两种情况之一），并且我们在这两种情况下都找到了 $y$ 的原像，因此 $f$ 是满射的。
+
+Next, we will show that $f$ is injective.
+
+接下来，我们将证明 $f$ 是单射的。
+
+Suppose that $x_1$ and $x_2$ are elements of $\Naturals$ and that
+$f(x_1)=f(x_2)$.
+
+假设 $x_1$ 和 $x_2$ 是 $\Naturals$ 的元素，并且 $f(x_1)=f(x_2)$。
+
+Consider the following three cases: $x_1$ and $x_2$
+are both even, both odd, or have opposite parity.
+
+考虑以下三种情况：$x_1$ 和 $x_2$ 都是偶数，都是奇数，或者奇偶性相反。
+
+If $x_1$ and $x_2$ are both even, then by the definition of $f$ we
+have $f(x_1) = x_1/2$ and $f(x_2) = x_2/2$ and since these functional
+values are equal, we have $x_1/2 = x_2/2$.
+
+如果 $x_1$ 和 $x_2$ 都是偶数，那么根据 $f$ 的定义，我们有 $f(x_1) = x_1/2$ 和 $f(x_2) = x_2/2$，由于这些函数值相等，我们有 $x_1/2 = x_2/2$。
+
+Doubling both sides of this
+leads to $x_1=x_2$.
+
+将两边都乘以2，得到 $x_1=x_2$。
+
+If $x_1$ and $x_2$ are both odd, then by the definition of $f$ we
+have $f(x_1) = -(x_1+1)/2$ and $f(x_2) = -(x_2+1)/2$ and since these functional
+values are equal, we have $-(x_1+1)/2 = -(x_2+1)/2$.
+
+如果 $x_1$ 和 $x_2$ 都是奇数，那么根据 $f$ 的定义，我们有 $f(x_1) = -(x_1+1)/2$ 和 $f(x_2) = -(x_2+1)/2$，由于这些函数值相等，我们有 $-(x_1+1)/2 = -(x_2+1)/2$。
+
+A bit more
+algebra (doubling, negating and adding one to both sides) leads to 
+$x_1=x_2$.
+
+再进行一些代数运算（两边乘以2，取负，然后加1）可得 $x_1=x_2$。
+
+If $x_1$ and $x_2$ have opposite parity, we will assume w.l.o.g.\ that 
+$x_1$ is even and $x_2$ is odd.
+
+如果 $x_1$ 和 $x_2$ 的奇偶性相反，我们不妨假设 $x_1$ 是偶数，$x_2$ 是奇数。
+
+The equality $f(x_1)=f(x_2)$ becomes
+$x_1/2 = -(x_2+1)/2$.  Note that $x_1 \geq 0$ so $f(x_1) = x_1/2 \geq 0$.
+
+等式 $f(x_1)=f(x_2)$ 变为 $x_1/2 = -(x_2+1)/2$。注意 $x_1 \ge 0$ 所以 $f(x_1) = x_1/2 \ge 0$。
+
+Also, note that $x_2 \geq 1$ so 
+
+此外，注意 $x_2 \geq 1$，所以
+
+\begin{gather*}
+x_2 + 1 \geq 2 \\
+(x_2+1)/2 \geq 1 \\
+-(x_2+1)/2 \leq -1 \\
+f(x_2) \leq -1
+\end{gather*}
+
+\noindent therefore we have a contradiction since it is impossible
+for the two values $f(x_1)$ and $f(x_2)$ to be equal while $f(x_1) \geq 0$
+and $f(x_2) \leq -1$.
+
+因此我们得到了一个矛盾，因为当 $f(x_1) \geq 0$ 且 $f(x_2) \leq -1$ 时，$f(x_1)$ 和 $f(x_2)$ 这两个值不可能相等。
+
+Since the last case under consideration leads to a contradiction, it follows
+that $x_1$ and $x_2$ never have opposite parities, and so the first two
+cases are exhaustive -- in both of those cases we reached the desired
+conclusion that $x_1 = x_2$ so it follows that $f$ is injective.
+
+由于最后考虑的情况导致了矛盾，因此 $x_1$ 和 $x_2$ 绝不会有相反的奇偶性，所以前两种情况是穷尽的——在这两种情况下我们都得出了期望的结论，即 $x_1 = x_2$，因此 $f$ 是单射的。
+\end{proof}
+
+We'll conclude this section by mentioning that the ideas of ``image''
+and ``preimage'' can be extended to sets.
+
+我们将通过提及“像”和“原像”的概念可以扩展到集合来结束本节。
+
+If $S$ is a subset of 
+$\Dom{f}$ then the \index{image, of a set}\emph{image of $S$ under $f$}
+is denoted $f(S)$ and
+
+\[ f(S) = \{ y \suchthat \exists x \in S, y = f(x) \}. \]
+
+如果 $S$ 是 $\Dom{f}$ 的一个子集，那么 \index{image, of a set}\emph{$S$ 在 $f$ 下的像} 记为 $f(S)$，并且
+
+\[ f(S) = \{ y \suchthat \exists x \in S, y = f(x) \}. \]
+
+Similarly, if $T$ is a subset of of $\Cod{f}$ we can define something akin
+to the preimage.
+
+类似地，如果 $T$ 是 $\Cod{f}$ 的一个子集，我们可以定义类似于原像的概念。
+
+The \index{inverse image, of a set}\emph{inverse image
+of the set $T$ under the function $f$} is denoted $f^{-1}(T)$ and 
+
+\[ f^{-1}(T) = \{ x \suchthat \exists y \in T, y=f(x) \}.\]
+
+\index{inverse image, of a set}\emph{集合 $T$ 在函数 $f$ 下的逆像}记为 $f^{-1}(T)$，并且
+
+\[ f^{-1}(T) = \{ x \suchthat \exists y \in T, y=f(x) \}.\]
+
+Essentially, we have extended the function $f$ so that it goes between the
+power sets of its domain and codomain!
+
+本质上，我们已经扩展了函数 $f$，使其在定义域和上域的幂集之间进行映射！
+
+This new notion gives us some elegant
+ways of restating what it means to be surjective and injective.
+
+这个新概念为我们提供了一些优雅的方式来重新陈述满射和单射的含义。
+
+A function $f$ is surjective iff $f(\Dom{f}) = \Cod{f}$.  
+
+一个函数 $f$ 是满射的，当且仅当 $f(\Dom{f}) = \Cod{f}$。
+
+A function $f$ is injective iff the inverse images of singletons
+are always singletons.
+
+一个函数 $f$ 是单射的，当且仅当单元素集的逆像总是单元素集。
+
+That is,
+
+也就是说，
+
+\[ \forall y \in \Rng{f}, |f^{-1}(\{y\})| = 1.
+\] 
+
+\newpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{rel-zh/functions-exer.tex}
+
+\newpage
+
+\section{Special functions 特殊函数}
+\label{sec:special_functions}
+
+%restrictions
+
+There are a great many functions that fail the horizontal line test
+which we nevertheless seem to have inverse functions for.
+
+有许多函数未能通过水平线测试，但我们似乎仍然有它们的逆函数。
+
+For example,
+$x^2$ fails HLT but $\sqrt{x}$ is a pretty reasonable inverse for it --
+one just needs to be careful about the ``plus or minus'' issue.
+
+例如，$x^2$ 未能通过水平线测试，但 $\sqrt{x}$ 是一个相当合理的逆函数——只需要注意“正负号”问题。
+
+Also,
+$\sin{x}$ fails HLT pretty badly; any horizontal line $y=c$ with 
+$-1 \leq c \leq 1$ will hit $\sin{x}$ infinitely many times.
+
+此外，$\sin{x}$ 严重地未能通过水平线测试；任何满足 $-1 \leq c \leq 1$ 的水平线 $y=c$ 都会与 $\sin{x}$ 的图像有无限多个交点。
+
+But look!
+Right here on my calculator is a button labeled ``$\sin^{-1}$.''\footnote{It 
+might be labeled ``asin'' instead. The old-style way to refer to the inverse
+of a trig.\ function was arc-whatever. So the inverse of sine was arcsine,
+the inverse of tangent was arctangent.}  This apparent contradiction
+can be resolved using the notion of restriction.
+
+但是看！我的计算器上就有一个标记为“$\sin^{-1}$”的按钮。\footnote{它也可能被标记为“asin”。旧式表示三角函数反函数的方法是arc-某某。所以正弦的反函数是反正弦，正切的反函数是反正切。} 这个明显的矛盾可以用限制的概念来解决。
+
+\begin{defi}
+\index{restriction, of a function}
+Given a function $f$ and a subset $D$ of its domain, the
+\emph{restriction of $f$ to $D$} is denoted $\restrict{f}{D}$ and
+
+\[ \restrict{f}{D} = \{ (x,y) \suchthat \; x \in D \, \land \, (x,y) \in f \}. \]
+\end{defi}
+
+\begin{defi}
+\index{restriction, of a function}
+给定一个函数 $f$ 及其定义域的一个子集 $D$，\emph{$f$ 在 $D$ 上的限制}记为 $\restrict{f}{D}$ 且
+
+\[ \restrict{f}{D} = \{ (x,y) \suchthat \; x \in D \, \land \, (x,y) \in f \}. \]
+\end{defi}
+
+The way we typically use restriction is to eliminate any regions in
+$\Dom{f}$ that cause $f$ to fail to be one-to-one.
+
+我们通常使用限制的方式是消除 $\Dom{f}$ 中导致 $f$ 不是一对一的任何区域。
+
+That is, we
+choose a subset $D \subseteq \Dom{f}$ so that $\restrict{f}{D}$ is an injection.
+
+也就是说，我们选择一个子集 $D \subseteq \Dom{f}$，使得 $\restrict{f}{D}$ 是一个单射。
+
+This allows us to invert the restricted version of $f$.
+
+这使我们能够求限制后版本的 $f$ 的逆。
+
+There can be
+problems in doing this, but if we are careful about how we choose $D$,
+these problems are usually resolvable.
+
+这样做可能会有问题，但如果我们谨慎地选择 $D$，这些问题通常是可以解决的。
+
+\begin{exer}
+Suppose $f$ is a function that is not one-to-one, and $D$ is a subset
+of $\Dom{f}$ such that $\restrict{f}{D}$ \emph{is} one-to-one. The restricted
+function $\restrict{f}{D}$ has an inverse which we will denote by $g$. Note that $g$ is a function from $\Rng{\restrict{f}{D}}$ to $D$. Which
+of the following is always true:
+
+\[ f(g(x)) = x \quad \mbox{or} \quad g(f(x)) = x ? \]
+\end{exer}
+
+\begin{exer}
+假设 $f$ 是一个不是一对一的函数，而 $D$ 是 $\Dom{f}$ 的一个子集，使得 $\restrict{f}{D}$ \emph{是}一对一的。限制函数 $\restrict{f}{D}$ 有一个逆，我们将其表示为 $g$。注意 $g$ 是一个从 $\Rng{\restrict{f}{D}}$ 到 $D$ 的函数。以下哪一个总是成立的：
+
+\[ f(g(x)) = x \quad \mbox{或者} \quad g(f(x)) = x ？ \]
+\end{exer}
+
+Technically, when we do the process outlined above (choose a domain
+$D$ so that the restriction $\restrict{f}{D}$ is invertible, and 
+find that inverse)
+the function we get is a \index{right inverse}\emph{right inverse} for $f$.
+
+技术上讲，当我们执行上述过程（选择一个定义域 $D$ 使得限制 $\restrict{f}{D}$ 是可逆的，并找到该逆函数）时，我们得到的函数是 $f$ 的一个 \index{right inverse}\emph{右逆}。
+
+Let's take a closer look at the inverse sine function.
+
+让我们仔细看看反正弦函数。
+
+This should 
+help us to really understand the ``right inverse'' concept.
+
+这应该能帮助我们真正理解“右逆”的概念。
+
+A glance at the graph of $y = \sin{x}$ will certainly convince us that 
+this function is not injective, but the portion of the graph shown 
+in bold below passes the horizontal line test.
+
+看一眼 $y = \sin{x}$ 的图像肯定会让我们相信这个函数不是单射的，但下面以粗体显示的图像部分通过了水平线测试。
+
+\begin{center}
+\input{figures/graph_o_sine.tex}
+\end{center}
+
+If we restrict the domain of the sine function to the closed interval 
+$[-\pi/2, \pi/2]$, we have an invertible function.
+
+如果我们将正弦函数的定义域限制在闭区间 $[-\pi/2, \pi/2]$ 上，我们就得到了一个可逆函数。
+
+The inverse of this
+restricted function is the function we know as $\sin^{-1}(x)$ or 
+$\mbox{arcsin}(x)$.
+
+这个限制函数的逆函数就是我们所知的 $\sin^{-1}(x)$ 或 $\mbox{arcsin}(x)$。
+
+The domain and range of $\sin^{-1}(x)$ are 
+(respectively) the intervals
+$[-1,1]$ and $[-\pi/2, \pi/2]$.
+
+$\sin^{-1}(x)$ 的定义域和值域分别是区间 $[-1,1]$ 和 $[-\pi/2, \pi/2]$。
+
+Notice that if we choose a number $x$ in the range $-1 \leq x \leq 1$ and apply
+the inverse sine function to it, we will get a number between $-\pi/2$ and 
+$\pi/2$ -- i.e.\ a number we can interpret as an \emph{angle} in radian measure.
+
+请注意，如果我们在范围 $-1 \leq x \leq 1$ 内选择一个数 $x$，并对其应用反正弦函数，我们将得到一个介于 $-\pi/2$ 和 $\pi/2$ 之间的数——即一个我们可以解释为以弧度度量的\emph{角度}的数。
+
+If we then proceed to calculate the sine of this angle, we will get back our
+original number $x$.
+
+如果我们接着计算这个角度的正弦值，我们将得到我们原来的数 $x$。
+
+On the other hand, if we choose an angle first, then take the sine of it to
+get a number in $[-1,1]$ and then take the inverse sine of \emph{that},
+we will only end up with the same angle we started with {\bf if} 
+we chose the original angle
+so that it lay in the interval $[-\pi/2, \pi/2]$.
+
+另一方面，如果我们先选择一个角度，然后取它的正弦值得到一个在 $[-1,1]$ 中的数，然后再取\emph{那个}数的反正弦，我们只有在选择的原始角度位于区间 $[-\pi/2, \pi/2]$ 内时，才会得到我们开始时的那个角度。
+
+\begin{exer}
+We get a right inverse for the cosine function by restricting it to
+the interval $[0,\pi]$. What are the domain and range of $\cos^{-1}$?
+\end{exer}
+
+\begin{exer}
+我们通过将余弦函数限制在区间 $[0,\pi]$ 上来得到它的一个右逆。$\cos^{-1}$ 的定义域和值域是什么？
+\end{exer}
+
+The \index{winding map}\emph{winding map} is a function that goes 
+from $\Reals$ to the unit circle in the $x$--$y$ plane, defined by
+
+\[ W(t) = (\cos{t}, \sin{t}). \]
+
+\index{winding map}\emph{缠绕映射}是一个从 $\Reals$ 到 $x$--$y$ 平面单位圆的函数，定义为
+
+\[ W(t) = (\cos{t}, \sin{t}). \]
+
+One can think of this map as literally winding the infinitely long
+real line around and around the circle.
+
+我们可以把这个映射想象成把无限长的实数线一圈一圈地缠绕在圆上。
+
+Obviously, this is not an
+injection -- there are an infinite number of values of $t$ that 
+get mapped to (for instance) the point $(1,0)$, $t$ can be any integer
+multiple of $2\pi$.
+
+显然，这不是一个单射——有无限多个 $t$ 的值被映射到（例如）点 $(1,0)$， $t$ 可以是 $2\pi$ 的任何整数倍。
+
+\begin{exer}
+What is the set $W^{-1}(\{(0,1)\})$ ?
+\end{exer}
+
+\begin{exer}
+集合 $W^{-1}(\{(0,1)\})$ 是什么？
+\end{exer}
+
+If we restrict $W$ to the half-open interval $[0, 2\pi)$ the restricted
+function $\restrict{W}{[0, 2\pi)}$ is an injection.
+
+如果我们将 $W$ 限制在半开区间 $[0, 2\pi)$ 上，那么限制函数 $\restrict{W}{[0, 2\pi)}$ 是一个单射。
+
+The inverse function is 
+not easy to write down, but it is possible to express (in terms 
+of the inverse functions of sine and cosine) if we consider the 
+four cases determined by what quadrant a point on the unit circle 
+may lie in.
+
+逆函数不容易写出来，但是如果我们考虑单位圆上的一个点可能位于哪个象限的四种情况，就可以用正弦和余弦的反函数来表示它。
+
+\begin{exer}
+Suppose $(x,y)$ represents a point on the unit circle. If $(x,y)$ happens
+to lie on one of the coordinate axes we have 
+
+\begin{gather*}
+W^{-1}((1,0)) = 0\\
+W^{-1}((0,1)) = \pi/2\\
+W^{-1}((-1,0)) = \pi\\
+W^{-1}((0,-1)) = 3\pi/2.\\
+\end{gather*}
+
+If neither $x$ nor $y$ is zero, there are four cases to consider. Write an expression for $W^{-1}((x,y))$ using the cases 
+(i) $x>0 \, \land \, y>0$, 
+(ii) $x<0 \, \land \, y>0$, 
+(iii) $x<0 \, \land \, y<0$ and  
+(iv) $x>0 \, \land \, y<0$.
+\end{exer}
+
+\begin{exer}
+假设 $(x,y)$ 表示单位圆上的一个点。如果 $(x,y)$ 恰好位于坐标轴上，我们有
+
+\begin{gather*}
+W^{-1}((1,0)) = 0\\
+W^{-1}((0,1)) = \pi/2\\
+W^{-1}((-1,0)) = \pi\\
+W^{-1}((0,-1)) = 3\pi/2.\\
+\end{gather*}
+
+如果 $x$ 和 $y$ 都不是零，有四种情况需要考虑。使用以下情况写出 $W^{-1}((x,y))$ 的表达式：
+(i) $x>0 \, \land \, y>0$， 
+(ii) $x<0 \, \land \, y>0$， 
+(iii) $x<0 \, \land \, y<0$ 和  
+(iv) $x>0 \, \land \, y<0$。
+\end{exer}
+
+This last example that we have done (the winding map) was unusual in that
+the outputs were ordered pairs.
+
+我们做的最后一个例子（缠绕映射）不同寻常，因为它的输出是有序对。
+
+In thinking of this map as a relation
+(that is, as a set of ordered pairs) we have an ordered pair in which 
+the second element is an ordered pair!
+
+在把这个映射看作一个关系（即一个有序对的集合）时，我们有一个有序对，其中第二个元素本身就是一个有序对！
+
+Just for fun, here is another 
+way of expressing the winding map:
+
+为了好玩，这里有另一种表达缠绕映射的方式：
+
+\[ W = \{ (t, (\cos{t}, \sin{t})) \suchthat \, t \in \Reals \} \]
+
+When dealing with very complicated expressions involving ordered
+pairs, or more generally, ordered $n$-tuples, it is useful to 
+have a way to refer succinctly to the pieces of a tuple.
+
+在处理涉及有序对或更一般的有序n元组的非常复杂的表达式时，有一个简洁地指代元组各个部分的方法是很有用的。
+
+Let's start by considering the set $P = \Reals \times \Reals$ --- i.e. 
+$P$ is the $x$--$y$ plane.
+
+让我们从考虑集合 $P = \Reals \times \Reals$ 开始——即 $P$ 是 $x$--$y$ 平面。
+
+There are two functions, whose domain is $P$
+that ``pick out'' the $x$, and/or $y$ coordinate.
+
+有两个定义域为 $P$ 的函数，它们可以“挑选出”$x$ 和/或 $y$ 坐标。
+
+These functions are
+called $\pi_1$ and $\pi_2$, $\pi_1$ is the projection onto the first
+coordinate and $\pi_2$ is the projection onto the second coordinate.\footnote{%
+Don't think of the usual $\pi \approx 3.14159$ when looking at $\pi_1$ and %
+$\pi_2$. These functions are named as they are because $\pi$ is the Greek %
+letter corresponding to `p' which stands for ``projection.''}
+
+这些函数被称为 $\pi_1$ 和 $\pi_2$，$\pi_1$ 是到第一个坐标的投影，$\pi_2$ 是到第二个坐标的投影。\footnote{在看到 $\pi_1$ 和 $\pi_2$ 时，不要想到通常的 $\pi \approx 3.14159$。这些函数之所以这样命名，是因为 $\pi$ 是对应于‘p’的希腊字母，而‘p’代表“投影(projection)”。}
+
+\begin{defi}
+The function $\pi_1: \Reals \times \Reals \longrightarrow \Reals$ known
+as \index{projection}\emph{projection onto the first coordinate} is
+defined by
+
+\[ \pi_1((x,y)) = x. \]
+ 
+\end{defi}
+
+\begin{defi}
+函数 $\pi_1: \Reals \times \Reals \longrightarrow \Reals$ 被称为 \index{projection}\emph{到第一个坐标的投影}，定义为
+
+\[ \pi_1((x,y)) = x. \]
+ 
+\end{defi}
+
+The definition of $\pi_2$ is entirely analogous.  
+
+$\pi_2$ 的定义完全类似。
+
+You should note that these projection functions are \emph{very} bad 
+as far as being one-to-one is concerned.
+
+你应该注意到，就一对一性而言，这些投影函数是\emph{非常}糟糕的。
+
+For instance, the preimage
+of $1$ under the map $\pi_1$ consists of all the points on the vertical line
+$x=1$.
+
+例如，映射 $\pi_1$ 下 $1$ 的原像由垂直线 $x=1$ 上的所有点组成。
+
+That's a lot of preimages!  These guys are so far from being 
+one-to-one that it seems impossible to think of an appropriate restriction
+that would become invertible.
+
+那可是很多原像！这些家伙离一对一差得太远了，以至于似乎不可能想出一个合适的限制使其变得可逆。
+
+Nevertheless, there is a function that 
+provides a right inverse for both $\pi_1$ and $\pi_2$.
+
+然而，存在一个函数，可以为 $\pi_1$ 和 $\pi_2$ 提供右逆。
+
+Now, these projection
+maps go from $\Reals \times \Reals$ to $\Reals$ so an inverse needs to be
+a map from $\Reals$ to $\Reals \times \Reals$.
+
+现在，这些投影映射是从 $\Reals \times \Reals$ 到 $\Reals$ 的，所以逆映射需要是一个从 $\Reals$ 到 $\Reals \times \Reals$ 的映射。
+
+What is a reasonable way to
+produce a \emph{pair} of real numbers if we have a single real number in hand?
+
+如果我们手头只有一个实数，有什么合理的方法可以产生一\emph{对}实数呢？
+
+There are actually many ways one could proceed, but one reasonable choice is
+to create a pair where the input number appears in both coordinates.
+
+实际上有很多方法可以进行，但一个合理的选择是创建一个输入数出现在两个坐标中的数对。
+
+This
+is the so-called \index{diagonal map}\emph{diagonal map}, 
+$d:\Reals \times \Reals \longrightarrow \Reals$, defined by $d(a) = (a,a)$.
+
+这就是所谓的 \index{diagonal map}\emph{对角映射}，$d:\Reals \longrightarrow \Reals \times \Reals$，定义为 $d(a) = (a,a)$。
+
+\begin{exer}
+Which of the following is always true,
+
+\[ d(\pi_1((x,y)) = (x,y) \quad \mbox{or} \quad \pi_1(d(x)) = x? \] 
+\end{exer}
+
+\begin{exer}
+以下哪一个总是成立的，
+
+\[ d(\pi_1((x,y)) = (x,y) \quad \mbox{或者} \quad \pi_1(d(x)) = x? \] 
+\end{exer}
+
+There are a few other functions that it will be convenient to 
+introduce at this stage.  All of them are aspects of the 
+characteristic function of a subset, so we'll start with that.
+
+在这个阶段，介绍另外几个函数会很方便。它们都是子集特征函数的某些方面，所以我们从特征函数开始。
+
+Whenever we have a subset/superset relationship, $S \subseteq D$,  
+it is possible to define a function whose codomain is $\{0,1\}$
+which performs a very useful task -- if an input $x$ is in the 
+set $S$ the function will indicate this by returning 1, otherwise
+it will return 0.   
+
+每当我们有一个子集/父集关系 $S \subseteq D$ 时，就可以定义一个上域为 $\{0,1\}$ 的函数，它执行一个非常有用的任务——如果一个输入 $x$ 在集合 $S$ 中，函数将返回1来表示，否则它将返回0。
+
+The function which has this behavior is known 
+as $1_S$, and is called the \index{characteristic function}
+\emph{characteristic function of the subset $S$} (There are those
+who use the term \index{indicator function}\emph{indicator function of $S$}
+for $1_S$.)  By definition,
+$D$ is the domain of this function.  
+
+具有这种行为的函数被称为 $1_S$，并被称为\emph{子集 $S$ 的特征函数}\index{characteristic function}（有些人用\emph{$S$ 的指示函数}\index{indicator function}来指代 $1_S$）。根据定义，$D$ 是这个函数的定义域。
+
+\begin{gather*}
+1_S: D \longrightarrow \{0,1\} \\
+1_S(x) = \left\{ \begin{array}{cl} 1 & \mbox{if} \, x \in S \\ 0 & \mbox{otherwise} \end{array} \right.
+\end{gather*}
+
+\begin{exer}
+If you have the characteristic function of a subset $S$, how can you
+create the characteristic function of its complement, $\overline{S}$.
+\end{exer}
+
+\begin{exer}
+如果你有一个子集 $S$ 的特征函数，你如何创建其补集 $\overline{S}$ 的特征函数？
+\end{exer}
+
+A characteristic function may be thought of as an embodiment of a
+membership criterion.
+
+特征函数可以被认为是成员资格标准的一种体现。
+
+The logical open sentence ``$x \in S$'' being true
+is the same thing as the equation ``$1_S(x) = 1$.''   There is a notation,
+growing in popularity, that does the same thing for an arbitrary open sentence.
+
+逻辑开句“$x \in S$”为真与方程“$1_S(x) = 1$”是同一件事。有一种越来越流行的记法，对任意开句做同样的事情。
+
+The \index{Iverson bracket}\emph{Iverson bracket} notation uses the 
+shorthand $[ P(x) ]$ to represent a function that sends any $x$ that makes
+$P(x)$ true to 1, and any inputs that make $P(x)$ false will get sent to 0.
+
+\index{Iverson bracket}\emph{艾佛森括号}表示法使用简写 $[ P(x) ]$ 来表示一个函数，该函数将任何使 $P(x)$ 为真的 $x$ 映射到 1，而将任何使 $P(x)$ 为假的输入映射到 0。
+
+\[ [ P(x) ] = \left\{ \begin{array}{cl} 1 & \mbox{if} \, P(x) \\ 0 & \mbox{otherwise} \end{array} \right. \]
+ 
+The Iverson brackets can be particularly useful in expressing and simplifying
+sums.
+
+艾佛森括号在表示和简化求和时特别有用。
+
+For example, we can write $\sum_{i=1}^{24} [2 \divides i]$ to
+find the number of even natural numbers less than 25.  Similarly, we can write
+$\sum_{i=1}^{24} [3 \divides i]$ to find the number of natural numbers less than 
+25 that are divisible by 3.  
+
+例如，我们可以写 $\sum_{i=1}^{24} [2 \divides i]$ 来找出小于25的偶自然数的数量。类似地，我们可以写 $\sum_{i=1}^{24} [3 \divides i]$ 来找出小于25的能被3整除的自然数的数量。
+
+\begin{exer}
+What does the following formula count?
+\[ \sum_{i=1}^{24} [2 \divides i] + [3 \divides i] - [6 \divides i] \]
+
+\end{exer}
+
+\begin{exer}
+以下公式计算的是什么？
+\[ \sum_{i=1}^{24} [2 \divides i] + [3 \divides i] - [6 \divides i] \]
+\end{exer}
+
+There is a much more venerable notation known as the \index{Kronecker delta}
+\emph{Kronecker delta} that can be thought of as a special case of the 
+idea inherent in Iverson brackets.
+
+有一种更为古老的记法，称为\emph{克罗内克 delta}\index{Kronecker delta}，可以看作是艾佛森括号内在思想的一个特例。
+
+We write $\delta_{ij}$ as a shorthand
+for a function that takes two inputs, $\delta(i,j)$ is 1 if and only if
+$i$ and $j$ are equal.
+
+我们用 $\delta_{ij}$ 作为接受两个输入的函数的简写，当且仅当 $i$ 和 $j$ 相等时，$\delta(i,j)$ 为 1。
+
+\[ \delta_{ij} =  \left\{ \begin{array}{cl} 1 & \mbox{if} \; i=j \\ 0 & \mbox{otherwise} \end{array} \right. \]
+
+The corresponding Iverson bracket would simply be $[i=j]$.
+
+对应的艾佛森括号将是 $[i=j]$。
+
+We'll end this section with a function that will be especially important
+in Chapter~\ref{ch:card}.
+
+我们将以一个在第~\ref{ch:card}章中特别重要的函数来结束本节。
+
+If we have an arbitrary subset of the natural
+numbers, we can associate it with an infinite string of 0's and 1's.
+
+如果我们有自然数的任意一个子集，我们可以将其与一个无限的0和1字符串关联起来。
+
+By
+sticking a decimal point in front of such a thing, we get binary notation
+for a real number in the interval $[0,1]$.
+
+通过在这样的字符串前加上一个小数点，我们得到了区间 $[0,1]$ 内一个实数的二进制表示法。
+
+There is a subtle problem that 
+we'll deal with when we study this function in more detail in Chapter~\ref{ch:card} --- some real numbers can be expressed in two different ways in base 2.
+For example, $1/2$ can either be written as $.1$ or as $.0\overline{1}$ (where,
+as usual, the overline indicates a pattern that repeats forever).
+
+当我们在第~\ref{ch:card}章更详细地研究这个函数时，会处理一个微妙的问题——一些实数可以用两种不同的方式以二进制表示。例如，1/2可以写成$.1$，也可以写成$.0\overline{1}$（像往常一样，上划线表示一个无限重复的模式）。
+
+For the moment, we are talking about 
+defining a function $\phi$ whose domain is ${\mathcal P}(\Naturals)$ and 
+whose codomain is the set of all infinite binary strings.
+
+目前，我们正在讨论定义一个函数 $\phi$，其定义域是 ${\mathcal P}(\Naturals)$，其上域是所有无限二进制字符串的集合。
+
+Let us denote these binary expansions by
+$.b_1b_2b_3b_4\ldots$.  Suppose $A$ is a subset of $\Naturals$,
+then the binary expansion associated with $A$ will be
+determined by $b_i = 1_A(i)$.
+
+让我们用 $.b_1b_2b_3b_4\ldots$ 来表示这些二进制展开式。假设 $A$ 是 $\Naturals$ 的一个子集，那么与 $A$ 相关联的二进制展开式将由 $b_i = 1_A(i)$ 确定。
+
+(Alternatively, we can use the Iverson 
+bracket notation: $b_i = [i \in A]$.)   
+
+（或者，我们可以使用艾佛森括号表示法：$b_i = [i \in A]$。）
+
+The function $\phi$ defined in the last paragraph turns out to be a 
+bijection -- given a subset we get a unique binary expansion, and given 
+binary expansion we get (using $\phi^{-1}$) a unique subset  of 
+$\Naturals$.
+
+上一段定义的函数 $\phi$ 原来是一个双射——给定一个子集，我们得到一个唯一的二进制展开式；给定一个二进制展开式，我们（使用 $\phi^{-1}$）得到一个唯一的 $\Naturals$ 的子集。
+
+A few examples will
+probably help to clarify this function's workings.
+
+几个例子可能会帮助阐明这个函数的工作原理。
+
+Consider 
+the set $\{1,2,3\} \subseteq \Naturals$, the binary expansion that this
+corresponds to will have 1's in the first three positions after the 
+decimal -- $\phi(\{1,2,3\}) = .111$ this is the number written .875
+in decimal.
+
+考虑集合 $\{1,2,3\} \subseteq \Naturals$，它对应的二进制展开式在小数点后的前三个位置上将是1——$\phi(\{1,2,3\}) = .111$，这个数用十进制写作.875。
+
+The infinite repeating binary number $.\overline{01}$ 
+is the base-2 representation of $1/3$, it is easy to see that
+$.\overline{01}$ is the image of the set of odd naturals, $\{1,3,5,\ldots\}$.
+
+无限循环二进制数 $.\overline{01}$ 是 $1/3$ 的二进制表示，很容易看出 $.\overline{01}$ 是奇自然数集合 $\{1,3,5,\ldots\}$ 的像。
+
+\begin{exer}
+Find the binary representation for the real number which is the image of
+the set of even numbers under $\phi$.
+\end{exer}
+
+\begin{exer}
+求在 $\phi$ 映射下，偶数集合的像所对应的实数的二进制表示。
+\end{exer}
+
+\begin{exer}
+Find the binary representation for the real number which is the image of
+the set of triangular numbers under $\phi$. (Recall that the triangular
+numbers are $T = \{1,3,6,10,15, \ldots \}$.)
+\end{exer}
+
+\begin{exer}
+求在 $\phi$ 映射下，三角数集合的像所对应的实数的二进制表示。（回想一下，三角数是 $T = \{1,3,6,10,15, \ldots \}$.)
+\end{exer}
+
+\newpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{rel-zh/special-exer.tex}
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***

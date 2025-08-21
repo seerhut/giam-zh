@@ -1,0 +1,135 @@
+Give inductive proofs of the following 
+
+为以下各项给出归纳证明
+\begin{enumerate}
+\item $\forall x \in \Naturals, \; 3 \divides x^3-x$
+
+\hint{
+\begin{proof} (by induction)
+
+(通过归纳法)
+
+{\bf Base case:} ($x=0$)
+
+{\bf 基础情形：} ($x=0$)
+
+The base case is trivial since, when $x=0$, $x^3-x$ evaluates to $0$ and every natural number is a divisor of $0$.
+
+基础情形是平凡的，因为当 $x=0$ 时，$x^3-x$ 的值为0，而任何自然数都是0的约数。
+{\bf Inductive step:} 
+
+{\bf 归纳步骤：}
+
+In the inductive step we want to show that $\forall k \in \Naturals, \; 3 \divides k^3 - k \; \implies \; 3 \divides (k+1)^3 - (k+1)$.
+So, let $k$ be an arbitrary natural number such that  $3 \divides k^3 - k$.
+Consider the quantity $(k+1)^3 - (k+1)$,
+
+在归纳步骤中，我们想要证明 $\forall k \in \Naturals, \; 3 \divides k^3 - k \; \implies \; 3 \divides (k+1)^3 - (k+1)$。所以，设 $k$ 是一个任意的自然数，使得 $3 \divides k^3 - k$。考虑量 $(k+1)^3 - (k+1)$，
+
+\begin{gather*}
+(k+1)^3 - (k+1) \\
+= \; (k^3 + 3k^2+ 3k +1) - (k+1) \\
+= \; (k^3 - k) + (3k^2 + 3k). 
+\end{gather*}
+
+By the inductive hypothesis (and the definition of divisibility), we know that there is an integer $q$ such that $k^3-k = 3q$.
+So, by substitution, we obtain
+
+根据归纳假设（以及整除的定义），我们知道存在一个整数 $q$ 使得 $k^3-k = 3q$。所以，通过代换，我们得到
+
+\[ (k+1)^3 - (k+1) \; = \; 3q + 3k^2 + 3k \; = 3 \cdot (q + k^2 + k).\]
+
+Finally, $q+k^2-k$ (being the sum of integers) is certainly an integer, so by the definition of 
+divisibility, it follows that $(k+1)^3 - (k+1)$ is divisible by 3.
+
+最后，$q+k^2-k$（作为整数之和）当然是一个整数，所以根据整除的定义，可知 $(k+1)^3 - (k+1)$ 能被3整除。
+
+\end{proof}
+}
+\wbvfill
+
+%\workbookpagebreak
+
+\item $\forall x \in \Naturals, \; 3 \divides x^3+5x$
+
+\wbvfill
+
+\workbookpagebreak
+
+\item $\forall x \in \Naturals, \; 11 \divides x^{11}+10x$
+
+\wbvfill
+
+%\workbookpagebreak
+
+\item $\forall n \in \Naturals, \; 3 \divides 4^n-1$
+
+\wbvfill
+
+\workbookpagebreak
+
+\item $\forall n \in \Naturals, \; 6 \divides (3n^{2}+3n-12)$
+
+\wbvfill
+
+%\workbookpagebreak
+
+\item $\forall n \in \Naturals, \; 5 \divides (n^{5}-5n^{3}+14n)$
+
+\wbvfill
+
+\workbookpagebreak
+
+\item $\forall n \in \Naturals, \; 4 \divides (13^{n}+4n-1)$
+
+\wbvfill
+
+%\workbookpagebreak
+
+\item $\forall n \in \Naturals, \; 7 \divides 8^n+6$
+
+\wbvfill
+
+\workbookpagebreak
+
+\item $\forall n \in \Naturals, \; 6 \divides 2n^3 - 2n - 12$
+
+\wbvfill
+
+%\workbookpagebreak
+
+\item $\forall n \geq 3 \in \Naturals, \; 3n^2+3n+1 < 2n^3$
+
+\wbvfill
+
+\workbookpagebreak
+
+\item $\forall n > 3 \in \Naturals, \; n^3 < 3^n$
+
+\wbvfill
+
+%\workbookpagebreak
+
+\item $\forall n \geq 3 \in \Naturals, \; n^{3}+3>n^{2}+3n+1$
+
+\wbvfill
+
+\workbookpagebreak
+
+\item $\forall x \geq 4 \in \Naturals, \; x^22^x \leq 4^x$
+
+\wbvfill
+
+%\workbookpagebreak
+
+\end{enumerate}
+
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM-hw.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***

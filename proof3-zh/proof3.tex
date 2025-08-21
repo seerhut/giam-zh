@@ -1,0 +1,2407 @@
+\chapter{Proof techniques III --- Combinatorics 证明技巧 III --- 组合数学}
+\label{ch:comb}
+
+{\em Tragedy is when I cut my finger. Comedy is when you fall into an open sewer and die. --Mel Brooks }
+
+{\em 悲剧是我切到了我的手指。喜剧是你掉进一个敞开的下水道里死掉了。——梅尔·布鲁克斯 }
+
+
+\section{Counting 计数}
+\label{sec:counting}
+
+Many results in mathematics are answers to ``How many \ldots'' questions.
+
+数学中的许多结果都是对“有多少……”这类问题的回答。
+
+\noindent ``How many subsets does a finite set have?''
+
+\noindent “一个有限集有多少个子集？”
+
+\noindent ``How many handshakes will transpire when $n$ people first meet?''
+
+\noindent “当n个人初次见面时，会发生多少次握手？”
+
+\noindent ``How many functions are there from a set of size $n$ to a set of size $m$?''
+
+\noindent “从一个大小为n的集合到一个大小为m的集合，有多少个函数？”
+
+The title of this section, ``Counting,'' is not intended to evoke the usual
+process of counting sheep, or counting change.
+
+本节的标题“计数”，并非意在唤起数羊或数零钱的常规过程。
+
+What we want is to be able
+to count some collection \emph{in principle} so that we will be able to 
+discover a formula for its size.
+
+我们想要的是能够\emph{在原则上}对某个集合进行计数，以便我们能够发现其大小的公式。
+
+There are two principles that will be indispensable in counting things.
+
+在计数方面，有两个原则是不可或缺的。
+
+These principles are simple, yet powerful, and they have been named in
+the most unimaginative way possible.
+
+这些原则简单而强大，它们的命名方式却是最缺乏想象力的。
+
+The ``multiplication rule'' which
+tells us when we should multiply, and the ``addition rule'' which tells
+us when we should add.
+
+“乘法法则”告诉我们什么时候应该相乘，“加法法则”告诉我们什么时候应该相加。
+
+Before we describe these principles in detail,
+we'll have a look at a simpler problem which is most easily described
+by an example: How many integers are there in the list $(7,8,9,\ldots 44)$?
+
+在我们详细描述这些原则之前，我们先看一个更简单的问题，这个问题最容易通过一个例子来描述：在列表 $(7,8,9,\ldots 44)$ 中有多少个整数？
+
+We could certainly write down all the integers from $7$ to $44$ (inclusive) 
+and then count them -- although this wouldn't be the best plan if the numbers
+$7$ and $44$ were replaced with (say) $7,045,356$ and $22,355,201$.
+
+我们当然可以写下从7到44（含）的所有整数，然后数一数——尽管如果数字7和44被替换成（比如说）7,045,356和22,355,201，这可能不是最好的计划。
+
+A method
+that does lead to a generalized ability to count the elements of a finite
+sequence arises if we think carefully about what exactly a finite sequence 
+\emph{is}.
+
+如果我们仔细思考有限序列究竟\emph{是}什么，就会产生一种能够推广到计算有限序列元素数量的方法。
+
+\begin{defi}
+A \index{sequence}\emph{sequence from a set $S$} is a function from 
+$\Naturals$ to $S$.
+\end{defi}
+
+\begin{defi}
+来自集合$S$的\index{sequence}\emph{序列}是一个从$\Naturals$到$S$的函数。
+\end{defi}
+
+\begin{defi}
+A \index{finite sequence}\emph{finite sequence from a set $S$} is a 
+function from $\{0, 1, 2, \ldots , n\}$ to $S$, where $n$ is some 
+particular (finite) integer.
+\end{defi}
+
+\begin{defi}
+来自集合$S$的\index{finite sequence}\emph{有限序列}是一个从$\{0, 1, 2, \ldots , n\}$到$S$的函数，其中$n$是某个特定的（有限的）整数。
+\end{defi}
+
+Now it is easy to see that there are $n+1$ elements in the set
+$\{0, 1, 2, \ldots , n \}$ so counting the elements of a finite
+sequence will be easy if we can determine the function involved 
+and figure out what $n$ is by inverting it ($n$ is an inverse image
+for the last element in a listing of the sequence).
+
+现在很容易看出集合$\{0, 1, 2, \ldots , n \}$中有$n+1$个元素，所以如果我们能确定所涉及的函数并通过求逆来找出$n$是什么（$n$是序列列表中最后一个元素的原像），那么计算有限序列的元素就会很容易。
+
+In the example that we started with, the function is $f(x)=x+7$.
+
+在我们开始的例子中，函数是$f(x)=x+7$。
+
+We
+can sum up the process that allows us to count the sequence by saying
+``there is a one-to-one correspondence between the lists %
+
+我们可以通过说“在列表
+
+\[ (7, 8, 9, \ldots , 44 ) \]
+
+\noindent 和
+
+\[ (0, 1, 2, \ldots , 37 ) \]
+
+\noindent 之间存在一一对应关系，且后一个列表有38个条目”来总结让我们能够计算该序列的过程。
+
+More generally, if there is a list of consecutive numbers beginning
+with $k$ and ending with $n$, there will be $n-k+1$ entries in the 
+list.
+
+更一般地，如果有一个从$k$开始到$n$结束的连续数字列表，那么该列表中将有$n-k+1$个条目。
+
+Lists of consecutive integers represent a relatively simple
+type of finite sequence.
+
+连续整数的列表代表了一种相对简单的有限序列类型。
+
+Usually we would have some slightly more
+interesting function that we'd need to invert.
+
+通常我们会有一个稍微更有趣的函数需要我们去求逆。
+
+The following exercise involves inverting the function $(x+5)^2$.
+
+下面的练习涉及到对函数$(x+5)^2$求逆。
+
+\begin{exer}
+How many integers are in the list $(25, 36, 49, \ldots , 10000)$ ?
+\end{exer}
+
+\begin{exer}
+在列表 $(25, 36, 49, \ldots , 10000)$ 中有多少个整数？
+\end{exer}
+
+We will have a lot more practice with counting the elements of sequences
+in the exercises at the end of this section, let's continue on our
+tour of counting by having a look at the addition rule.
+
+在本节末的练习中，我们将有更多关于计算序列元素数量的练习，现在让我们继续我们的计数之旅，看看加法法则。
+
+The \index{addition rule}addition rule says that it is appropriate to add if we can 
+partition a collection into \emph{disjoint} pieces.
+
+\index{addition rule}加法法则说，如果我们能将一个集合划分为\emph{不相交}的几部分，那么相加是合适的。
+
+In other words,
+if a set $S$ is the union of two or more subsets and these subsets 
+are mutually disjoint, we can find the size of $S$ by adding the sizes
+of the subsets.
+
+换句话说，如果一个集合$S$是两个或多个子集的并集，并且这些子集是互不相交的，我们可以通过将这些子集的大小相加来求得$S$的大小。
+
+In the game \index{Yahtzee}Yahtzee, one rolls 5 dice and (optionally) performs a 
+second roll of some or all of the dice.
+
+在\index{Yahtzee}Yahtzee（快艇骰子）游戏中，玩家掷5个骰子，并（可选地）对部分或全部骰子进行第二次投掷。
+
+The object is to achieve 
+several final configurations that are modeled after the hands in
+Poker.
+
+目标是达成几种模仿扑克牌型的最终组合。
+
+In particular, one configuration, known as a ``full house,''
+is achieved by having two of one number and three of another.
+
+特别地，一种称为“葫芦”的组合，是通过获得两个相同数字和三个另一相同数字来达成的。
+
+(Colloquially, we say ``three-of-a-kind plus a pair is a full house.'')
+
+（通俗地说，我们称“三条加一对是葫芦。”）
+
+Now, we could use Yahtzee ``hands'' to provide us with a whole collection
+of counting problems once we have our basic counting principles,
+but for the moment we just want to make a simple (and obvious) point
+about ``full houses'' -- the pair is either smaller or larger than
+the three-of-a-kind.
+
+现在，一旦我们掌握了基本的计数原则，我们就可以用Yahtzee的“牌型”为我们提供一大堆计数问题，但目前我们只想就“葫芦”提出一个简单（且明显）的观点——对子要么比三条小，要么比三条大。
+
+This means we can partition the set of all possible
+full houses into two disjoint sets -- the full houses consisting of a small
+pair and a larger three-of-a-kind and those where the pair is larger 
+than the three-of-a-kind.
+
+这意味着我们可以将所有可能的葫芦集合划分为两个不相交的集合——由一个小的对子和一个大的三条组成的葫芦，以及那些对子比三条大的葫芦。
+
+If we can find some way of counting these
+two cases separately, then the total number of full houses will be the 
+sum of these numbers.
+
+如果我们能找到某种方法分别计算这两种情况，那么葫芦的总数将是这些数字的和。
+
+\begin{figure}[!hbtp]
+\begin{center}
+\input{figures/full_house_w_small_pair.tex}
+
+\vspace{.3in}
+
+\input{figures/full_house_w_large_pair.tex}
+\end{center}
+\caption[Full houses in Yahtzee.]{In Yahtzee, a full house may consist of 
+a pair and a larger three-of-a-kind, or vice versa.}
+\caption[Yahtzee中的葫芦。]{在Yahtzee中，一个葫芦可能由一个对子和一个较大的三条组成，反之亦然。}
+\label{fig:full_house} 
+\end{figure}
+
+
+The \index{multiplication rule}multiplication rule gives 
+us a way of counting things by thinking
+about how we might construct them.
+
+\index{multiplication rule}乘法法则为我们提供了一种通过思考如何构造事物来进行计数的方法。
+
+The numbers that are multiplied
+are the number of choices we have in the construction process.
+
+相乘的数字是我们在构造过程中所拥有的选择数量。
+
+Surprisingly often, the number of choices we can make in a given 
+stage of constructing some configuration is independent of the choices
+that have gone before -- if this is not the case the multiplication rule
+may not apply.
+
+出人意料的是，在构建某种配置的给定阶段中，我们能做的选择数量常常与之前的选择无关——如果情况并非如此，乘法法则可能就不适用。
+
+If some object can be constructed in $k$ stages, and if in the first
+stage we have $n_1$ choices as to how to proceed, in the second stage
+we have $n_2$ choices, \emph{et cetera}.
+
+如果某个对象可以在$k$个阶段内构建，并且在第一个阶段我们有$n_1$种选择，在第二个阶段我们有$n_2$种选择，以此类推。
+
+Then the total number of such
+objects is the product $n_1n_2 \cdots n_k$.
+
+那么这类对象的总数就是乘积$n_1n_2 \cdots n_k$。
+
+A \index{permutation}\emph{permutation of an $n$-set} (w.l.o.g.\ $\{1,2,\ldots , n\}$) is an ordered $n$-tuple where each entry is a distinct element of the
+$n$-set.
+
+一个\index{permutation}\emph{$n$-集合的排列}（不失一般性地，设为$\{1,2,\ldots , n\}$）是一个有序的$n$-元组，其中每个条目都是该$n$-集合中的一个不同元素。
+
+Generally, a permutation may be regarded as a bijection from
+an $n$-set to itself.
+
+通常，一个排列可以被看作是一个$n$-集合到其自身的双射。
+
+Our first use of the multiplication rule will
+be to count the total number of permutations of $\{1, 2, 3, \ldots ,n\}$.
+
+我们第一次使用乘法法则将是计算集合$\{1, 2, 3, \ldots ,n\}$的全排列总数。
+
+Let's start by counting the permutations of   $\{1, 2, 3\}$.
+
+让我们从计算$\{1, 2, 3\}$的排列开始。
+
+A permutation will be a 3-tuple containing the numbers $1$, $2$ and
+$3$ in some order.
+
+一个排列将是一个包含数字1、2、3以某种顺序排列的3元组。
+
+We will think about building such a thing in 
+three stages.
+
+我们将分三个阶段来考虑构建这样一个东西。
+
+First,
+we must select a number to go in the first position -- there are $3$ choices.
+
+首先，我们必须选择一个数字放在第一个位置——有3种选择。
+
+Having made that choice, there will only be two possibilities for the number
+in the second position.
+
+做出那个选择后，第二个位置的数字就只有两种可能性了。
+
+Finally there is just one number remaining to put in
+the third position\footnote{People may say you have ``no choice'' in this %
+last situation, but what they mean is that you have only one choice.}.
+
+最后只剩下一个数字可以放在第三个位置\footnote{人们在这种最后的情况下可能会说你“别无选择”，但他们的意思是说你只有一个选择。}。
+
+Thus there are $3\cdot 2\cdot 1 = 6$ permutations of a $3$ element set.
+
+因此，一个3元素集合有$3\cdot 2\cdot 1 = 6$个排列。
+
+The general rule is that there are $n!$ permutations of $\{1, 2, \ldots , n\}$.
+
+一般的规则是，集合$\{1, 2, \ldots , n\}$有$n!$个排列。
+
+There are times when configurations that are like permutations (in that they
+are ordered and have no duplicates) but don't consist of all $n$ numbers 
+are useful.
+
+有时，像排列那样（有序且无重复）但不包含所有$n$个数字的配置也很有用。
+
+\begin{defi}
+A \emph{$k$-permutation from an $n$-set} is an ordered selection
+of $k$ distinct elements from a set of size $n$.
+\end{defi}
+
+\begin{defi}
+一个\emph{来自$n$-集合的$k$-排列}是从一个大小为$n$的集合中选出的$k$个不同元素的有序选择。
+\end{defi}
+
+There are certain natural limitations on the value of $k$, for instance $k$
+can't be negative -- although (arguably) $k$ can be 0, it makes more sense
+to think of $k$ being at least 1.  Also, if $k$ exceeds
+$n$ we won't be able to find \emph{any} $k$-permutations, 
+since it will be impossible
+to meet the ``distinct'' requirement.
+
+$k$的值有一些自然的限制，例如$k$不能是负数——尽管（可以说）$k$可以是0，但认为$k$至少为1更有意义。另外，如果$k$超过$n$，我们将找不到\emph{任何}$k$-排列，因为将无法满足“不同”的要求。
+
+If $k$ and $n$ are equal, there is 
+no difference between a $k$-permutation and an ordinary permutation.
+
+如果$k$和$n$相等，那么$k$-排列和普通排列之间没有区别。
+
+Therefore, we ordinarily restrict $k$ to lie in the range $0 < k < n$.
+
+因此，我们通常将$k$限制在$0 < k < n$的范围内。
+
+The notation $P(n,k)$ is used for the total number of $k$-permutations
+of a set of size $n$.
+
+符号$P(n,k)$用于表示一个大小为$n$的集合的$k$-排列总数。
+
+For example, $P(4,2)$ is 12, since there are
+twelve different ordered pairs having distinct entries where the 
+entries come from $\{1,2,3,4\}$.
+
+例如，$P(4,2)$是12，因为有十二个不同的有序对，其条目不同且来自集合$\{1,2,3,4\}$。
+
+\begin{exer}
+Write down all twelve $2$-permutations of the $4$-set $\{1,2,3,4\}$.
+\end{exer}
+
+\begin{exer}
+写下4元集合$\{1,2,3,4\}$的所有十二个2-排列。
+\end{exer}
+
+Counting $k$-permutations using the multiplication rule is easy.
+
+使用乘法法则计算$k$-排列很容易。
+
+We
+build a $k$-permutation in $k$ stages.  In stage 1, we pick the first 
+element in the permutation -- there are $n$ possible choices.
+
+我们在$k$个阶段内构建一个$k$-排列。在第1阶段，我们选择排列中的第一个元素——有$n$种可能的选择。
+
+In
+stage 2, we pick the second element -- there are now only $n-1$ choices
+since we may not repeat the first entry.
+
+在第2阶段，我们选择第二个元素——现在只有$n-1$种选择，因为我们不能重复第一个条目。
+
+We keep going like this until 
+we've picked $k$ entries.
+
+我们一直这样做，直到我们选了$k$个条目。
+
+The number $P(n,k)$ is the product of $k$
+numbers beginning with $n$ and descending down to $n-k+1$.
+
+数字$P(n,k)$是从$n$开始，递减到$n-k+1$的$k$个数的乘积。
+
+To verify 
+that $n-k+1$ is really the right lower limit, check that there are indeed
+$k$ entries in the sequence
+
+为了验证$n-k+1$确实是正确的下限，请检查序列
+
+\[ (n, n-1, n-2, \ldots n-k+1). \]
+
+中确实有$k$个条目。
+
+This verification may be easier if we rewrite the sequence as
+
+如果我们将序列重写为
+
+\[ (n-0, n-1, n-2, \ldots n-(k-1) ). \]
+
+这个验证可能会更容易。
+
+Let's have a look at another small example -- $P(8,4)$.
+
+让我们再看一个小的例子——$P(8,4)$。
+
+There will be 8
+choices for the first entry in a 4-tuple, 7 choices for the second
+entry, 6 choices for the third entry and 5 choices for the last entry.
+
+在一个4元组中，第一个条目有8种选择，第二个条目有7种选择，第三个条目有6种选择，最后一个条目有5种选择。
+
+(Note that $5 = 8-4+1$.)  Thus $P(8,4)=8\cdot 7 \cdot 6 \cdot 5 = 1680$.
+
+（注意 $5 = 8-4+1$。）因此 $P(8,4)=8\cdot 7 \cdot 6 \cdot 5 = 1680$。
+
+Finally, we should take note that it is relatively easy to express $P(n,k)$
+using factorials.
+
+最后，我们应该注意到，用阶乘来表示$P(n,k)$是相对容易的。
+
+If we divide a number factorialized by some smaller 
+number factorialized, we will get a descending product just like those above.
+
+如果我们将一个数的阶乘除以某个更小的数的阶乘，我们将得到一个像上面那样的递减乘积。
+
+\begin{exer}
+What factorial would we divide $8!$ by in order to get $P(8,4)$?
+\end{exer}
+
+\begin{exer}
+为了得到$P(8,4)$，我们应该用$8!$除以哪个数的阶乘？
+\end{exer}
+
+The general rule is that $P(n,k) = \frac{n!}{(n-k)!}$.
+
+一般的规则是$P(n,k) = \frac{n!}{(n-k)!}$。
+
+If we were playing a card game in which we were dealt 5 cards from
+a deck of 52, we would receive our cards in the form of 
+$P(52,5) = 52 \cdot 51 \cdot 50 \cdot 49 \cdot 48 = 311875200$ ordered
+$5$-tuples.
+
+如果我们玩一种从52张牌中发5张的牌类游戏，我们收到的牌会是$P(52,5) = 52 \cdot 51 \cdot 50 \cdot 49 \cdot 48 = 311875200$种有序5元组的形式。
+
+Normally, we don't really care about what order the cards
+came to us in.  In a card game one ordinarily begins sorting the cards
+so as to see what hand one has -- this is a sure sign that the order the
+cards were dealt is actually immaterial.
+
+通常，我们并不真正在意牌是按什么顺序发到我们手里的。在牌类游戏中，人们通常会先整理牌，以便看清自己有什么牌——这明确地表明发牌的顺序实际上是无关紧ย์要的。
+
+How many different orders can
+five cards be put in?  The answer to this question is $5! = 120$ since
+what we are discussing is nothing more than a permutation of a set of
+size 5.  Thus, if we say that there are 311,875,200 different possible 
+hands in 5-card poker, we are over-counting things by quite a bit!
+
+五张牌可以有多少种不同的顺序？这个问题的答案是$5! = 120$，因为我们讨论的无非是一个大小为5的集合的排列。因此，如果我们说5张牌的扑克有311,875,200种可能的牌手，我们就大大地多数了！
+
+Any
+given hand will appear 120 times in that tabulation, which means the 
+right value is $311875200/120 = 2598960$.
+
+任何给定的牌手都会在那个列表中出现120次，这意味着正确的值是$311875200/120 = 2598960$。
+
+Okay, so there around 2.6 million
+different hands in 5-card poker.
+
+好的，所以在5张牌的扑克中大约有260万种不同的牌手。
+
+Unless you plan to become a gambler
+this isn't really that useful of a piece of information -- but if you
+generalize what we've done in the paragraph above, you'll have found
+a way to count unordered collections of a given size taken from a set.
+
+除非你打算成为一个赌徒，否则这并不是一个真正有用的信息——但如果你将我们上面段落中所做的推广，你就会找到一种方法来计算从一个集合中取出的给定大小的无序集合。
+
+A \index{combination} \emph{$k$-combination from an $n$-set} is an 
+unordered selection, without repetitions, of $k$ things out of $n$.
+
+一个\index{combination}\emph{来自$n$-集合的$k$-组合}是从$n$个事物中无序地、不重复地选择$k$个事物。
+
+This is the exact same thing as a subset of size $k$ of a set of size 
+$n$, and the number of such things is denoted by several different 
+notations -- $C(n,k)$, $nCk$ and $\displaystyle\binom{n}{k}$ among 
+them\footnote{Watch out for the $\binom{n}{k}$ notation, it is easy 
+to confuse it with the fraction $\left(\frac{n}{k}\right)$. They
+are not the same --- the fraction bar is \emph{supposed} to be missing
+in $\binom{n}{k}$.}.
+
+这与一个大小为$n$的集合的大小为$k$的子集完全相同，这种东西的数量有几种不同的记法——其中包括$C(n,k)$、$nCk$和$\displaystyle\binom{n}{k}$\footnote{小心$\binom{n}{k}$这个记法，很容易将它与分数$\left(\frac{n}{k}\right)$混淆。它们是不同的——在$\binom{n}{k}$中，分数线\emph{应该}是缺失的。}。
+
+We can come
+up with a formula for $C(n,k)$ by a slightly roundabout argument.
+
+我们可以通过一个稍微迂回的论证来得出$C(n,k)$的公式。
+
+Suppose we think of counting the $k$-permutations of $n$ things using the
+multiplication rule in a different way then we have previously.
+
+假设我们用一种与之前不同的方式，使用乘法法则来计算$n$个事物的$k$-排列。
+
+We'll
+build a $k$-permutation in two stages.  First we'll choose $k$ symbols
+to put into our permutation -- which can be done in $C(n,k)$ ways.
+
+我们将分两个阶段来构建一个$k$-排列。首先，我们将选择$k$个符号放入我们的排列中——这可以用$C(n,k)$种方式完成。
+
+And
+second, we'll put those $k$ symbols into a particular order -- which
+can be accomplished in $k!$ ways.
+
+其次，我们将这$k$个符号按特定顺序排列——这可以用$k!$种方式完成。
+
+Thus $P(n,k) = C(n,k) \cdot k!$. 
+
+因此，$P(n,k) = C(n,k) \cdot k!$。
+
+Since we already know that $P(n,k) = \frac{n!}{(n-k)!}$, we can 
+substitute and solve to obtain 
+
+因为我们已经知道$P(n,k) = \frac{n!}{(n-k)!}$，我们可以代入并求解得到
+
+\[ C(n,k) = \frac{n!}{k! \cdot (n-k)!}. \]
+
+It is possible to partition many counting problems into 4 ``types''
+based on the answers to two questions:
+
+根据对两个问题的回答，可以将许多计数问题划分为4种“类型”：
+
+Is order important in the configurations being counted?
+
+在被计数的配置中，顺序是否重要？
+
+Are we allowed to have repeated elements in a configuration?
+
+在一个配置中，我们是否允许有重复的元素？
+
+Suppose that we are in the general situation of selecting $k$ things
+out of a set of size $n$.
+
+假设我们处于从一个大小为$n$的集合中选择$k$个事物的普遍情况。
+
+It should be possible to write formulas
+involving $n$ and $k$ in the four cells of the following table.
+
+应该可以在下表的四个单元格中写出包含$n$和$k$的公式。
+
+\begin{center}
+\begin{tabular}{cc}
+ & Does order matter? 顺序重要吗？ \\
+\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? 允许重复吗？ \end{sideways} }  & \begin{tabular}{c|c|c}
+ & Yes 是 & No 否 \\ \hline
+\parbox[c]{12pt}{ \begin{sideways} \rule{36pt}{0pt} No 否 \end{sideways} } & \rule{0pt}{40pt}\rule{96pt}{0pt} & \rule{96pt}{0pt} \\ \hline
+\parbox[c]{12pt}{ \begin{sideways} \rule{36pt}{0pt} Yes 是  \end{sideways} } & \rule{0pt}{40pt}\rule{96pt}{0pt} & \rule{96pt}{0pt} \\
+\end{tabular}
+\end{tabular}
+\end{center}
+\bigskip
+
+
+\noindent{\bf Ordered with repetition 有序且可重复}
+
+Selecting a \index{PIN}PIN number\footnote{The phrase ``PIN number'' is 
+redundant. The `N' in PIN stands for ``number.''  Anyway, a PIN is
+a four digit (secret) number used to help ensure that automated banking
+(such as withdrawing your life's savings) is only done by an authorized
+individual.}   for your bank account is a good example of
+the kind of problem that is dealt with in the lower left part of the
+table.
+
+为你的银行账户选择一个\index{PIN}个人识别码\footnote{“PIN码”这个短语是多余的。PIN中的‘N’代表“号码”。无论如何，PIN是一个四位数的（秘密）号码，用于帮助确保自动银行业务（例如提取你的毕生积蓄）只由授权的个人执行。}是表格左下部分所处理的那类问题的一个好例子。
+
+Obviously, the order in which you key-in the digits of your PIN
+is important.
+
+显然，你输入PIN数字的顺序是重要的。
+
+If one's number is 1356, it won't do to put in 6531!
+
+如果一个人的号码是1356，输入6531是行不通的！
+
+Also there is no reason that we couldn't have repeated digits in a PIN.
+
+另外，PIN码中没有理由不能有重复的数字。
+
+(Although someone who chooses a PIN like 3333 is taking a bit of a security
+risk!  A bad guy looking over your shoulder may easily discern what your
+PIN is.)  A PIN is an ordered selection of 4 things out of 10, where 
+repetition is allowed.
+
+（尽管选择像3333这样的PIN码的人在安全上冒了点风险！一个坏蛋从你肩膀上看过去可能很容易就看出你的PIN码是什么。）一个PIN码是从10个事物中有序地选择4个，且允许重复。
+
+There are $10^4$ possible PINs.  We can determine
+this by thinking of the multiplication principle -- there are 10 choices 
+for the first digit of our PIN, since repetition is okay there are still
+10 choices for our second digit, then (still) 10 choices for the third
+digit as well as the fourth digit.
+
+有$10^4$种可能的PIN码。我们可以通过考虑乘法原理来确定这一点——我们PIN码的第一位有10种选择，因为允许重复，所以第二位仍然有10种选择，然后第三位和第四位（仍然）有10种选择。
+
+In general, when selecting $k$ things out of $n$ possibilities, where order
+counts and repetition is allowed, there are $n^k$ possible selections.
+
+一般地，当从$n$种可能性中选择$k$个事物，且顺序重要、允许重复时，有$n^k$种可能的选择。
+
+\noindent{\bf Ordered without repetition 有序且不重复}
+
+Suppose that one wishes to come up with a password for a computer
+account.
+
+假设有人想为一个计算机账户设置一个密码。
+
+There are 52 letters (both upper and lower case) 10 numerals
+and 32 symbols and punctuation marks -- for a total of 94 different 
+characters that 
+may be used.
+
+有52个字母（大小写）、10个数字以及32个符号和标点符号——总共有94个不同的字符可供使用。
+
+Some system administrators can be very paranoid about
+passwords that might be guessable -- for instance no password that 
+appears in a dictionary should ever be used on a system where security
+is a concern.
+
+一些系统管理员可能对可能被猜到的密码非常偏执——例如，在注重安全的系统上，绝不应使用出现在字典中的密码。
+
+Suppose that your system administrator will reject any 
+password that has repeated symbols, and that passwords must have 8 
+characters.
+
+假设你的系统管理员会拒绝任何有重复符号的密码，并且密码必须有8个字符。
+
+How many passwords are possible?    
+
+有多少种可能的密码？
+
+This is an instance of a counting problem where we are selecting 8 things
+out of a set of size 94 -- clearly order is important and the system 
+administrator's restriction means that we may not have repeats.
+
+这是一个计数问题的实例，我们从一个大小为94的集合中选择8个事物——显然顺序是重要的，并且系统管理员的限制意味着我们不能有重复。
+
+The multiplication rule tells us that there are 
+$94\cdot 93\cdot 92\cdot 91\cdot 90\cdot 89\cdot 88\cdot 87 = 4488223369069440$
+different passwords.
+
+乘法法则告诉我们，有$94\cdot 93\cdot 92\cdot 91\cdot 90\cdot 89\cdot 88\cdot 87 = 4488223369069440$种不同的密码。
+
+And in the general case (selecting $k$ things out 
+of a set of size $n$, without repetition, and with order counting) 
+there will be $n!/(n-k)!$ possibilities.
+
+在一般情况下（从一个大小为$n$的集合中选择$k$个事物，不重复，且顺序重要），将有$n!/(n-k)!$种可能性。
+
+This is the number we have 
+denoted previously by $P(n,k)$.
+
+这就是我们之前用$P(n,k)$表示的数。
+
+\noindent{\bf Unordered without repetition 无序且不重复}
+
+This is also a case that we've considered previously.
+
+这也是我们之前考虑过的一种情况。
+
+If we are choosing
+$k$ things out of $n$ and order is unimportant and there can be no 
+repetitions, then what we are describing is a $k$-subset of the 
+$n$-set.
+
+如果我们从$n$个事物中选择$k$个，且顺序不重要，也不能有重复，那么我们所描述的就是一个$n$-集合的$k$-子集。
+
+There are $C(n,k) = \frac{n!}{k!(n-k)!}$ distinct subsets.
+Here, we'll give an example that doesn't sound like we're talking
+about counting subsets of a particular size.
+
+有$C(n,k) = \frac{n!}{k!(n-k)!}$个不同的子集。在这里，我们将给出一个听起来不像是在计算特定大小子集的例子。
+
+(Although we really are!)
+
+（尽管我们确实是！）
+
+How many different sequences of 6 strictly increasing numbers can 
+we choose from $\{1, 2, 3, \ldots 20\}$?
+
+我们可以从$\{1, 2, 3, \ldots 20\}$中选择多少个不同的由6个严格递增数组成的序列？
+
+Obviously, listing all such sequences would be an arduous task.
+
+显然，列出所有这样的序列将是一项艰巨的任务。
+
+We might start with $(1,2,3,4,5,6)$ and try to proceed in some 
+orderly fashion to $(15,16,17,18,19,20)$, but unfortunately there
+are 38,760 such sequences so unless we enlist the aid of a computer
+we are unlikely to finish this job in a reasonable time.
+
+我们可能从$(1,2,3,4,5,6)$开始，并尝试以某种有序的方式进行到$(15,16,17,18,19,20)$，但不幸的是，有38,760个这样的序列，所以除非我们借助计算机的帮助，否则我们不太可能在合理的时间内完成这项工作。
+
+The number
+we've just given (38,760) is $C(20,6)$ and so it would seem that we're
+claiming that this problem is really unordered selection without repetition
+of 6 things out of 20.   Well, actually, some parts of this are clearly
+right -- we are selecting 6 things from a set of size 20, and because
+our sequences are supposed to be \emph{strictly} increasing there will 
+be no repetitions -- but, a strictly increasing sequence is clearly 
+\underline{ordered} and the formula we are using is for \underline{unordered}
+collections.
+
+我们刚才给出的数字（38,760）是$C(20,6)$，所以看起来我们是在声称这个问题实际上是从20个事物中无序地、不重复地选择6个。嗯，实际上，这其中的某些部分显然是正确的——我们是从一个大小为20的集合中选择6个事物，并且因为我们的序列被要求是\emph{严格}递增的，所以不会有重复——但是，一个严格递增的序列显然是\underline{有序}的，而我们使用的公式是用于\underline{无序}集合的。
+
+By specifying a particular ordering (strictly increasing) on the sequences 
+we are counting above, we are actually removing the importance of order.
+
+通过在我们上面计数的序列上指定一个特定的顺序（严格递增），我们实际上消除了顺序的重要性。
+
+Put another way: if order really mattered, the symbols $1$ through $6$
+could be put into $720$ different orders -- but we only want to count 
+one of those possibilities.
+
+换句话说：如果顺序真的重要，那么从1到6的符号可以排成720种不同的顺序——但我们只想计算其中的一种可能性。
+
+Put another other way: there is a one-to-one
+correspondence between a $6$-subset of $\{1,2,3, \ldots 20\}$ and a
+strictly increasing sequence.
+
+再换一种说法：在$\{1,2,3, \ldots 20\}$的一个6-子集和一个严格递增序列之间存在一一对应关系。
+
+Just make sure the subset is written in
+increasing order!
+
+只需确保子集是按递增顺序写的！
+
+Okay, at this point we have filled-in three out of the four cells in our table.
+
+好的，到目前为止，我们已经填好了表格中四个单元格中的三个。
+
+\begin{center}
+\begin{tabular}{cc}
+ & Does order matter? 顺序重要吗？ \\
+\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? 允许重复吗？ \end{sideways} }  & \begin{tabular}{c|c|c}
+ & \rule{108pt}{0pt} & \rule{108pt}{0pt} \\
+ & Yes 是 & No 否 \\ \hline
+\parbox[c]{12pt}{ \begin{sideways} \rule{36pt}{0pt} No 否 \end{sideways} } & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt} $P(n,k) = \frac{n!}{(n-k)!}$ & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt}  $C(n,k) = \frac{n!}{k!(n-k)!}$ \\ \hline
+\parbox[c]{12pt}{ \begin{sideways} \rule{36pt}{0pt} Yes 是  \end{sideways} } & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt} $n^k$  & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt}  \\
+\end{tabular}
+\end{tabular}
+\end{center}
+
+What kinds of things are we counting in the lower right part of the table?
+
+我们在表格的右下角部分计算的是什么类型的东西？
+
+Unordered selections of $k$ things out of $n$ possibilities where there may
+(or may not!) be repetitions.
+
+从$n$种可能性中无序地选择$k$个事物，其中可能（也可能不！）有重复。
+
+The game Yahtzee provides a nice example of
+this type of configuration.
+
+Yahtzee游戏是这种类型配置的一个很好的例子。
+
+When we roll 5 dice, we do not do so 
+one-at-a-time, rather, we roll them as a group -- the dice are 
+indistinguishable so there is no way to order our set of 5 outcomes.
+
+当我们掷5个骰子时，我们不是一个一个地掷，而是将它们作为一个整体来掷——这些骰子是无法区分的，所以没有办法对我们的5个结果集进行排序。
+
+In fact, it would be quite reasonable to, after one's roll, arrange the
+die in (say) increasing order.
+
+事实上，在掷完骰子后，将骰子按（比如说）递增顺序排列是相当合理的。
+
+We'll repeat a bit of advice that was given
+previously: if one is free to rearrange a configuration to suit one's needs,
+that is a clue that order is \emph{not} important in the configurations
+under consideration.
+
+我们将重复之前给过的一点建议：如果一个人可以自由地重新排列一个配置以满足自己的需要，这就是一个线索，表明在所考虑的配置中顺序\emph{不}重要。
+
+Finally, are repetitions allowed?  The outcomes
+in Yahtzee are 5 numbers from the set $\{1,2,3,4,5,6\}$, and while it
+is possible to have no repetitions, that is a pretty special outcome!
+
+最后，是否允许重复？在Yahtzee中，结果是从集合$\{1,2,3,4,5,6\}$中选出的5个数字，虽然可能没有重复，但那是一个非常特殊的结果！
+
+In general, the same number can appear on two, or several, or even 
+\emph{all 5} of the die\footnote{When this happens you are supposed 
+to jump in the air and yell ``Yahtzee!''}.
+
+通常情况下，同一个数字可以出现在两个、几个，甚至\emph{全部5个}骰子上\footnote{当这种情况发生时，你应该跳起来大喊“Yahtzee！”}。
+
+So, how many different outcomes
+are there when one rolls five dice?
+
+那么，当掷五个骰子时，有多少种不同的结果？
+
+To answer this question it will
+be helpful to think about how we might express such an outcome.
+
+要回答这个问题，思考我们如何表达这样的结果会很有帮助。
+
+Since order is unimportant, we can choose to put the numbers that appear
+on the individual die in whatever order we like.
+
+由于顺序不重要，我们可以选择将各个骰子上出现的数字按我们喜欢的任何顺序排列。
+
+We may as well place them
+in increasing order.  There will be 5 numbers and each number is between 1
+and 6.  We can list the outcomes systematically by starting with an all-ones
+Yahtzee:
+
+我们不妨将它们按递增顺序排列。将会有5个数字，每个数字都在1到6之间。我们可以通过从全是1的Yahtzee开始，系统地列出结果：
+
+\begin{tabbing}
+(1,1,1,1,1) \rule{8pt}{0pt} \= (1,1,1,1,2) \rule{8pt}{0pt} \= (1,1,1,1,3) \rule{8pt}{0pt} \= (1,1,1,1,4) \rule{8pt}{0pt} \= (1,1,1,1,5) \rule{8pt}{0pt} \= (1,1,1,1,6) \\ 
+(1,1,1,2,2) \> (1,1,1,2,3) \> (1,1,1,2,4) \> (1,1,1,2,5) \> (1,1,1,2,6) \> (1,1,1,3,3) \\ 
+(1,1,1,3,4) \> (1,1,1,3,5) \> (1,1,1,3,6) \> (1,1,1,4,4) \> (1,1,1,4,5) \> (1,1,1,4,6) \\ 
+(1,1,1,5,5) \> (1,1,1,5,6) \> (1,1,1,6,6) \> (1,1,2,2,2) \> (1,1,2,2,3) \> (1,1,2,2,4) \\ 
+(1,1,2,2,5) \> (1,1,2,2,6) \> (1,1,2,3,3) \> (1,1,2,3,4) \> (1,1,2,3,5) \> (1,1,2,3,6) \\ 
+(1,1,2,4,4) \> (1,1,2,4,5) \> (1,1,2,4,6) \> (1,1,2,5,5) \> (1,1,2,5,6) \> (1,1,2,6,6) \\ 
+(1,1,3,3,3) \> (1,1,3,3,4) \> (1,1,3,3,5) \> (1,1,3,3,6) \> (1,1,3,4,4) \> (1,1,3,4,5) \\ 
+(1,1,3,4,6) \> (1,1,3,5,5) \> (1,1,3,5,6) \> (1,1,3,6,6) \> (1,1,4,4,4) \> (1,1,4,4,5) \\ 
+(1,1,4,4,6) \> (1,1,4,5,5) \> (1,1,4,5,6) \> (1,1,4,6,6) \> (1,1,5,5,5) \> (1,1,5,5,6) \\ 
+(1,1,5,6,6) \> (1,1,6,6,6) \> (1,2,2,2,2) \> (1,2,2,2,3) \> (1,2,2,2,4) \> (1,2,2,2,5) \\ 
+(1,2,2,2,6) \> (1,2,2,3,3) \> (1,2,2,3,4) \> (1,2,2,3,5) \> (1,2,2,3,6) \> (1,2,2,4,4) \\ 
+(1,2,2,4,5) \> (1,2,2,4,6) \> (1,2,2,5,5) \> (1,2,2,5,6) \> (1,2,2,6,6) \> (1,2,3,3,3) \\ 
+(1,2,3,3,4) \> (1,2,3,3,5) \> (1,2,3,3,6) \> (1,2,3,4,4) \> (1,2,3,4,5) \> (1,2,3,4,6) \\ 
+(1,2,3,5,5) \> (1,2,3,5,6) \> (1,2,3,6,6) \> (1,2,4,4,4) \> (1,2,4,4,5) \> (1,2,4,4,6) \\ 
+(1,2,4,5,5) \> (1,2,4,5,6) \> (1,2,4,6,6) \> (1,2,5,5,5) \> (1,2,5,5,6) \> (1,2,5,6,6) \\ 
+(1,2,6,6,6) \> (1,3,3,3,3) \> (1,3,3,3,4) \> (1,3,3,3,5) \> (1,3,3,3,6) \> (1,3,3,4,4) \\ 
+(1,3,3,4,5) \> (1,3,3,4,6) \> (1,3,3,5,5) \> (1,3,3,5,6) \> (1,3,3,6,6) \> (1,3,4,4,4) \\ 
+(1,3,4,4,5) \> (1,3,4,4,6) \> (1,3,4,5,5) \> (1,3,4,5,6) \> (1,3,4,6,6) \> (1,3,5,5,5) \\ 
+(1,3,5,5,6) \> (1,3,5,6,6) \> (1,3,6,6,6) \> (1,4,4,4,4) \> (1,4,4,4,5) \> (1,4,4,4,6) \\ 
+(1,4,4,5,5) \> (1,4,4,5,6) \> (1,4,4,6,6) \> (1,4,5,5,5) \> (1,4,5,5,6) \> (1,4,5,6,6) \\ 
+(1,4,6,6,6) \> (1,5,5,5,5) \> (1,5,5,5,6) \> (1,5,5,6,6) \> (1,5,6,6,6) \> (1,6,6,6,6) \\ 
+(2,2,2,2,2) \> (2,2,2,2,3) \> (2,2,2,2,4) \> (2,2,2,2,5) \> (2,2,2,2,6) \> (2,2,2,3,3) \\ 
+(2,2,2,3,4) \> (2,2,2,3,5) \> (2,2,2,3,6) \> (2,2,2,4,4) \> (2,2,2,4,5) \> (2,2,2,4,6) \\ 
+(2,2,2,5,5) \> (2,2,2,5,6) \> (2,2,2,6,6) \> (2,2,3,3,3) \> (2,2,3,3,4) \> (2,2,3,3,5) \\ 
+(2,2,3,3,6) \> (2,2,3,4,4) \> (2,2,3,4,5) \> (2,2,3,4,6) \> (2,2,3,5,5) \> (2,2,3,5,6) \\ 
+(2,2,3,6,6) \> (2,2,4,4,4) \> (2,2,4,4,5) \> (2,2,4,4,6) \> (2,2,4,5,5) \> (2,2,4,5,6) \\ 
+(2,2,4,6,6) \> (2,2,5,5,5) \> (2,2,5,5,6) \> (2,2,5,6,6) \> (2,2,6,6,6) \> (2,3,3,3,3) \\ 
+(2,3,3,3,4) \> (2,3,3,3,5) \> (2,3,3,3,6) \> (2,3,3,4,4) \> (2,3,3,4,5) \> (2,3,3,4,6) \\ 
+(2,3,3,5,5) \> (2,3,3,5,6) \> (2,3,3,6,6) \> (2,3,4,4,4) \> (2,3,4,4,5) \> (2,3,4,4,6) \\ 
+(2,3,4,5,5) \> (2,3,4,5,6) \> (2,3,4,6,6) \> (2,3,5,5,5) \> (2,3,5,5,6) \> (2,3,5,6,6) \\ 
+(2,3,6,6,6) \> (2,4,4,4,4) \> (2,4,4,4,5) \> (2,4,4,4,6) \> (2,4,4,5,5) \> (2,4,4,5,6) \\ 
+(2,4,4,6,6) \> (2,4,5,5,5) \> (2,4,5,5,6) \> (2,4,5,6,6) \> (2,4,6,6,6) \> (2,5,5,5,5) \\ 
+(2,5,5,5,6) \> (2,5,5,6,6) \> (2,5,6,6,6) \> (2,6,6,6,6) \> (3,3,3,3,3) \> (3,3,3,3,4) \\ 
+(3,3,3,3,5) \> (3,3,3,3,6) \> (3,3,3,4,4) \> (3,3,3,4,5) \> (3,3,3,4,6) \> (3,3,3,5,5) \\ 
+(3,3,3,5,6) \> (3,3,3,6,6) \> (3,3,4,4,4) \> (3,3,4,4,5) \> (3,3,4,4,6) \> (3,3,4,5,5) \\ 
+(3,3,4,5,6) \> (3,3,4,6,6) \> (3,3,5,5,5) \> (3,3,5,5,6) \> (3,3,5,6,6) \> (3,3,6,6,6) \\ 
+(3,4,4,4,4) \> (3,4,4,4,5) \> (3,4,4,4,6) \> (3,4,4,5,5) \> (3,4,4,5,6) \> (3,4,4,6,6) \\ 
+(3,4,5,5,5) \> (3,4,5,5,6) \> (3,4,5,6,6) \> (3,4,6,6,6) \> (3,5,5,5,5) \> (3,5,5,5,6) \\ 
+(3,5,5,6,6) \> (3,5,6,6,6) \> (3,6,6,6,6) \> (4,4,4,4,4) \> (4,4,4,4,5) \> (4,4,4,4,6) \\ 
+(4,4,4,5,5) \> (4,4,4,5,6) \> (4,4,4,6,6) \> (4,4,5,5,5) \> (4,4,5,5,6) \> (4,4,5,6,6) \\ 
+(4,4,6,6,6) \> (4,5,5,5,5) \> (4,5,5,5,6) \> (4,5,5,6,6) \> (4,5,6,6,6) \> (4,6,6,6,6) \\ 
+(5,5,5,5,5) \> (5,5,5,5,6) \> (5,5,5,6,6) \> (5,5,6,6,6) \> (5,6,6,6,6) \> (6,6,6,6,6) \\ 
+\end{tabbing}
+
+Whew \ldots err, I mean, Yahtzee!
+
+呼……呃，我是说，Yahtzee！
+
+You can describe a generic element of the above listing by saying ``It starts
+with some number of 1's (which may be zero), then there are some 2's (again,
+it might be that there are zero 2's),  then some (possibly none) 3's, 
+then some 4's (or maybe not), then some
+5's (I think you probably get the idea) and finally some 6's (sorry for 
+all the parenthetical remarks).''  
+
+你可以这样描述上面列表中的一个通用元素：“它以一些1开头（可能没有），然后是一些2（同样，也可能没有2），然后是一些（可能没有）3，然后是一些4（或者可能没有），然后是一些5（我想你大概明白我的意思了），最后是一些6（抱歉用了这么多括号里的备注）。”
+
+We could, of course, actually count the 
+outcomes as listed above (there are 252) but that would be pretty dull -- and
+it wouldn't get us any closer to solving such problems in general.
+
+我们当然可以实际计算上面列出的结果（有252个），但这会很无聊——而且也无助于我们从根本上解决这类问题。
+
+To 
+count things like Yahtzee rolls it will turn out that we can count something
+related but much simpler -- blank-comma arrangements.
+
+要计算像Yahtzee掷骰这样的东西，结果表明我们可以计算一些相关但简单得多的东西——空格-逗号排列。
+
+For the Yahtzee
+problem we count arrangements of 5 blanks and 5 commas.
+
+对于Yahtzee问题，我们计算5个空格和5个逗号的排列。
+
+That is,
+things like {\LARGE \blnk\blnk,\blnk,,\blnk,\blnk,} and 
+{\LARGE \blnk\blnk\blnk\blnk\blnk,,,,,} and 
+{\LARGE ,,,\blnk\blnk\blnk\blnk\blnk,,}.
+
+也就是说，像 {\LARGE \blnk\blnk,\blnk,,\blnk,\blnk,} 和 {\LARGE \blnk\blnk\blnk\blnk\blnk,,,,,} 以及 {\LARGE ,,,\blnk\blnk\blnk\blnk\blnk,,} 这样的东西。
+
+These arrangements of blanks and commas correspond uniquely to Yahtzee
+rolls -- the commas serve to separate different numerical values
+and the blanks are where we would write-in the 5 outcomes on the die.
+
+这些空格和逗号的排列与Yahtzee的掷骰结果一一对应——逗号用来分隔不同的数值，而空格则是我们填写5个骰子结果的地方。
+
+Convince yourself that there really is a one-to-one correspondence
+between Yahtzee outcomes and arrangements of 5 blanks and 5 commas
+by doing the following
+
+通过做以下练习，让自己相信在Yahtzee结果和5个空格与5个逗号的排列之间确实存在一一对应关系。
+
+\begin{exer}
+What Yahtzee rolls correspond to the following blank-comma arrangements?
+\noindent {\LARGE \blnk,\blnk,\blnk,\blnk,\blnk,} \hspace{\fill} {\LARGE \blnk\blnk,\blnk\blnk\blnk,,,,}  \hspace{\fill} {\LARGE ,,,,,\blnk\blnk\blnk\blnk\blnk}
+\medskip
+
+What blank-comma arrangements correspond to the following Yahtzee outcomes?
+\noindent $\{2,3,4,5,6\}$  \hspace{\fill} $\{3,3,3,3,4\}$  \hspace{\fill} $\{5,5,6,6,6\}$
+
+\end{exer}   
+
+\begin{exer}
+以下的空格-逗号排列对应哪些Yahtzee掷骰结果？
+\noindent {\LARGE \blnk,\blnk,\blnk,\blnk,\blnk,} \hspace{\fill} {\LARGE \blnk\blnk,\blnk\blnk\blnk,,,,}  \hspace{\fill} {\LARGE ,,,,,\blnk\blnk\blnk\blnk\blnk}
+\medskip
+
+以下的Yahtzee掷骰结果对应哪些空格-逗号排列？
+\noindent $\{2,3,4,5,6\}$  \hspace{\fill} $\{3,3,3,3,4\}$  \hspace{\fill} $\{5,5,6,6,6\}$
+\end{exer}
+
+It may seem at first that this blank-comma thing is okay, but that we're 
+still no closer to answering the question we started with.
+
+乍一看，这个空格-逗号的东西似乎还行，但我们离回答最初的问题还是没有更近一步。
+
+It may seem
+that way until you realize how easy it is to count these blank-comma
+arrangements!
+
+在你意识到计算这些空格-逗号排列是多么容易之前，可能看起来是这样！
+
+You see, there are 10 symbols in one of these blank-comma 
+arrangements
+and if we choose positions for (say) the commas, the blanks will have to go
+into the other positions -- thus every 5-subset of $\{1,2,3,4,5,6,7,8,9,10\}$
+gives us a blank-comma arrangement and every one of \emph{them} gives us
+a Yahtzee outcome.
+
+你看，这些空格-逗号排列中有10个符号，如果我们选择（比如说）逗号的位置，那么空格就必须放在其他位置上——因此，$\{1,2,3,4,5,6,7,8,9,10\}$的每一个5-子集都给我们一个空格-逗号排列，而每一个\emph{这样的排列}都给我们一个Yahtzee的结果。
+
+That is why there are $C(10, 5) = 252$ outcomes
+listed in the giant tabulation above.
+
+这就是为什么在上面的巨大表格中列出了$C(10, 5) = 252$个结果。
+
+In general, when we are selecting $k$ things from a set of size $n$ 
+(with repetition and without order) we will need to consider 
+blank-comma arrangements having $k$ blanks and $n-1$ commas.
+
+一般地，当我们从一个大小为$n$的集合中选择$k$个事物（可重复且无序）时，我们需要考虑具有$k$个空格和$n-1$个逗号的空格-逗号排列。
+
+As an
+aid to memory, consider that when you actually write-out the elements
+of a set it takes one fewer commas than there are elements -- for example
+$\{1,2,3,4\}$ has 4 elements but we only need 3 commas to separate them.
+
+为了帮助记忆，可以考虑当你实际写出一个集合的元素时，所用的逗号比元素数量少一个——例如$\{1,2,3,4\}$有4个元素，但我们只需要3个逗号来分隔它们。
+
+The general answer to our problem is either $C(k+n-1,k)$ or 
+  $C(k+n-1, n-1)$, depending on whether you want to think about
+selecting positions for the $k$ blanks or for the $n-1$ commas.
+
+我们问题的通用答案是$C(k+n-1,k)$或$C(k+n-1, n-1)$，这取决于你是想考虑为$k$个空格选择位置，还是为$n-1$个逗号选择位置。
+
+It turns out that these binomial coefficients are equal so there's
+no problem with the apparent ambiguity.
+
+事实证明，这些二项式系数是相等的，所以明显的歧义不成问题。
+
+So, finally, our table of counting formulas is complete.  We'll produce
+it here one more time and, while we're at it, ditch the $C(n,k)$ notation in 
+favor of the more usual ``binomial coefficient'' notation $\binom{n}{k}$.
+
+所以，最后，我们的计数公式表是完整的。我们将在这里再次展示它，并且顺便地，放弃$C(n,k)$记法，转而使用更常见的“二项式系数”记法$\binom{n}{k}$。
+
+\begin{center}
+\begin{tabular}{cc}
+ & Does order matter? 顺序重要吗？ \\
+\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? 允许重复吗？ \end{sideways} }  & \begin{tabular}{c|c|c}
+ & \rule{108pt}{0pt} & \rule{108pt}{0pt} \\
+ & Yes 是 & No 否 \\ \hline
+\parbox[c]{12pt}{ \begin{sideways} \rule{36pt}{0pt} No 否 \end{sideways} } & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt} $P(n,k) = \frac{n!}{(n-k)!}$ & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt}  $\binom{n}{k} = \frac{n!}{k!(n-k)!}$ \\ \hline
+\parbox[c]{12pt}{ \begin{sideways} \rule{36pt}{0pt} Yes 是  \end{sideways} } & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt} $n^k$  & \rule{0pt}{60pt} \rule[-48pt]{0pt}{48pt} 
+$\binom{n+k-1}{k}$ \\
+\end{tabular}
+\end{tabular}
+\end{center}
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{proof3-zh/counting-exer.tex}
+
+\clearpage
+
+\section{Parity and Counting arguments 奇偶性与计数论证}
+\label{sec:parity}
+
+This section is concerned with two very powerful elements of the
+proof-making arsenal: ``Parity'' is a way of referring to the result of
+an even/odd calculation;
+
+本节关注证明工具库中两个非常强大的元素：“奇偶性”是表示偶数/奇数计算结果的一种方式；
+
+Counting arguments most often take the form of
+counting some collection in two different ways -- and then comparing
+those results.
+
+计数论证最常见的形式是对某个集合用两种不同的方式进行计数——然后比较这些结果。
+
+These techniques have little to do with one another,
+but when they are applicable they tend to produce really elegant little
+arguments.
+
+这些技巧彼此之间关联不大，但当它们适用时，往往能产生非常优雅的小论证。
+
+In (very) early computers and business machines, paper cards were used to
+store information.
+
+在（非常）早期的计算机和商业机器中，纸卡被用来存储信息。
+
+A so-called \index{punch card}``punch card'' or 
+\index{Hollerith card} ``Hollerith card'' was used to store 
+binary information by means of holes punched into it.
+
+所谓的\index{punch card}“打孔卡”或\index{Hollerith card}“霍尔瑞斯卡”通过在其上打孔的方式来存储二进制信息。
+
+Paper tape 
+was also used in a similar fashion.  A typical paper tape format would
+involve 8 positions in rows across the tape that might or might not be
+punched, often a column of smaller holes would appear as well which 
+did not store information but were used to drive the tape through the
+reading mechanism on a sprocket.
+
+纸带也以类似的方式被使用。一个典型的纸带格式会横跨纸带有8个位置，这些位置可能会被打孔也可能不会，通常还会有一列较小的孔，这些孔不存储信息，而是用来通过链轮驱动纸带穿过读取机制。
+
+Tapes and cards could be ``read'' either
+by small sets of electrical contacts which would touch through a punched
+hole or be kept separate if the position wasn't punched, or by using a
+photo-detector to sense whether light could pass through the hole or not.
+
+纸带和卡片可以通过两种方式“读取”：一种是用小组电触点，它们会通过打孔处接触，如果位置没有打孔则保持分离；另一种是使用光电探测器来感知光线是否能穿过孔洞。
+
+The mechanisms for reading and writing on these paper media were amazingly
+accurate, and allowed early data processing machines to use just a couple
+of large file cabinets to store what now fits in a jump drive one can
+wear on a necklace.
+
+在这些纸质媒介上读写的机制惊人地精确，使得早期的数据处理机器仅用几个大文件柜就能存储现在可以戴在项链上的U盘所容纳的数据。
+
+(About 10 or 12 cabinets could hold a gigabyte
+of data).
+
+（大约10到12个文件柜可以容纳一千兆字节的数据）。
+
+Paper media was ideally suited to storing binary information, but of course
+most of the real data people needed to store and process would be 
+\index{alphanumeric}alphanumeric\footnote{``Alphanumeric'' is a somewhat
+antiquated term that refers to information containing both alphabetic 
+characters and numeric characters -- as well as punctuation marks, etc.}.
+
+纸质媒介非常适合存储二进制信息，但当然，人们需要存储和处理的大部分真实数据是\index{alphanumeric}字母数字\footnote{“字母数字”是一个有些过时的术语，指的是包含字母字符和数字字符以及标点符号等的信息。}的。
+
+There were several encoding schemes that served to translate between the
+character sets that people commonly used and the binary numerals that could
+be stored on paper.
+
+有几种编码方案用于在人们常用的字符集和可以存储在纸上的二进制数字之间进行转换。
+
+One of these schemes still survives today -- 
+\index{ASCII}ASCII.
+The American Standard Code for Information Interchange uses 7-bit binary
+numerals to represent characters, so it contains 128 different symbols.
+
+其中一种方案至今仍在沿用——\index{ASCII}ASCII。美国信息交换标准代码使用7位二进制数字来表示字符，因此它包含128个不同的符号。
+
+This is more than enough to represent both upper- and lower-case 
+letters, the 10 numerals, and the punctuation marks -- many of the 
+remaining spots in the ASCII code were used to contain so-called 
+``control characters'' that were associated with functionality that
+appeared on old-fashioned teletype equipment -- things like ``ring the bell,''
+``move the carriage backwards one space,''  ``move the carriage 
+to the next line,'' etc.   These control characters are why modern 
+keyboards still have a modifier key labeled ``Ctrl'' on them.
+
+这足以表示大写和小写字母、10个数字以及标点符号——ASCII码中许多剩余的位置被用来包含所谓的“控制字符”，这些字符与老式电传打字机设备上的功能相关——比如“响铃”、“将托架向后移动一格”、“将托架移动到下一行”等。这些控制字符是现代键盘上仍然有一个标有“Ctrl”的修饰键的原因。
+
+The 
+following listing gives the decimal and binary numerals from 0 to 127
+and the ASCII characters associated with them -- the non-printing and
+control characters have a 2 or 3 letter mnemonic designation.
+
+下面的列表给出了从0到127的十进制和二进制数字以及与它们相关联的ASCII字符——非打印和控制字符有一个2或3个字母的助记符。
+
+\renewcommand{\baselinestretch}{.9}
+\renewcommand{\arraystretch}{.9}
+
+
+\small \normalsize % A bogus font change is necessary to get LaTeX
+                   % to take notice of the changed line spacing.
+\begin{tabbing}
+\rule{24pt}{0pt} \=0 \rule{24pt}{0pt} \=0000 0000  \rule{24pt}{0pt} \=\verb+NUL+  \rule{50pt}{0pt} \=64 \rule{24pt}{0pt} \=0100 0000 \rule{24pt}{0pt} \=\verb+@+  \\ 
+\>1 \>0000 0001 \>\verb+SOH+   \>65 \>0100 0001 \>\verb+A+  \\ 
+\>2 \>0000 0010 \>\verb+STX+   \>66 \>0100 0010 \>\verb+B+  \\ 
+\>3 \>0000 0011 \>\verb+ETX+   \>67 \>0100 0011 \>\verb+C+  \\ 
+\>4 \>0000 0100 \>\verb+EOT+   \>68 \>0100 0100 \>\verb+D+  \\ 
+\>5 \>0000 0101 \>\verb+ENQ+   \>69 \>0100 0101 \>\verb+E+  \\ 
+\>6 \>0000 0110 \>\verb+ACK+   \>70 \>0100 0110 \>\verb+F+  \\ 
+\>7 \>0000 0111 \>\verb+BEL+   \>71 \>0100 0111 \>\verb+G+  \\ 
+\>8 \>0000 1000 \>\verb+BS+    \>72 \>0100 1000 \>\verb+H+  \\ 
+\>9 \>0000 1001 \>\verb+TAB+   \>73 \>0100 1001 \>\verb+I+  \\ 
+\>10 \>0000 1010 \>\verb+LF+   \>74 \>0100 1010 \>\verb+J+  \\ 
+\>11 \>0000 1011 \>\verb+VT+   \>75 \>0100 1011 \>\verb+K+  \\ 
+\>12 \>0000 1100 \>\verb+FF+   \>76 \>0100 1100 \>\verb+L+  \\ 
+\>13 \>0000 1101 \>\verb+CR+   \>77 \>0100 1101 \>\verb+M+  \\ 
+\>14 \>0000 1110 \>\verb+SO+   \>78 \>0100 1110 \>\verb+N+  \\ 
+\>15 \>0000 1111 \>\verb+SI+   \>79 \>0100 1111 \>\verb+O+  \\ 
+\>16 \>0001 0000 \>\verb+DLE+  \>80 \>0101 0000 \>\verb+P+  \\ 
+\>17 \>0001 0001 \>\verb+DC1+  \>81 \>0101 0001 \>\verb+Q+  \\ 
+\>18 \>0001 0010 \>\verb+DC2+  \>82 \>0101 0010 \>\verb+R+  \\ 
+\>19 \>0001 0011 \>\verb+DC3+  \>83 \>0101 0011 \>\verb+S+  \\ 
+\>20 \>0001 0100 \>\verb+DC4+  \>84 \>0101 0100 \>\verb+T+  \\ 
+\>21 \>0001 0101 \>\verb+NAK+  \>85 \>0101 0101 \>\verb+U+  \\ 
+\>22 \>0001 0110 \>\verb+SYN+  \>86 \>0101 0110 \>\verb+V+  \\ 
+\>23 \>0001 0111 \>\verb+ETB+  \>87 \>0101 0111 \>\verb+W+  \\ 
+\>24 \>0001 1000 \>\verb+CAN+  \>88 \>0101 1000 \>\verb+X+  \\ 
+\>25 \>0001 1001 \>\verb+EM+   \>89 \>0101 1001 \>\verb+Y+  \\ 
+\>26 \>0001 1010 \>\verb+SUB+  \>90 \>0101 1010 \>\verb+Z+  \\ 
+\>27 \>0001 1011 \>\verb+ESC+  \>91 \>0101 1011 \>\verb+[+  \\ 
+\>28 \>0001 1100 \>\verb+FS+   \>92 \>0101 1100 \>\verb+\+  \\ 
+\>29 \>0001 1101 \>\verb+GS+   \>93 \>0101 1101 \>\verb+]+  \\ 
+\>30 \>0001 1110 \>\verb+RS+   \>94 \>0101 1110 \>\verb+^+  \\ 
+\>31 \>0001 1111 \>\verb+US+   \>95 \>0101 1111 \>\verb+_+  \\ 
+\>32 \>0010 0000 \>\verb+ +    \>96 \>0110 0000 \>\verb+`+  \\ 
+\>33 \>0010 0001 \>\verb+!+    \>97 \>0110 0001 \>\verb+a+  \\ 
+\>34 \>0010 0010 \>\verb+"+    \>98 \>0110 0010 \>\verb+b+  \\ 
+\>35 \>0010 0011 \>\verb+#+    \>99 \>0110 0011 \>\verb+c+  \\ 
+\>36 \>0010 0100 \>\verb+$+   \>100 \>0110 0100 \>\verb+d+  \\ 
+\>37 \>0010 0101 \>\verb+%+   \>101 \>0110 0101 \>\verb+e+  \\ 
+\>38 \>0010 0110 \>\verb+&+   \>102 \>0110 0110 \>\verb+f+  \\ 
+\>39 \>0010 0111 \>\verb+'+   \>103 \>0110 0111 \>\verb+g+  \\ 
+\>40 \>0010 1000 \>\verb+(+   \>104 \>0110 1000 \>\verb+h+  \\ 
+\>41 \>0010 1001 \>\verb+)+   \>105 \>0110 1001 \>\verb+i+  \\ 
+\>42 \>0010 1010 \>\verb+*+   \>106 \>0110 1010 \>\verb+j+  \\ 
+\>43 \>0010 1011 \>\verb+++   \>107 \>0110 1011 \>\verb+k+  \\ 
+\>44 \>0010 1100 \>\verb+,+   \>108 \>0110 1100 \>\verb+l+  \\ 
+\>45 \>0010 1101 \>\verb+-+   \>109 \>0110 1101 \>\verb+m+  \\ 
+\>46 \>0010 1110 \>\verb+.+   \>110 \>0110 1110 \>\verb+n+  \\ 
+\>47 \>0010 1111 \>\verb+/+   \>111 \>0110 1111 \>\verb+o+  \\ 
+\>48 \>0011 0000 \>\verb+0+   \>112 \>0111 0000 \>\verb+p+  \\ 
+\>49 \>0011 0001 \>\verb+1+   \>113 \>0111 0001 \>\verb+q+  \\ 
+\>50 \>0011 0010 \>\verb+2+   \>114 \>0111 0010 \>\verb+r+  \\ 
+\>51 \>0011 0011 \>\verb+3+   \>115 \>0111 0011 \>\verb+s+  \\ 
+\>52 \>0011 0100 \>\verb+4+   \>116 \>0111 0100 \>\verb+t+  \\ 
+\>53 \>0011 0101 \>\verb+5+   \>117 \>0111 0101 \>\verb+u+  \\ 
+\>54 \>0011 0110 \>\verb+6+   \>118 \>0111 0110 \>\verb+v+  \\ 
+\>55 \>0011 0111 \>\verb+7+   \>119 \>0111 0111 \>\verb+w+  \\ 
+\>56 \>0011 1000 \>\verb+8+   \>120 \>0111 1000 \>\verb+x+  \\ 
+\>57 \>0011 1001 \>\verb+9+   \>121 \>0111 1001 \>\verb+y+  \\ 
+\>58 \>0011 1010 \>\verb+:+   \>122 \>0111 1010 \>\verb+z+  \\ 
+\>59 \>0011 1011 \>\verb+;+   \>123 \>0111 1011 \>\verb+{+  \\ 
+\>60 \>0011 1100 \>\verb+<+   \>124 \>0111 1100 \>\verb+|+  \\ 
+\>61 \>0011 1101 \>\verb+=+   \>125 \>0111 1101 \>\verb+}+  \\ 
+\>62 \>0011 1110 \>\verb+>+   \>126 \>0111 1110 \>\verb+~+  \\ 
+\>63 \>0011 1111 \>\verb+?+   \>127 \>0111 1111 \>\verb+DEL+  \\ 
+\end{tabbing}
+
+%A LaTeX comment containing a $ fixes format highliting.
+\renewcommand{\baselinestretch}{1.3}
+\renewcommand{\arraystretch}{.77}
+
+
+\small \normalsize
+
+
+
+Now it only takes 7 bits to encode the 128 possible values in the
+ASCII system, which can easily be verified by noticing that the left-most
+bits in all of the binary representations above are 0.   Most computers 
+use 8 bit words or ``bytes'' as their basic units of information, and the
+fact that the ASCII code only requires 7 bits lead someone to think up 
+a use for that additional bit.
+
+现在，ASCII系统只需要7位就可以编码128个可能的值，这一点可以通过注意到上面所有二进制表示中最左边的位都是0来轻松验证。大多数计算机使用8位字或“字节”作为它们的基本信息单位，而ASCII码只需要7位这一事实，启发了某人想出了那个额外位的一个用途。
+
+It became a ``parity check bit.''  If the
+seven bits of an ASCII encoding have an odd number of 1's, the parity
+check bit is set to 1 --- otherwise, it is set to 0.  The result of this
+is that, subsequently, all of the 8 bit words that encode ASCII data will have
+an even number of 1's.
+
+它变成了一个“奇偶校验位”。如果一个ASCII编码的七位中1的个数是奇数，奇偶校验位就设为1——否则，就设为0。这样做的结果是，随后，所有编码ASCII数据的8位字都会有偶数个1。
+
+This is an example of a so-called \index{error detecting code} error detecting
+code known as the ``even code'' or the \index{parity check code}``parity check code.''  If 
+data is sent over a noisy telecommunications channel, or is stored in
+fallible computer memory, there is some small but calculable probability
+that there will be a ``bit error.''   For instance, one computer might
+send 10000111 (which is the ASCII code that says ``ring the bell'') but
+another machine across the network might receive 10100111 (the 3rd bit from 
+the left has been received in error) now if we are only looking at the 
+rightmost seven bits we will think that the ASCII code for a single quote
+has been received, but if we note that this piece of received data has an
+odd number of ones we'll realize that something is amiss.
+
+这是一个所谓的\index{error detecting code}错误检测码的例子，被称为“偶校验码”或\index{parity check code}“奇偶校验码”。如果数据通过一个有噪声的电信通道发送，或者存储在易出错的计算机内存中，存在一些虽小但可计算的概率会发生“位错误”。例如，一台计算机可能发送10000111（这是表示“响铃”的ASCII码），但网络上的另一台机器可能接收到10100111（从左数第3位接收错误），现在如果我们只看最右边的七位，我们会认为收到了单引号的ASCII码，但如果我们注意到接收到的这段数据有奇数个1，我们就会意识到出问题了。
+
+There are other
+more advanced coding schemes that will let us not only \emph{detect} an
+error, but (within limits) \emph{correct} it as well!
+
+还有其他更先进的编码方案，不仅能让我们\emph{检测}到错误，而且（在一定限度内）还能\emph{纠正}它！
+
+This rather amazing
+feat is what makes wireless telephony (not to mention communications
+with deep space probes --- whoops! I mentioned it) work.
+
+这个相当惊人的壮举是无线电话（更不用说与深空探测器的通信——哎呀！我提到了）得以工作的原因。
+
+The concept of parity can be used in many settings to prove some
+fairly remarkable results.
+
+奇偶性的概念可以在许多场合用来证明一些相当了不起的结果。
+
+In Section~\ref{sec:eq_rel} we introduced the idea of a graph.  This
+notion was first used by \index{Euler, Leonhard} Leonhard Euler to solve
+a recreational math problem posed by the citizens of 
+\index{K\"{o}nigsberg}K\"{o}nigsberg, Prussia (this is the city now known
+as \index{Kaliningrad} Kaliningrad, Russia.)  K\"{o}nigsberg was situated 
+at a place where two branches of the \index{Pregel, Pregolya} Pregel river\footnote{Today, this river is known as the Pregolya.} come together -- there is also
+a large island situated near this confluence.  By Euler's time, the city of
+ K\"{o}nigsberg covered this island as well as the north and south banks of the
+river and also the promontory where the branches came together.  A network of
+seven bridges had been constructed to connect all these land masses.
+
+在~\ref{sec:eq_rel}节中，我们介绍了图的概念。这个概念最早由\index{Euler, Leonhard}莱昂哈德·欧拉用来解决普鲁士\index{K\"{o}nigsberg}柯尼斯堡市民提出的一个娱乐数学问题（这座城市现在被称为俄罗斯的\index{Kaliningrad}加里宁格勒）。柯尼斯堡位于\index{Pregel, Pregolya}普雷格尔河\footnote{今天，这条河被称为普雷戈利亚河。}两条支流交汇处——在交汇处附近还有一个大岛。到欧拉时代，柯尼斯堡市覆盖了这个岛以及河的南北两岸，还有支流交汇处的岬角。当时已经修建了一个由七座桥组成的网络来连接所有这些陆地。
+
+The
+townsfolk are alleged to have become enthralled by the question of whether it
+was possible to leave one's home and take a walk through town
+which crossed each of the bridges exactly once and, finally, return to one's
+home.
+
+据说，镇上的人们对一个问题着了迷：是否有可能从自己家出发，在镇上散步，精确地穿过每一座桥一次，最后回到自己的家。
+
+\begin{figure}[!hbtp]
+\begin{center}
+\input{figures/konigsberg.tex}
+\end{center}
+\caption[K\"{o}nigsberg, Prussia.]{A simplified map of K\"{o}nigsberg, Prussia
+circa 1736.}
+\caption[普鲁士，柯尼斯堡。]{约1736年普鲁士柯尼斯堡的简化地图。}
+\label{fig:kon_map} 
+\end{figure}
+
+Euler settled the question (it can't be done) be converting the map of 
+K\"{o}nigsberg into a graph and then making some simple observations about
+the parities of the nodes in this graph.  The \index{degree} degree of a node
+in a graph is the number of edges that are incident with it (if a so-called
+``loop edge'' is present it adds two to the node's degree).  The ``parity
+of a node'' is shorthand for the ``parity of the \emph{degree} of the node.'' 
+ 
+欧拉解决了这个问题（这是不可能做到的），他将柯尼斯堡的地图转换成一个图，然后对这个图中节点的奇偶性进行了一些简单的观察。\index{degree}图中一个节点的度是与它相关联的边的数量（如果存在所谓的“环边”，则节点的度增加2）。“节点的奇偶性”是“节点\emph{度}的奇偶性”的简称。
+
+\begin{figure}[!hbtp]
+\begin{center}
+\input{figures/kon_graph.tex}
+\end{center}
+\caption[K\"{o}nigsberg, Prussia as a graph.]{Euler's solution of the ``seven
+bridges of K\"{o}nigsberg problem'' involved representing the town
+as an undirected graph.}
+\caption[普鲁士柯尼斯堡的图表示。]{欧拉对“柯尼斯堡七桥问题”的解答涉及将该城镇表示为一个无向图。}
+\label{fig:kon_graph} 
+\end{figure}
+
+The graph of K\"{o}nigsberg has 4 nodes: one of degree 5 and three of degree
+3.  All the nodes are odd.
+
+柯尼斯堡图有4个节点：一个度为5，三个度为3。所有节点的度都是奇数。
+
+Would it be possible to either modify 
+K\"{o}nigsberg or come up with an entirely new graph having some even nodes?
+Well, the answer to that is easy -- just tear down one of the bridges, and two
+of the nodes will have their degree changed by one; they'll both become even.
+Notice that, by removing one edge, we effected the parity of two nodes.  Is
+it possible to create a graph with four nodes in which just one of them is
+even?  More generally, given any short list of natural numbers, is it 
+possible to draw a graph whose degrees are the listed numbers?
+
+是否有可能修改柯尼斯堡的图，或者构造一个全新的、有一些偶数度节点的图？嗯，这个问题的答案很简单——只要拆掉一座桥，就有两个节点的度会改变1；它们都会变成偶数。请注意，通过移除一条边，我们影响了两个节点的奇偶性。是否可能创建一个有四个节点，其中只有一个节点的度是偶数的图？更一般地，给定任意一个自然数的短列表，是否可能画出一个其节点度为所列数字的图？
+
+\begin{exer}
+Try drawing graphs having the following lists of vertex degrees.
+(In some cases it will be impossible\ldots)
+
+\begin{itemize}
+\item[-] $\{1,1,2,3,3\}$
+\item[-] $\{1,2,3,5\}$
+\item[-] $\{1,2,3,4\}$
+\item[-] $\{4,4,4,4,5\}$
+\item[-] $\{3,3,3,3\}$
+\item[-] $\{3,3,3,3,3\}$
+\end{itemize}
+\end{exer}   
+
+\begin{exer}
+尝试绘制具有以下顶点度列表的图。（在某些情况下，这是不可能的……）
+
+\begin{itemize}
+\item[-] $\{1,1,2,3,3\}$
+\item[-] $\{1,2,3,5\}$
+\item[-] $\{1,2,3,4\}$
+\item[-] $\{4,4,4,4,5\}$
+\item[-] $\{3,3,3,3\}$
+\item[-] $\{3,3,3,3,3\}$
+\end{itemize}
+\end{exer} 
+ 
+When it is possible to create a graph with a specified list
+of vertex degrees, it is usually easy to do.  Of course, when 
+it's impossible you struggle a bit\ldots \rule{5pt}{0pt} 
+To help get things rolling (just in case you haven't
+really done the exercise) I'll give a hint -- for the first list it 
+is possible to draw a graph, for the second it is not.
+
+当可以用指定的顶点度列表创建一个图时，通常很容易做到。当然，当不可能时，你会挣扎一下…… 为了帮助你开始（以防你还没有真正做这个练习），我给一个提示——对于第一个列表，可以画出一个图，对于第二个则不行。
+
+Can you distinguish the pattern?  What makes one list
+of vertex degrees reasonable and another not?
+
+你能分辨出其中的规律吗？是什么使得一个顶点度列表合理而另一个不合理？
+
+\begin{exer}
+(If you didn't do the last exercise, stop being such a lame-o and 
+try it now.  BTW, if you \emph{did} do it, good for you!  You can
+either join with me now in sneering at all those people who are scurrying
+back to do the last one, or try the following:)  
+
+Figure out a way to distinguish a sequence of numbers that \emph{can} be
+the degree sequence of some graph from the sequences that cannot be.
+\end{exer}
+
+\begin{exer}
+（如果你没做上一个练习，别这么逊了，现在就去试试。顺便说一句，如果你\emph{做了}，好样的！你现在可以和我一起嘲笑那些匆忙回去做上一个练习的人，或者尝试下面的问题：）
+
+找出一个方法来区分一个\emph{可以}作为某个图的度序列的数字序列和那些不可以的序列。
+\end{exer}
+
+Okay, now if you're reading this sentence you should know that every 
+other list of vertex degrees above is impossible, you should have graphs
+drawn in the margin here for the 1st, 3rd and 5th degree sequences, and
+you may have discovered some version of the following
+
+好的，现在如果你正在读这句话，你应该知道上面每隔一个顶点度列表都是不可能的，你应该在这里的页边空白处为第1、3、5个度序列画了图，并且你可能已经发现了下面定理的某个版本
+
+\begin{thm} 
+In an undirected graph, the number of vertices having an odd degree is even.
+\end{thm}
+
+\begin{thm}
+在一个无向图中，度为奇数的顶点数量是偶数。
+\end{thm}
+
+A slightly pithier statement is: All graphs have an even number of 
+odd nodes.
+
+一个更简洁的说法是：所有图都有偶数个奇数度节点。
+
+We'll leave the proof of this theorem to the exercises but most of the
+work is done in proving the following equivalent result.
+
+我们将这个定理的证明留作练习，但大部分工作都在证明以下等价结果中完成。
+
+\begin{thm}
+In an undirected graph the sum of the degrees of the vertices is even.
+\end{thm}
+
+\begin{thm}
+在一个无向图中，所有顶点的度之和是偶数。
+\end{thm}
+
+\begin{proof}
+The sum of the degrees of all the vertices in a graph $G$,
+
+\[ \sum_{v\in V(G)} \deg(v), \]
+
+\noindent counts every edge of $G$ exactly twice.
+Thus,
+
+ \[ \sum_{v\in V(G)} \deg(v) = 2 \cdot |E(G)|. \]
+
+In particular we see that this sum is even.
+\end{proof}
+
+\begin{proof}
+图$G$中所有顶点的度之和，
+\[ \sum_{v\in V(G)} \deg(v), \]
+\noindent 将$G$的每条边恰好计算了两次。因此，
+ \[ \sum_{v\in V(G)} \deg(v) = 2 \cdot |E(G)|. \]
+我们特别看到这个和是偶数。
+\end{proof}
+
+The question of whether a graph having a given list of vertex degrees
+can exist comes down to an elegant little argument using both of the 
+techniques in the title of this section.
+
+一个具有给定顶点度列表的图是否存在的问题，可以用一个同时使用了本节标题中两种技巧的优雅小论证来解决。
+
+We count the edge set of the 
+graph in two ways -- once in the usual fashion and once by summing the 
+vertex degrees;
+
+我们用两种方式计算图的边集——一次是常规方式，另一次是通过对顶点度求和；
+
+we also note that since this latter count is actually
+a double count we can bring in the concept of parity.
+
+我们还注意到，由于后一种计数实际上是双重计数，我们可以引入奇偶性的概念。
+
+Another perfectly lovely argument involving parity arises in questions
+concerning whether or not it is possible to tile a pruned chessboard 
+with dominoes.
+
+另一个涉及奇偶性的非常优美的论证出现在关于是否可以用多米诺骨牌平铺一个修剪过的棋盘的问题中。
+
+We've seen dominoes before in Section~\ref{sec:induct}
+and we're just hoping you've run across chessboards before.
+
+我们在~\ref{sec:induct}节见过多米诺骨牌，我们只是希望你以前见过棋盘。
+
+Usually
+a chessboard is 8 $\times$ 8, but we would like to adopt a more
+liberal interpretation that a chessboard can be any rectangular grid
+of squares we might choose.\footnote{The game known as ``draughts'' in the
+UK and ``checkers'' in the US is played on an $8 \times 8$ board, but 
+(for example) international draughts is played on a $10 \times 10$ 
+board and Canadian checkers is played on a $12 \times 12$ board.}
+
+通常棋盘是8×8的，但我们想采用一个更宽泛的解释，即棋盘可以是任何我们选择的矩形方格网格。\footnote{在英国被称为“draughts”在美国被称为“checkers”的游戏是在8×8的棋盘上进行的，但（例如）国际跳棋是在10×10的棋盘上进行的，而加拿大跳棋是在12×12的棋盘上进行的。}
+
+Suppose that we have a supply of dominoes that are of just the right
+size that if they are laid on a chessboard they perfectly cover two
+adjacent squares.
+
+假设我们有一批多米诺骨牌，它们的大小正好可以在棋盘上完美地覆盖两个相邻的方格。
+
+Our first question is quite simple.  Is it possible
+to perfectly tile an $m \times n$ chessboard with such dominoes?
+
+我们的第一个问题非常简单。是否可能用这样的多米诺骨牌完美地平铺一个$m \times n$的棋盘？
+
+First let's specify the question a bit more.  By ``perfectly tiling''
+a chessboard we mean that every domino lies (fully) on the board,
+covering precisely two squares, and that every square of the board 
+is covered by a domino.
+
+首先让我们更具体地说明一下问题。我们所说的“完美平铺”一个棋盘，是指每一块多米诺骨牌都（完全）放在棋盘上，精确地覆盖两个方格，并且棋盘的每一个方格都被一块多米诺骨牌覆盖。
+
+The answer is straightforward.  If at least one of $m$ or $n$ is even
+it can be done.
+
+答案很简单。如果$m$或$n$中至少有一个是偶数，就可以做到。
+
+A necessary condition is that the number of squares
+be even (since every domino covers two squares) and so, if both $m$ 
+and $n$ are odd we will be out of luck.
+
+一个必要条件是方格的数量必须是偶数（因为每块多米诺骨牌覆盖两个方格），所以，如果$m$和$n$都是奇数，我们就没戏了。
+
+A ``pruned board'' is obtained by either literally removing some of the
+squares or perhaps by marking them as being off limits in some way.
+
+一个“修剪过的棋盘”是通过字面上移除一些方格，或者可能通过某种方式将它们标记为禁区而得到的。
+
+When we ask questions about perfect tilings of pruned chessboards things
+get more interesting and the notion of parity can be used in several
+ways.
+
+当我们询问关于修剪过的棋盘的完美平铺问题时，事情变得更有趣，奇偶性的概念可以以几种方式使用。
+
+Here are two tiling problems regarding square chessboards:
+
+这里有两个关于方形棋盘的平铺问题：
+
+\begin{enumerate}
+\item An even-sided square board (e.g.\ an ordinary $8 \times 8$ board) 
+with diagonally opposite corners pruned.
+\item 一个偶数边长的方形棋盘（例如一个普通的8×8棋盘），其对角线两端的角被修剪掉。
+\item An odd-sided board with one square pruned.
+\item 一个奇数边长的棋盘，其上有一个方格被修剪掉。
+\end{enumerate} 
+
+Both of these situations satisfy the basic necessary condition that 
+the number of squares on the board must be even.
+
+这两种情况都满足了棋盘上格子数必须是偶数的基本必要条件。
+
+You may be able
+to determine another ``parity'' approach to these tiling problems
+by attempting the following
+
+你或许可以通过尝试以下练习来确定另一种解决这些平铺问题的“奇偶性”方法
+
+\begin{exer}
+Below are two five-by-five chessboards each having a single
+square pruned. One can be tiled by dominoes and the other
+cannot.  Which is which?
+\begin{center}
+\input{figures/odd_pruned_chessboards.tex}
+\end{center}
+
+\end{exer}
+
+\begin{exer}
+下面是两个五乘五的棋盘，每个都剪掉了一个方格。其中一个可以用多米诺骨牌平铺，另一个则不能。哪个是哪个？
+\begin{center}
+\input{figures/odd_pruned_chessboards.tex}
+\end{center}
+\end{exer}
+
+The pattern of black and white squares on a chessboard is an 
+example of a sort of artificial parity, if we number the squares
+of the board appropriately then the odd squares will be white and
+the even squares will be black.
+
+棋盘上黑白方格的图案是一种人造奇偶性的例子，如果我们适当地给棋盘的方格编号，那么奇数方格将是白色，偶数方格将是黑色。
+
+We are used to chessboards having
+this alternating black/white pattern on them, but nothing about these
+tiling problems required that structure\footnote{Nothing about chess
+requires this structure either, but it does let us do some error checking. For instance, bishops always end up on the same color they left from and 
+knights always switch colors as they move.}  If we were used to monochromatic chessboards, we might never solve the previous two problems -- unless
+of course we invented the coloring scheme in order to solve them.
+
+我们习惯于棋盘上有这种黑白交替的图案，但关于这些平铺问题，并没有任何东西要求这种结构\footnote{国际象棋也并不要求这种结构，但它确实能让我们做一些错误检查。例如，象总是停留在与出发时相同颜色的格子上，而马在移动时总是会改变颜色。}如果我们习惯了单色棋盘，我们可能永远也解不出前面两个问题——当然，除非我们为了解决它们而发明了这种着色方案。
+
+An odd-by-odd chessboard has more squares of one color than of the other.
+
+一个奇数乘奇数的棋盘，一种颜色的方格比另一种多。
+
+An odd-by-odd chessboard needs to have a square pruned in order for it to
+be possible for it to be tiled by dominoes -- but if the wrong colored
+square is pruned it will \emph{still} be impossible.
+
+一个奇数乘奇数的棋盘需要剪掉一个方格才有可能用多米诺骨牌平铺——但如果剪掉了错误颜色的方格，它\emph{仍然}是不可能的。
+
+Each domino covers
+two squares -- one of each color!  (So the pruned board must have the 
+same number of white squares as black.) 
+
+每块多米诺骨牌覆盖两个方格——每种颜色各一个！（所以修剪过的棋盘必须有相同数量的白色和黑色方格。）
+
+We'll close this section with another example of the technique of
+counting in two ways.
+
+我们将以另一个“用两种方式计数”的技巧例子来结束本节。
+
+A \index{magic square} magic square of order $n$ is a square 
+$n \times n$ array 
+containing the numbers $1, 2, 3, \ldots , n^2$.
+
+一个$n$阶\index{magic square}幻方是一个$n \times n$的方形阵列，包含数字$1, 2, 3, \ldots , n^2$。
+
+The numbers must 
+be arranged in such a way that every row and every column sum to
+the same number -- this value is known as the magic sum.
+
+这些数字必须以这样一种方式排列，使得每一行和每一列的和都相同——这个值被称为幻和。
+
+For example, the following is an order $3$ magic square.
+
+例如，下面是一个3阶幻方。
+
+\begin{center}
+\begin{tabular}{c|c|c}
+\rule[-4pt]{0pt}{20pt}\rule{5pt}{0pt} 1 \rule{5pt}{0pt} & \rule{5pt}{0pt} 6 \rule{5pt}{0pt} & \rule{5pt}{0pt} 8 \rule{5pt}{0pt} \\ \hline
+\rule[-4pt]{0pt}{20pt} 5 & 7 & 3 \\ \hline
+\rule[-4pt]{0pt}{20pt} 9 & 2 & 4 \\
+\end{tabular}
+\end{center}
+
+The definition of a magic square requires that the rows and columns sum to 
+the same number but says nothing about what that number must be.
+
+幻方的定义要求行和列的和相同，但没有说明这个数必须是多少。
+
+It is conceivable that we could produce magic squares (of the same order)
+having different magic sums.
+
+可以想象，我们可能制造出（同阶的）具有不同幻和的幻方。
+
+This is \emph{conceivable}, but in fact the
+magic sum is determined completely by $n$.
+
+这是\emph{可以想象的}，但实际上幻和完全由$n$决定。
+
+\begin{thm}
+A magic square of order $n$ has a magic sum equal to $\displaystyle\frac{n^3+n}{2}$.
+\end{thm}
+
+\begin{thm}
+一个$n$阶幻方的幻和等于$\displaystyle\frac{n^3+n}{2}$。
+\end{thm}
+
+\begin{proof}
+We count the total of the entries in the magic square in two ways.
+
+我们用两种方式计算幻方中所有条目的总和。
+
+The sum of all the entries in the magic square is
+
+\[ S = 1 + 2 + 3 + \ldots + n^2. \]
+
+幻方中所有条目的总和是
+\[ S = 1 + 2 + 3 + \ldots + n^2. \]
+
+Using the formula for the sum of the first $k$ naturals ( $\sum_{i=1}^k i = \frac{k^2+k}{2}$) and evaluating at $n^2$ gives
+
+\[ S = \frac{n^4 + n^2}{2}. \]
+
+使用前$k$个自然数求和公式（$\sum_{i=1}^k i = \frac{k^2+k}{2}$）并在$n^2$处求值，得到
+\[ S = \frac{n^4 + n^2}{2}. \]
+
+On the other hand, if the magic sum is $M$, then each of the $n$ rows has 
+numbers in it which sum to $M$ so
+
+\[ S = nM. \]
+
+另一方面，如果幻和是$M$，那么$n$行中的每一行数字之和都为$M$，所以
+\[ S = nM. \]
+
+By equating these different expressions for $S$ and solving for $M$, we
+prove the desired result:
+
+\[ nM = \frac{n^4 + n^2}{2}, \]
+
+\noindent therefore
+
+\[ M = \frac{n^3 + n}{2}. \]
+
+通过将这两个不同的$S$表达式相等并解出$M$，我们证明了期望的结果：
+\[ nM = \frac{n^4 + n^2}{2}, \]
+\noindent 因此
+\[ M = \frac{n^3 + n}{2}. \]
+\end{proof}
+
+%Parity:
+% Parity check bits and ``even'' codes.
+% Graphs having certain lists of vertex degrees.
+% (A graph must have an even 
+%   number of odd vertices.)
+% Covering a pruned chessboard with dominoes.
+% Existence of an Eulerian circuit (or path) in a graph.
+% The game of Nim.
+% Why can't we make a 4x5 rectangle using the 5 tetrominoes?
+%Counting:
+% Magic squares.
+% Block designs (bk=vr)
+% R(3,3;2)
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{proof3-zh/parity-exer.tex}
+
+\clearpage
+
+
+\section{The pigeonhole principle 鸽巢原理}
+\label{sec:pigeonhole}
+
+The word \index{pigeonhole} ``pigeonhole'' can refer to a hole in which a pigeon roosts
+(i.e.\ pretty much what it sounds like) or a series of roughly square 
+recesses in a desk in which one could sort correspondence (see Figure~\ref{fig:roll_top}).
+
+单词\index{pigeonhole}“鸽巢”可以指鸽子栖息的洞（即，基本上就是字面意思），也可以指书桌上一系列大致方形的凹槽，用来分类信件（见图~\ref{fig:roll_top}）。
+
+\begin{figure}[!hbtp]
+\begin{center}
+\input{figures/RollTopDesk.tex}
+\end{center}
+\caption[A desk with pigeonholes.]{Pigeonholes in an old-fashioned roll top
+desk could be used to sort letters.}
+\caption[带鸽巢格的书桌。]{老式卷盖书桌里的鸽巢格可以用来分类信件。}
+\label{fig:roll_top} 
+\end{figure}
+
+Whether you prefer to think of roosting birds or letters being sorted,
+the first and easiest version of the \index{pigeonhole principle} pigeonhole principle is that if you
+have more ``things'' than you have ``containers'' there must be a container
+holding at least two things.
+
+无论你更喜欢想象栖息的鸟儿还是被分类的信件，\index{pigeonhole principle}鸽巢原理的第一个也是最简单的版本是，如果你的“东西”比“容器”多，那么必定有一个容器里至少装着两件东西。
+
+If we have 6 pigeons who are trying to roost in a coop with 5 pigeonholes,
+two birds will have to share.
+
+如果我们有6只鸽子想在有5个鸽巢的鸽舍里栖息，那么将有两只鸟必须共享一个鸽巢。
+
+If we have 7 letters to sort and there are 6 pigeonholes in our desk, we
+will have to put two letters in the same compartment.
+
+如果我们有7封信要分类，而我们的书桌上有6个鸽巢格，我们就必须把两封信放在同一个隔间里。
+
+The ``things'' and the ``containers'' don't necessarily have to be 
+interpreted in the strict sense that the ``things'' go \emph{into} 
+the ``containers.''
+For instance, a nice application of the pigeonhole principle is that 
+if there are at least 13 people present in a room, some pair of people 
+will have been born in the same month.
+
+“东西”和“容器”不一定非要严格地理解为“东西”放\emph{进}“容器”里。例如，鸽巢原理的一个很好的应用是，如果一个房间里至少有13个人，那么必定有两个人出生在同一个月份。
+
+In this example the things are the
+people and the containers are the months of the year.
+
+在这个例子中，东西是人，容器是一年中的月份。
+
+The abstract way to phrase the pigeonhole principle is:
+
+鸽巢原理的抽象表述方式是：
+
+\begin{thm}
+If $f$ is a function such that $|\Dom{f}| > |\Rng{f}|$ then $f$ is not
+injective.
+\end{thm}
+
+\begin{thm}
+如果$f$是一个函数，使得$|\Dom{f}| > |\Rng{f}|$，那么$f$不是单射的。
+\end{thm}
+
+The proof of this statement is an easy example of proof by contradiction
+so we'll include it here.
+
+这个陈述的证明是反证法的一个简单例子，所以我们把它包含在这里。
+
+\begin{proof}
+Suppose to the contrary that $f$ is a function with 
+$|\Dom{f}| > |\Rng{f}|$ and that $f$ is injective.
+
+假设相反，即$f$是一个函数，满足$|\Dom{f}| > |\Rng{f}|$且$f$是单射的。
+
+Of course
+$f$ is onto its range, so since we are presuming that $f$ is injective
+it follows that $f$ is a bijection between $\Dom{f}$ and $\Rng{f}$.
+
+当然$f$是到其值域上的满射，所以既然我们假定$f$是单射的，那么$f$就是$\Dom{f}$和$\Rng{f}$之间的一个双射。
+
+Therefore (since $f$ provides a one-to-one
+correspondence) $|\Dom{f}| = |\Rng{f}|$.  This clearly contradicts the
+statement that $|\Dom{f}| > |\Rng{f}|$.
+
+因此（由于$f$提供了一一对应关系）$|\Dom{f}| = |\Rng{f}|$。这显然与$|\Dom{f}| > |\Rng{f}|$的陈述相矛盾。
+\end{proof}
+
+For a statement with an almost trivial proof the pigeonhole principle
+is very powerful.
+
+对于一个证明几乎微不足道的陈述来说，鸽巢原理非常强大。
+
+We can use it to prove a host of existential 
+results -- some are fairly silly, others very deep.
+
+我们可以用它来证明大量的存在性结果——有些相当傻，有些则非常深刻。
+
+Here are a few 
+examples:
+
+这里有几个例子：
+
+There are two people (who are not bald) in New York City having exactly
+the same number of hairs on their heads.
+
+在纽约市，有两个（非秃顶的）人头上的头发数量完全相同。
+
+There are two books in (insert your favorite library) that have the 
+same number of pages.
+
+在（填入你最喜欢的图书馆）里，有两本书的页数相同。
+
+Given $n$ married couples (so $2n$ people) if we choose $n+1$ people
+we will be forced to choose both members of some couple.
+
+给定$n$对已婚夫妇（即$2n$个人），如果我们选择$n+1$个人，我们将被迫选中某对夫妇的两个成员。
+
+Suppose we select $n+1$ numbers from the set $\{1, 2, 3, \ldots, 2n\}$,
+we will be forced to have chosen two numbers such that one is divisible 
+by the other.
+
+假设我们从集合$\{1, 2, 3, \ldots, 2n\}$中选择$n+1$个数，我们将被迫选出两个数，其中一个能被另一个整除。
+
+\vspace{.25 in}
+
+\centerline{\rule{108pt}{1pt}}
+
+\vspace{.25 in}
+
+We can come up with stronger forms of the pigeonhole principle by
+considering pigeonholes with capacities.
+
+通过考虑有容量的鸽巢，我们可以得出更强形式的鸽巢原理。
+
+Suppose we have 6 pigeonholes
+in a desk, each of which can hold 10 letters.
+
+假设我们书桌上有6个鸽巢，每个可以放10封信。
+
+What number of letters will
+guarantee that one of the pigeonholes is full?
+
+多少封信才能保证其中一个鸽巢是满的？
+
+The largest number of letters
+we could have without having 10 in some pigeonhole is $9 \cdot 6 = 54$, so if
+there are 55 letters we must have 10 letters in some pigeonhole.
+
+在没有任何一个鸽巢里有10封信的情况下，我们能有的最大信件数是$9 \cdot 6 = 54$，所以如果有55封信，我们必定在某个鸽巢里有10封信。
+
+More generally, if we have $n$ containers, each capable of holding $m$
+objects, than if there are $n \cdot (m-1) + 1$ objects placed in the 
+containers, we will be assured that one of the containers is at capacity.
+
+更一般地，如果我们有$n$个容器，每个能容纳$m$个物体，那么如果将$n \cdot (m-1) + 1$个物体放入这些容器中，我们就能保证其中一个容器已满。
+
+The ordinary pigeonhole principle is the special case $m=2$ of this 
+stronger version.
+
+普通的鸽巢原理是这个更强版本的$m=2$的特例。
+
+There is an even stronger version, which ordinarily is known as the 
+\index{pigeonhole principle, strong form} ``strong form of the pigeonhole
+principle.''  In the strong form, we have pigeonholes with an assortment
+of capacities.
+
+还有一个更强的版本，通常被称为\index{pigeonhole principle, strong form}“强形式的鸽巢原理”。在强形式中，我们的鸽巢有各种不同的容量。
+
+\begin{thm}
+If there are $n$ containers having capacities $m_1, m_2, m_3, \ldots, m_n$,
+and there are $1 + \sum_{i=1}^n (m_i - 1)$ objects placed in them, then for
+some $i$, container $i$ has (at least) $m_i$ objects in it.
+\end{thm} 
+
+\begin{thm}
+如果有$n$个容器，其容量分别为$m_1, m_2, m_3, \ldots, m_n$，并且有$1 + \sum_{i=1}^n (m_i - 1)$个物体放入其中，那么对于某个$i$，容器$i$中至少有$m_i$个物体。
+\end{thm}
+
+\begin{proof}
+If no container holds its full capacity, then the largest the
+total of the objects could be is $\sum_{i=1}^n (m_i - 1)$.
+\end{proof}
+
+\begin{proof}
+如果没有一个容器达到其满容量，那么物体总数的最大可能值是$\sum_{i=1}^n (m_i - 1)$。
+\end{proof}
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{proof3-zh/pigeon-exer.tex}
+
+\clearpage
+
+\section{The algebra of combinations 组合代数}
+\label{sec:alg_comb}
+
+Earlier in this chapter we determined the number of $k$-subsets of a set
+of size $n$.
+
+在本章前面部分，我们确定了一个大小为n的集合的k-子集的数量。
+
+These numbers, denoted by $C(n,k) = nCk = \binom{n}{k}$
+and determined by the formula $\frac{n!}{k!(n-k)!}$ are known as binomial 
+coefficients.
+
+这些数，记为$C(n,k) = nCk = \binom{n}{k}$，由公式$\frac{n!}{k!(n-k)!}$确定，被称为二项式系数。
+
+It seems likely that you will have already seen the arrangement
+of these binomial coefficients into a triangular array -- known as 
+\index{Pascal's triangle} Pascal's triangle, but if not\ldots
+
+你很可能已经见过将这些二项式系数排列成一个三角形数组——即著名的\index{Pascal's triangle}帕斯卡三角形，但如果没有……
+
+\begin{center}
+\begin{tabular}{ccccccccccccc}
+  &   &   &   &    &    & 1  &    &    &   &   &   &   \\
+  &   &   &   &    & 1  &    & 1  &    &   &   &   &   \\
+  &   &   &   &  1 &    & 2  &    & 1  &   &   &   &   \\
+  &   &   & 1 &    & 3  &    & 3  &    & 1 &   &   &   \\
+  &   & 1 &   &  4 &    & 6  &    & 4  &   & 1 &   &   \\
+  & 1 &   & 5 &    & 10 &    & 10 &    & 5 &   & 1 &   \\
+1 &   & 6 &   & 15 &    & 20 &    & 15 &   & 6 &   & 1 \\
+\end{tabular}
+\end{center}
+
+\noindent \emph{et cetera.}
+
+\noindent \emph{等等。}
+
+The thing that makes this triangle so nice and that leads to the
+strange name ``binomial coefficients'' for the number of $k$-combinations
+of an $n$-set is that you can use the triangle to (very quickly) compute
+powers of binomials.
+
+这个三角形之所以如此美妙，并导致n-集合的k-组合数有一个奇怪的名字“二项式系数”，是因为你可以用这个三角形来（非常迅速地）计算二项式的幂。
+
+A \index{binomial}\emph{binomial} is a polynomial with two terms.
+Things like $(x+y)$, $(x+1)$ and $(x^7+x^3)$ all count as binomials
+but to keep things simple just think about $(x+y)$.
+
+\index{binomial}\emph{二项式}是一个有两项的多项式。像$(x+y)$, $(x+1)$和$(x^7+x^3)$这样的都算是二项式，但为了简单起见，我们只考虑$(x+y)$。
+
+If you need to
+compute a large power of $(x+y)$ you can just multiply it out, for
+example, think of finding the 6th power of $(x+y)$.
+
+如果你需要计算$(x+y)$的高次幂，你可以直接把它乘开，例如，考虑求$(x+y)$的6次幂。
+
+We can use the F.O.I.L rule to find $(x+y)^2 = x^2 + 2xy + y^2$.
+
+我们可以使用F.O.I.L法则来求得$(x+y)^2 = x^2 + 2xy + y^2$。
+
+Then $(x+y)^3 =  (x+y) \cdot (x+y)^2 = (x+y) \cdot  (x^2 + 2xy + y^2)$.
+
+然后$(x+y)^3 = (x+y) \cdot (x+y)^2 = (x+y) \cdot (x^2 + 2xy + y^2)$。
+
+You can compute that last product either by using the distributive law
+or the table method:
+
+你可以用分配律或表格法来计算最后一个乘积：
+
+\begin{center}
+\begin{tabular}{c|ccc}
+      & $x^2$ & $+ 2xy$ & $+ y^2$ \\ \hline
+$x$   &       &         &         \\
+$+ y$ &       &         &         \\
+\end{tabular} 
+\end{center}
+
+Either way, the answer should be $(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3$.
+
+无论哪种方式，答案都应该是$(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3$。
+
+Finally the sixth power is the square of the cube thus
+
+最后，六次幂是三次幂的平方，因此
+
+\begin{gather*} 
+(x+y)^6 = (x+y)^3 \cdot (x+y)^3 \\
+= (x^3 + 3x^2y + 3xy^2 + y^3) \cdot (x^3 + 3x^2y + 3xy^2 + y^3)
+\end{gather*}
+
+For this product I wouldn't even \emph{think} about the distributive
+law, I'd jump to the table method right away:
+
+对于这个乘积，我甚至不会\emph{考虑}分配律，我会立刻使用表格法：
+
+\begin{center}
+\begin{tabular}{r|cccc}
+\rule[-6pt]{0pt}{24pt} & $x^3$ & $+ 3x^2y$ & $+ 3xy^2$ & $+ y^3$ \\ \hline
+\rule[-6pt]{0pt}{24pt} $x^3$ & \rule{45pt}{0pt} & \rule{45pt}{0pt} & \rule{45pt}{0pt} & \rule{45pt}{0pt} \\
+\rule[-6pt]{0pt}{24pt} $+ 3x^2y$ &       &           &           &         \\
+\rule[-6pt]{0pt}{24pt} $+ 3xy^2$ &       &           &           &         \\
+\rule[-6pt]{0pt}{24pt} $+ y^3$   &       &           &           &         \\
+
+\end{tabular} 
+\end{center}
+
+In the end you should obtain 
+
+最后你应该得到
+
+\[ x^6 + 6 x^5y + 15 x^4y^2 + 20 x^3y^3 + 15 x^2y^4 + 6 xy^5 + y^6. \]
+
+Now all of this is a lot of work and it's really much easier
+to notice the form of the answer:  The exponent on $x$ starts at 6 and descends
+with each successive term down to 0.  The exponent on $y$ starts at 0
+and ascends to 6.  The coefficients in the answer are the numbers in the 
+sixth row of Pascal's triangle.
+
+现在，所有这些工作都很繁重，而注意到答案的形式要容易得多：x的指数从6开始，随后的每一项递减到0。y的指数从0开始，递增到6。答案中的系数是帕斯卡三角形第六行的数字。
+
+Finally, the form of Pascal's triangle makes it really easy to extend.
+
+最后，帕斯卡三角形的形式使得扩展它变得非常容易。
+
+A number in the interior of the triangle is always the sum of the two
+above it (on either side).
+
+三角形内部的数字总是它上方两个数（两边的）的和。
+
+Numbers that aren't in the interior of the
+triangle are always 1.
+
+不在三角形内部的数字总是1。
+
+We showed rows 0 through 6 above.
+
+我们上面展示了第0行到第6行。
+
+Rows 7 and 8 are
+
+第7行和第8行是
+
+\begin{center}
+\begin{tabular}{ccccccccccccccccc}
+   & 1 &   & 7 &    & 21 &    & 35 &    & 35 &    & 21 &    & 7 &   & 1 & \\
+ 1 &   & 8 &   & 28 &    & 56 &    & 70 &    & 56 &    & 28 &   & 8 &   & 1. \\ \end{tabular}
+\end{center}
+
+With this information in hand, it becomes nothing more than a matter of copying
+down the answer to compute
+
+有了这些信息，计算就变成了抄写答案那么简单
+
+\[ (x+y)^8 =  x^8 + 8x^7y + 28x^6y^2 + 56x^5y^3 + 70x^4y^4 + 56x^3y^5 + 28x^2y^6 + 8xy^7 + y^8. \]
+
+\begin{exer} 
+Given the method using Pascal's triangle for computing $(x+y)^n$ we can
+use substitution to determine more general binomial powers.
+Find $(x^4 + x^2)^5$.
+\end{exer}
+
+\begin{exer}
+给定使用帕斯卡三角形计算$(x+y)^n$的方法，我们可以使用代换来确定更一般的二项式幂。求$(x^4 + x^2)^5$。
+\end{exer}
+
+All of the above hinges on the fact that one can compute a binomial
+coefficient by summing the two that appear to either side and above it
+in Pascal's triangle.
+
+以上所有内容都取决于一个事实，即可以通过将帕斯卡三角形中一个二项式系数上方两侧的两个系数相加来计算它。
+
+This fact is the fundamental relationship
+between binomial coefficients -- it is usually called Pascal's formula.
+
+这个事实是二项式系数之间的基本关系——通常被称为帕斯卡公式。
+
+\begin{thm}
+For all natural numbers $n$ and $k$ with $0 < k \leq n$,
+
+\[ \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}. \]
+\end{thm}
+
+\begin{thm}
+对于所有满足$0 < k \leq n$的自然数$n$和$k$，
+
+\[ \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}。\]
+\end{thm}
+
+We are going to prove it twice.
+
+我们将证明它两次。
+
+\begin{proof} 
+(The first proof is a combinatorial argument.)
+
+（第一个证明是组合论证。）
+
+There are $\binom{n}{k}$ subsets of size $k$ of the set $N = \{1, 2, 3, \ldots, n\}$.
+
+集合$N = \{1, 2, 3, \ldots, n\}$有$\binom{n}{k}$个大小为$k$的子集。
+
+We will partition these $k$-subsets into two disjoint cases: those that contain
+the final number, $n$, and those that do not.
+
+我们将这些k-子集划分为两个不相交的情况：包含最后一个数n的子集和不包含n的子集。
+
+Let 
+
+设
+
+\[ A = \{ S \subseteq N \suchthat |S| = k \; \land \; n \notin S \} \]
+
+\noindent and, let
+
+\noindent 并且，设
+
+\[ B = \{ S \subseteq N \suchthat |S| = k \; \land \; n \in S \}. \]
+
+Since the number $n$ is either in a $k$-subset or it isn't, these sets
+are disjoint and exhaustive.
+
+由于数字n要么在k-子集中，要么不在，所以这些集合是不相交且穷尽的。
+
+So the addition rule tells us that
+
+所以加法法则告诉我们
+
+\[ \binom{n}{k} = |A| + |B|. \]
+
+The set $A$ is really just the set of all $k$-subsets of the $(n-1)$-set
+$\{1, 2, 3, \ldots, n-1 \}$, so $|A| = \binom{n-1}{k}$.
+
+集合A实际上就是(n-1)-集合$\{1, 2, 3, \ldots, n-1 \}$的所有k-子集的集合，所以$|A| = \binom{n-1}{k}$。
+
+Any of the sets in $B$ can be obtained by adjoining the element $n$ to
+a $k-1$ subset of the  $(n-1)$-set
+$\{1, 2, 3, \ldots, n-1 \}$, so $|B| = \binom{n-1}{k-1}$.
+
+B中的任何集合都可以通过将元素n附加到(n-1)-集合$\{1, 2, 3, \ldots, n-1 \}$的一个k-1子集来获得，所以$|B| = \binom{n-1}{k-1}$。
+
+Substituting gives us the desired result.
+
+代入即可得到我们想要的结果。
+\end{proof}
+
+\begin{proof}
+(The second proof is algebraic in nature.)
+
+（第二个证明本质上是代数的。）
+
+Consider the sum 
+
+考虑和
+
+\[ \binom{n-1}{k} + \binom{n-1}{k-1}.\]
+
+Applying the formula we deduced in Section~\ref{sec:counting}
+we get 
+
+应用我们在~\ref{sec:counting}节推导出的公式，我们得到
+
+\begin{gather*} 
+\binom{n-1}{k} + \binom{n-1}{k-1} \\
+\rule{0pt}{36pt} = \frac{(n-1)!}{k! (n-1-k)!}  + \frac{(n-1)!}{(k-1)! ((n-1)-(k-1))!} \\
+\rule{0pt}{36pt} = \frac{(n-1)!}{k! (n-k-1)!}  + \frac{(n-1)!}{(k-1)! (n-k)!} \\
+\end{gather*}
+
+A common denominator for these fractions is $k!(n-k)!$.  (We will have
+to multiply the top and bottom of the first fraction by $(n-k)$ and the
+top and bottom of the second fraction by $k$.)
+
+这些分数的公分母是$k!(n-k)!$。（我们将不得不将第一个分数的分子和分母都乘以$(n-k)$，第二个分数的分子和分母都乘以$k$。）
+
+\begin{gather*} 
+= \frac{(n-k)(n-1)!}{k! (n-k) (n-k-1)!}  + \frac{k (n-1)!}{k (k-1)! (n-k)!} \\
+\rule{0pt}{36pt} = \frac{(n-k)(n-1)!}{k! (n-k)!}  + \frac{k (n-1)!}{k! (n-k)!} \\
+\rule{0pt}{36pt} = \frac{(n-k)(n-1)! + k (n-1)!}{k! (n-k)!} \\
+\rule{0pt}{36pt} = \frac{(n-k+k)(n-1)!}{k! (n-k)!} \\
+\rule{0pt}{36pt} = \frac{(n)(n-1)!}{k! (n-k)!} \\
+\rule{0pt}{36pt} = \frac{n!}{k! (n-k)!}. \\
+\end{gather*}
+
+
+We recognize the final expression as the definition of $\binom{n}{k}$,
+so we have proved that
+
+我们认出最后的表达式是$\binom{n}{k}$的定义，所以我们证明了
+
+\[ \binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}. \]
+\end{proof}
+
+There are quite a few other identities concerning binomial coefficients
+that can also be proved in (at least) two ways.
+
+还有相当多关于二项式系数的恒等式也可以用（至少）两种方式来证明。
+
+We will provide one
+or two 
+other examples and leave the rest to you in the exercises for this section.
+
+我们将提供另外一两个例子，其余的留给你们在本节的练习中完成。
+
+\begin{thm}
+For all natural numbers $n$ and $k$ with $0 < k \leq n$,
+
+\[ k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1}. \]
+\end{thm}
+
+\begin{thm}
+对于所有满足$0 < k \leq n$的自然数$n$和$k$，
+
+\[ k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1}。\]
+\end{thm}
+
+Let's try a purely algebraic approach first.
+
+让我们先尝试一个纯代数的方法。
+
+\begin{proof}
+
+Using the formula for the value of a binomial coefficient 
+we get 
+
+使用二项式系数值的公式我们得到
+
+\[ k \cdot \binom{n}{k} = k \cdot \frac{n!}{k! (n-k)!}. \]
+
+We can do some cancellation to obtain
+
+我们可以进行一些约分来获得
+
+\[ k \cdot \binom{n}{k} = \frac{n!}{(k-1)! (n-k)!}. \]
+
+Finally we factor-out an $n$ to obtain
+
+最后我们提出一个$n$因子来获得
+
+\[ k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)! (n-k)!}, \]
+
+\noindent since $(n-k)$ is the same thing as $((n-1)-(k-1))$ we have
+
+\noindent 因为$(n-k)$与$((n-1)-(k-1))$是相同的，我们有
+
+\[ k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)!((n-1)-(k-1))!} 
+= n \cdot \binom{n-1}{k-1} \]
+
+\end{proof}
+
+A combinatorial argument usually involves counting \emph{something} 
+in two ways.
+
+一个组合论证通常涉及用两种方式来计数\emph{某样东西}。
+
+What could that something be?  Well, if you see a 
+product in some formula you should try to imagine what the 
+multiplication rule would say in that particular circumstance.
+
+那个东西可能是什么呢？嗯，如果你在某个公式中看到一个乘积，你应该试着想象在那种特定情况下乘法法则会说什么。
+
+\begin{proof} 
+Consider the collection of all subsets of size $k$ taken from 
+$N = \{1, 2, 3, \ldots, n\}$ in which one of the elements has
+been marked to distinguish it from the others in some way.\footnote{
+For example, a committee of $k$ individuals one of whom has been %
+chosen as chairperson, is an example of the kind of entity we are %
+discussing.}
+
+考虑从$N = \{1, 2, 3, \ldots, n\}$中取出的所有大小为k的子集的集合，其中有一个元素被标记以某种方式与其他元素区分开来。\footnote{例如，一个由k名成员组成的委员会，其中一人被选为主席，就是我们正在讨论的实体的一个例子。}
+
+We can count this collection in two ways using the multiplication rule.
+
+我们可以用乘法法则以两种方式来计算这个集合。
+
+Firstly, we could select a $k$-subset in $\binom{n}{k}$ ways and then from
+among the $k$ elements of the subset we could select one to be marked.
+
+首先，我们可以用$\binom{n}{k}$种方式选择一个k-子集，然后从该子集的k个元素中选择一个进行标记。
+
+By this analysis there are $\binom{n}{k} \cdot k$ elements in our
+collection.
+
+根据这个分析，我们的集合中有$\binom{n}{k} \cdot k$个元素。
+
+Secondly, we could select an element from the $n$-set which will be 
+the ``marked'' element of our subset, and then choose the additional
+$k-1$ elements from the remaining $n-1$ elements of the $n$-set.
+
+其次，我们可以从n-集合中选择一个元素作为我们子集的“被标记”元素，然后从n-集合中剩下的n-1个元素中选择另外的k-1个元素。
+
+By this analysis there are $n \cdot \binom{n-1}{k-1}$ elements in
+the collection we have been discussing.
+
+根据这个分析，我们一直在讨论的集合中有$n \cdot \binom{n-1}{k-1}$个元素。
+
+Thus,
+
+因此，
+
+\[ k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1} \]
+
+\end{proof}
+
+The final result that we'll talk about actually has (at least) three proofs.
+
+我们最后要讨论的结果实际上有（至少）三种证明。
+
+One of which suffers from the fault that it is ``like swatting a fly
+with a sledge hammer.''
+
+其中之一的缺点是“像用大锤打苍蝇”。
+
+The result concerns the sum of all the numbers in some 
+row of Pascal's triangle.
+
+这个结果关系到帕斯卡三角形某一行中所有数字的和。
+
+\begin{thm}
+For all natural numbers $n$ and $k$ with $0 < k \leq n$,
+
+\[ \sum_{k=0}^n \binom{n}{k} = 2^n \]
+\end{thm}
+
+\begin{thm}
+对于所有满足$0 < k \leq n$的自然数$n$和$k$，
+\[ \sum_{k=0}^n \binom{n}{k} = 2^n \]
+\end{thm}
+
+Our sledge hammer is a powerful result known as the binomial theorem
+which is a formalized statement of the material we began this section
+with.
+
+我们的大锤是一个被称为二项式定理的强大结果，它是我们本节开始时内容的正式陈述。
+
+\begin{thm}[The Binomial Theorem]
+For all natural numbers $n$, and real numbers $x$ and $y$, 
+
+\[ (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k. \] 
+\end{thm}
+
+\begin{thm}[二项式定理]
+对于所有自然数$n$，以及实数$x$和$y$，
+\[ (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k. \] 
+\end{thm}
+
+We won't be proving this result just now.   But, the following proof
+is a proof of the previous theorem using this more powerful result.
+
+我们现在不证明这个结果。但是，下面的证明是使用这个更强大的结果来证明前一个定理。
+
+\begin{proof}
+Substitute $x=y=1$ in the binomial theorem.
+\end{proof} 
+
+\begin{proof}
+在二项式定理中代入$x=y=1$。
+\end{proof}
+
+Our second proof will be combinatorial.
+
+我们的第二个证明将是组合的。
+
+Let us re-iterate that a combinatorial proof usually consists of 
+counting some collection in two different ways.
+
+让我们重申一下，一个组合证明通常包括用两种不同的方式对某个集合进行计数。
+
+The formula
+we have in this example contains a sum, so we should search for 
+a collection of things that can be counted using the addition
+rule.
+
+我们这个例子中的公式包含一个和，所以我们应该寻找一个可以用加法法则来计数的集合。
+
+\begin{proof} 
+The set of all subsets of $N = \{1, 2, 3, \ldots, n\}$, which we
+denote by ${\mathcal P}(N)$, can be partitioned into $n+1$ sets based
+on the sizes of the subsets,
+
+\[ {\mathcal P}(N) = S_0 \cup S_1 \cup S_2 \cup \ldots \cup S_n, \]
+
+\noindent where $S_k = \{ S \suchthat S \subseteq N \; \land \; |S| = k \}$
+for $0 \leq k \leq n$.
+
+由于$N$的任何子集不能出现在划分的两个不同部分中（子集的大小是唯一的），并且$N$的每个子集都出现在划分的某个部分中（子集的大小都在0到n的范围内）。
+
+Since no subset of $N$ can appear in two different
+parts of the partition (a subset's size is unique) and every subset of $N$
+appears in one of the parts of the partition (the sizes of subsets are
+all in the range from $0$ to $n$).
+
+加法原理告诉我们
+
+The addition principle tells us that
+
+\[ |{\mathcal P}(N)| \quad = \quad |S_0| \;+\; |S_1| \;+\;\cup |S_2| \;+\; \ldots \;+\; |S_n|. \]
+
+我们之前证明了$|{\mathcal P}(N)| = 2^n$，并且我们知道$|S_k| = \binom{n}{k}$，所以可以得出
+
+We have previously proved that $ |{\mathcal P}(N)| = 2^n$ and we know that
+$|S_k| = \binom{n}{k}$ so it follows that
+
+
+\[ 2^n = \binom{n}{0} + \binom{n}{1} +\binom{n}{2} + \ldots + \binom{n}{n}. \] 
+
+\end{proof}
+
+\begin{proof}
+集合$N = \{1, 2, 3, \ldots, n\}$的所有子集的集合，我们记为${\mathcal P}(N)$，可以根据子集的大小划分为$n+1$个集合，
+\[ {\mathcal P}(N) = S_0 \cup S_1 \cup S_2 \cup \ldots \cup S_n, \]
+\noindent 其中$S_k = \{ S \suchthat S \subseteq N \; \land \; |S| = k \}$，对于$0 \leq k \leq n$。
+由于$N$的任何子集不能出现在划分的两个不同部分中（子集的大小是唯一的），并且$N$的每个子集都出现在划分的某个部分中（子集的大小都在0到$n$的范围内），加法原理告诉我们
+\[ |{\mathcal P}(N)| \quad = \quad |S_0| \;+\; |S_1| \;+\;\cup |S_2| \;+\; \ldots \;+\; |S_n|. \]
+我们之前证明了$|{\mathcal P}(N)| = 2^n$，并且我们知道$|S_k| = \binom{n}{k}$，所以可以得出
+\[ 2^n = \binom{n}{0} + \binom{n}{1} +\binom{n}{2} + \ldots + \binom{n}{n}. \] 
+\end{proof}
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{proof3-zh/combinations-exer.tex}
+
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***

@@ -1,0 +1,1211 @@
+\chapter{Proof techniques IV --- Magic 证明技巧IV --- “魔术”}
+\label{ch:magic}
+
+{\em If you can keep your head when all about you are losing theirs, it's 
+just possible you haven't grasped the situation. --Jean Kerr} 
+
+{\em 如果你能在周围所有人都失去理智时保持冷静，那很可能只是你还没搞清楚状况。——琼·克尔} 
+
+\vspace{.3in}
+
+The famous mathematician 
+\index{Erdos, Paul} Paul Erd\"{o}s is said to have believed that
+God has a Book in which all the really elegant proofs are written.
+
+据说，著名数学家\index{Erdos, Paul}保罗·埃尔德什相信，上帝有一本书，里面写着所有真正优雅的证明。
+
+The greatest praise that a collaborator\footnote{The collaborators
+of Paul Erd\"{o}s were legion. His collaborators, and their collaborators,
+and \emph{their} collaborators, etc.\ are organized into a tree structure 
+according to their so-called \index{Erdos number}Erd\"{o}s number,
+see~\cite{wiki-Erdos_number}.} could receive from Erd\"{o}s
+was that they had discovered a ``Book proof.''   It is not
+easy or straightforward for a mere mortal to come up with a Book 
+proof but notice that, since the Book is inaccessible to the living,
+all the Book proofs of which we are aware were constructed by ordinary
+human beings.
+
+合作者\footnote{保罗·埃尔德什的合作者众多。他的合作者，以及他们的合作者，以及\emph{他们的}合作者等等，根据他们所谓的\index{Erdos number}埃尔德什数被组织成一个树状结构，见~\cite{wiki-Erdos_number}。}能从埃尔德什那里得到的最高赞誉是他们发现了一个“书中证明”。凡人要提出一个“书中证明”并非易事，但请注意，由于生者无法接触到那本书，我们所知的所有“书中证明”都是由普通人构建的。
+
+In other words, it's not impossible!
+
+换句话说，这并非不可能！
+
+The title of this final chapter is intended to be whimsical -- there
+is no real magic involved in any of the arguments that we'll look at.
+
+本最后一章的标题意在异想天开——我们将要看到的所有论证中都没有真正的魔术。
+
+Nevertheless, if you  reflect a bit on the mental processes that 
+must have gone into the development of these elegant proofs, perhaps
+you'll agree that there is something magical there.
+
+然而，如果你稍微反思一下这些优雅证明发展过程中所必须经历的思维过程，也许你会同意其中确实有某种魔力。
+
+At a minimum
+we hope that you'll agree that they are beautiful -- they are proofs
+from the Book\footnote{There is a lovely book entitled ``Proofs from the
+Book''~\cite{pftB} that has a nice collection of Book proofs.}.
+
+至少我们希望你会同意它们是美丽的——它们是来自那本书的证明\footnote{有一本可爱的书，名为《来自圣书的证明》~\cite{pftB}，其中收集了许多“书中证明”。}。
+
+Acknowledgment: Several of the topics in this section were unknown to
+the author until he visited the excellent mathematics website
+by the late Alexander Bogomolny:
+
+致谢：本节中的几个主题，作者在访问已故的亚历山大·博戈莫尔尼的优秀数学网站之前并不知晓：
+
+\url{http://www.cut-the-knot.org/}
+
+\clearpage
+
+\section{Morley's miracle 莫雷奇迹}
+\label{sec:morley}
+
+Probably you have heard of the impossibility of trisecting an angle.
+
+你可能听说过三等分一个角是不可能的。
+
+(Hold on for a quick rant about the importance of understanding your
+hypotheses\ldots)  What's \emph{actually} true is that you can't trisect
+a generic angle if you accept the restriction of using the old-fashioned
+tools of Euclidean geometry: the compass and straight-edge.
+
+（稍等，让我快速抱怨一下理解假设的重要性……）\emph{实际上}正确的是，如果你接受使用欧几里得几何的古老工具：圆规和直尺的限制，你无法三等分一个任意角。
+
+There 
+are a lot of constructions that can't be done using just a 
+straight-edge and compass
+-- angle trisection, duplication of a cube\footnote{Duplicating the cube 
+is also known as the Delian problem -- the problem comes from a pronouncement
+by the oracle of Apollo at Delos that a plague afflicting the Athenians would
+be lifted if they built an altar to Apollo that was twice as big as the 
+existing altar. The existing altar was a cube, one meter on a side, so they
+carefully built a two meter cube -- but the plague raged on. Apparently what
+Apollo wanted was a cube that had double the \emph{volume} of the 
+present altar -- it's side length would have to be 
+$\sqrt[3]{2} \approx 1.25992$ and since this was Greece and it was around 
+430 B.C.E.\ and there were no electronic calculators, they were basically
+just screwed.}, squaring a circle, constructing a regular heptagon, \emph{et cetera}.
+
+仅用直尺和圆规无法完成许多作图——角的三等分、立方体倍积\footnote{立方体倍积问题也称为提洛斯问题——该问题源于提洛岛阿波罗神谕的一则神谕，即如果雅典人建造一个比现有祭坛大一倍的阿波罗祭坛，困扰雅典人的瘟疫就会解除。现有的祭坛是一个边长一米的立方体，所以他们小心地建造了一个两米的立方体——但瘟疫继续肆虐。显然，阿波罗想要的是一个\emph{体积}是现有祭坛两倍的立方体——它的边长必须是$\sqrt[3]{2} \approx 1.25992$，由于这是在希腊，大约是公元前430年，没有电子计算器，他们基本上就完蛋了。}、化圆为方、作正七边形，\emph{等等}。
+
+If you allow yourself to use a \emph{ruler} -- i.e.\ a straight-edge with
+marks on it (indeed you really only need two marks a unit distance apart) 
+then angle trisection \emph{can} be done via what is known as a 
+\index{neusis construction}neusis construction.
+
+如果你允许自己使用一把\emph{尺子}——即一把带有刻度的直尺（实际上你只需要两个相距一个单位距离的标记）——那么角的三等分\emph{可以}通过一种称为\index{neusis construction}纽西斯作图法来完成。
+
+Nevertheless, because of the central place of Euclid's \emph{Elements} in
+mathematical training throughout the centuries, and thereby, a very
+strong predilection towards that which \emph{is} possible via compass and straight-edge
+alone, it is perhaps not surprising that a perfectly beautiful result that
+involved trisecting angles went undiscovered until 1899, when Frank Morley
+stated his Trisector Theorem.
+
+然而，由于欧几里得的《几何原本》在几个世纪以来的数学训练中占据中心地位，因此人们对仅用圆规和直尺可能完成的事情有很强的偏好，所以一个涉及三等分角的完美漂亮的结果直到1899年才被发现，当时弗兰克·莫雷阐述了他的三等分线定理，这也许并不奇怪。
+
+There is much more to this result than we will
+state here -- so much more that the name ``Morley's Miracle'' that has been
+given to the Trisector theorem is truly justified -- but even the simple,
+initial part of this beautiful theory is arguably miraculous!
+
+这个结果的内涵远不止我们在此陈述的——多到足以让赋予三等分线定理的“莫雷奇迹”之名名副其实——但即使是这个美丽理论的简单、初始部分，也可以说是奇迹般的！
+
+To learn more
+about \index{Morley's theorem}Morley's theorem and its extension see~\cite{lighthouse}.
+
+要了解更多关于\index{Morley's theorem}莫雷定理及其扩展，请参见~\cite{lighthouse}。
+
+So, let's state the theorem!
+
+那么，让我们来陈述这个定理吧！
+
+Start with an arbitrary triangle ${\triangle}ABC$.  Trisect each of its angles
+to obtain a diagram something like that in Figure~\ref{fig:morley_setup}.
+
+从一个任意三角形${\triangle}ABC$开始。将其每个角三等分，得到一个类似于图~\ref{fig:morley_setup}的图。
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Morley_setup.tex}
+\end{center}
+\caption[The setup for Morley's Miracle.]{The setup for Morley's %
+Miracle -- start with an arbitrary triangle and trisect each of %
+its angles.}
+\caption[莫雷奇迹的设置。]{莫雷奇迹的设置——从一个任意三角形开始，并将其每个角三等分。}
+\label{fig:morley_setup}
+\end{figure}
+ 
+The six angle trisectors that we've just drawn intersect one another
+in quite a few points.
+
+我们刚刚画的六条角三等分线在相当多的点上相互交叉。
+
+\begin{exer}
+You could literally count the number of intersection points between the
+angle trisectors on the diagram, but you should also be able to count them
+(perhaps we should say ``double-count them'') combinatorially.
+Give it 
+a try!
+\end{exer}
+
+\begin{exer}
+你可以直接在图上数出角三等分线之间的交点数量，但你也应该能够用组合学的方法来计算它们（也许我们应该说“双重计算”它们）。试一试吧！
+\end{exer}
+
+Among the points of intersection of the angle trisectors there are three
+that we will single out -- the intersections of adjacent trisectors.
+
+在角三等分线的交点中，我们将挑出三个——相邻三等分线的交点。
+
+In Figure~\ref{fig:morley_1st_triangle} the intersection of adjacent trisectors
+are indicated, additionally, we have connected them together to form a 
+small triangle in the center of our original triangle.
+
+在图~\ref{fig:morley_1st_triangle}中，标出了相邻三等分线的交点，此外，我们将它们连接起来，在我们原始三角形的中心形成了一个小三角形。
+
+\clearpage
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Morley_1st_triangle.tex}
+\end{center}
+\caption[The first Morley triangle.]{A triangle is formed whose vertices %
+are the intersections of the adjacent trisectors of the angles of %
+${\triangle}ABC$.}
+\caption[第一个莫雷三角形。]{形成了一个三角形，其顶点是${\triangle}ABC$各角相邻三等分线的交点。}
+\label{fig:morley_1st_triangle}
+\end{figure}
+  
+
+
+Are you ready for the miraculous part?
+
+你准备好迎接奇迹的部分了吗？
+
+Okay, here goes!
+
+好的，来了！
+
+\begin{thm}
+The points of intersection of the adjacent trisectors in an arbitrary
+triangle ${\triangle}ABC$ form the vertices of an equilateral triangle.
+\end{thm}
+
+\begin{thm}
+在任意三角形${\triangle}ABC$中，相邻三等分线的交点构成一个等边三角形的顶点。
+\end{thm}
+
+In other words, that little blue triangle in 
+Figure~\ref{fig:morley_1st_triangle}
+that kind of \emph{looks} like it might be equilateral actually does have
+all three sides equal to one another.
+
+换句话说，图~\ref{fig:morley_1st_triangle}中的那个看起来\emph{有点}像等边三角形的蓝色小三角形，实际上三条边都相等。
+
+Furthermore, it doesn't matter what
+triangle we start with, if we do the construction above we'll get
+a perfect $60^\circ - 60^\circ - 60^\circ$ triangle in the middle!
+
+此外，无论我们从哪个三角形开始，如果我们进行上述作图，我们都会在中间得到一个完美的$60^\circ - 60^\circ - 60^\circ$三角形！
+
+Sources differ, but it is not clear whether Morley ever proved his 
+theorem.
+
+资料来源不同，但尚不清楚莫雷是否曾证明过他的定理。
+
+The first valid proof (according to R.\ K.\ Guy in~\cite{lighthouse}
+was published in 1909 by M.\ Satyanarayana~\cite{satyana}.  There are now
+\emph{many} other proofs known, for instance the cut-the-knot website
+(\verb+http://www.cut-the-knot.org/+) exposits no less than nine different
+proofs.  The proof by Satyanarayana used trigonometry.  The proof we'll
+look at here is arguably the shortest ever produced and it is due to
+\index{Conway, John}John Conway.  It is definitely a ``Book proof''!
+
+第一个有效的证明（根据R. K. Guy在~\cite{lighthouse}中的说法）由M. Satyanarayana于1909年发表~\cite{satyana}。现在已经知道了\emph{许多}其他的证明，例如cut-the-knot网站（\verb+http://www.cut-the-knot.org/+）阐述了不少于九种不同的证明。Satyanarayana的证明使用了三角学。我们在这里将要看的证明可以说是迄今为止最短的，它归功于\index{Conway, John}约翰·康威。这绝对是一个“书中证明”！
+
+Let us suppose that an arbitrary triangle ${\triangle}ABC$ is given.
+We want to show that the triangle whose vertices are the intersections
+of the adjacent trisectors is equilateral -- this triangle will be
+referred to as the \index{Morley triangle}\emph{Morley triangle}.  
+Let's also denote by
+$A$, $B$ and $C$ the measures of the angles of ${\triangle}ABC$.  (This
+is what is generally known as an ``abuse of notation'' -- we are intentionally
+confounding the vertices ($A$, $B$ and $C$) of the triangle with the
+measure of the angles at those vertices.)   It turns out that it is
+fairly hard to reason from our knowledge of what the angles $A$, $B$ and $C$
+are to deduce that the Morley triangle is equilateral.
+
+假设给定一个任意三角形${\triangle}ABC$。我们想要证明其顶点为相邻三等分线交点的三角形是等边三角形——这个三角形将被称为\index{Morley triangle}\emph{莫雷三角形}。我们还用$A$, $B$和$C$来表示${\triangle}ABC$的角度大小。（这通常被称为“滥用符号”——我们有意将三角形的顶点（$A$, $B$和$C$）与这些顶点的角度大小混淆。）事实证明，从我们对角$A$, $B$和$C$的了解来推断莫雷三角形是等边的是相当困难的。
+
+How does the
+following plan sound: suppose we construct a triangle, that definitely
+\emph{does} have an equilateral Morley triangle, whose angles also happen
+to be $A$, $B$ and $C$.
+
+以下计划听起来如何：假设我们构造一个三角形，它明确地\emph{拥有}一个等边莫雷三角形，并且其角度也恰好是$A$, $B$和$C$。
+
+Such a triangle would be 
+\index{similarity transform} 
+similar\footnote{In Geometry, two objects are said to be \emph{similar} %
+if one can be made to exactly coincide with the other after a series of %
+rigid translations, rotations and scalings. In other words, they have %
+the same shape if you allow for differences in scale and are allowed to %
+slide them around and spin them about as needed.} 
+to the original
+triangle ${\triangle}ABC$ -- if we follow the \index{similarity transform}
+similarity transform from the
+constructed triangle back to ${\triangle}ABC$ we will see that their 
+Morley triangles must coincide;
+
+这样的三角形将与原始三角形${\triangle}ABC$ \index{similarity transform}相似\footnote{在几何学中，如果一个物体可以通过一系列刚性平移、旋转和缩放与另一个物体完全重合，则称这两个物体是\emph{相似}的。换句话说，如果你允许缩放上的差异，并可以根据需要滑动和旋转它们，那么它们的形状是相同的。}——如果我们沿着从构造的三角形回到${\triangle}ABC$的\index{similarity transform}相似变换，我们会发现它们的莫雷三角形必须重合；
+
+thus if one is equilateral so is the other!
+
+因此，如果一个是等边的，另一个也是！
+
+One of the features of Conway's proof that leads to its great succinctness
+and beauty is his introduction of some very nice notation.
+
+康威证明之所以如此简洁优美，其特点之一是他引入了一些非常好的符号。
+
+Since we are dealing with angle trisectors, let $a$, $b$ and $c$ be 
+angles such that $3a=A$, $3b=B$ and $3c=C$.
+
+由于我们正在处理角的三等分线，设$a, b, c$为角，使得$3a=A, 3b=B, 3c=C$。
+
+Furthermore, let a superscript
+star denote the angle that is $\pi/3$ (or $60^\circ$ if you prefer) greater
+than a given angle.
+
+此外，让上标星号表示比给定角大$\pi/3$（如果你喜欢，也可以是$60^\circ$）的角。
+
+So, for example, 
+
+所以，例如，
+
+\[ a^\star = a + \pi/3 \]
+
+\noindent and 
+
+\noindent 并且
+
+\[ a^{\star\star} = a + 2\pi/3. \]
+
+Now, notice that the sum $a+b+c$ must be $\pi/3$.  This is an 
+immediate consequence of $A+B+C=\pi$ which is true for any triangle
+in the plane.
+
+现在，请注意和$a+b+c$必须是$\pi/3$。这是$A+B+C=\pi$的直接结果，这对于平面上的任何三角形都成立。
+
+It follows that by distributing two stars amongst 
+the three numbers $a$, $b$ and $c$ we will come up with three
+quantities which sum to $\pi$.
+
+因此，通过在$a, b, c$这三个数中分配两个星号，我们将得到三个和为$\pi$的量。
+
+In other words, there are 
+Euclidean triangles having the following 
+triples as their vertex angles:
+
+换句话说，存在以以下三元组为顶角的欧几里得三角形：
+
+\begin{center}
+\begin{tabular}{cc}
+\rule{0pt}{18pt} $(a, b, c^{\star\star})$ \rule{18pt}{0pt} & $(a, b^\star, c^\star)$ \\
+\rule{0pt}{18pt} $(a, b^{\star\star}, c)$ \rule{18pt}{0pt} & $(a^\star, b^\star, c)$ \\
+\rule{0pt}{18pt} $(a^{\star\star}, b, c)$ \rule{18pt}{0pt} & $(a^\star, b, c^\star)$ \\
+\end{tabular}
+\end{center}
+
+\begin{exer}
+What would a triangle whose vertex angles are $(0^\star, 0^\star, 0^\star)$
+be?
+\end{exer}
+
+\begin{exer}
+一个顶角为$(0^\star, 0^\star, 0^\star)$的三角形会是什么样子？
+\end{exer}
+
+In a nutshell, Conway's proof consists of starting with an equilateral
+triangle of unit side length, adding appropriately scaled versions of the 
+six triangles above and ending up with a figure (having an equilateral 
+Morley triangle) similar to  ${\triangle}ABC$.
+
+简而言之，康威的证明包括从一个单位边长的等边三角形开始，添加上面六个三角形的适当缩放版本，最终得到一个与${\triangle}ABC$相似的图形（它有一个等边莫雷三角形）。
+
+The generic picture is
+given in Figure~\ref{fig:morley_conway_puzzle}.  Before we can really
+count this argument as a proof, we need to say a bit more about what
+the phrase ``appropriately scaled'' means.
+
+一般情况的图在图~\ref{fig:morley_conway_puzzle}中给出。在我们能真正将这个论证算作一个证明之前，我们需要更多地说明“适当缩放”这个短语的含义。
+
+In order to appropriately
+scale the triangles (the small acute ones) that appear green in Figure~\ref{fig:morley_conway_puzzle}
+we have a relatively easy job -- just scale them so that the side
+opposite the trisected angle has length one;
+
+为了适当地缩放图~\ref{fig:morley_conway_puzzle}中呈绿色的三角形（那些小的锐角三角形），我们的工作相对容易——只需将它们缩放，使得三等分角对边的长度为一即可；
+
+that way they will join
+perfectly with the central equilateral triangle.
+
+这样它们就能与中心的等边三角形完美地拼接起来。
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Morley_Conway_puzzle.tex}
+\end{center}
+\caption[Conway's puzzle proof.]{Conway's proof involves putting 
+these pieces together to obtain a triangle (with an equilateral
+Morley triangle) that is similar to  %
+${\triangle}ABC$.}
+\caption[康威的拼图证明。]{康威的证明涉及将这些碎片拼接在一起，以获得一个与${\triangle}ABC$相似的三角形（它有一个等边的莫雷三角形）。}
+\label{fig:morley_conway_puzzle}
+\end{figure}
+  
+The triangles (these are the larger obtuse ones) that appear purple in \ref{fig:morley_conway_puzzle} are 
+a bit more puzzling.
+
+图~\ref{fig:morley_conway_puzzle}中呈紫色的三角形（这些是较大的钝角三角形）则更令人费解一些。
+
+Ostensibly, we have two different jobs to accomplish --
+we must scale them so that both of the edges that they will share
+with green triangles have the correct lengths.
+
+表面上，我们有两个不同的任务要完成——我们必须缩放它们，使得它们将与绿色三角形共享的两条边都具有正确的长度。
+
+How do we know
+that this won't require two different scaling factors?
+
+我们怎么知道这不会需要两个不同的缩放因子呢？
+
+Conway also
+developed an elegant argument that handles this question as well.
+
+康威也发展了一个优雅的论证来处理这个问题。
+
+Consider the purple triangle at the bottom of the 
+diagram in Figure~\ref{fig:morley_conway_puzzle} -- it has vertex
+angles $(a,b,c^{\star\star})$.
+
+考虑图~\ref{fig:morley_conway_puzzle}中底部的紫色三角形——它的顶角是$(a,b,c^{\star\star})$。
+
+It is possible to construct triangles
+similar (via reflections) to the adjacent green triangles 
+$(a, b^\star, c^\star)$ and $(a^\star, b, c^\star)$ \emph{inside} of
+triangle $(a,b,c^{\star\star})$.
+
+在三角形$(a,b,c^{\star\star})$\emph{内部}，可以构造出与相邻的绿色三角形$(a, b^\star, c^\star)$和$(a^\star, b, c^\star)$相似（通过反射）的三角形。
+
+To do this just construct two lines that
+go through the top vertex (where the angle $c^{\star\star}$ is) that cut
+the opposite edge at the angle $c^\star$ in the two possible senses -- 
+these two lines
+will coincide if it should happen that $c^\star$ is precisely $\pi/2$
+but generally there will be two and it is evident that the two line
+segments formed have the same length.
+
+要做到这一点，只需构造两条穿过顶顶点（角为$c^{\star\star}$的地方）的线，这两条线以两种可能的方式与对边相交成角$c^\star$——如果$c^\star$恰好是$\pi/2$，这两条线将重合，但通常会有两条线，并且很明显，形成的两条线段长度相同。
+
+We scale the purple triangle so
+that this common length will be 1.  See Figure~\ref{fig:morley_conway_puzzle_scaling}.
+
+我们将紫色三角形缩放，使得这个公共长度为1。见图~\ref{fig:morley_conway_puzzle_scaling}。
+
+\begin{exer}
+If it should happen that $c^\star = \pi/2$, what can we 
+say about $C$?
+\end{exer}
+
+\begin{exer}
+如果碰巧$c^\star = \pi/2$，我们能对$C$说些什么？
+\end{exer}
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Morley_Conway_puzzle_scaling.tex}
+\end{center}
+\caption[Scaling in Conway's puzzle proof.]{The scaling factor for
+the obtuse triangles in Conway's puzzle proof is determined so that 
+the segments constructed in there midsts have unit length.}
+\caption[康威拼图证明中的缩放。]{康威拼图证明中钝角三角形的缩放因子被确定，以便在其中构建的线段具有单位长度。}
+\label{fig:morley_conway_puzzle_scaling}
+\end{figure}
+ 
+Of course the other two obtuse triangles can be handled in a similar way.
+
+当然，另外两个钝角三角形也可以用类似的方式处理。
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{proof4-zh/morley-exer.tex}
+
+\newpage
+
+\section{Five steps into the void 深入虚空的五步}
+\label{sec:5_steps}
+
+In this section we'll talk about another Book proof also due to John
+Conway.
+
+在本节中，我们将讨论另一个同样出自约翰·康威的“书中证明”。
+
+This proof serves as an introduction to a really powerful
+general technique -- the idea of an invariant.
+
+这个证明是对一个非常强大的通用技巧——不变量思想的介绍。
+
+An invariant is some
+sort of quantity that one can calculate that itself doesn't change as 
+other things are changed.
+
+不变量是某种可以计算的量，当其他事物发生变化时，它本身保持不变。
+
+Of course different situations have different
+invariant quantities.  
+
+当然，不同的情况有不同的不变量。
+
+The setup here is simple and relatively intuitive.
+
+这里的设置简单且相对直观。
+
+We have a bunch
+of checkers on a checkerboard -- in fact we have an infinite number
+of checkers, but not filling up the whole board, they completely fill
+an infinite half-plane which we could take to be the set
+
+我们在一张棋盘上有一堆棋子——实际上我们有无限多个棋子，但它们没有填满整个棋盘，而是完全填满了一个无限的半平面，我们可以把这个集合看作是
+
+\[ S = \{(x,y) \suchthat x \in \Integers \, \land \, y \in \Integers \, \land \, y \leq 0 \}. \]
+
+See Figure~\ref{fig:the_army}.
+ 
+见图~\ref{fig:the_army}。
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/The_Army.tex}
+\end{center}
+\caption[An infinite army in the lower half-plane.]{An infinite number of
+checkers occupying the integer lattice points such that $y\leq 0$.}
+\caption[下半平面中的无限军队。]{无限数量的棋子占据着满足$y\leq 0$的整格点。}
+\label{fig:the_army}
+\end{figure}
+  
+Think of these checkers as an army and the upper half-plane is ``enemy 
+territory.''  Our goal is to move one of our soldiers into enemy territory
+as far as possible.
+
+把这些棋子想象成一支军队，上半平面是“敌方领土”。我们的目标是把我们的一个士兵尽可能远地移入敌方领土。
+
+The problem is that our ``soldiers'' move the 
+way checkers do, by jumping over another man (who is then removed from 
+the board).
+
+问题在于，我们的“士兵”移动的方式和跳棋一样，通过跳过另一个人（然后被跳过的人被从棋盘上移除）。
+
+It's clear that we can get someone into enemy territory --
+just take someone in the second row and jump a guy in the first row.
+
+很明显，我们可以把某个人送入敌方领地——只需从第二行拿一个人跳过第一行的一个人即可。
+
+It is also easy enough to see that it is possible to get a man
+two steps into enemy territory -- we could bring two adjacent men
+a single step into enemy territory, have one of them jump the other
+and then a man from the front rank can jump over him.
+
+也很容易看出，有可能把一个人送入敌方领地两步——我们可以把两个相邻的人送入敌方领地一步，让其中一个跳过另一个，然后前排的一个人可以跳过他。
+
+\begin{exer}
+The strategy just stated uses 4 men (in the sense that they are removed
+from the board -- 5 if you count the one who ends up two steps into
+enemy territory as well).
+Find a strategy for moving someone two
+steps into enemy territory that is more efficient -- that is, involves
+fewer jumps.
+\end{exer}
+
+\begin{exer}
+刚刚陈述的策略使用了4个人（即他们被从棋盘上移除——如果也算上最终进入敌方领地两步的那个人，则是5个）。找一个更有效率的策略将某人移动到敌方领地两步——即，涉及更少的跳跃。
+\end{exer}
+
+\begin{exer}
+Determine the most efficient way to get a man three steps into
+enemy territory.
+An actual checkers board and pieces (or some 
+coins, or rocks) might come in handy.
+\end{exer}
+
+\begin{exer}
+确定将一个人送入敌方领地三步的最有效方法。一个真正的跳棋棋盘和棋子（或一些硬币、石子）可能会派上用场。
+\end{exer}
+
+We'll count the man who ends up some number of steps above the
+$x$-axis, as well as all the pieces who get jumped and removed
+from the board as a measure of the efficiency of a strategy.
+
+我们将把最终停在x轴上方若干步的那个棋子，以及所有被跳过并从棋盘上移除的棋子数量，作为衡量一个策略效率的标准。
+
+If you did the last exercise correctly you should have found that 
+eight men are the minimum required to get 3 steps into enemy 
+territory.
+
+如果你正确地完成了上一个练习，你应该已经发现，要进入敌方领土3步，最少需要8个人。
+
+So far, the number of men required to get a given
+distance into enemy territory seems to always be a power of 
+2.
+
+到目前为止，进入敌方领土给定距离所需的人数似乎总是2的幂。
+
+\begin{center}
+\begin{tabular}{c|c}
+\# of steps 步数 & \# of men 人数 \\ \hline
+1 & 2 \\
+2 & 4 \\
+3 & 8 \\
+\end{tabular}
+\end{center}  
+
+As a picture is sometimes literally worth one thousand words, we
+include here 3 figures illustrating the moves necessary to put 
+a scout 1, 2 and 3 steps into the void.
+
+由于一图有时胜千言，我们在此附上3张图，说明将一个侦察兵送入虚空1、2、3步所需的移动。
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/One_step_into_void.tex}
+\end{center}
+\caption[Moving one step into the void is trivial.]{One man is sacrificed in 
+order to move a scout one step into enemy territory.}
+\caption[迈入虚空一步是微不足道的。]{为了将一个侦察兵送入敌方领土一步，牺牲了一个人。}
+\label{fig:one_step}
+\end{figure}
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Two_steps_into_void.tex}
+\end{center}
+\caption[Moving two steps into the void is more difficult.]{Three man are sacrificed in 
+order to move a scout two steps into enemy territory.}
+\caption[迈入虚空两步更加困难。]{为了将一个侦察兵送入敌方领土两步，牺牲了三个人。}
+\label{fig:two_steps}
+\end{figure}
+
+In order to show that 8 men are sufficient to get a scout 3 steps into
+enemy territory, we show that it is possible to reproduce the configuration
+that can place a man two steps in -- shifted up by one unit.
+
+为了证明8个人足以将一个侦察兵送入敌方领地3步，我们证明了可以重现那个能将一个人送入两步远的配置——只是向上平移了一个单位。
+
+\begin{figure}[!hbtp] 
+%\hspace{-.2in}\begin{center}
+\hspace{-.2in}\input{figures/Three_steps_into_void.tex}
+%\end{center}
+\caption[Moving three steps into the void takes 8 men.]{Eight men are needed to
+get a scout 3 steps into the void.}
+\caption[迈入虚空三步需要8个人。]{需要八个人才能将一个侦察兵送入虚空3步。}
+\label{fig:three_steps}
+\end{figure}
+
+You may be surprised to learn that the pattern of 8 men which are needed to
+get someone three steps into the void can be re-created -- shifted up by one
+unit -- using just 12 men.
+
+你可能会惊讶地发现，将某人送入虚空三步所需的8人模式，可以仅用12人就重新创建——并向上平移一个单位。
+
+This means that we can get a man 4 steps into
+enemy territory using $12 + 8 = 20$ men.
+
+这意味着我们可以用$12 + 8 = 20$个人将一个人送入敌方领地4步。
+
+You were expecting 16 weren't you?
+(I know \emph{I} was!)
+
+你以为是16个，对吧？（我知道\emph{我}是这么以为的！）
+
+\begin{exer}
+Determine how to get a marker 4 steps into the void.
+\end{exer}
+
+\begin{exer}
+确定如何将一个标记物送入虚空4步。
+\end{exer}
+
+The \emph{real} surprise is that it is simply impossible to get a man five
+steps into enemy territory.
+
+\emph{真正}的惊喜是，把一个人送入敌方领土五步是完全不可能的。
+
+So the sequence we've been looking at actually
+goes 
+
+所以我们一直在看的序列实际上是
+
+\[ 2, 4, 8, 20, \infty. \] 
+
+The proof of this surprising result works by using a fairly simple, but
+clever, strategy.
+
+这个惊人结果的证明采用了一个相当简单但聪明的策略。
+
+We assign a numerical value to a set of men that is 
+dependent on their positions -- then we show that this value never increases
+when we make ``checker jumping'' moves -- finally we note that the 
+value assigned to a man in position $(0,5)$ is equal to the value of the
+entire original set of men (that is, with \emph{all} the positions in the lower
+half-plane occupied).
+
+我们给一群人分配一个取决于他们位置的数值——然后我们证明当进行“跳棋”移动时，这个值永远不会增加——最后我们注意到，分配给位置(0,5)的人的数值等于整个原始人群的数值（即，下半平面\emph{所有}位置都被占据时）。
+
+This is a pretty nice strategy, but how exactly are
+we going to assign these numerical values?
+
+这是一个相当不错的策略，但我们究竟该如何分配这些数值呢？
+
+A man's value is related to his distance from the point $(0,5)$ in what
+is often called ``the taxicab metric.''   We don't use the straight-line
+distance, but rather determine the number of blocks we will have to drive
+in the north-south direction and in the east-west direction and add them 
+together.
+
+一个人的价值与他到点(0,5)的距离有关，这种距离通常被称为“出租车度量”。我们不使用直线距离，而是确定我们在南北方向和东西方向必须行驶的街区数，然后将它们相加。
+
+The value of a set of men is the sum of their individual values.
+
+一群人的价值是他们个人价值的总和。
+
+Since we need to deal with the value of the set of men that completely fills
+the lower half-plane, we are going to have to have most of these values be
+pretty tiny!
+
+因为我们需要处理完全填满下半平面的那群人的价值，我们将不得不让这些价值中的大部分都非常小！
+
+To put it in a more mature and dignified manner: the infinite
+sum of the values of the men in our army must be convergent.
+
+用一种更成熟、更庄重的方式来说：我们军队中士兵价值的无限和必须是收敛的。
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Taxicab_distance.tex}
+\end{center}
+\caption[The taxicab distance to $(0,5)$.]{The taxicab distance to $(0,5)$.}
+\caption[到(0,5)的出租车距离。]{到(0,5)的出租车距离。}
+\label{fig:taxicab_distance}
+\end{figure}
+
+We've previously seen geometric series which have convergent sums.
+
+我们之前见过和收敛的几何级数。
+
+Recall 
+the formula for such a sum is
+
+回想一下这种和的公式是
+
+\[ \sum_{k=0}^{\infty} ar^k  \quad = \quad \frac{a}{1-r}, \]
+
+\noindent where $a$ is the initial term of the sum and $r$ is the common
+ratio between terms.
+
+\noindent 其中$a$是和的初始项，$r$是项之间的公比。
+
+Conway's big insight was to associate the powers of some number $r$ with
+the positions on the board -- $r^k$ goes on the squares that are distance
+$k$ from the target location.
+
+康威的一大创见是将某个数$r$的幂与棋盘上的位置联系起来——距离目标位置$k$的方格上放$r^k$。
+
+If we have a man who is actually {\em at}
+the target location, he will be worth $r^0$ or $1$.
+
+如果我们有一个人确实\emph{在}目标位置，他将价值$r^0$或1。
+
+We need to arrange for
+two things to happen:  the sum of all the powers of $r$ in the initial setup
+of the board must be less than or equal to 1, and checker-jumping moves should
+result in the total value of a set of men going down or (at worst) staying 
+the same.
+
+我们需要安排两件事发生：棋盘初始设置中所有$r$的幂的和必须小于或等于1，并且跳棋移动应该导致一群人的总价值下降或（最坏情况）保持不变。
+
+These goals push us in different directions:  In order for the initial sum to be less
+than 1, we would like to choose $r$ to be fairly small.
+
+这些目标将我们推向不同的方向：为了使初始和小于1，我们希望选择一个相当小的$r$。
+
+In order to have checker-jumping moves we need to choose $r$ to be (relatively) larger.
+
+为了能进行跳棋移动，我们需要选择一个（相对）较大的$r$。
+
+Is there a value of $r$ that does the trick?  Can we find a balance between these competing 
+desires?
+
+是否存在一个能奏效的$r$值？我们能在这些相互竞争的愿望之间找到平衡吗？
+
+Think about the change in the value of our invariant as a checker jumping 
+move gets made.  See Figure~\ref{fig:finding_r}.
+
+思考一下当进行一次跳棋移动时，我们不变量的值会发生什么变化。见图~\ref{fig:finding_r}。
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Void-finding_r.tex}
+\end{center}
+\caption[Finding $r$.]{In making a checker-jump move, two men valued $r^{k+1}$ and $r^{k+2}$ are replaced by a single man valued $r^k$.}
+\caption[寻找r。]{在进行一次跳棋移动时，两个价值为$r^{k+1}$和$r^{k+2}$的棋子被一个价值为$r^k$的棋子取代。}
+\label{fig:finding_r}
+\end{figure}
+ 
+If we choose $r$ so that $r^{k+2} + r^{k+1} \leq r^k$ then the 
+checker-jumping move will at worst leave the total sum fixed.
+
+如果我们选择$r$使得$r^{k+2} + r^{k+1} \leq r^k$，那么跳棋移动最坏的情况也只是让总和保持不变。
+
+Note that
+so long as $r<1$ a checker-jumping move that takes us away from the target 
+position will certainly {\em decrease} the total sum.
+
+请注意，只要$r<1$，一个使我们远离目标位置的跳棋移动肯定会\emph{减少}总和。
+
+As is often the case, we'll analyze the inequality by looking instead at the
+corresponding equality.
+
+像往常一样，我们将通过研究相应的等式来分析这个不等式。
+
+What value of $r$ makes  $r^{k+2} + r^{k+1}  =  r^k$?
+
+什么样的$r$值能使$r^{k+2} + r^{k+1} = r^k$成立？
+
+The answer is that $r$ must be a root of the quadratic equation $x^2+x-1$.
+
+答案是$r$必须是二次方程$x^2+x-1$的一个根。
+
+\begin{exer}
+Do the algebra to verify the previous assertion.
+\end{exer}
+
+\begin{exer}
+进行代数运算以验证前面的断言。
+\end{exer}
+
+\begin{exer}
+Find the value of $r$ that solves the above equation.
+\end{exer}
+
+\begin{exer}
+求出解上述方程的$r$值。
+\end{exer}
+
+Hopefully you used the quadratic formula to solve the previous 
+exercise.
+
+希望你用二次公式解了上一个练习。
+
+You should of course have found two solutions, $-1.618033989\ldots$
+and $.618033989\ldots$, these decimal approximations are actually $-\phi$ and $1/\phi$, where $\displaystyle \phi = \frac{1+\sqrt{5}}{2}$ is the famous \index{golden ratio} ``golden ratio''.
+
+你当然应该找到了两个解，$-1.618033989\ldots$和$.618033989\ldots$，这些十进制近似值实际上是$-\phi$和$1/\phi$，其中$\displaystyle \phi = \frac{1+\sqrt{5}}{2}$是著名的\index{golden ratio}“黄金比例”。
+
+If we are hoping for the sum over all the occupied positions of $r^k$ to be convergent, we need $|r|<1$, so the negative 
+solution is extraneous and so the inequality  $r^{k+2} + r^{k+1} \leq r^k$
+is true in the interval $[1/\phi, 1)$.
+
+如果我们希望所有被占据位置上$r^k$的和是收敛的，我们需要$|r|<1$，所以负解是无关的，因此不等式$r^{k+2} + r^{k+1} \leq r^k$在区间$[1/\phi, 1)$内成立。
+
+Next we want to look at the value of this invariant when ``men'' occupy all of
+the positions with $y\leq0$.
+
+接下来我们想看看当“棋子”占据所有$y\leq0$的位置时，这个不变量的值。
+
+By looking at Figure~\ref{fig:taxicab_distance}
+you can see that there is a single square with value $r^5$,  there are 3 squares
+with value $r^6$, there are 5 squares with value $r^7$, \emph{et cetera}.
+
+通过查看图~\ref{fig:taxicab_distance}，你可以看到有一个值为$r^5$的方格，有3个值为$r^6$的方格，有5个值为$r^7$的方格，\emph{等等}。
+
+The sum, $S$, of the values of all the initially occupied positions is
+
+所有初始占据位置的值的和$S$是
+
+\[ S \quad = \quad r^5 \cdot \sum_{k=0}^{\infty} (2k+1) r^k. \]
+
+We have previously seen how to solve for the value of an infinite sum involving
+powers of $r$.
+
+我们之前已经看过如何求解一个包含$r$的幂的无穷和的值。
+
+In the expression above we have powers of $r$ but also 
+multiplied by odd numbers.
+
+在上面的表达式中，我们有$r$的幂，但也乘以了奇数。
+
+Can we solve something like this?
+
+我们能解这样的问题吗？
+
+Let's try the same trick that works for a geometric sum.
+
+让我们试试对几何和有效的同样技巧。
+
+Let
+
+设
+
+\[ T \quad = \quad  \sum_{k=0}^{\infty} (2k+1) r^k \quad = \quad  1 + 3r + 5r^2 + 7r^3 + \ldots. \]
+
+Note that 
+
+注意
+
+\[ rT \quad = \quad  \sum_{k=0}^{\infty} (2k+1) r^{k+1} \quad = \quad  r + 3r^2 + 5r^3 + 7r^4 + \ldots \]
+
+\noindent and it follows that 
+
+\noindent 并且可以得出
+
+\[ T - rT \quad = \quad  1 + 2 \sum_{k=1}^{\infty} r^{k} \quad = \quad 1 + 2r + 2r^2 + 2r^3 + 2r^4 + \ldots \]
+
+A bit more algebra (and the formula for the sum of a geometric series) leads us to
+
+再多一点代数运算（以及几何级数求和公式）可以让我们得到
+
+\[ T = \frac{1}{1-r}\left( 1 + \frac{2r}{1-r} \right), \]
+
+\noindent
+
+which simplifies to 
+
+\noindent
+
+化简为
+
+\[ T = \frac{1+r}{(1-r)^2}. \]
+
+Finally, recall that we are really interested in $S = r^5 \cdot T$, or
+
+最后，回想一下我们真正感兴趣的是$S = r^5 \cdot T$，或者
+
+\[ S = \frac{r^5 + r^6}{(1-r)^2}. \]
+
+It is interesting to proceed from this expression for $S$,
+using the fact that $r$ satisfies $x^2 = 1 - x$, to obtain the somewhat
+amazing fact that $S=1$.
+
+从这个S的表达式出发，利用r满足$x^2 = 1 - x$这一事实，可以得到一个有些惊人的事实，即S=1，这是很有趣的。
+
+The fact that $S=1$ has an extraordinary consequence.
+In order to get a single
+checker to the position $(0,5)$ we would need to use \emph{everybody}!
+
+$S=1$这个事实有一个非凡的推论。为了把一个棋子送到(0,5)的位置，我们需要用上\emph{所有人}！
+
+For a set consisting of just a single
+checker positioned at $(0,5)$ the value of our invariant is 1.
+
+对于一个只包含一个位于(0,5)的棋子的集合，我们不变量的值是1。
+
+On the other hand, the set consisting of the entire army lined 
+up on and below the $x$-axis also yields a 1.  Every checker move either
+does not change the value of the invariant or reduces it.
+
+另一方面，由整个军队在x轴上及以下排列组成的集合也产生1。每一次跳棋移动要么不改变不变量的值，要么减少它。
+
+The best 
+we could possibly hope for is that there would be no need for moves 
+of the sort that reduce
+the invariant -- nevertheless we still could not get a man to $(0,5)$ 
+in a finite number of moves.
+
+我们所能期望的最好情况是，不需要进行那种会减少不变量的移动——然而，我们仍然无法在有限步内将一个人送到(0,5)的位置。
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{proof4-zh/five-exer.tex}
+
+\newpage
+
+\section{Monge's circle theorem 蒙日圆定理}
+\label{sec:monge}
+
+There's a nice sequence of matchstick puzzles that starts with
+``Use nine non-overlapping matchsticks to form 4 triangles (all of
+the same size).''  It's not that hard, and after a while most people come
+up with 
+
+有一个不错的火柴棍谜题序列，开头是“用九根不重叠的火柴棍组成4个（大小相同的）三角形。” 这并不难，过一会儿大多数人会想出
+
+\begin{center}
+\input{figures/matchstick_puzzle.tex}
+\end{center}
+
+The kicker comes when you next ask them to ``use six matches to form
+4 (equal sized) triangles.''   There's a picture of the solution to
+this new puzzle at the back of this section.
+
+关键在于当你接下来要求他们“用六根火柴组成4个（大小相等的）三角形”时。本节末尾有这个新谜题的解图。
+
+The answer involves 
+thinking three-dimensionally, so -- with that hint -- give it a try for a
+while before looking in the back.
+
+答案涉及三维思考，所以——有了这个提示——在看答案之前先试一会儿。
+
+\index{Monge's circle theorem}Monge's circle theorem has 
+nothing to do with matchsticks, but it is a
+\emph{sweet} example of a proof that works by moving to a higher dimension.
+
+\index{Monge's circle theorem}蒙日圆定理与火柴棍无关，但它是一个通过进入更高维度来证明的\emph{绝佳}例子。
+
+People often talk about ``thinking outside of the box'' when discussing
+critical thinking, but the mathematical idea of moving to a higher dimension
+is even more powerful.
+
+人们在讨论批判性思维时，常说要“跳出盒子思考”，但数学中进入更高维度的思想甚至更强大。
+
+When we have a ``box'' in 2-dimensional space which
+we then regard as sitting in a 3-dimensional space we find that the box
+doesn't even \emph{have} an inside or an outside anymore!
+
+当我们在二维空间中有一个“盒子”，然后我们把它看作是置于三维空间中时，我们发现这个盒子甚至不再\emph{有}内部或外部了！
+
+We get ``outside 
+the box'' by literally erasing the notion that there \emph{is} an inside
+of the box!
+
+我们通过字面上消除盒子\emph{有}内部这个概念来“跳出盒子”！
+
+The setup for Monge's circle theorem consists of three random circles
+drawn in the plane.
+
+蒙日圆定理的设置包括在平面上画的三个随机圆。
+
+Well, to be honest they can't be entirely random --
+we can't allow a circle that is entirely inside another circle.
+
+嗯，说实话，它们不能完全随机——我们不允许一个圆完全在另一个圆的内部。
+
+Because,
+if a circle was entirely inside another, there would be no external tangents
+and Monge's circle theorem is about external tangents.
+
+因为，如果一个圆完全在另一个圆的内部，就不会有外公切线，而蒙日圆定理是关于外公切线的。
+
+I could probably write a few hundred words to explain the concept of 
+external tangents to a pair of circles, or you could just have a look at
+Figure~\ref{fig:monge1}.
+
+我大概可以写几百个词来解释一对圆的外公切线的概念，或者你也可以直接看看图~\ref{fig:monge1}。
+
+So, uhmm, just have a look\ldots
+
+所以，嗯，就看看吧……
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Monge_circle_setup.tex}
+\end{center}
+\caption[Setup for Monge's circle theorem.]{The setup for Monge's circle theorem: three randomly placed circles -- we are also showing the external tangents to
+one pair of circles.}
+\caption[蒙日圆定理的设置。]{蒙日圆定理的设置：三个随机放置的圆——我们也展示了一对圆的外公切线。}
+\label{fig:monge1}
+\end{figure}
+ 
+Notice how the external tangents\footnote{The reason I keep saying ``external tangents'' is that there are also \emph{internal} tangents.} to two of the circles meet in a point?
+
+注意到两个圆的外公切线\footnote{我一直说“外公切线”的原因是还有\emph{内公切线}。}是如何交于一点的吗？
+
+Unless the circles just happen to have exactly the same size
+(And what are the odds of that?) this is going to be the case.
+
+除非这些圆恰好大小完全相同（而这有多大几率呢？），否则情况就是如此。
+
+Each pair of external tangents are going to meet in a point.
+
+每一对的外公切线都会交于一点。
+
+There are three such pairs of external tangents and so they determine three points.
+
+有三对这样的外公切线，因此它们确定了三个点。
+
+I suppose, since these three 
+points are determined in a fairly complicated way from three randomly chosen
+circles, that we would expect the three points to be pretty much random.
+
+我想，由于这三个点是由三个随机选择的圆以一种相当复杂的方式确定的，我们可能会期望这三个点也差不多是随机的。
+
+Monge's circle theorem says that that isn't so.
+
+蒙日圆定理说，事实并非如此。
+
+\begin{thm}[Monge's Circle Theorem] 
+If three circles of different radii in the Euclidean plane are 
+chosen so that no circle lies in the interior of another, the 
+three pairs of external tangents to these circles meet in 
+points which are collinear.
+\end{thm}
+
+\begin{thm}[蒙日圆定理]
+如果在欧几里得平面上选择三个不同半径的圆，使得没有一个圆位于另一个圆的内部，那么这三个圆的三对（外）公切线的交点共线。
+\end{thm}
+
+In Figure~\ref{fig:monge2} we see a complete example of Monge's Circle theorem
+in action.  There are three random circles.
+
+在图~\ref{fig:monge2}中，我们看到了蒙日圆定理实际应用的一个完整例子。有三个随机的圆。
+
+There are three pairs of external
+tangents.  The three points determined by the intersection of the pairs of 
+external tangents lie on a line (shown dashed in the figure).
+
+有三对（外）公切线。由每对（外）公切线相交确定的三个点在一条直线上（图中以虚线显示）。
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\input{figures/Monge_circle_setup_2.tex}
+\end{center}
+\caption[Example of Monge's circle theorem.]{An example of Monge's %
+circle theorem. The three pairs of external %
+tangents to the circles intersect in points which are collinear.}
+\caption[蒙日圆定理的例子。]{蒙日圆定理的一个例子。这三个圆的三对（外）公切线的交点共线。}
+\label{fig:monge2}
+\end{figure}
+ 
+We won't even try to write-up a formal proof of the circle theorem.
+
+我们甚至不打算写出这个圆定理的正式证明。
+
+Not that it can't be done -- it's just that you can probably get the
+point better via an informal discussion.
+
+并不是说做不到——只是通过非正式的讨论，你可能会更好地理解要点。
+
+The main idea is simply to move to 3-dimensional space.
+
+主要思想很简单，就是进入三维空间。
+
+Imagine the
+original flat plane containing our three random circles as being the
+plane $z=0$ in Euclidean 3-space.
+
+想象一下，把包含我们三个随机圆的原始平面看作是欧几里得三维空间中的平面$z=0$。
+
+Replace the three circles by three
+spheres of the same radius and having the same centers -- clearly the 
+intersections of these spheres with the plane $z=0$ will be our original
+circles.
+
+用三个相同半径且中心相同的球体来代替这三个圆——显然，这些球体与平面$z=0$的交线就是我们原来的圆。
+
+While pairs of circles are encompassed by two lines (the external
+tangents that we've been discussing so much), when we have a pair of spheres
+in 3-space, they are encompassed by a cone which lies tangent to both
+spheres\footnote{As before, when the spheres happen to have identical radii %
+we get a degenerate case -- the cone becomes a cylinder.}.
+
+虽然一对圆被两条线（我们一直在讨论的外公切线）所包围，但当我们在三维空间中有一对球体时，它们被一个与两个球体都相切的圆锥所包围\footnote{和以前一样，当球体恰好半径相同时，我们会得到一个退化情况——圆锥变成圆柱。}。
+
+Notice that 
+the cones that lie tangent to a pair of spheres intersect the plane
+precisely in those infamous external tangents.
+
+请注意，与一对球体相切的圆锥与该平面的交线恰好就是那些臭名昭著的外公切线。
+
+Well, okay, we've moved to 3-d.  We've replaced our circles with spheres
+and our external tangents with tangent cones.
+
+嗯，好的，我们已经进入了三维空间。我们用球体代替了圆，用切锥代替了外公切线。
+
+The points of intersection
+of the external tangents are now the tips of the cones.
+
+外公切线的交点现在是圆锥的顶点。
+
+But, what good has this all done?
+Is there any reason to believe that the tips of those cones lie in a line?
+
+但是，这到底有什么用呢？有什么理由相信那些圆锥的顶点在一条直线上吗？
+
+Actually, yes!  There is a plane that touches all three spheres tangentially.
+
+实际上，是的！有一个平面与所有三个球体都相切。
+
+Actually, there are two such planes, one that touches them all on their
+upper surfaces and one that touches them all on their lower surfaces.
+
+实际上，有两个这样的平面，一个在它们所有球体的上表面相切，另一个在它们的下表面相切。
+
+Oh 
+damn!  There are actually \emph{lots} of planes that are tangent to all three spheres
+but only one that lies above the three of them.
+
+哦，该死！实际上有\emph{很多}与所有三个球体都相切的平面，但只有一个位于它们三者之上。
+
+That plane intersects the
+plane $z=0$ in a line -- nothing fancy there;
+
+那个平面与平面$z=0$相交于一条直线——没什么特别的；
+
+any pair of non-parallel planes
+will intersect in a line (and the only way the planes we are discussing
+would be parallel is if all three spheres just happened to be the same size).
+
+任何一对不平行的平面都会相交于一条直线（而我们讨论的这些平面平行的唯一方式是，如果所有三个球体恰好大小相同）。
+
+But that plane also lies tangent to the cones that envelope our spheres
+and so that plane (as well as the plane $z=0$) contains the tips of the
+cones!
+
+但是那个平面也与包围我们球体的圆锥相切，所以那个平面（以及平面$z=0$）包含了圆锥的顶点！
+
+\clearpage
+
+\rule{0pt}{0pt}
+
+\vfill
+
+\begin{figure}[!hbtp] 
+\begin{center}
+\includegraphics[scale=1]{photos/pencil_tetrahedron.jpg}
+\end{center}
+\caption[Four triangles bounded by 6 line segments]{Six matchstick (actually, pencils are a lot easier to hold) can be arranged three-dimensionally to create
+four triangles.}
+\caption[由6条线段围成的四个三角形]{六根火柴棍（实际上，铅笔更容易拿）可以三维排列来创造四个三角形。}
+\label{fig:4triangles}
+\end{figure}
+ 
+\vfill
+
+\rule{0pt}{0pt}
+
+\clearpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\noindent{\large \bf 练习 --- \thesection\ }
+
+\input{proof4-zh/monge-exer.tex}
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***

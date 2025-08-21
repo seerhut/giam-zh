@@ -1,0 +1,162 @@
+\begin{enumerate}
+
+    \item Design a digital logic circuit (using and, or \& not gates) that 
+    implements an exclusive or.
+    
+    设计一个实现异或功能的数字逻辑电路（使用与门、或门和非门）。
+    \wbvfill
+    
+    \hint{First, it's essential to know what is meant by the term "exclusive or".
+    This is the interpretation that many people give to the word "or" -- where "X or Y" means either X is true or Y is true, but that it isn't the case that both X and Y are true.
+    This (wrong) understanding of what "or" means is common because it is often the case that X and Y represent complimentary possibilities: old or new, cold or hot, right or wrong...  The truth table for exclusive or (often written xor, pronounced "ex-or", symbolically it is usually $\oplus$) is
+    
+    首先，必须知道“异或”这个术语的含义。这是许多人对“或”这个词的解释——其中“X或Y”意味着X为真或Y为真，但X和Y不同时为真。这种对“或”的（错误）理解很普遍，因为X和Y通常代表互补的可能性：旧或新、冷或热、对或错……异或（常写作xor，读作“ex-or”，符号通常是$\oplus$）的真值表是：
+    
+    \begin{tabular}{|c|c|c|} \hline
+    \rule[-8pt]{0pt}{30pt}$X$ & $Y$ & $X \,\oplus\, Y$ \\ \hline
+    \rule[-8pt]{0pt}{30pt}$T$ & $T$ & $\phi$ \\ \hline
+    \rule[-8pt]{0pt}{30pt}$T$ & $\phi$ & $T$ \\ \hline
+    \rule[-8pt]{0pt}{30pt}$\phi$ & $T$ & $T$ \\ \hline
+    \rule[-8pt]{0pt}{30pt}$\phi$ & $\phi$ & $\phi$  \\ \hline
+    \end{tabular}
+    
+    \noindent So it's true when one, or the other, but not both of its inputs are true.
+    The upshot of the last sentence is that we can write $X \oplus Y \; \equiv \; (X \lor Y) \land {\lnot}(X \land Y)$.
+    
+    \noindent 所以当它的一个输入为真，或另一个输入为真，但不是两个都为真时，它为真。最后一句话的要点是我们可以写成 $X \oplus Y \; \equiv \; (X \lor Y) \land {\lnot}(X \land Y)$。
+    
+    The above reformulation should help\ldots 
+    
+    上面的重新表述应该会有帮助……
+    
+    \vfill
+    
+    }
+    
+    \workbookpagebreak
+    
+    \item Consider the sentence 
+    ``This is a sentence which does not refer to itself.''
+    which was given in the beginning of this chapter as an example.
+    Is this sentence a statement?  If so, what is its truth value?
+    
+    思考一下本章开头作为例子给出的句子“这是一个不指代自身的句子。”这个句子是一个命题吗？如果是，它的真值是什么？
+    \hint{The only question in your mind, when deciding whether a sentence is a statement, should be "Does this thing have a definite truth value?"
+    Well?
+    
+    Isn't it just plainly false?
+    
+    在判断一个句子是否是命题时，你脑中唯一的问题应该是“这个东西有确定的真值吗？”怎么样？它难道不就是明显错误的吗？}
+    
+    %\vspace{.5in}
+    \vfill
+    
+    \item Consider the sentence ``This sentence is false.''  Is this 
+    sentence a statement?
+    
+    思考一下句子“这句话是假的。”这个句子是一个命题吗？
+    \hint{Try to justify why this sentence can't be either true or false.
+    
+    试着证明为什么这个句子既不能为真也不能为假。}
+    
+    \hintspagebreak
+    
+    %\vspace{.5in}
+    \vfill
+    
+    \workbookpagebreak
+    
+    \item Complete truth tables for each of the sentences 
+    $(A \land B) \lor C$ and
+    $A \land (B \lor C)$.
+    Does it seem that these sentences have
+    the same logical content?
+    
+    完成句子 $(A \land B) \lor C$ 和 $A \land (B \lor C)$ 的真值表。这两个句子似乎有相同的逻辑内容吗？
+    \hint{
+    
+    \vfill
+    
+    A tiny hint here: since the sentences involve 3 variables you'll need truth tables with 8 rows.  Here's a template.
+    
+    这里有一个小提示：因为句子涉及3个变量，所以你需要8行的真值表。这是一个模板。
+    \vfill
+    
+    \begin{tabular}{|c|c|c|c|c|} \hline
+    \rule[-8pt]{0pt}{30pt}$A$ & $B$ & $C$ & $(A \land B) \lor C$ & $A \land (B \lor C)$ \\ \hline
+    \rule[-8pt]{0pt}{30pt}$T$ & $T$ & $T$ & \rule{100pt}{0pt} & \rule{100pt}{0pt} \\ \hline
+    \rule[-8pt]{0pt}{30pt}$T$ & $T$ & $\phi$  & & \\ \hline
+    \rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $T$ & & \\ \hline
+    \rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $\phi$  & & \\  \hline
+    \rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $T$ & & \\ \hline
+    \rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $\phi$  & & \\ \hline
+    \rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $T$ & & \\ \hline
+    \rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $\phi$  & & \\  \hline
+    \end{tabular}
+    }
+    \vfill
+    
+    \hintspagebreak
+    \workbookpagebreak
+    
+    \item 
+    \label{ex:nand_nor} There are two other logical connectives that are
+    used somewhat less commonly than $\lor$ and $\land$.
+    These are the \index{Scheffer stroke} Scheffer stroke and the 
+    \index{Peirce arrow}Peirce arrow
+    -- written $\vert$ and $\downarrow$, respectively ---  they are 
+    also known as \index{NAND} NAND and \index{NOR} NOR.
+    
+    还有另外两个逻辑联结词，它们的使用频率比 $\lor$ 和 $\land$ 稍低。它们是\index{Scheffer stroke}谢弗竖线和\index{Peirce arrow}皮尔斯箭头——分别写作 $\vert$ 和 $\downarrow$——它们也被称为\index{NAND}与非和\index{NOR}或非。
+    \noindent The truth tables for these connectives are:
+    \medskip
+    
+    \noindent 这些联结词的真值表是：
+    \medskip
+    
+    \begin{tabular}{c|c|c}
+    $A$ & $B$ & $A \,\vert\, B$ \\ \hline
+    $T$ & $T$ & $\phi$ \\
+    $T$ & $\phi$ & $T$ \\
+    $\phi$ & $T$ & $T$ \\
+    $\phi$ & $\phi$ & $T$ 
+    \end{tabular}
+    \hspace{.25 in} and (和) \hspace{.25 in}
+    \begin{tabular}{c|c|c}
+    $A$ & $B$ & $A \downarrow B$ \\ \hline
+    $T$ & $T$ & $\phi$ \\
+    $T$ & $\phi$ & $\phi$ \\
+    $\phi$ & $T$ & $\phi$ \\
+    $\phi$ & $\phi$ & $T$ 
+    \end{tabular}
+    \medskip
+    
+    Find an expression for $(A\, \land {\lnot}B) \lor C$
+    using only these new connectives (as well as negation and the
+    variable symbols themselves).
+    
+    仅使用这些新的联结词（以及否定和变量符号本身）来找出 $(A\, \land {\lnot}B) \lor C$ 的一个表达式。
+    \hint{Sorry, I know this is probably the hardest problem in the chapter, but I'm (mostly) not going to help...
+    Just one hint to help you get started: NAND and NOR are the negations of AND and OR (respectively) so, for example, $(X \land Y) \; \equiv \; {\lnot}(A \,\vert\, B)$.
+    
+    抱歉，我知道这可能是本章最难的问题，但我（基本上）不打算帮忙……只给一个提示让你开始：与非（NAND）和或非（NOR）分别是与（AND）和或（OR）的否定，所以，例如，$(X \land Y) \; \equiv \; {\lnot}(A \,\vert\, B)$。}
+    
+    \textbookpagebreak
+    \workbookpagebreak
+    
+    
+    \item \label{IKK} The famous logician \index{Smullyan, Raymond} Raymond Smullyan devised 
+    a family of logical puzzles around a fictitious place he called 
+    \index{Knights and Knaves} ``the Island of Knights and Knaves.''  The inhabitants of the island are either knaves, who always make false statements, or knights, who always make truthful statements.
+    In the most famous knight/knave puzzle, you are in a room which has only two exits.
+    One leads to certain death and the other to freedom.
+    There are two 
+    individuals in the room, and you know that one of them is a knight and the other is a knave, but you don't know which.
+    Your challenge is to determine the door which leads to freedom by asking a single question.
+    
+    著名的逻辑学家\index{Smullyan, Raymond}雷蒙德·斯穆里安围绕一个他称之为\index{Knights and Knaves}“骑士与无赖岛”的虚构地方设计了一系列逻辑谜题。岛上的居民要么是总是说谎的无赖，要么是总是说真话的骑士。在最著名的骑士/无赖谜题中，你身处一个只有两个出口的房间。一个通向死亡，另一个通向自由。房间里有两个人，你知道其中一个是骑士，另一个是无赖，但你不知道谁是谁。你的挑战是通过问一个问题来确定通向自由的门。
+    \hint{Ask one of them what the other one would say to do.
+    
+    问其中一个人，另一个人会让你走哪扇门。}
+    
+    \end{enumerate}

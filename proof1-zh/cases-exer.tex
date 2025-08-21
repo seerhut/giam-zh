@@ -1,0 +1,213 @@
+\begin{enumerate}
+  \item Prove that if $n$ is an odd number then $n^4 \pmod{16} = 1$.
+  
+  证明如果 $n$ 是一个奇数，那么 $n^4 \pmod{16} = 1$。
+  \hint{
+  
+  While one could perform fairly complicated arithmetic, expanding expression like
+  $(16k+13)^4$ and then regrouping to put it in the form $16q+1$ (and one would need 
+  to do that work for each of the odd remainders modulo $16$),  that would be missing out
+  on the true power of modular notation.
+  In a ``$\pmod{16}$'' calculation one can simply ignore
+  summands like $16k$ because they are $0 \pmod{16}$.
+  Thus, for example,
+  
+  虽然可以进行相当复杂的算术运算，比如展开像 $(16k+13)^4$ 这样的表达式，然后重新组合成 $16q+1$ 的形式（并且需要对模16的每个奇数余数都进行这项工作），但这会错过模符号的真正威力。在“$\pmod{16}$”计算中，可以简单地忽略像 $16k$ 这样的加数，因为它们是 $0 \pmod{16}$。因此，例如，
+  
+    \[ (16k+7)^4 \pmod{16} \; = \; 7^4 \pmod{16} \; = \; 2401 \pmod{16}  \; = \; 1. \]
+    
+  So, essentially one just needs to compute the $4$th powers of $1, 3, 5, 7, 9, 11, 13$  and $15$, and
+  then reduce them modulo 16.  An even greater economy is possible if one notes that (modulo 16) many
+  of those cases are negatives of one another -- so their $4$th powers are equal.
+  
+  所以，基本上只需要计算 $1, 3, 5, 7, 9, 11, 13$ 和 $15$ 的4次方，然后将它们对16取模。如果注意到（在模16下）许多这些情况互为相反数——所以它们的4次方相等，那么可以更加简化计算。
+  }
+  
+  \wbvfill
+       
+  \item Prove that every prime number other than 2 and 3 has the form
+  $6q+1$ or $6q+5$ for some integer $q$.
+  (Hint: this problem involves
+  thinking about cases as well as contrapositives.)
+  
+  证明除2和3之外的每个素数都具有 $6q+1$ 或 $6q+5$ 的形式，其中 $q$ 是某个整数。（提示：这个问题涉及分情况讨论以及逆否命题的思考。）
+  
+  \hint{It is probably obvious that the "cases" will be the possible remainders mod 6.  Numbers of the form 6q+0 will be multiples of 6, so clearly not prime.
+  The other forms that need to be eliminated are 6q+2, 6q+3, and 6q+4.
+  
+  很可能显而易见，“情况”将是模6的可能余数。形式为6q+0的数是6的倍数，所以显然不是素数。需要排除的其他形式是6q+2、6q+3和6q+4。
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Show that the sum of any three consecutive integers is divisible
+  by 3.
+  
+  证明任意三个连续整数的和能被3整除。
+  
+  \hint{Write the sum as $n + (n+1) + (n+2)$.
+  
+  将和写成 $n + (n+1) + (n+2)$。}
+  
+  \wbvfill
+  
+  \item There is a graph known as $K_4$ that has $4$ nodes and there is an edge between every pair of nodes.
+  The pebbling number of $K_4$ has to be at least $4$ since it would be possible to put one pebble on each of
+  $3$ nodes and not be able to reach the remaining node using pebbling moves.
+  Show that the pebbling number of $K_4$ is actually $4$.
+  
+  有一个被称为 $K_4$ 的图，它有4个节点，并且每对节点之间都有一条边。$K_4$ 的配石数至少为4，因为可以在3个节点上各放一颗石子，而无法通过配石移动到达剩下的节点。证明 $K_4$ 的配石数实际上是4。
+  \hint{If there are two pebbles on any node we will be able to reach all the other nodes using pebbling moves
+  (since every pair of nodes is connected).
+  
+  如果任何节点上有两颗石子，我们将能够通过配石移动到达所有其他节点（因为每对节点都是相连的）。}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Find the pebbling number of a graph whose nodes are the corners and 
+  whose edges are the, uhmm, edges of a cube.
+  
+  找出一个图的配石数，该图的节点是立方体的顶点，边是立方体的……呃……棱。
+  \hint{It should be clear that the pebbling number is at least $8$ -- $7$ pebbles could be distributed, 
+  one to a node, and the $8$th node would be unreachable.
+  It will be easier to play around with this if
+  you figure out how to draw the cube graph ``flattened-out'' in the plane.
+  
+  应该很清楚，配石数至少是8——可以分布7颗石子，每个节点一颗，这样第8个节点就无法到达。如果你能想出如何在平面上画出“展开”的立方体图，玩起来会更容易。}
+  
+  \wbvfill
+  
+  \item A \index{vampire number}\emph{vampire number} is a $2n$ digit number $v$ that factors as $v=xy$
+  where $x$ and $y$ are $n$ digit numbers and the digits of $v$ are precisely the digits in $x$ and $y$ in some order.
+  The numbers $x$ and $y$
+  are known as the ``fangs'' of $v$.
+  To eliminate trivial
+  cases, both fangs can't end with 0.  
+  
+  一个\index{vampire number}\emph{吸血鬼数}是一个 $2n$ 位数 $v$，它可以分解为 $v=xy$，其中 $x$ 和 $y$ 是 $n$ 位数，并且 $v$ 的各位数字恰好是 $x$ 和 $y$ 中数字的某种排列。数 $x$ 和 $y$ 被称为 $v$ 的“尖牙”。为消除平凡情况，两个尖牙都不能以0结尾。
+  
+  Show that there are no 2-digit vampire numbers.
+  Show that there are seven 4-digit vampire numbers.
+  
+  证明不存在2位的吸血鬼数。证明存在7个4位的吸血鬼数。
+  
+  \hint{The 2-digit challenge is do-able by hand (just barely).
+  The $4$ digit question certainly requires 
+  some computer assistance!
+  
+  2位数的问题用手算是可以完成的（勉强可以）。4位数的问题肯定需要一些计算机辅助！}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Lagrange's theorem on representation of integers as sums of squares
+  says that every positive integer can be expressed as the sum of at most 
+  $4$ squares.
+  For example, $79 = 7^2 + 5^2 + 2^2 + 1^2$.
+  Show (exhaustively) 
+  that $15$ can not be represented using fewer than $4$ squares.
+  
+  拉格朗日关于整数表示为平方和的定理指出，每个正整数都可以表示为至多4个平方数之和。例如，$79 = 7^2 + 5^2 + 2^2 + 1^2$。请（用穷举法）证明15不能用少于4个平方数的和来表示。
+  \hint{Note that $15 = 3^2 + 2^2 + 1^2 + 1^2$.
+  Also, if $15$ were expressible as a sum of fewer than $4$ squares, the squares involved would be $1$, $4$ and $9$.
+  It's really not that hard to try all the possibilities.
+  
+  注意 $15 = 3^2 + 2^2 + 1^2 + 1^2$。另外，如果15能表示为少于4个平方数的和，那么涉及的平方数将是1、4和9。尝试所有可能性其实并不难。}
+  
+  \wbvfill
+  
+  \item Show that there are exactly $15$ numbers $x$ in the range $1 \leq x \leq 100$ that can't be represented using fewer than $4$ squares.
+  
+  证明在 $1 \leq x \leq 100$ 的范围内，恰好有15个数 $x$ 不能用少于4个平方数的和来表示。
+  \hint{The following Sage code generates all the numbers up to $100$ that {\em can} be written
+  as the sum of at most $3$ squares.
+  
+  下面的Sage代码生成了100以内所有{\em 可以}写成至多3个平方数之和的数。
+  {\tt
+  var('x y z') \newline
+  a=[s$\caret$2 for s in [1..10]]  \newline
+  b=[s$\caret$2 for s in [0..10]]  \newline
+  s = []  \newline
+  for x in a:  \newline
+  \tab for y in b:  \newline
+  \tab \tab for z in b:  \newline
+  \tab \tab \tab s = union(s,[x+y+z])  \newline
+  s = Set(s)  \newline
+  H=Set([1..100]) \newline
+  show(H.intersection(s))  \newline
+  }
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item The \index{trichotomy property}\emph{trichotomy property} of the real 
+  numbers simply states that every real number is either positive or negative 
+  or zero.
+  Trichotomy can be used to prove many statements by looking at the
+  three cases that it guarantees.
+  Develop a proof (by cases) that the square of
+  any real number is non-negative.
+  
+  实数的\index{trichotomy property}\emph{三分性}简单地陈述了每个实数要么是正数，要么是负数，要么是零。三分性可以通过考察它所保证的三种情况来证明许多陈述。请（通过分情况讨论）给出一个证明，证明任何实数的平方都是非负的。
+  \hint{By trichotomy, x is either zero, negative, or positive.  If x is zero, its square is zero.
+  If x is negative, its square is positive.  If x is positive, its square is also positive.
+  
+  根据三分性，x要么是零，要么是负数，要么是正数。如果x是零，它的平方是零。如果x是负数，它的平方是正数。如果x是正数，它的平方也是正数。}
+  
+  \wbvfill
+  
+  \hintspagebreak
+  
+  \item Consider the game called ``binary determinant tic-tac-toe''\ifthenelse{\boolean{InTextBook}}{\footnote{ %
+  This question was problem A4 in the 63rd annual %
+  \index{William Lowell Putnam Mathematics Competition} %
+  William Lowell Putnam Mathematics Competition (2002).
+  There are three collections of questions %
+  and answers  from previous Putnam exams available from the MAA % 
+  \cite{putnam1,putnam2,putnam3}% 
+  
+  }}{} 
+  which is played by two players who alternately fill in the entries of a 
+  $3 \times 3$ array.
+  Player One goes first, placing 1's in the array and 
+  player Zero goes second, placing 0's.
+  Player One's goal is that the 
+  final array have determinant 1, and player Zero's goal is that the 
+  determinant be 0.  The determinant calculations are carried out mod 2.
+  
+  考虑一个名为“二进制行列式井字棋”的游戏\ifthenelse{\boolean{InTextBook}}{\footnote{
+  这个问题是第63届\index{William Lowell Putnam Mathematics Competition}威廉·洛厄尔·普特南数学竞赛（2002年）的A4题。MAA提供了三套往届普特南考试的试题与答案集\cite{putnam1,putnam2,putnam3}。
+  }}{}，由两名玩家轮流填充一个 $3 \times 3$ 矩阵的项。玩家一先走，在矩阵中放入1，玩家零后走，放入0。玩家一的目标是使最终矩阵的行列式为1，玩家零的目标是使行列式为0。行列式计算在模2下进行。
+  
+  Show that player Zero can always win a game of binary determinant tic-tac-toe
+  by the method of exhaustion.
+  
+  用穷举法证明玩家零总能赢得二进制行列式井字棋游戏。
+  \hint{If you know something about determinants it would help here.
+  The determinant will be
+  0 if there are two identical rows (or columns) in the finished array.
+  Also, if there is a row or column
+  that is all zeros, player Zero wins too.
+  Also, cyclically permuting either rows or columns has no effect
+  on the determinant of a binary array.
+  This means we lose no generality in assuming player One's
+  first move goes (say) in the upper-left corner.
+  
+  如果你了解一些关于行列式的知识，这会有帮助。如果最终的矩阵中有两行（或两列）相同，行列式将为0。另外，如果有一行或一列全为零，玩家零也获胜。此外，对二进制矩阵的行或列进行循环置换不影响其行列式的值。这意味着我们可以不失一般性地假设玩家一的第一步棋走在（比如）左上角。}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \rule{0pt}{0pt}
+  
+  \workbookpagebreak
+  
+  \end{enumerate}

@@ -1,0 +1,277 @@
+\begin{enumerate}
+  \item Let $A = \{1, 2, \{1, 2\}, b\}$ and let $B=\{a, b, \{1, 2\} \}$.
+  Find the following:
+  
+  令 $A = \{1, 2, \{1, 2\}, b\}$ 且 $B=\{a, b, \{1, 2\} \}$。求下列集合：
+    \begin{enumerate}
+    \item \wbitemsep $A \cap B$   \hint{ $ \{ b,  \{1, 2\} \} $ }
+    \item \wbitemsep $A \cup B$ \hint{ $ \{1, 2, a, b, \{1, 2\} \} $ }
+    \item \wbitemsep $A \setminus B$ \hint{  $ \{ 1, 2 \} $ }
+    \item \wbitemsep $B \setminus A$ \hint{ $ \{ a \} $ }
+    \item \wbitemsep $A \triangle B$ \hint{ $ \{ 1, 2, a \} $ }
+    \end{enumerate}
+  
+  \vfill
+  
+  
+  \workbookpagebreak
+  
+  \item In a standard deck of playing cards one can distinguish sets
+  based on face-value and/or suit.
+  Let $A, 2, \ldots 9, 10, J, Q$ and $K$
+  represent the sets of cards having the various face-values.
+  Also, let
+  $\heartsuit$, $\spadesuit$, $\clubsuit$ and $\diamondsuit$ be the 
+  sets of cards having the possible suits.
+  Find the following
+  
+  在一副标准扑克牌中，可以根据牌面值和/或花色来区分集合。令 $A, 2, \ldots 9, 10, J, Q$ 和 $K$ 代表具有各种牌面值的牌的集合。另外，令 $\heartsuit$, $\spadesuit$, $\clubsuit$ 和 $\diamondsuit$ 为具有可能花色的牌的集合。求下列集合：
+    \begin{enumerate}
+    \item \wbitemsep$A \cap \heartsuit$ \hint{This is just the ace of hearts. 这就是红桃A。}
+    \item \wbitemsep$A \cup \heartsuit$ \hint{All of the hearts and the other three aces. 所有的红桃牌和其他三张A。}
+    \item \wbitemsep$J \cap (\spadesuit \cup \heartsuit)$ \hint{ These two cards are known as the one-eyed jacks. 这两张牌被称为单眼J。}
+    \item \wbitemsep$K \cap \heartsuit$ \hint{The king of hearts, a.k.a.\ the suicide king. 红桃K，又名自杀王。}
+    \item \wbitemsep$A \cap K$ \hint{$\emptyset$ }
+    \item \wbitemsep$A \cup K$ \hint{Eight cards: all four kings and all four aces. 八张牌：所有四张K和所有四张A。}
+    \end{enumerate}
+  
+  \vfill
+  
+  %\textbookpagebreak
+  %\workbookpagebreak
+  %\hintspagebreak
+  
+  \pagebreak
+  
+  \item The following is a screenshot from the computational geometry program OpenSCAD (very handy for making models 
+  for 3-d printing\ldots)  In computational geometry we use the basic set operations together
+  with a few other types of transformations to create interesting models using simple components.
+  Across the top of the image below we see 3 sets of points in $\Reals^3$, a ball, a sort of 3-dimensional plus sign, and a disk.
+  Let's call the ball $A$, the plus sign $B$ and the disk $C$.
+  The nine shapes shown below them are made from $A$, $B$ and $C$ using union, intersection and set difference.
+  Identify them!
+  
+  下面是计算几何程序OpenSCAD的截图（对于制作3D打印模型非常方便……）。在计算几何中，我们使用基本的集合运算以及其他一些类型的变换，用简单的组件创建有趣的模型。在下图的顶部，我们看到$\Reals^3$中的3个点集：一个球体、一个类似三维加号的形状和一个圆盘。我们称球体为 $A$，加号为 $B$，圆盘为 $C$。它们下方的九个形状是由 $A, B, C$ 使用并集、交集和差集运算得到的。请识别它们！
+  
+  \vspace{.5in}
+  \includegraphics[scale=.375]{figures/set_ops.png}
+  
+  \pagebreak
+  
+  \item Do element-chasing proofs (show that an element is in the left-hand side if and only if it is in the right-hand side) to prove each of the following set equalities.
+  
+  进行元素追踪证明（证明一个元素在左边当且仅当它在右边）来证明以下每个集合等式。
+  \begin{enumerate}
+    \item \wbitemsep$\overline{A\cap B} \; = \; \overline{A}\cup\overline{B}$
+  
+    \item \wbitemsep$A\cup B \; = \; A\cup(\overline{A}\cap B)$
+  
+    \item \wbitemsep$A\triangle B \; = \; (A\cup B)\setminus(A\cap B)$
+  
+    \item \wbitemsep$(A\cup B)\setminus C \; = \; (A\setminus C)\cup(B\setminus C)$
+  
+    \end{enumerate}
+  
+  \hint{Here's the first one (although I'm omiting justifications for each step.
+  
+  这是第一个（尽管我省略了每一步的理由）。
+  
+  \begin{gather*}
+  x \in \overline{A\cap B} \\
+  \iff \; {\lnot}(x \in A\cap B) \\
+  \iff \; {\lnot}(x \in A \; \land \; x \in B) \\
+  \iff \; {\lnot}(x \in A) \; \lor \; {\lnot}(x \in B) \\
+  \iff \; x \in \overline{A}  \; \lor \; x \in \overline{B} \\
+  \iff \; x \in \overline{A} \cup \overline{B}
+  \end{gather*}
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item For each positive integer $n$, we'll define an interval $I_n$
+  by
+  
+  \[ I_n = [-n, 1/n).
+  \]
+  
+  对于每个正整数 $n$，我们定义一个区间 $I_n$ 为
+  \[ I_n = [-n, 1/n).
+  \]
+  
+  Find the union and intersection of all the intervals in this infinite family.
+  
+  找出这个无限族中所有区间的并集和交集。
+  \[ \bigcup_{n \in \Naturals} I_n \quad = \]
+  
+  \[ \bigcap_{n \in \Naturals} I_n \quad = \]
+  
+  \hint{To better understand what is going on, first figure out what the first three or four
+  intervals actually are.
+  
+  为了更好地理解情况，首先弄清楚前三四个区间实际上是什么。
+  \[ I_1 \; = \; \underline{\rule{96pt}{0pt}} \]
+  \[ I_2 \; = \; \underline{\rule{96pt}{0pt}} \]
+  \[ I_3 \; = \; \underline{\rule{96pt}{0pt}} \]
+  \[ I_4 \; = \; \underline{\rule{96pt}{0pt}} \]
+  
+  Any negative real number $r$ will be in the intersection only if  $r \geq -1$.
+  Certainly $0$ is in
+  the intersection since it is in each of the intervals.
+  Are there any positive numbers in the intersection?
+  
+  任何负实数 $r$ 只有在 $r \geq -1$ 时才会在交集中。当然，$0$ 在交集中，因为它在每个区间里。交集中有正数吗？
+  
+  In order to be in the union a real number just needs to be in {\em one} of the intervals.
+  
+  一个实数只要在{\em 一个}区间里，它就在并集中。
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item There is a set $X$ such that, for all sets $A$, we have 
+  $X \triangle A = A$.
+  What is $X$?
+  
+  存在一个集合 $X$，使得对于所有集合 $A$，都有 $X \triangle A = A$。$X$ 是什么？
+  
+  \wbvfill
+  
+  \item There is a set $Y$ such that, for all sets $A$, we have 
+  $Y \triangle A = \overline{A}$.
+  What is $Y$?
+  
+  存在一个集合 $Y$，使得对于所有集合 $A$，都有 $Y \triangle A = \overline{A}$。$Y$ 是什么？
+  
+  \hint{One of the answers to the last two questions is $\emptyset$ and the other is $U$.
+  Decide
+  which is which.
+  
+  最后两个问题的一个答案是 $\emptyset$，另一个是 $U$。请判断哪个是哪个。}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item In proving a set-theoretic identity, we are basically showing that
+  two sets are equal.
+  One reasonable way to proceed is to show that
+  each is contained in the other.
+  Prove that 
+  $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ by showing that 
+  $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$ and 
+  $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)$.
+  
+  在证明一个集合论恒等式时，我们基本上是在证明两个集合相等。一个合理的方法是证明它们互相包含。通过证明 $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$ 且 $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)$ 来证明 $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$。
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Prove that 
+  $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ by showing that 
+  $A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)$ and 
+  $(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)$.
+  
+  通过证明 $A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)$ 且 $(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)$ 来证明 $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$。
+  \hint{This exercise, as well as the previous one, is really just about converting set-theoretic
+  statements into their logical equivalents, applying some rules of logic that we've already verified,
+  and then returning to a set-theoretic version of things.
+  
+  这个练习，以及前一个练习，实际上只是关于将集合论的陈述转换为它们的逻辑等价物，应用一些我们已经验证过的逻辑规则，然后回到集合论的版本。}
+  
+   \wbvfill
+  
+  \workbookpagebreak
+   
+  \item Prove the set-theoretic versions of DeMorgan's laws using the technique
+  discussed in the previous problems.
+  
+  使用前面问题中讨论的技巧来证明集合论版本的德摩根定律。
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item The previous technique (showing that $A=B$ by arguing that
+  $A \subseteq B \; \land \; B \subseteq A$) will have an outline something like
+  
+  前一个技巧（通过论证 $A \subseteq B \; \land \; B \subseteq A$ 来证明 $A=B$）的大纲大致如下：
+  
+  \begin{proof} 
+  First we will show that $A \subseteq B$.\newline
+  Towards that end, suppose $x \in A$.
+  
+  首先我们将证明 $A \subseteq B$。\newline
+  为此，假设 $x \in A$。
+  \begin{center}
+  $\vdots$
+  \end{center}
+  
+  Thus $x \in B$.
+  
+  因此 $x \in B$。
+  
+  Now, we will show that $B \subseteq A$. \newline
+  Suppose that $x \in B$.
+  
+  现在，我们将证明 $B \subseteq A$。\newline
+  假设 $x \in B$。
+  \begin{center}
+  $\vdots$
+  \end{center}
+  
+  Thus $x \in A$.
+  
+  因此 $x \in A$。
+  
+  Therefore $A \subseteq B \; \land \; B \subseteq A$ so we conclude that $A=B$.
+  
+  因此 $A \subseteq B \; \land \; B \subseteq A$，所以我们得出结论 $A=B$。
+  \end{proof}
+  
+  Formulate a proof that $A \triangle B \; = \; (A \cup B) \setminus (A \cap B)$ that follows this outline.
+  
+  构建一个遵循此大纲的证明，证明 $A \triangle B \; = \; (A \cup B) \setminus (A \cap B)$。
+  \hint{The definition of $A \triangle B$ is $(A\setminus B) \cup (B\setminus A)$.
+  The definition of 
+  $X \setminus Y$ is $X \cap \overline{Y}$.
+  Restating things in terms of $\cap$ and $\cup$ (and complementation) should help.
+  So your first few lines should be:
+  
+  $A \triangle B$ 的定义是 $(A\setminus B) \cup (B\setminus A)$。$X \setminus Y$ 的定义是 $X \cap \overline{Y}$。用 $\cap$ 和 $\cup$（以及补集）来重述问题应该会有帮助。所以你的前几行应该是：
+  
+   \begin{quote} 
+   Suppose $x \in  A \triangle B$.
+   
+   假设 $x \in  A \triangle B$。
+   Then, by definition, $x \in (A\setminus B) \cup (B\setminus A)$.
+   
+   那么，根据定义，$x \in (A\setminus B) \cup (B\setminus A)$。
+   
+   So, $x \in (A \cap \overline{B}) \cup (B \cap \overline{A})$.
+   
+   所以，$x \in (A \cap \overline{B}) \cup (B \cap \overline{A})$。
+   \begin{center}
+  $\vdots$
+  \end{center}
+  
+  \end{quote}
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \end{enumerate}
+  
+  
+  %% Emacs customization
+  %% 
+  %% Local Variables: ***
+  %% TeX-master: "GIAM-hw.tex" ***
+  %% comment-column:0 ***
+  %% comment-start: "%% "  ***
+  %% comment-end:"***" ***
+  %% End: ***

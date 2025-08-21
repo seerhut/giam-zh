@@ -1,0 +1,77 @@
+\documentclass[12pt,twoside]{book}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+% \setCJKmainfont{STSong}
+% \setmainfont{Times New Roman}
+\RequirePackage{hyperref}
+
+\usepackage[english]{babel} %language selection
+% \selectlanguage{english}
+
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{color}
+
+\usepackage{ifthen}
+
+\usepackage{xr} %for external references
+\externaldocument{GIAM}
+
+%All my customized LaTeX commands are in this file:
+
+\input{my_latex_definitions.tex}
+
+%set up the booleans (we are doing the workbook here).
+
+\setboolean{InTextBook}{false}
+\setboolean{InWorkBook}{true}
+\setboolean{InHints}{false}
+
+%Things that effect the size and placement of text on the page
+
+\renewcommand{\baselinestretch}{1.3}
+\renewcommand{\arraystretch}{.77}
+
+\addtolength{\textheight}{.25in}
+\addtolength{\oddsidemargin}{.75in}
+\addtolength{\evensidemargin}{-.75in}
+
+
+\begin{document}
+
+\frontmatter
+
+\title{Exercise Workbook to Accompany \\
+A Gentle Introduction to the Art of Mathematics\\ 《数学艺术入门》练习册 \\{\small Version \versionNum
+\ifthenelse{\boolean{LNotIsSim}}{S}{}\ifthenelse{\boolean{ZeroInNaturals}}{}{N} }}
+\author{Joseph Fields}
+\date{Southern Connecticut State University \\ 南康涅狄格州立大学}
+
+\maketitle
+
+\clearpage
+
+\input{legalpage-zh.tex}
+
+\clearpage
+
+\mainmatter
+
+\include{intro-zh/intro-hw}
+\include{logic-zh/logic-hw}
+\include{proof1-zh/proof1-hw}
+\include{sets-zh/sets-hw}
+\include{proof2-zh/proof2-hw}
+\include{rel-zh/rel-hw}
+\include{proof3-zh/proof3-hw}
+\include{card-zh/card-hw}
+\include{proof4-zh/proof4-hw}
+
+
+\end{document}
+

@@ -1,0 +1,173 @@
+\begin{enumerate}
+    \item There is a common variant of the existential quantifier,
+    $\exists !$, if you write $\exists ! \, x, \, P(x)$ you are asserting 
+    that there is a \index{unique existence}\emph{unique} element 
+    in the universe that makes $P(x)$ true.
+    Determine how to negate the sentence $\exists ! \, x, \, P(x)$.
+    
+    存在量词有一个常见的变体，$\exists !$，如果你写 $\exists ! \, x, \, P(x)$，你是在断言论域中存在一个\index{unique existence}\emph{唯一}的元素使得 $P(x)$ 为真。请确定如何否定句子 $\exists ! \, x, \, P(x)$。
+    \wbvfill
+    
+    \hint{
+    Unique existence is essentially saying that there is exactly 1 element of the universe of discourse that makes P(x) true.
+    The negation of "there is exactly 1" is "there's either none, or at least 2".
+    Is that enough of a hint?
+    
+    唯一存在本质上是说论域中恰好有1个元素使P(x)为真。“恰好有1个”的否定是“一个都没有，或者至少有2个”。这个提示够了吗？
+    }
+    
+    \rule{0pt}{0pt}
+    
+    \wbvfill
+    
+    \item The order in which quantifiers appear is important.
+    Let $L(x,y)$
+    be the open sentence ``$x$ is in love with $y$.''  Discuss the meanings of the
+    following quantified statements and find their negations.
+    
+    量词出现的顺序很重要。设 $L(x,y)$ 为开放句“$x$ 爱着 $y$”。讨论以下量化陈述的含义并找出它们的否定。
+    \begin{enumerate}
+    \item \wbitemsep $\forall x \, \exists y \; L(x,y)$.
+    \item \wbitemsep $\exists x \, \forall y \; L(x, y)$.
+    \item \wbitemsep $\forall x \, \forall y \; L(x, y)$.
+    \item \wbitemsep $\exists x \, \exists y \; L(x, y)$.
+    \end{enumerate}
+    
+    \hint{
+    
+    \begin{enumerate}
+    \item $\forall x \, \exists y \; L(x,y)$.
+    
+    This is a fairly optimistic statement  ``For everyone out there, there's somebody that they are in love with.''
+    
+    这是一个相当乐观的陈述：“对于外面的每一个人，都有一个他们所爱的人。”
+    
+    \item $\exists x \, \forall y \; L(x, y)$.
+    
+    This one, on the other hand, says something fairly strange: ``There's someone who has fallen in love with every other human being.'' I don't know, maybe the Dalai Lama?
+    Mother Theresa?...
+    Anyway, do the last two for yourself.
+    
+    另一方面，这个陈述说了一些相当奇怪的事情：“有一个人爱上了所有其他的人。”我不知道，也许是达赖喇嘛？特蕾莎修女？……无论如何，自己完成最后两个。
+    
+    \item $\forall x \, \forall y \; L(x, y)$.
+    \item $\exists x \, \exists y \; L(x, y)$.
+    
+    \vspace{.5in}
+    
+    Here's a couple of bonus questions.
+    Two of the statements above have different meanings if you just interchange the order that the quantifiers appear in.  What do the following mean (in contrast to the ones above)?
+    
+    这里有几个附加问题。上面两个陈述如果你交换量词出现的顺序，它们的含义就会不同。与上面的陈述相比，下面的陈述是什么意思？
+    \item $\exists y \, \forall x \; L(x, y)$.
+    \item $\forall y \, \exists x \; L(x,y)$.
+    \end{enumerate}
+    
+    }
+    
+    \wbvfill
+    
+    \workbookpagebreak
+    
+    \item Determine a useful denial of: 
+    
+    $\displaystyle \forall \epsilon>0 \, \exists 
+    \delta>0 \, \forall x \, (|x-c| < \delta) \implies (|f(x)-l| < \epsilon) $.
+    The denial above gives a criterion for saying $\lim_{x\rightarrow c}f(x) \neq l.$
+    
+    确定一个有用的否定形式：
+    $\displaystyle \forall \epsilon>0 \, \exists 
+    \delta>0 \, \forall x \, (|x-c| < \delta) \implies (|f(x)-l| < \epsilon) $.
+    上面的否定给出了一个判断 $\lim_{x\rightarrow c}f(x) \neq l$ 的标准。
+    
+    \hint{
+    This is asking you to put a couple of things together.
+    The first thing is that in negating a quantified statement, we get a new statement with all the quantified variables occurring in the same order but with $\forall$'s and $\exists$'s interchanged.
+    The second issue is that the logical statement that appears after all the quantifiers needs to be negated.
+    Since, in this statement we have a conditional, you must remember to negate that properly (its negation is a conjunction).
+    $\displaystyle \exists \epsilon>0 \, \forall 
+    \delta>0 \, \exists x \, (|x-c| < \delta)  \land  (|f(x)-l| \geq \epsilon) $.
+    
+    这要求你把几件事结合起来。第一件事是，在否定一个量化陈述时，我们会得到一个新陈述，其中所有量化变量的出现顺序相同，但$\forall$和$\exists$互换。第二个问题是，出现在所有量词之后的逻辑陈述需要被否定。由于在这个陈述中我们有一个条件句，你必须记住正确地否定它（它的否定是一个合取）。
+    $\displaystyle \exists \epsilon>0 \, \forall 
+    \delta>0 \, \exists x \, (|x-c| < \delta)  \land  (|f(x)-l| \geq \epsilon) $.
+    }
+    
+    \wbvfill
+    
+    \item A \index{Sophie Germain prime} \emph{Sophie Germain prime} is a prime number $p$
+    such that the corresponding odd number $2p+1$ is also a prime.
+    For example 11 is a 
+    Sophie Germain prime since $23 = 2\cdot 11 + 1$ is also prime.
+    Almost all Sophie Germain
+    primes are congruent to $5 \pmod{6}$, nevertheless, there are exceptions -- so the
+    statement ``There are Sophie Germain primes that are not 5 mod 6.'' is true.
+    Verify this.
+    
+    一个\index{Sophie Germain prime}\emph{索菲·热尔曼素数}是一个素数 $p$，使得相应的奇数 $2p+1$ 也是一个素数。例如11是一个索菲·热尔曼素数，因为 $23 = 2\cdot 11 + 1$ 也是素数。几乎所有的索菲·热尔曼素数都与 $5 \pmod{6}$ 同余，然而，也有例外——所以“存在不是模6余5的索菲·热尔曼素数”这个陈述是真的。请验证这一点。
+    
+    \hint{The exceptions are very small prime numbers.  You should be able to find them easily.
+    
+    例外的是非常小的素数。你应该能轻易找到它们。}
+    
+    \wbvfill
+    
+    \workbookpagebreak
+    
+    \item  Alvin, Betty, and Charlie enter a cafeteria which offers three different
+    entrees, turkey sandwich, veggie burger, and pizza;
+    four different
+    beverages, soda, water, coffee, and milk; and two types of desserts,
+    pie and pudding.
+    Alvin takes a turkey sandwich, a soda, and a pie.
+    Betty takes a veggie burger, a soda, and a pie.
+    Charlie takes a pizza
+    and a soda.  Based on this information, determine whether the following
+    statements are true or false.
+    
+    Alvin、Betty和Charlie进入一家自助餐厅，该餐厅提供三种不同的主菜：火鸡三明治、素食汉堡和披萨；四种不同的饮料：苏打水、水、咖啡和牛奶；以及两种甜点：派和布丁。Alvin拿了一个火鸡三明治、一杯苏打水和一个派。Betty拿了一个素食汉堡、一杯苏打水和一个派。Charlie拿了一个披萨和一杯苏打水。根据这些信息，判断以下陈述的真假。
+    \begin{enumerate}
+    \item \label{negated} \wbitemsep $\forall$ people $p$, $\exists$ dessert $d$ such that $ p$
+    took $d$.
+    
+    $\forall$ 人 $p$, $\exists$ 甜点 $d$ 使得 $p$ 拿了 $d$。
+    \hint{false (假)}
+    \item \label{compare} \wbitemsep $\exists$ person $p$ such that $\forall$ desserts
+    $d$, $p$ did not take $d$.
+    
+    $\exists$ 人 $p$ 使得 $\forall$ 甜点 $d$, $p$ 没有拿 $d$。
+    \hint{true (真)}
+    \item \wbitemsep $\forall$ entrees $e$, $\exists$ person $p$ such that $ p$ took
+    $e$.
+    
+    $\forall$ 主菜 $e$, $\exists$ 人 $p$ 使得 $p$ 拿了 $e$。
+    \hint{true (真)}
+    \item \label{entree} \wbitemsep $\exists$ entree $e$ such that  $\forall$ people
+    $p,\ p$ took $e$.
+    
+    $\exists$ 主菜 $e$ 使得 $\forall$ 人 $p$, $p$ 拿了 $e$。
+    \hint{false (假)}
+    \item \wbitemsep $\forall$ people $p$, $p$ took a dessert $\iff p$ did not take
+    a pizza.
+    
+    $\forall$ 人 $p$, $p$ 拿了甜点 $\iff p$ 没有拿披萨。
+    \hint{true (真)}
+    \item \wbitemsep Change one word of statement \ref{entree} so that it becomes true.
+    
+    修改陈述\ref{entree}中的一个词，使其为真。
+    \hint{entree $\longrightarrow$ beverage (主菜 $\longrightarrow$ 饮料)}
+    \item \wbitemsep Write down the negation of \ref{negated} and compare it to statement
+    \ref{compare}.
+    Hopefully you will see that they are the same! Does
+    this make you want to modify one or both of your answers to \ref{negated}
+    and \ref{compare}?
+    
+    写下\ref{negated}的否定，并将其与陈述\ref{compare}进行比较。希望你会发现它们是相同的！这是否让你想修改你对\ref{negated}和\ref{compare}的一个或两个答案？
+    \hint{$\exists$ person $p$ such that $\forall$ desserts
+    $d$, $p$ did not take $d$.  Yes I do.
+    No, I got them right in the first place!
+    
+    $\exists$ 人 $p$ 使得 $\forall$ 甜点 $d$, $p$ 没有拿 $d$。是的，我想修改。不，我一开始就答对了！}
+    \end{enumerate}
+    
+    \end{enumerate}

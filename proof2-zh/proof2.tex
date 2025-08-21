@@ -1,0 +1,1518 @@
+\chapter{Proof techniques II --- Induction 证明技巧 II --- 归纳法}
+\label{ch:proof2}
+
+{\em Who was the guy who first looked at a cow and said, "I think I'll drink whatever comes out of these things when I squeeze 'em!"? --Bill Watterson}
+
+{\em 那个第一个看着牛说“我想我会喝那些我挤它们时出来的任何东西！”的家伙是谁？——比尔·沃特森}
+
+\section{The principle of mathematical induction 数学归纳法原理}
+\label{sec:induct}
+
+The \index{induction}Principle of Mathematical Induction (PMI) may be the least intuitive
+proof method available to us.
+
+\index{induction}数学归纳法原理（PMI）可能是我们可用的最不直观的证明方法。
+
+Indeed, at first, PMI may feel somewhat like
+grabbing yourself by the seat of your pants and lifting yourself into
+the air.
+
+的确，起初，数学归纳法可能会让人感觉有点像抓住自己的裤腰带把自己提起来。
+
+Despite the indisputable fact that proofs by PMI often feel
+like magic, we need to convince you of the validity of this proof
+technique.
+
+尽管通过数学归纳法进行的证明常常感觉像魔术，这是一个无可争议的事实，但我们需要说服你这种证明技巧的有效性。
+
+It is one of the most important tools in your mathematical
+kit!
+
+它是你数学工具箱中最重要的工具之一！
+
+The simplest argument in favor of the validity of PMI is simply that it is
+axiomatic.
+
+支持数学归纳法有效性的最简单论据就是它是公理化的。
+
+This may seem somewhat unsatisfying, but the axioms for
+the natural number system, known as the \index{Peano axioms}Peano axioms,
+include one that justifies PMI.
+
+这可能看起来有些不尽人意，但自然数系的公理，即所谓的\index{Peano axioms}皮亚诺公理，其中就有一条为数学归纳法提供了依据。
+
+The Peano axioms will not be treated 
+thoroughly in this book, but here they are:
+
+本书不会详尽地讨论皮亚诺公理，但它们如下：
+
+\begin{enumerate}
+\item[i)] There is a least element of $\Naturals$ that we denote by $0$.
+
+$\Naturals$ 中有一个我们记为0的最小元素。
+\item[ii)] Every natural number $a$ has a successor denoted by $s(a)$.
+(Intuitively, think of $s(a) = a+1$.)
+
+每个自然数 $a$ 都有一个记为 $s(a)$ 的后继。（直观上，可以认为 $s(a) = a+1$。）
+\item[iii)] There is no natural number whose successor is $0$.
+(In other
+words, -1 isn't in $\Naturals$.)
+
+不存在其后继为0的自然数。（换句话说，-1不在$\Naturals$中。）
+\item[iv)] Distinct natural numbers have distinct successors.
+($a \neq b \; \implies \; s(a) \neq s(b)$) 
+
+不同的自然数有不同的后继。（$a \neq b \; \implies \; s(a) \neq s(b)$）
+\item[v)] If a subset of the natural numbers contains $0$ and also has the
+property that whenever $a \in S$ it follows that $s(a) \in S$, then the
+subset $S$ is actually equal to $\Naturals$.
+
+如果一个自然数的子集包含0，并且具有这样的性质：只要 $a \in S$，就有 $s(a) \in S$，那么这个子集 $S$ 实际上就等于$\Naturals$。
+\end{enumerate}
+
+The last axiom is the one that justifies PMI.  Basically, if $0$ is in
+a subset, and the subset has this property about successors\footnote{Whenever a number is in it, the number's successor must be in it.}, then $1$ must
+be in it.
+
+最后一条公理是为数学归纳法提供依据的。基本上，如果0在一个子集中，并且该子集具有关于后继的这个性质\footnote{只要一个数在其中，这个数的后继也必须在其中。}，那么1也必须在其中。
+
+But if $1$ is in it, then $1$'s successor ($2$) must be in it.
+
+但如果1在其中，那么1的后继（2）也必须在其中。
+
+And so on \ldots  
+
+依此类推……
+
+The subset ends up having every natural number in it.
+
+这个子集最终会包含每一个自然数。
+
+\begin{exer}
+Verify that the following symbolic formulation has the same content
+as the version of the 5th Peano axiom given above.
+
+验证以下符号化表述与上面给出的第5条皮亚诺公理的版本具有相同的内容。
+\[ \forall S \subseteq \Naturals \; ( 0 \in S ) \land (\forall a \in \Naturals, a \in S \, \implies s(a) \in S) \implies  \; S=\Naturals \]
+
+\end{exer}
+\bigskip
+
+On August 16th 2003, \index{Lihua, Ma}Ma Lihua of Beijing, China earned her place in the 
+record books by single-handedly setting up an arrangement of dominoes 
+standing on end (actually, the setup took 7 weeks and was almost ruined by
+some cockroaches in the Singapore Expo Hall) and toppling them.
+
+2003年8月16日，来自中国北京的\index{Lihua, Ma}马丽华通过独自摆放并推倒一组立着的骨牌，创造了纪录。（实际上，这个摆放过程耗时7周，并差点被新加坡博览馆的一些蟑螂毁掉）。
+
+After the first domino was tipped over it took about six minutes
+before 303,621 out of the 303,628 dominoes had fallen.
+
+第一张骨牌被推倒后，大约六分钟内，303,628张骨牌中有303,621张倒下了。
+
+(One has to wonder 
+what kept those other 7 dominoes upright \ldots)  
+
+（人们不禁好奇，是什么让另外7张骨牌保持直立……）
+
+\begin{center}
+\includegraphics[scale=.2]{photos/domino_row.jpg}
+\end{center}
+
+This is the model one should keep in mind when thinking about PMI: domino
+toppling.
+
+这就是思考数学归纳法时应该记住的模型：推倒骨牌。
+
+In setting up a line of dominoes, what do we need to do
+in order to ensure that they will all fall when the toppling begins?
+
+在摆放一排骨牌时，为了确保当推倒开始时它们会全部倒下，我们需要做什么？
+
+Every domino must be placed so that it will hit and topple its successor.
+
+每一张骨牌都必须摆放得能够撞倒并推倒它的下一张。
+
+This is exactly analogous to $(a \in S \, \implies s(a) \in S)$.
+
+这完全类似于 $(a \in S \, \implies s(a) \in S)$。
+
+(Think 
+of $S$ having the membership criterion, $x \in S$ = ``$x$ will have fallen
+when the toppling is over.'')   The other thing that has to happen
+(barring the action of cockroaches) is for someone to knock over the
+first domino.
+
+（可以认为 $S$ 的成员资格标准是，$x \in S$ = “当推倒结束后，$x$ 已经倒下。”）另一件必须发生的事情（除非有蟑螂的干扰）是有人推倒第一张骨牌。
+
+This is analogous to $0 \in S$.
+
+这类似于 $0 \in S$。
+
+Rather than continuing to talk about subsets of the naturals, it will
+be convenient to recast our discussion in terms of infinite families
+of logical statements.
+
+与其继续讨论自然数的子集，不如将我们的讨论重塑为关于无限个逻辑陈述族。
+
+If we have a sequence of statements, (one
+for each natural number) $P_0$, $P_1$, $P_2$, $P_3$, \ldots  we
+can prove them \emph{all} to be true using PMI.
+
+如果我们有一个陈述序列（每个自然数对应一个）$P_0, P_1, P_2, P_3, \ldots$，我们可以用数学归纳法证明它们\emph{全部}为真。
+
+We have to do two
+things.   First -- and this is usually the easy part -- we must show 
+that $P_0$ is true (i.e.\ the first domino \emph{will} get knocked over).
+
+我们必须做两件事。首先——这通常是容易的部分——我们必须证明 $P_0$ 为真（即第一张骨牌\emph{会}被推倒）。
+
+Second, we must show, for every possible value of $k$, $P_k \implies P_{k+1}$
+(i.e.\ each domino will knock down its successor).
+
+其次，我们必须证明，对于每一个可能的 $k$ 值，$P_k \implies P_{k+1}$（即每一张骨牌都会推倒它的下一张）。
+
+These two parts 
+of an inductive proof are known, respectively, as the \emph{basis}
+and the \emph{inductive step}.
+
+一个归纳证明的这两个部分分别被称为\emph{基础步骤}和\emph{归纳步骤}。
+
+An outline for a proof using PMI:
+
+一个使用数学归纳法的证明大纲：
+
+\begin{center}
+\begin{tabular}{|c|} \hline
+\rule{16pt}{0pt}\begin{minipage}{.75\textwidth}
+
+\rule{0pt}{16pt}{\bf \large Theorem} $ \displaystyle \forall n \in \Naturals, \; P_n $
+
+{\bf \large 定理} $ \displaystyle \forall n \in \Naturals, \; P_n $
+\medskip
+
+\rule{0pt}{20pt} {\em Proof:} (By induction)
+
+{\em 证明：} (通过归纳法)
+
+\noindent {\bf Basis:}
+
+\noindent {\bf 基础步骤：}
+
+\begin{center}
+$\vdots$ \rule{36pt}{0pt} \begin{minipage}[c]{1.7 in} (Here we must show that $P_0$ is true.) (这里我们必须证明$P_0$为真。) \end{minipage}
+\end{center}
+
+\noindent {\bf Inductive step:}
+
+\noindent {\bf 归纳步骤：}
+
+\begin{center}
+$\vdots$ \rule{36pt}{0pt} \begin{minipage}[c]{1.7 in} (Here we must show that $\forall k,  P_k \implies P_{k+1}$ is true.) (这里我们必须证明$\forall k,  P_k \implies P_{k+1}$为真。) \end{minipage}
+\end{center}
+
+\rule{0pt}{0pt} \hspace{\fill} Q.E.D.
+\rule[-10pt]{0pt}{16pt}
+\end{minipage} \rule{16pt}{0pt} \\ \hline
+\end{tabular}
+\end{center}
+\medskip
+
+Soon we'll do an actual example of an inductive 
+proof, but first we have to say something \emph{REALLY IMPORTANT}
+about such proofs.
+
+很快我们将给出一个归纳证明的实际例子，但首先我们必须说一些关于这类证明的\emph{非常重要}的事情。
+
+Pay attention! This is \emph{REALLY IMPORTANT}!
+When doing the second part of an inductive proof (the inductive step),
+you are proving a UCS, and if you recall how that's done, you start
+by assuming the antecedent is true.
+
+注意！这\emph{非常重要}！在进行归纳证明的第二部分（归纳步骤）时，你正在证明一个全称条件陈述（UCS），如果你还记得那是如何做的，你会从假设前件为真开始。
+
+But the particular UCS we'll
+be dealing with is $\forall k,  P_k \implies P_{k+1}$.
+
+但我们将要处理的特定UCS是 $\forall k,  P_k \implies P_{k+1}$。
+
+That means
+that in the course of proving $\forall n,  P_n$ we have to \emph{assume}
+ that $P_k$ is true.
+
+这意味着在证明 $\forall n,  P_n$ 的过程中，我们必须\emph{假设} $P_k$ 为真。
+
+Now this sounds very much like the error known
+as ``circular reasoning,'' especially as many authors don't even
+use different letters ($n$ versus $k$ in our outline) to distinguish
+the two statements.
+
+这听起来很像被称为“循环论证”的错误，尤其是许多作者甚至不用不同的字母（在我们的提纲中是 $n$ 对 $k$）来区分这两个陈述。
+
+(And, quite honestly, we only introduced the variable
+$k$ to assuage a certain lingering guilt regarding circular reasoning.)
+
+（而且，老实说，我们引入变量 $k$ 只是为了减轻对循环论证的某种挥之不去的愧疚感。）
+The sentence $\forall n,  P_n$ is what we're trying to prove, but the
+sentence we need to prove in order to do that is $\forall k,  P_k \implies P_{k+1}$.
+
+句子 $\forall n,  P_n$ 是我们试图证明的，但为了做到这一点，我们需要证明的句子是 $\forall k,  P_k \implies P_{k+1}$。
+
+This is subtly different -- in proving that $\forall k,  P_k \implies P_{k+1}$
+(which is a UCS!) we assume that $P_k$ is true {\em for some particular value of $k$}.
+
+这有细微的不同——在证明 $\forall k,  P_k \implies P_{k+1}$（这是一个UCS！）时，我们假设 $P_k$ 对于{\em 某个特定的k值}为真。
+
+The sentence $P_k$ is known as the 
+\index{inductive hypothesis}\emph{inductive hypothesis}.
+
+句子 $P_k$ 被称为\index{inductive hypothesis}\emph{归纳假设}。
+
+Think about it this way:  If we were doing an entirely separate
+proof of $\forall n,  P_n \implies P_{n+1}$, it would certainly be fair
+to use the inductive hypothesis, and \emph{once that proof was done}, 
+it would be okay to quote that result in an inductive proof of 
+$\forall n,  P_n$.
+
+这样想：如果我们正在做一个完全独立的关于 $\forall n,  P_n \implies P_{n+1}$ 的证明，使用归纳假设当然是公平的，并且\emph{一旦那个证明完成}，在 $\forall n,  P_n$ 的归纳证明中引用那个结果也是可以的。
+
+Thus we can compartmentalize our way out of the
+difficulty!
+
+因此，我们可以通过分块处理来摆脱困境！
+
+Okay, so on to an example.
+
+好了，来看一个例子。
+
+In Section~\ref{sec:basic_set_notions} 
+we discovered a formula relating the sizes of a set $A$ and its 
+power set ${\mathcal P}(A)$.
+
+在第~\ref{sec:basic_set_notions}节中，我们发现了一个联系集合 $A$ 的大小与其幂集 ${\mathcal P}(A)$ 大小的公式。
+
+If $|A| = n$ then $|{\mathcal P}(A)| = 2^n$.
+What we've got here is an infinite family of logical sentences, one for 
+each value of $n$ in the natural numbers,
+
+如果 $|A| = n$，那么 $|{\mathcal P}(A)| = 2^n$。我们这里得到的是一个无穷的逻辑句子族，对自然数中的每一个 $n$ 值都有一个，
+
+\[ |A| = 0 \implies |{\mathcal P}(A)| = 2^0, \]
+\[ |A| = 1 \implies |{\mathcal P}(A)| = 2^1, \]
+\[ |A| = 2 \implies |{\mathcal P}(A)| = 2^2, \]
+\[ |A| = 3 \implies |{\mathcal P}(A)| = 2^3, \]
+
+\noindent et cetera.
+
+\noindent 等等。
+
+This is exactly the sort of situation in which we use induction.
+
+这正是我们使用归纳法的情形。
+
+\begin{thm} For all finite sets $A$, $\displaystyle |A| = n \implies  |{\mathcal P}(A)| = 2^n$.
+
+对于所有有限集 $A$，$\displaystyle |A| = n \implies  |{\mathcal P}(A)| = 2^n$。
+\end{thm}
+
+\begin{proof}
+Let $n = |A|$ and proceed by induction on $n$.
+
+设 $n = |A|$ 并对 $n$ 进行归纳。
+\noindent {\bf Basis:} Suppose $A$ is a finite set and $|A| = 0$, it follows 
+that $A = \emptyset$.
+
+\noindent {\bf 基础步骤：} 假设 $A$ 是一个有限集且 $|A| = 0$，那么 $A = \emptyset$。
+The power set of $\emptyset$ is $\{ \emptyset \}$ 
+which is a set having 1 element.
+
+$\emptyset$ 的幂集是 $\{ \emptyset \}$，这是一个包含1个元素的集合。
+Note that $2^0 = 1$.
+   
+注意到 $2^0 = 1$。
+   
+\noindent {\bf Inductive step:}  Suppose that $A$ is a finite set with $|A| = k+1$.  Choose some particular element of $A$, say $a$, and note that
+we can divide the subsets of $A$ (i.e.\ elements of ${\mathcal P}(A)$) into
+two categories, those that contain $a$ and those that don't.
+
+\noindent {\bf 归纳步骤：} 假设 $A$ 是一个有限集，且 $|A| = k+1$。选择 $A$ 的某个特定元素，比如 $a$，并注意到我们可以将 $A$ 的子集（即 ${\mathcal P}(A)$ 的元素）分为两类：包含 $a$ 的和不包含 $a$ 的。
+
+Let $S_1 = \{ X \in {\mathcal P}(A) \suchthat a \in X \}$ and let
+$S_2 = \{ X \in {\mathcal P}(A) \suchthat a \notin X \}$.
+
+设 $S_1 = \{ X \in {\mathcal P}(A) \suchthat a \in X \}$ 且 $S_2 = \{ X \in {\mathcal P}(A) \suchthat a \notin X \}$。
+
+We have 
+created two sets that contain all the elements of ${\mathcal P}(A)$,
+and which are disjoint from one another.
+
+我们创建了两个包含 ${\mathcal P}(A)$ 所有元素的集合，并且它们互不相交。
+
+In symbolic form, 
+$S_1 \cup S_2 = {\mathcal P}(A)$ and $S_1 \cap S_2 = \emptyset$.
+It follows that $|{\mathcal P}(A)| = |S_1| + |S_2|$.  
+
+用符号形式表示，$S_1 \cup S_2 = {\mathcal P}(A)$ 且 $S_1 \cap S_2 = \emptyset$。因此 $|{\mathcal P}(A)| = |S_1| + |S_2|$。
+
+Notice that $S_2$ is actually the power set of the $k$-element set
+$A \setminus \{ a \}$.
+
+注意到 $S_2$ 实际上是 $k$ 元集合 $A \setminus \{ a \}$ 的幂集。
+
+By the inductive hypothesis, $|S_2| = 2^k$.
+Also, notice that each set in $S_1$ corresponds uniquely to a set in
+$S_2$ if we just remove the element $a$ from it.
+
+根据归纳假设，$|S_2| = 2^k$。另外，注意到 $S_1$ 中的每个集合，如果我们从中移除元素 $a$，它就唯一地对应于 $S_2$ 中的一个集合。
+
+This shows that 
+$|S_1| = |S_2|$.  Putting this all together we get that 
+$|{\mathcal P}(A)| = 2^k + 2^k = 2(2^k) = 2^{k+1}$.
+
+这表明 $|S_1| = |S_2|$。将这一切综合起来，我们得到 $|{\mathcal P}(A)| = 2^k + 2^k = 2(2^k) = 2^{k+1}$。
+
+\end{proof}
+
+Here are a few pieces
+of advice about proofs by induction:
+
+以下是关于归纳证明的一些建议：
+
+\begin{itemize}
+\item Statements that can be proved inductively don't always start out with 
+$P_0$.
+
+可以用归纳法证明的陈述并不总是从 $P_0$ 开始。
+Sometimes $P_1$ is the first statement in an infinite family.
+Sometimes its $P_5$.
+
+有时 $P_1$ 是一个无穷族中的第一个陈述。有时是 $P_5$。
+Don't get hung up about something that could be
+handled by renumbering things.
+
+不要纠结于可以通过重新编号来处理的事情。
+\item In your final write-up you only need to prove the initial case
+(whatever it may be) for the basis, but it is a good idea to try 
+the first several cases while you are in the ``draft'' stage.
+
+在你的最终文稿中，你只需要为基础步骤证明初始情况（无论它是什么），但在“草稿”阶段尝试前几个情况是个好主意。
+This
+can provide insights into how to prove the inductive step, and it may
+also help you avoid a classic error in which the inductive approach fails
+essentially just because there is a gap between two of the earlier 
+dominoes.\footnote{See exercise~\ref{ex:horses}, the classic fallacious proof that all horses are the same color.}
+
+这可以为如何证明归纳步骤提供见解，也可能帮助你避免一个经典错误，即归纳法失败仅仅是因为前几个骨牌之间有间隙。\footnote{见练习~\ref{ex:horses}，那个经典的关于所有马都是同一种颜色的谬误证明。}
+\item It is a good idea to write down somewhere just what it is that
+needs to be proved in the inductive step --- just don't make it look like 
+you're assuming what needs to be shown.
+
+最好在某个地方写下归纳步骤中需要证明的内容——只是不要让它看起来像你在假设需要证明的东西。
+For instance in the proof above
+it might have been nice to start the inductive step with a comment along
+the following lines, ``What we need to show is that under the assumption
+that any set of size $k$ has a power set of size $2^k$, it follows that
+a set of size $k+1$ will have a power set of size $2^{k+1}$.'' 
+
+例如，在上面的证明中，如果在归纳步骤的开头加上类似这样的评论会很好：“我们需要证明的是，在任何大小为 $k$ 的集合其幂集大小为 $2^k$ 的假设下，可以得出大小为 $k+1$ 的集合其幂集大小为 $2^{k+1}$。”
+\end{itemize}
+\medskip
+
+We'll close this section with a short discussion about nothing.
+
+我们将以一段关于无的简短讨论来结束本节。
+\ifthenelse{\boolean{ZeroInNaturals}}{
+When we first introduced the natural numbers ($\Naturals$) in Chapter~\ref{ch:intro} we decided to follow the convention that the smallest natural number is 1.
+You may have noticed that the Peano axioms mentioned in the beginning of this
+section treat $0$ as the smallest natural number.
+So, from here on out we
+are going to switch things up and side with Dr.\ Peano.
+That is, from now
+on we will use the convention
+
+当我们第一次在第~\ref{ch:intro}章介绍自然数($\Naturals$)时，我们决定遵循最小自然数为1的惯例。你可能已经注意到，本节开头提到的皮亚诺公理将0视为最小的自然数。所以，从这里开始，我们将改变做法，站在皮亚诺博士一边。也就是说，从现在开始，我们将使用惯例
+\[\Naturals \, = \, \{ 0, 1, 2, 3, \ldots \} \]
+
+Hmmm\ldots \rule{5pt}{0pt}Maybe that was a short discussion about {\em something} after all.
+
+嗯……也许那终究是一段关于{\em 某事}的简短讨论。
+}{
+When we first introduced the natural numbers ($\Naturals$) in Chapter~\ref{ch:intro} we decided to follow the convention that the smallest natural number is 1.
+You may have noticed that the Peano axioms mentioned in the beginning of this
+section treat $0$ as the smallest natural number.
+Many people follow Dr.\ Peano's
+convention, but we're going to stick with our original interpretation:
+
+当我们第一次在第~\ref{ch:intro}章介绍自然数($\Naturals$)时，我们决定遵循最小自然数为1的惯例。你可能已经注意到，本节开头提到的皮亚诺公理将0视为最小的自然数。许多人遵循皮亚诺博士的惯例，但我们将坚持我们最初的解释：
+\[\Naturals \, = \, \{ 1, 2, 3, \ldots \} \]
+
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+
+Despite our stubbornness, we are forced to admit that many inductive proofs are
+made easier by treating the ``first'' case as being in truth the one numbered $0$.
+We'll
+use the symbol $\Naturals$ to indicate the set ${\mathbb N} \cup \{ 0 \}$.
+
+尽管我们固执，但我们被迫承认，将“第一个”案例视为实际上是编号为0的案例，会使许多归纳证明变得更容易。我们将使用符号$\Naturals$来表示集合${\mathbb N} \cup \{ 0 \}$。
+}
+
+\newpage
+
+  
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{proof2-zh/induct-exer.tex}
+
+ 
+\newpage
+
+\section{Formulas for sums and products 和与积的公式}
+\label{sec:sums_prods}
+
+Gauss, when only a child, found a formula for
+summing the first 100 natural numbers (or so the story goes\ldots).
+
+高斯，当他还是个孩子的时候，就找到了一个计算前100个自然数之和的公式（故事是这么说的……）。
+
+This formula, and his clever method for justifying it, can be easily 
+generalized to the sum of the first $n$ naturals.
+
+这个公式，以及他巧妙的证明方法，可以很容易地推广到前 $n$ 个自然数之和。
+
+While learning calculus, notably during the study of Riemann sums,
+one encounters other summation formulas.
+
+在学习微积分时，特别是在研究黎曼和期间，人们会遇到其他的求和公式。
+
+For example, in approximating the
+integral of the function $f(x)=x^2$ from $0$ to $100$ one needs the sum of 
+the first 100 {\em squares}.
+
+例如，在近似计算函数 $f(x)=x^2$ 从0到100的积分时，需要前100个{\em 平方数}的和。
+
+For this reason, somewhere in almost
+every calculus book one will find the following formulas collected:
+
+因此，几乎在每一本微积分教科书中，都能找到以下收集的公式：
+
+\begin{gather*}
+\sum_{j=1}^n j = \frac{n(n+1)}{2}\\
+\sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}\\
+\sum_{j=1}^n j^3 = \frac{n^2(n+1)^2}{4}.\\
+\end{gather*}
+
+\noindent A really industrious author might also include the sum of the 
+fourth powers.
+
+\noindent 一个非常勤奋的作者可能还会包括四次方之和。
+
+Jacob Bernoulli (a truly industrious individual)
+got excited enough to find formulas for the sums of the first
+ten powers of the naturals.
+
+雅各布·伯努利（一个真正勤奋的人）兴奋地找到了前十个自然数幂次和的公式。
+
+Actually, Bernoulli went much further.  His work
+on sums of powers lead to the definition of what are now known as Bernoulli
+numbers and let him calculate $\sum_{j=1}^{1000}j^{10}$ in 
+about seven minutes --
+long before the advent of calculators!
+
+实际上，伯努利走得更远。他关于幂次和的研究导致了现在被称为伯努利数的定义，并让他在大约七分钟内计算出 $\sum_{j=1}^{1000}j^{10}$——这远在计算器出现之前！
+
+In \cite[p. 320]{struik}, Bernoulli is 
+quoted:
+
+在\cite[p. 320]{struik}中，引用了伯努利的话：
+
+\begin{quote}
+With the help of this table it took me less than half of a quarter of an hour
+to find that the tenth powers of the first 1000 numbers being added together 
+will yield the sum 
+
+借助于这张表，我用了不到一刻钟的一半时间就发现，前1000个数的十次方相加将得到总和
+
+\[ 91,409,924,241,424,243,424,241,924,242,500.
+\]
+
+\end{quote}
+
+To the beginning calculus student, the beauty of the above relationships may
+be somewhat dimmed by the memorization challenge that they represent.
+
+对于初学微积分的学生来说，上述关系的美妙之处可能会因它们所代表的记忆挑战而有所失色。
+
+It
+is fortunate then, that the right-hand side of the third formula is just 
+the square of the right-hand side of the first formula.
+
+幸运的是，第三个公式的右边恰好是第一个公式右边的平方。
+
+And of course,
+the right-hand side of the first formula is something that can be deduced 
+by a six year old child (provided that he is a super-genius!)  This happy
+coincidence leaves us to apply most of our rote memorization energy to
+formula number two, because the first and third formulas are related by
+the following rather bizarre-looking equation,
+
+当然，第一个公式的右边是一个六岁小孩（如果他是个超级天才的话！）都能推导出来的东西。这个愉快的巧合让我们把大部分的死记硬背精力都用在第二个公式上，因为第一个和第三个公式通过下面这个看起来相当奇怪的方程联系在一起，
+
+\[
+\sum_{j=1}^n j^3 = \left( \sum_{j=1}^n j \right)^2.
+\]       
+
+\noindent The sum of the cubes of the first $n$ numbers is the square of their sum.
+
+\noindent 前 $n$ 个数的立方和是它们和的平方。
+
+For completeness we should include the following formula which 
+should be thought of as the sum of the zeroth powers of the first $n$
+naturals.
+
+为了完整性，我们应该包括以下公式，它应被看作是前 $n$ 个自然数的零次方之和。
+\[ \sum_{j=1}^n 1 = n \]
+
+\begin{exer}
+Use the above formulas to approximate the integral
+
+使用上述公式来近似积分
+
+\[ \int_{x=0}^{10} x^3 - 2x +3 \mbox{d}x \]
+\end{exer}
+\bigskip
+
+Our challenge today is not to merely memorize these formulas but
+to prove their validity.
+
+我们今天的挑战不仅仅是背诵这些公式，而是要证明它们的有效性。
+
+We'll use PMI.
+
+我们将使用数学归纳法。
+
+Before we start in on a proof, it's important to figure out where 
+we're trying to go.
+
+在我们开始证明之前，弄清楚我们的目标是很重要的。
+
+In proving the formula that Gauss discovered
+by induction we need to show that the $k+1$--th version of the 
+formula holds, assuming that the $k$--th version does.
+
+在用归纳法证明高斯发现的公式时，我们需要在假设第 $k$ 版公式成立的情况下，证明第 $k+1$ 版公式也成立。
+
+Before
+proceeding on to read the proof do the following
+
+在继续阅读证明之前，请做以下练习
+
+\begin{exer}
+Write down the $k+1$--th version of the formula for the sum of
+the first $n$ naturals.
+
+写下前 $n$ 个自然数之和公式的第 $k+1$ 个版本。
+(You have to replace every $n$ with 
+a $k+1$.)
+
+（你必须用 $k+1$ 替换每一个 $n$。）
+\end{exer}
+
+\begin{thm}
+\[ \forall n \in \Naturals, \; \sum_{j=1}^n j = \frac{n(n+1)}{2} \]
+\end{thm}
+
+\begin{proof}
+We proceed by induction on $n$.
+
+我们对 $n$ 进行归纳。
+\noindent {\bf Basis: }  Notice that when $n=0$ the sum on the left-hand side
+has no terms in it!
+
+\noindent {\bf 基础步骤：}注意到当 $n=0$ 时，左边的和式中没有任何项！
+This is known as an \index{empty sum} empty sum, and by 
+definition, an empty sum's value is $0$.
+
+这被称为\index{empty sum}空和，根据定义，空和的值为0。
+Also, when 
+$n=0$ the formula on the right-hand side becomes $(0 \cdot 1)/2$ and this is 
+$0$ as well.\footnote{If you'd prefer to avoid the ``empty sum'' argument, %
+you can choose to use $n=1$ as the basis case.
+The theorem should %
+be restated so the universe of discourse is \emph{positive} naturals.}
+
+另外，当 $n=0$ 时，右边的公式变为 $(0 \cdot 1)/2$，这也等于0。\footnote{如果你不想用“空和”的论证，你可以选择用 $n=1$ 作为基础情形。定理应该被重述，使其论域为\emph{正}自然数。}
+
+\noindent {\bf Inductive step: }  Consider the sum on the left-hand side of
+the $k+1$--th version of our formula.
+
+\noindent {\bf 归纳步骤：}考虑我们公式第 $k+1$ 个版本的左边和式。
+\[ \sum_{j=1}^{k+1} j \]
+
+We can separate out the last term of this sum.
+
+我们可以把这个和的最后一项分离出来。
+\[ = (k+1) + \sum_{j=1}^{k} j \]
+
+Next, we can use the inductive hypothesis to replace the sum (the part 
+that goes from 1 to $k$) with a formula.
+
+接下来，我们可以用归纳假设来替换这个和（从1到 $k$ 的部分）为一个公式。
+\[ = (k+1) + \frac{k(k+1)}{2} \]
+
+From here on out it's just algebra \ldots
+
+从这里开始就只是代数运算了……
+
+\[ = \frac{2(k+1)}{2} + \frac{k(k+1)}{2} \]
+
+\[ = \frac{2(k+1) + k(k+1)}{2} \]
+
+\[ = \frac{(k+1) \cdot (k+2)}{2}.
+\]
+
+\end{proof}
+\medskip
+
+Notice how the inductive step in this proof works.  We start by writing
+down the left-hand side of $P_{k+1}$, we pull out the last term
+so we've got the left-hand side of $P_{k}$ (plus something else), then
+we apply the inductive hypothesis and do some algebra until we arrive
+at the right-hand side of $P_{k+1}$.
+
+注意到这个证明中的归纳步骤是如何工作的。我们从写下 $P_{k+1}$ 的左边开始，我们提出最后一项，这样我们就得到了 $P_k$ 的左边（加上别的东西），然后我们应用归纳假设并进行一些代数运算，直到我们到达 $P_{k+1}$ 的右边。
+
+Overall, we've just transformed the
+left-hand side of the statement we wish to prove into its right-hand side.
+
+总的来说，我们只是将我们希望证明的陈述的左边转换成了它的右边。
+
+There is another way to organize the inductive steps in proofs like these
+that works by manipulating entire equalities (rather than just one side
+or the other of them).
+
+还有另一种组织这类证明中归纳步骤的方法，它通过操作整个等式（而不是仅仅一边或另一边）来进行。
+\begin{quote}
+
+\noindent {\bf Inductive step (alternate): }  By the inductive 
+hypothesis, we can write
+
+\noindent {\bf 归纳步骤（备选）：}根据归纳假设，我们可以写出
+
+\[ \sum_{j=1}^{k} j = \frac{k(k+1)}{2}.
+\]
+
+Adding $(k+1)$ to both side of this yields
+
+两边同时加上 $(k+1)$ 得到
+
+\[ \sum_{j=1}^{k+1} j = (k+1) + \frac{k(k+1)}{2}.
+\]
+
+Next, we can simplify the right-hand side of this to obtain
+
+接下来，我们可以化简这个等式的右边得到
+
+\[ \sum_{j=1}^{k+1} j = \frac{(k+1)(k+2)}{2}. \]
+
+\rule{0pt}{0pt} \hspace{\fill} Q.E.D.
+\end{quote}
+\medskip
+
+Oftentimes one can save considerable effort in an inductive 
+proof by creatively using the factored form during intermediate steps.
+
+通常，通过在中间步骤中创造性地使用因式分解形式，可以在归纳证明中节省大量精力。
+
+On the other hand, sometimes it is easier to just simplify everything
+completely, and also, completely simplify the expression on the 
+right-hand side of $P(k+1)$ and then verify that the two things are
+equal.
+
+另一方面，有时完全化简所有东西，并且也完全化简 $P(k+1)$ 右边的表达式，然后验证两者相等会更容易。
+
+This is basically just another take on the technique of 
+``working backwards from the conclusion.''  Just remember that 
+in writing-up your proof you need to make it look as if you reasoned
+directly from the premises to the conclusion.
+
+这基本上只是“从结论倒推”技巧的另一种应用。只要记住，在写你的证明时，你需要让它看起来像是你从前提直接推理到结论。
+
+We'll illustrate
+what we've been discussing in this paragraph while proving
+the formula for the sum of the squares of the first $n$ positive integers.
+
+我们将在证明前 $n$ 个正整数平方和的公式时，阐释本段所讨论的内容。
+\begin{thm}
+\[ \forall n \in \Zplus, \; \sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6} \]
+\end{thm}
+
+\begin{proof}
+We proceed by induction on $n$.
+
+我们对 $n$ 进行归纳。
+\noindent {\bf Basis: } When $n = 1$ the sum has only one term, $1^2 = 1$.
+
+\noindent {\bf 基础步骤：}当 $n = 1$ 时，和只有一个项，$1^2 = 1$。
+On the other hand, the formula is 
+$\displaystyle \frac{1(1+1)(2\cdot 1+1)}{6} = 1$.  Since these are equal, the 
+basis is proved.
+
+另一方面，公式是 $\displaystyle \frac{1(1+1)(2\cdot 1+1)}{6} = 1$。由于两者相等，基础步骤得证。
+\noindent {\bf Inductive step: }
+
+\noindent {\bf 归纳步骤：}
+
+\begin{tabular}{|ccc|} \hline
+ & &\\
+ & \begin{minipage}{4 in} 
+Before proceeding with the inductive step, in this box, we will
+figure out what the right-hand side of our theorem looks like 
+when $n$ is replaced with $k+1$:
+
+在进行归纳步骤之前，在这个框里，我们将计算出当 $n$ 被替换为 $k+1$ 时，我们定理的右边是什么样子：
+\begin{gather*}
+ \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6} \\
+= \frac{(k+1)(k+2)(2k+3)}{6} \\
+= \frac{(k^2+3k+2)(2k+3)}{6} \\
+= \frac{2k^3+9k^2+13k+6}{6}.
+\end{gather*}
+\end{minipage} & \\ 
+ & & \\ \hline
+\end{tabular}
+
+
+By the inductive hypothesis,
+
+根据归纳假设，
+
+\[ \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6}.
+\]
+
+Adding $(k+1)^2$ to both sides of this equation gives
+
+在这个等式两边同时加上 $(k+1)^2$ 得到
+
+\[ (k+1)^2 + \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
+\]
+
+Thus,
+
+因此，
+
+\[ \sum_{j=1}^{k+1} j^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}. \]
+
+Therefore,
+
+所以，
+
+\begin{gather*}
+\sum_{j=1}^{k+1} j^2 = \frac{(k^2+k)(2k+1)}{6} + \frac{6(k^2+2k+1)}{6} \\
+ = \frac{(2k^3+3k^2+k)+(6k^2+12k+6)}{6}\\
+ = \frac{2k^3+9k^2+13k+6}{6}\\
+ = \frac{(k^2+3k+2)(2k+3)}{6}\\
+ = \frac{(k+1)(k+2)(2k+3)}{6} \\
+ = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}.
+\end{gather*}
+
+This proves the inductive step, so the result is true.
+
+这就证明了归纳步骤，所以结果成立。
+\end{proof}
+
+Notice how the last four lines of the proof are the same as those in
+the box above containing our scratch work?
+
+注意到证明的最后四行与上面包含我们草稿的框中的内容相同吗？
+(Except in the reverse order.)
+
+（只是顺序相反。）
+
+We'll end this section by demonstrating one more use of this technique.
+
+我们将以演示这项技术的另一个用途来结束本节。
+
+This time we'll look at a formula for a product rather than a sum.
+
+这次我们将看一个关于乘积而不是和的公式。
+\begin{thm} $$\forall n \geq 2 \in \Integers, \prod_{j=2}^n \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{n+1}{2n}.$$
+\end{thm}
+
+Before preceding with the proof let's look at an example (although this 
+has nothing to do with proving anything, it's really not a bad idea -- it can
+keep you from wasting a lot of time trying to prove something that isn't 
+actually true!)  When $n = 4$ the product is
+
+在进行证明之前，让我们看一个例子（虽然这与证明无关，但这确实不是一个坏主意——它可以让你避免浪费大量时间去证明一个实际上不成立的东西！）当 $n = 4$ 时，乘积是
+
+\[  \left(1-\frac{1}{2^2}\right) \cdot \left(1-\frac{1}{3^2}\right) \cdot \left(1-\frac{1}{4^2}\right).
+\]
+
+This simplifies to
+
+这可以化简为
+
+\[ \left( 1-\frac{1}{4} \right) \cdot \left( 1-\frac{1}{9} \right) \cdot 
+\left( 1-\frac{1}{16} \right) \quad = \quad \left( \frac{3}{4} \right) \cdot \left( \frac{8}{9} \right) \cdot \left( \frac{15}{16} \right) \quad = \quad \frac{360}{576}.
+\]
+
+The formula on the right-hand side is 
+
+右边的公式是
+
+\[ \frac{4+1}{2 \cdot 4} \quad = \frac{5}{8}. \]
+
+Well!
+These two expressions are \emph{clearly} not equal to one another\ldots
+What?  You say they are?
+Just give me a second with my calculator\ldots
+
+嗯！这两个表达式\emph{显然}不相等……什么？你说它们相等？给我一秒钟用计算器算一下……
+
+Alright then.  I guess we can't dodge doing the proof\ldots
+
+好吧。看来我们逃不过做这个证明了……
+
+\begin{proof}
+(Using mathematical induction on $n$.)
+
+（使用对n的数学归纳法。）
+
+\noindent {\bf Basis: } When $n = 2$ the product has only one term, $1-1/2^2 = 3/4$.
+
+\noindent {\bf 基础步骤：}当 $n = 2$ 时，乘积只有一个项，$1-1/2^2 = 3/4$。
+On the other hand, the formula is 
+$\displaystyle \frac{2+1}{2\cdot2} = 3/4$.  Since these are equal, the 
+basis is proved.
+
+另一方面，公式是 $\displaystyle \frac{2+1}{2\cdot2} = 3/4$。由于两者相等，基础步骤得证。
+\noindent {\bf Inductive step: }
+
+\noindent {\bf 归纳步骤：}
+
+Let $k$ be a particular but arbitrarily chosen integer such that
+
+设 $k$ 是一个特定但任意选择的整数，使得
+
+\[ \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right) \; = \; \frac{k+1}{2k}. \]
+
+Multiplying\footnote{Really, the only reason I'm doing this silly proof is to 
+point out to you that when you're doing the inductive step in a proof of a 
+formula for a {\bf product}, you don't add to both sides anymore, you {\bf multiply.} You see that, right?
+Well, consider yourself to have been pointed out to or \ldots oh, whatever.}  both sides by the $k+1$-th term of the product 
+gives
+
+两边同时乘以乘积的第 $k+1$ 项得到\footnote{实际上，我做这个傻证明的唯一原因是指给你看，当你在证明一个关于{\bf 乘积}的公式的归纳步骤时，你不再是两边相加，而是两边{\bf 相乘}。你看到了，对吧？好吧，就算我指给你看过了，或者……哦，随便了。}
+
+\[ \left( 1 - \frac{1}{(k+1)^2} \right) \; \cdot \; \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right) \quad  = \quad \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right). \]
+
+Thus 
+
+因此
+
+\[ \prod_{j=2}^{k+1} \left( 1 - \frac{1}{j^2} \right) \quad  = \quad \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right) \]
+
+\[ = \frac{k+1}{2k} - \frac{(k+1)}{2k(k+1)^2} \]
+
+\[ = \frac{k+1}{2k} - \frac{(1)}{2k(k+1)} \]
+
+\[ = \frac{(k+1)^2 - 1}{2k(k+1)} \]
+
+\[ = \frac{k^2+2k}{2k(k+1)} \]
+
+\[ = \frac{k (k+2)}{2k(k+1)} \]
+
+\[ = \frac{k+2}{2(k+1)}.
+\]
+
+\end{proof}
+
+\newpage
+  
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{proof2-zh/sums-exer.tex}
+ 
+\newpage
+
+\section[Other proofs using PMI]{Divisibility statements and other proofs using PMI 整除性陈述及其他使用数学归纳法的证明}
+\label{sec:other_pmi}
+
+There is a very famous result known as 
+\index{Fermat's little theorem}Fermat's Little Theorem.
+
+有一个非常著名的结果，称为\index{Fermat's little theorem}费马小定理。
+
+This would probably be abbreviated FLT except for two things.
+
+这或许会被缩写为FLT，但有两个例外。
+
+In science fiction FLT means ``faster than light travel'' and 
+there is \emph{another} theorem due to Fermat that goes by
+the initials FLT: \index{Fermat's last theorem}Fermat's Last Theorem.
+
+在科幻小说中，FLT意味着“超光速旅行”，而且还有费马的\emph{另一个}定理也用缩写FLT：\index{Fermat's last theorem}费马大定理。
+
+Fermat's last theorem states that equations of the form $a^n+b^n=c^n$,
+where $n$ is a positive natural number, 
+only have integer solutions that are trivial (like $0^3+1^3=1^3$) when $n$
+is greater than 2.  When $n$ is 1, there are lots of integer solutions.
+
+费马大定理指出，形如 $a^n+b^n=c^n$ 的方程，其中 $n$ 是一个正自然数，当 $n$ 大于2时，只有平凡的整数解（比如 $0^3+1^3=1^3$）。当 $n$ 为1时，有很多整数解。
+
+When $n$ is 2, there are still plenty of integer solutions -- these are the
+so-called Pythagorean triples, for example 3,4 \& 5 or 5,12 \& 13.  
+
+当 $n$ 为2时，仍然有很多整数解——这些就是所谓的勾股数，例如3,4和5，或者5,12和13。
+
+It is somewhat unfair that this statement is known as Fermat's last \emph{theorem} since he didn't prove it (or at least we can't be sure that he proved it).
+
+这个陈述被称为费马大\emph{定理}有些不公平，因为他没有证明它（或者至少我们不能确定他证明了它）。
+
+Five years after his death, Fermat's son published a translated\footnote{The
+translation from Greek into Latin was done by Claude Bachet.} version of
+Diophantus's \emph{Arithmetica} containing his father's notations.
+
+费马去世五年后，他的儿子出版了一本包含他父亲注释的丢番图《算术》的翻译版\footnote{从希腊语到拉丁语的翻译是由克劳德·巴歇完成的。}。
+
+One of
+those notations -- near the place where Diophantus was discussing the
+equation $x^2+y^2=z^2$ and its solution in whole numbers -- was the statement
+of what is now known as Fermat's last theorem as well as the following claim:
+
+其中一个注释——在丢番图讨论方程 $x^2+y^2=z^2$ 及其整数解的地方附近——就是现在被称为费马大定理的陈述以及以下声明：
+
+\begin{quote}
+Cuius rei demonstrationem mirabilem sane detexi hanc marginis exiguitas non caperet.
+\end{quote}
+
+In English:
+
+英语为：
+
+\begin{quote}
+I have discovered a truly remarkable proof of this that the margin of this page is too small to contain.
+
+我对此发现了一个真正绝妙的证明，但此页边空白太小，写不下。
+\end{quote}
+
+Between 1670 and 1994 a lot of famous mathematicians worked on FLT but
+never found the ``demonstrationem mirabilem.''  Finally in 1994, Andrew Wiles
+of Princeton announced a proof of FLT, but in Wiles's own words, his is ``a twentieth century proof'' it can't be the proof Fermat had in mind.
+
+从1670年到1994年，许多著名数学家都研究过费马大定理，但从未找到那个“绝妙的证明”。最终在1994年，普林斯顿的安德鲁·怀尔斯宣布了一个费马大定理的证明，但用怀尔斯自己的话说，他的证明是“一个二十世纪的证明”，不可能是费马所想的那个证明。
+
+These days most people believe that Fermat was mistaken.  Probably he thought
+a proof technique that works for small values of $n$ could be generalized.
+
+如今，大多数人相信费马搞错了。很可能他认为一个对小的 $n$ 值有效的证明技巧可以被推广。
+
+It remains a tantalizing question, can a proof of FLT using only methods
+available in the 17th century be accomplished?
+
+一个诱人的问题依然存在：能否仅使用17世纪可用的方法来完成费马大定理的证明？
+
+Part of the reason that so many people spent so much effort on FLT
+over the centuries is that Fermat had an excellent record as regards
+being correct about his theorems and proofs.
+
+几个世纪以来，这么多人对费马大定理投入如此多精力的部分原因在于，费马在他提出的定理和证明的正确性方面有着极好的记录。
+
+The result known as Fermat's
+little theorem is an example of a theorem and proof that Fermat got 
+right.
+
+被称为费马小定理的结果是费马正确提出的一个定理和证明的例子。
+
+It is probably known as his ``little'' theorem because its 
+statement is very short, but it is actually a fairly deep result.
+
+它之所以被称为他的“小”定理，可能是因为其陈述非常简短，但它实际上是一个相当深刻的结果。
+
+\begin{thm}[Fermat's Little Theorem] 
+For every prime number $p$, and for all integers $x$, the $p$-th 
+power of $x$ and $x$ itself are congruent mod $p$.
+Symbolically:
+
+对于每一个素数 $p$，以及所有整数 $x$，$x$ 的 $p$ 次方与 $x$ 本身模 $p$ 同余。符号表示为：
+
+\[ x^p \equiv x \pmod{p} \]
+\end{thm}
+
+A slight restatement of Fermat's little theorem is that $p$ is
+always a divisor of $x^p-x$ (assuming $p$ is a prime and $x$ is an integer).
+
+费马小定理的一个轻微改述是，$p$ 总是 $x^p-x$ 的一个约数（假设 $p$ 是一个素数且 $x$ 是一个整数）。
+
+Math professors enjoy using their knowledge of Fermat's little theorem
+to cook up divisibility results that can be proved using mathematical
+induction.
+
+数学教授喜欢利用他们对费马小定理的知识来编造可以用数学归纳法证明的整除性结果。
+
+For example, consider the following:
+
+例如，考虑以下内容：
+
+\[ \forall n \in \Naturals,  3 \divides (n^3 + 2n + 6).
+\]  
+
+This is really just the $p=3$ case of Fermat's little theorem 
+with a little camouflage added: $n^3 + 2n + 6 = (n^3-n)+3(n+2)$.
+
+这实际上只是费马小定理在 $p=3$ 时的情况，并加了一点伪装：$n^3 + 2n + 6 = (n^3-n)+3(n+2)$。
+
+But let's have a look at proving this statement using PMI.
+
+但是，让我们来看看用数学归纳法证明这个陈述。
+
+\begin{thm} 
+$\forall n \in \Naturals,  3 \divides (n^3 + 2n + 6)$
+\end{thm}
+
+\begin{proof}
+(By mathematical induction)
+
+(通过数学归纳法)
+
+{\bf Basis:} Clearly $3 \divides 6$.
+
+{\bf 基础步骤：} 显然 $3 \divides 6$。
+{\bf Inductive step:} 
+
+{\bf 归纳步骤：}
+
+\noindent (We need to show that $3 \divides (k^3 + 2k + 6) \; \implies \; 3 \divides ((k+1)^3 + 2(k+1) + 6$.)
+
+\noindent (我们需要证明 $3 \divides (k^3 + 2k + 6) \; \implies \; 3 \divides ((k+1)^3 + 2(k+1) + 6$)。)
+
+Consider the quantity $(k+1)^3 + 2(k+1) + 6$.
+
+考虑量 $(k+1)^3 + 2(k+1) + 6$。
+
+\begin{gather*}
+   (k+1)^3 + 2(k+1) + 6 \\
+ = (k^3 + 3k^2 + 3k + 1) + (2k + 2) + 6\\
+ = (k^3 + 2k + 6) + 3k^2 + 3k + 3\\
+ = (k^3 + 2k + 6) + 3(k^2 + k + 1).
+\end{gather*}
+
+By the inductive hypothesis, 3 is a divisor of $k^3 + 2k + 6$ so there
+is an integer $m$ such that $k^3 + 2k + 6 = 3m$.
+Thus,
+
+根据归纳假设，3是 $k^3 + 2k + 6$ 的一个约数，所以存在一个整数 $m$ 使得 $k^3 + 2k + 6 = 3m$。因此，
+
+\begin{gather*}
+(k+1)^3 + 2(k+1) + 6 \\
+= 3m + 3(k^2 + k + 1) \\
+= 3(m + k^2 + k + 1).
+\end{gather*}
+
+This equation shows that 3 is a divisor of $(k+1)^3 + 2(k+1) + 6$, which
+is the desired conclusion.
+
+这个方程表明3是 $(k+1)^3 + 2(k+1) + 6$ 的一个约数，这正是所期望的结论。
+\end{proof}
+
+\begin{exer}
+Devise an inductive proof of the statement, $\forall n \in \Naturals, 5 \divides x^5+4x-10$.
+
+设计一个归纳证明来证明陈述 $\forall n \in \Naturals, 5 \divides x^5+4x-10$。
+\end{exer}
+
+There is one other subtle trick for devising statements to be
+proved by PMI that you should know about.  An example should 
+suffice to make it clear.  Notice that $7$ is equivalent to $1 \pmod{6}$,
+it follows that any power of $7$ is also $1 \pmod{6}$.  So, if we subtract
+$1$ from some power of 7 we will have a number that is divisible by $6$.
+
+还有另一个你应该知道的、用于设计用数学归纳法证明的陈述的微妙技巧。一个例子应该足以说明清楚。注意到7与1模6同余，因此7的任何次方也与1模6同余。所以，如果我们从7的某个次方中减去1，我们将得到一个能被6整除的数。
+
+The proof (by PMI) of a statement like this requires another subtle little
+trick.
+
+像这样的陈述的证明（通过数学归纳法）需要另一个微妙的小技巧。
+
+Somewhere along the way in the proof you'll need the identity $7=6+1$.
+
+在证明过程中的某个地方，你会需要恒等式 $7=6+1$。
+
+\begin{thm}
+\[ \forall n \in \Naturals, \; 6 \divides 7^n-1 \]
+\end{thm}
+
+\begin{proof} (By PMI)
+
+(通过数学归纳法)
+
+{\bf Basis:}  Note that $7^0-1$ is $0$ and also that $6 \divides 0$.
+
+{\bf 基础步骤：}注意到 $7^0-1$ 是0，并且 $6 \divides 0$。
+{\bf Inductive step:}  
+
+{\bf 归纳步骤：}
+
+\noindent (We need to show that if $6 \divides 7^k-1$ then $6 \divides 7^{k+1}-1$.)
+
+\noindent (我们需要证明如果 $6 \divides 7^k-1$，那么 $6 \divides 7^{k+1}-1$。)
+
+\noindent Consider the quantity $7^{k+1}-1$.
+
+\noindent 考虑量 $7^{k+1}-1$。
+\begin{gather*}
+7^{k+1}-1 = 7 \cdot 7^k -1 \\
+ = (6 + 1) \cdot 7^k - 1 \\
+ = 6 \cdot 7^k + 1 \cdot 7^k - 1\\
+ = 6(7^k) + (7^k - 1)
+\end{gather*}
+
+\noindent By the inductive hypothesis, $6 \divides 7^k - 1$ so there is
+an integer $m$ such that $7^k - 1 = 6m$.
+
+\noindent 根据归纳假设，$6 \divides 7^k - 1$，所以存在一个整数 $m$ 使得 $7^k - 1 = 6m$。
+It follows that
+
+因此
+
+\[ 7^{k+1}-1 = 6(7^k) + 6m. \]
+
+So, clearly, $6$ is a divisor of $7^{k+1}-1$.
+
+所以，显然，6是 $7^{k+1}-1$ 的一个约数。
+\end{proof}
+
+Mathematical induction 
+can often be used to prove inequalities.  There are quite a few examples
+of families of statements where there is an inequality for every natural
+number.
+
+数学归纳法常常可以用来证明不等式。有相当多的例子，其中对于每个自然数都存在一个不等式的陈述族。
+
+Often such statements seem to be \emph{obviously} true and yet 
+devising a proof can be illusive.
+
+通常，这样的陈述似乎是\emph{显而易见}地正确，然而设计一个证明却可能很困难。
+
+If such is the case, try using PMI.
+One hint: it is fairly typical that the inductive step in a PMI proof
+of an inequality will involve reasoning that isn't particularly sharp.
+
+如果是这样，试试用数学归纳法。一个提示：在用数学归纳法证明不等式时，归纳步骤通常会涉及一些不是特别精确的推理。
+
+Just remember that if you have an inequality and you make the big
+side even bigger, the resulting statement is certainly still true!
+
+只要记住，如果你有一个不等式，并且你把大的一边变得更大，得到的陈述肯定仍然是真的！
+
+Consider the sequences $2^n$ and $n!$.
+
+考虑序列 $2^n$ 和 $n!$。
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+$n$   & \rule{6pt}{0pt} 0 \rule{6pt}{0pt} & \rule{6pt}{0pt} 1 \rule{6pt}{0pt} &\rule{6pt}{0pt} 2 \rule{6pt}{0pt} & \rule{6pt}{0pt} 3 \rule{6pt}{0pt} & \\ \hline
+$2^n$ & 1 & 2 & 4 & 8 & \\ \hline
+$n!$  & 1 & 1 & 2 & 6 & \\
+\end{tabular}
+\end{center}
+
+As the table illustrates, for small values of $n$, $2^n > n!$.
+
+如表所示，对于小的 $n$ 值，$2^n > n!$。
+
+But from $n=4$
+onward the inequality is reversed.
+
+但从 $n=4$ 开始，不等关系就反转了。
+
+\begin{thm} 
+\[ \forall n \geq 4 \in \Naturals, 2^n < n!
+\]
+\end{thm}
+
+\begin{proof} (By mathematical induction)
+
+(通过数学归纳法)
+
+\noindent {\bf Basis:} When $n=4$ we have $2^4 < 4!$, which is certainly 
+true ($16 < 24$).
+
+\noindent {\bf 基础步骤：}当 $n=4$ 时，我们有 $2^4 < 4!$，这当然是真的（$16 < 24$）。
+\noindent {\bf Inductive step:} Suppose that $k$ is a natural number 
+with $k > 4$, and that $2^k < k!$.
+
+\noindent {\bf 归纳步骤：}假设 $k$ 是一个大于4的自然数，且 $2^k < k!$。
+Multiply the left hand side of this
+inequality by $2$ and the right hand side by $k+1$\footnote{It might be %
+smoother to justify this step by first proving the lemma that %
+$\forall a,b,c,d \in {\mathbb R}^+, \; a<b \land c<d \implies ac < bd$.} 
+to get
+
+将这个不等式的左边乘以2，右边乘以 $k+1$\footnote{通过首先证明引理 $\forall a,b,c,d \in {\mathbb R}^+, \; a<b \land c<d \implies ac < bd$，来证明这一步可能会更顺畅。} 得到
+
+\[ 2\cdot 2^{k} < (k+1) \cdot k!.
+\]
+
+\noindent So
+
+\noindent 所以
+
+\[ 2^{k+1} < (k+1)!. \]
+
+\end{proof}
+
+The observant Calculus student will certainly be aware of the fact
+that, asymptotically, exponential functions grow faster than polynomial
+functions.
+
+敏锐的微积分学生肯定会意识到，渐近地，指数函数的增长速度比多项式函数快。
+
+That is, if you have a base $b$ which is greater than 1, the 
+function $b^x$ is eventually larger than any polynomial $p(x)$.
+
+也就是说，如果你有一个大于1的底数 $b$，函数 $b^x$ 最终会比任何多项式 $p(x)$ 都大。
+
+This
+may seem a bit hard to believe if $b=1.001$ and $p(x) = 500x^{10}$.
+
+如果 $b=1.001$ 且 $p(x) = 500x^{10}$，这可能有点难以置信。
+
+The
+graph of $y=1.001^x$ is practically indistinguishable from the line $y=1$
+(at first), whereas the graph of $y=500x^{10}$ has already reached the 
+astronomical value of five trillion ($5,000,000,000,000$) when $x$ is just
+$10$.
+
+（起初）$y=1.001^x$ 的图像几乎与直线 $y=1$ 无法区分，而当 $x$ 仅为10时，$y=500x^{10}$ 的图像已经达到了五万亿（$5,000,000,000,000$）这个天文数字。
+
+Nevertheless, the exponential will eventually outstrip the polynomial.
+We can use the methods of this section to get started on proving the fact 
+mentioned above.
+
+然而，指数函数最终会超过多项式函数。我们可以使用本节的方法来开始证明上述事实。
+
+Consider the two sequences $n^2$ and $2^n$. 
+
+考虑两个序列 $n^2$ 和 $2^n$。
+
+\begin{center}
+\begin{tabular}{c|ccccccc}
+$n$   & \rule{6pt}{0pt} 0 \rule{6pt}{0pt} & \rule{6pt}{0pt} 1 \rule{6pt}{0pt} & \rule{6pt}{0pt} 2 \rule{6pt}{0pt} & \rule{6pt}{0pt} 3 \rule{6pt}{0pt} & \rule{6pt}{0pt} 4 \rule{6pt}{0pt} & \rule{6pt}{0pt} 5 \rule{6pt}{0pt} & \rule{6pt}{0pt} 6 \rule{6pt}{0pt} \\ \hline
+$n^2$  & 0 & 1 & 4 & 9 & 16 & 25 & 36 \\ \hline
+$2^n$ & 1 & 2 & 4 & 8 & 16 & 32 & 64 \\ 
+\end{tabular}
+\end{center}
+
+If we think of a ``race'' between the sequences $n^2$ and $2^n$, notice
+that $2^n$ starts out with the lead.
+
+如果我们把序列 $n^2$ 和 $2^n$ 看作一场“比赛”，注意到 $2^n$ 开始时是领先的。
+
+The two sequences are tied when 
+$n=2$.  Briefly, $n^2$ goes into the lead but they are tied again when
+$n=4$.
+
+当 $n=2$ 时，两个序列相等。短暂地，$n^2$ 领先，但当 $n=4$ 时它们又相等了。
+
+After that it would appear that $2^n$ recaptures the lead for good.
+
+在那之后，似乎 $2^n$ 永久地夺回了领先地位。
+
+Of course we're making a rather broad presumption -- is it really true
+that $n^2$ never catches up with $2^n$ again?
+
+当然，我们做了一个相当宽泛的假设——$n^2$ 真的再也追不上 $2^n$ 了吗？
+
+Well, if we're right 
+then the following theorem should be provable:
+
+嗯，如果我们是对的，那么下面的定理应该是可以证明的：
+
+\begin{thm} 
+For all natural numbers $n$, if $n \geq 4$ then $n^2 \leq 2^n$.
+\end{thm}
+ 
+\begin{quote} \emph{Proof:}
+
+\emph{证明：}
+
+\noindent {\bf Basis:} When $n=4$ we have $4^2 \leq 2^4$, which is 
+true since both numbers are 16.
+
+\noindent {\bf 基础步骤：}当 $n=4$ 时，我们有 $4^2 \leq 2^4$，这是正确的，因为两个数都是16。
+
+\noindent {\bf Inductive step:} (In the inductive step we assume
+that $k^2 \leq 2^k$ and then show that $(k+1)^2 \leq 2^{k+1}$.)
+
+\noindent {\bf 归纳步骤：}（在归纳步骤中，我们假设 $k^2 \leq 2^k$，然后证明 $(k+1)^2 \leq 2^{k+1}$。）
+
+The inductive hypothesis tells us that 
+
+归纳假设告诉我们
+
+\[ k^2 \leq 2^k.
+\]
+
+ 
+If we add $2k+1$ to the left-hand side of this inequality
+and $2^k$ to the right-hand side we will produce the desired
+inequality.
+
+如果我们将这个不等式的左边加上 $2k+1$，右边加上 $2^k$，我们就会得到期望的不等式。
+Thus our proof will follow provided that
+we know that $2k+1 \leq 2^k$.
+
+因此，只要我们知道 $2k+1 \leq 2^k$，我们的证明就成立。
+Indeed, it is sufficient to show
+that $2k+1 \leq k^2$ since we already know (by the inductive
+hypothesis) that $k^2 \leq 2^k$.
+
+实际上，只需证明 $2k+1 \leq k^2$ 就足够了，因为我们已经知道（根据归纳假设）$k^2 \leq 2^k$。
+So the result remains in doubt unless you can complete the 
+exercise that follows\ldots
+
+所以，除非你能完成接下来的练习，否则结果仍然存疑……
+
+\rule{0pt}{0pt} \newline \rule{0pt}{15pt} \hfill Q.E.D.???
+\end{quote}
+
+
+\begin{exer} 
+Prove the lemma:  For all $n \in \Naturals$, if $n \geq 4$ then
+$2n+1 \leq n^2$.
+
+证明引理：对于所有自然数 $n$，如果 $n \geq 4$，则 $2n+1 \leq n^2$。
+\end{exer}
+
+\newpage
+  
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{proof2-zh/divisibility-exer.tex}
+
+\newpage
+ 
+\section{The strong form of mathematical induction 数学归纳法的强形式}
+\label{sec:strong_induct}
+
+The strong form of mathematical induction (a.k.a.\ the principle of
+complete induction, PCI; also a.k.a.\ course-of-values induction) 
+is so-called because the hypotheses one
+uses are stronger.
+
+数学归纳法的强形式（又名完全归纳法原理，PCI；又名过程值归纳法）之所以如此命名，是因为它使用的假设更强。
+
+Instead of showing that $P_k \implies P_{k+1}$ in
+the inductive step, we get to assume that all the statements numbered
+smaller than $P_{k+1}$ are true.
+
+在归纳步骤中，我们不是证明 $P_k \implies P_{k+1}$，而是可以假设所有编号小于 $P_{k+1}$ 的陈述都为真。
+
+To make life slightly easier we'll
+renumber things a little.  The statement that needs to be proved is
+
+为了让事情简单一点，我们将重新编号一下。需要证明的陈述是
+
+\[ \forall k (P_0 \land P_1 \land \ldots \land  P_{k-1}) \implies P_k.
+\]
+
+ An outline of a strong inductive proof is:
+
+一个强归纳证明的大纲是：
+
+\begin{center}
+\begin{tabular}{|c|} \hline
+\rule{16pt}{0pt}\begin{minipage}{.75\textwidth}
+
+\rule{0pt}{16pt}{\bf \large Theorem} $ \displaystyle \forall n \in \Naturals, \; P_n $
+
+{\bf \large 定理} $ \displaystyle \forall n \in \Naturals, \; P_n $
+\medskip
+
+\rule{0pt}{20pt} {\em Proof:} (By complete induction)
+
+{\em 证明：} (通过完全归纳法)
+
+\noindent {\bf Basis:}
+
+\noindent {\bf 基础步骤：}
+
+\begin{center}
+$\vdots$ \rule{36pt}{0pt} \begin{minipage}[c]{1.7 in} (Technically, a PCI %
+proof doesn't require a basis.   We recommend that you show that $P_0$ %
+is true anyway.) (技术上，一个完全归纳法证明不需要基础步骤。我们仍然建议你证明$P_0$为真。) \end{minipage}
+\end{center}
+
+\noindent {\bf Inductive step:}
+
+\noindent {\bf 归纳步骤：}
+
+\begin{center}
+$\vdots$ \rule{36pt}{0pt} \begin{minipage}[c]{1.7 in} (Here we must show that $\forall k,  \left( \bigwedge_{i=0}^{k-1} P_i \right) \implies P_{k}$ is true.) (这里我们必须证明$\forall k,  \left( \bigwedge_{i=0}^{k-1} P_i \right) \implies P_{k}$为真。) \end{minipage}
+\end{center}
+
+\rule{0pt}{0pt} \hspace{\fill} Q.E.D.
+\rule[-10pt]{0pt}{16pt}
+\end{minipage} \rule{16pt}{0pt} \\ \hline
+\end{tabular}
+\end{center}
+\medskip
+
+It's fairly common that we won't truly need all of the statements from $P_0$
+to $P_{k-1}$ to be true, but just one of them (and we don't know {\em a priori} 
+which one).
+
+很常见的情况是，我们并不真的需要从 $P_0$ 到 $P_{k-1}$ 的所有陈述都为真，而只需要其中一个（而且我们事先不知道是哪一个）。
+
+The following is a classic result; the proof that all numbers
+greater than 1 have prime factors.
+
+下面是一个经典的结果；证明所有大于1的数都有素因子。
+\begin{thm} For all natural numbers $n$, $n > 1$ implies $n$ has a prime 
+factor.
+
+对于所有自然数 $n$，如果 $n > 1$，则 $n$ 有一个素因子。
+\end{thm}
+
+\begin{proof} (By strong induction)
+
+(通过强归纳法)
+Consider an arbitrary natural number $n>1$.  If $n$ is prime then $n$ clearly
+has a prime factor (itself), so suppose that $n$ is not prime.
+
+考虑一个任意的自然数 $n>1$。如果 $n$ 是素数，那么 $n$ 显然有一个素因子（它本身），所以假设 $n$ 不是素数。
+By 
+definition, a composite
+natural number can be factored, so $n=a \cdot b$ for some pair of natural
+numbers $a$ and $b$ which are both greater than 1.  Since $a$ and $b$ are  
+factors of $n$ both greater than 1, it follows that $a < n$ (it is also 
+true that $b < n$ but we don't need that \ldots).
+
+根据定义，一个合数自然数可以被分解，所以对于某对都大于1的自然数 $a$ 和 $b$，$n=a \cdot b$。因为 $a$ 和 $b$ 都是 $n$ 的大于1的因子，所以 $a < n$（$b < n$ 也成立，但我们不需要……）。
+The inductive hypothesis
+can now be applied to deduce that $a$ has a prime factor $p$.
+
+现在可以应用归纳假设来推断 $a$ 有一个素因子 $p$。
+Since
+$p \divides a$ and $a \divides n$, by transitivity $p \divides n$.  Thus
+$n$ has a prime factor.
+
+因为 $p \divides a$ 且 $a \divides n$，根据传递性，$p \divides n$。因此，$n$ 有一个素因子。
+\end{proof}
+  
+
+\newpage
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{proof2-zh/strong-exer.tex}
+
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***

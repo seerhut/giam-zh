@@ -1,0 +1,171 @@
+\begin{enumerate}
+    \item Find a polynomial that assumes only prime values for
+    a reasonably large range of inputs.
+    
+    找一个在一个相当大的输入范围内只取素数值的多项式。
+    \hint{It sort of depends on what is meant by ``a reasonably large range of inputs.''  For example the polynomial $p(x) = 2x+1$ gives primes three times in a row (at $x=1,2$ and $3$).
+    See if you can do better than that.
+    
+    这有点取决于“一个相当大的输入范围”是什么意思。例如，多项式 $p(x) = 2x+1$ 连续三次（在 $x=1,2$ 和 $3$ 时）给出素数。看看你能不能做得更好。
+    }
+    
+    \wbvfill
+    
+    \item Find a counterexample to \ifthenelse{\boolean{InTextBook}}{Conjecture~\ref{conj:prim}}{the conjecture that $\forall a,b,c \in \Integers, a \divides bc \; \implies \; a \divides b \, \lor \, a \divides c$} using only powers of 2.
+    
+    仅使用2的幂次，为\ifthenelse{\boolean{InTextBook}}{猜想~\ref{conj:prim}}{“对于所有整数 $a,b,c$，如果 $a \divides bc$，那么 $a \divides b$ 或 $a \divides c$”这一猜想}找一个反例。
+    
+    \hint{The intent of the problem is that you find three numbers, $a$, $b$ and $c$, that are all powers 
+    of $2$ and such that $a$ divides the product $bc$, but neither of the factors separately.
+    For instance, 
+    if you pick $a=16$, then you would need to choose $b$ and $c$ so that $16$ doesn't divide evenly 
+    into them (they would need to be less than $16$\ldots) but so that their product {\em is} divisible by $16$.
+    
+    这个问题的意图是让你找到三个数 $a, b, c$，它们都是2的幂，并且 $a$ 能整除乘积 $bc$，但不能整除任何一个因子。例如，如果你选择 $a=16$，那么你需要选择 $b$ 和 $c$，使得16不能整除它们（它们需要小于16……），但它们的乘积{\em 可以}被16整除。
+    }
+    
+    \wbvfill
+    
+    \workbookpagebreak
+    
+    \item The alternating sum of factorials provides an interesting
+    example of a sequence of integers.
+    
+    阶乘的交错和提供了一个有趣的整数序列的例子。
+    \begin{center}
+    \[ 1! = 1 \]
+    \[ 2! - 1! = 1\]
+    \[ 3! - 2! + 1! = 5 \]
+    \[ 4! - 3! + 2! - 1! = 19 \]
+    et cetera (等等)
+    \end{center}
+    
+    \noindent Are they all prime?  (After the first two 1's.)
+    
+    \noindent （在头两个1之后）它们都是素数吗？
+    
+    \hint{
+    
+    Here's some Sage code that would test this conjecture:
+    
+    这里有一些可以测试这个猜想的Sage代码：
+    
+    {\tt 
+    n=1\newline
+    for i in [2..8]:\newline
+    \rule{18pt}{0pt}n = factorial(i) - n\newline
+    \rule{18pt}{0pt}show(factor(n))\newline
+    }
+    
+    Of course it turns out that going out to $8$ isn't quite far enough\ldots
+    
+    当然，事实证明，算到8还不够远……
+    
+    }
+    
+    \wbvfill
+    
+    \item It has been conjectured that whenever $p$ is prime, $2^p - 1$ is
+    also prime.
+    Find a minimal counterexample.
+    
+    有人猜想，只要 $p$ 是素数，$2^p - 1$ 也是素数。请找一个最小的反例。
+    
+    \hint{I would definitely seek help at your friendly neighborhood CAS.
+    In Sage 
+    you can loop over the first several prime numbers using the following syntax.
+    {\tt for p in [2,3,5,7,11,13]:}
+    
+    我肯定会向你友好的邻居CAS（计算机代数系统）求助。在Sage中，你可以使用以下语法遍历前几个素数。
+    {\tt for p in [2,3,5,7,11,13]:}
+    
+    \noindent If you want to automate that somewhat, there is a Sage function that returns a list
+    of all the primes in some range.
+    So the following does the same thing.
+    
+    \noindent 如果你想在某种程度上自动化这个过程，有一个Sage函数可以返回某个范围内的所有素数列表。所以下面这个做的是同样的事情。
+    
+    {\tt for p in primes(2,13):}
+    }
+    
+    \wbvfill
+    
+    \workbookpagebreak
+    
+    \item True or false:  The sum of any two irrational numbers is irrational.
+    Prove your answer.
+    
+    真或假：任意两个无理数的和是无理数。证明你的答案。
+    
+    \hint{This statement and the next are negations of one another.
+    Your answers should reflect that.
+    
+    这个陈述和下一个陈述互为否定。你的答案应该反映出这一点。}
+    
+    \wbvfill
+    
+    \hintspagebreak
+    
+    \item True or false:  There are two irrational numbers whose sum is rational.
+    Prove your answer.
+    
+    真或假：存在两个无理数，它们的和是有理数。证明你的答案。
+    
+    \hint{If a number is irrational, isn't its negative also irrational?
+    That's actually a pretty huge hint.
+    
+    如果一个数是无理数，它的相反数不也是无理数吗？这其实是一个非常大的提示。}
+    
+    \wbvfill
+    
+    \item True or false: The product of any two irrational numbers is irrational.
+    Prove your answer.
+    
+    真或假：任意两个无理数的乘积是无理数。证明你的答案。
+    
+    \hint{This one and the next are negations too.
+    Aren't they?
+    
+    这个和下一个也是互为否定的。不是吗？}
+    
+    \wbvfill
+    
+    \item True or false: There are two irrational numbers whose product is rational.
+    Prove your answer.
+    
+    真或假：存在两个无理数，它们的乘积是有理数。证明你的答案。
+    \hint{The two numbers {\em could} be equal couldn't they?
+    
+    这两个数{\em 可以}是相等的，不是吗？}
+    
+    \wbvfill
+    
+    \workbookpagebreak
+    
+    \item True or false:  Whenever an integer $n$ is a divisor of the square of an integer, $m^2$, it follows that $n$ is a divisor of $m$ as well.
+    (In symbols, $\forall n \in \Integers, \forall m \in \Integers, n \mid m^2 \; \implies \; n \mid m$.)
+    Prove your answer.
+    
+    真或假：只要整数 $n$ 是整数 $m^2$ 的一个约数，那么 $n$ 也是 $m$ 的一个约数。（用符号表示为，$\forall n \in \Integers, \forall m \in \Integers, n \mid m^2 \; \implies \; n \mid m$。）证明你的答案。
+    \hint{Hint: List all of the divisors of $36 = (2\cdot 3)^2$.
+    See if any of them are bigger than $6$.
+    
+    提示：列出 $36 = (2\cdot 3)^2$ 的所有约数。看看其中是否有比6大的。}
+    
+    \wbvfill
+    
+    
+    
+    \item In an exercise in Section~\ref{sec:more} we proved that the quadratic 
+    equation $ax^2 + bx + c = 0$ has two solutions if $ac < 0$.
+    Find a counterexample which shows that this implication cannot be replaced with a biconditional.
+    
+    在第~\ref{sec:more}节的一个练习中，我们证明了如果 $ac < 0$，二次方程 $ax^2 + bx + c = 0$ 有两个解。请找一个反例，说明这个蕴涵不能被替换为双条件句。
+    \hint{We'd want $ac$ to be positive (so $a$ and $c$ have the same sign) but nevertheless have $b^2-4ac > 0$.
+    It seems that if we make $b$ sufficiently large that could happen.
+    
+    我们希望 $ac$ 是正的（所以 $a$ 和 $c$ 同号），但同时有 $b^2-4ac > 0$。似乎如果我们让 $b$ 足够大，这就可以发生。}
+    
+    \wbvfill
+    
+    \end{enumerate}

@@ -1,0 +1,147 @@
+\begin{enumerate}
+
+    \item In the movie ``Monty Python and the Holy Grail'' we encounter
+    a medieval villager who (with a bit of prompting) makes the 
+    following argument.
+    \begin{quote}
+    If she weighs the same as a duck, then she's made of wood. \newline
+    If she's made of wood then she's a witch. \newline
+    Therefore, if she weighs the same as a duck, she's a witch.
+    \end{quote} 
+    
+    在电影《巨蟒与圣杯》中，我们遇到一位中世纪的村民，他（在一些提示下）提出了以下论证。
+    \begin{quote}
+    如果她的体重和鸭子一样，那么她就是木头做的。\newline
+    如果她是木头做的，那么她就是个女巫。\newline
+    因此，如果她的体重和鸭子一样，她就是个女巫。
+    \end{quote} 
+    
+    Which rule of inference is he using?
+    
+    他用的是哪个推理规则？
+    
+    \hint{
+    This is what many people refer to as the transitive rule of implication.
+    As an argument form it's known as ``hypothetical syllogism.''
+    
+    这就是许多人所说的蕴涵的传递规则。作为一种论证形式，它被称为“假言三段论”。
+    }
+    
+    \item In constructive dilemma, the antecedent of the conditional 
+    sentences are usually chosen to represent opposite alternatives.
+    This allows us to introduce their disjunction as a tautology.
+    Consider the following proof that there is never any reason to worry
+    (found on the walls of an Irish pub).
+    \begin{quote}
+    Either you are sick or you are well. \newline
+    If you are well there's nothing to worry about. \newline
+    If you are sick there are just two possibilities: \newline
+    Either you will get better or you will die. \newline
+    If you are going to get better there's nothing to worry about. \newline
+    If you are going to die there are just two possibilities:\newline
+    Either you will go to Heaven or to Hell. \newline
+    If you go to Heaven there is nothing to worry about.
+    If you go to Hell, you'll be so busy shaking hands with all your friends there won't be time to worry \ldots
+    \end{quote}
+    
+    在构造性二难推理中，条件句的前件通常被选择来代表相反的备选项。这使得我们可以将其析取作为重言式引入。思考以下证明，说明永远没有理由担心（发现于一家爱尔兰酒吧的墙上）。
+    \begin{quote}
+    你要么生病，要么健康。\newline
+    如果你健康，就没什么好担心的。\newline
+    如果你生病了，只有两种可能：\newline
+    你要么会好起来，要么会死。\newline
+    如果你会好起来，就没什么好担心的。\newline
+    如果你会死，只有两种可能：\newline
+    你要么上天堂，要么下地狱。\newline
+    如果你上天堂，就没什么好担心的。如果你下地狱，你会忙着和所有的朋友握手，没时间担心……
+    \end{quote}
+    
+    Identify the three tautologies that are introduced in this ``proof.''
+    
+    找出这个“证明”中引入的三个重言式。
+    
+    \hint{Look at the lines that start with the word "Either."
+    
+    看那些以“要么”开头的句子。}
+    
+    \textbookpagebreak
+    
+    \item For each of the following arguments, write it in symbolic form and determine 
+    which rules of inference are used.
+    
+    对于以下每个论证，请用符号形式写出，并确定使用了哪些推理规则。
+    \begin{enumerate}
+    \item \rule{0pt}{24pt} You are either with us, or you're against us.  And you don't appear to be with us.
+    So, that means you're against us!
+    
+    你要么和我们站在一起，要么就是反对我们。而你看起来不和我们站在一起。所以，这意味着你反对我们！
+    
+    \hint{
+    \begin{center}
+    \begin{tabular}{cl}
+     & $W \lor A$ \\
+     & ${\lnot}W$ \\ \hline
+    $\therefore$ & $A$ \\
+    \end{tabular}
+    \end{center}
+    
+    This is ``disjunctive syllogism.''
+    
+    这是“选言三段论”。
+    }
+    
+    \wbvfill
+    
+    \item \rule{0pt}{24pt} All those who had cars escaped the flooding.
+    Sandra had a car -- therefore, Sandra
+    escaped the flooding.
+    
+    所有有车的人都逃脱了洪水。桑德拉有车——因此，桑德拉逃脱了洪水。
+    
+    \hint{
+    Let $C(x)$ be the open sentence ``x has a car'' and let $E(x)$ be the open sentence ``x escaped the flooding.''
+    This argument is actually the particular form of universal modus ponens: (See the final question in the next set of exercises.)
+    
+    设 $C(x)$ 为开放句“x有车”，设 $E(x)$ 为开放句“x逃脱了洪水”。这个论证实际上是全称肯定前件式的特称形式：（见下一组练习的最后一个问题。）
+    
+    \begin{center}
+    \begin{tabular}{cl}
+     & $\forall x, C(x) \implies E(x)$ \\
+     & $C(\mbox{Sandra}) $ \\ \hline
+    $\therefore$ & $E(\mbox{Sandra})$ \\
+    \end{tabular}
+    \end{center}
+    
+    At this stage in the game it would be perfectly fine to just identify this as modus ponens and not worry about the quantifiers that appear.
+    
+    在现阶段，将其识别为肯定前件式而不用担心出现的量词是完全可以的。
+    }
+    
+    \wbvfill
+    
+    \item \rule{0pt}{24pt}  When Johnny goes to the casino, he always gambles 'til he goes broke.
+    Today, Johnny
+    has money, so Johnny hasn't been to the casino recently.
+    
+    当约翰尼去赌场时，他总是赌到破产为止。今天，约翰尼有钱，所以约翰尼最近没去过赌场。
+    \wbvfill
+    
+    \item \rule{0pt}{24pt} (A non-constructive proof that there are 
+    irrational numbers $a$ and $b$ such that $a^b$ is rational.)  
+    Either $\sqrt{2}^{\sqrt{2}}$ is rational or it is irrational.
+    If $\sqrt{2}^{\sqrt{2}}$ is rational, we let $a=b=\sqrt{2}$.
+    Otherwise, we let $a=\sqrt{2}^{\sqrt{2}}$ and $b=\sqrt{2}$.
+    (Since $\sqrt{2}^{\sqrt{2}^{\sqrt{2}}} = 2$, which is rational.) It follows that in either case, there
+    are irrational numbers $a$ and $b$ such that $a^b$ is rational.
+    
+    （一个非构造性证明，证明存在无理数 $a$ 和 $b$ 使得 $a^b$ 是有理数。）$\sqrt{2}^{\sqrt{2}}$ 要么是有理数，要么是无理数。如果 $\sqrt{2}^{\sqrt{2}}$ 是有理数，我们令 $a=b=\sqrt{2}$。否则，我们令 $a=\sqrt{2}^{\sqrt{2}}$ 且 $b=\sqrt{2}$。（因为 $\sqrt{2}^{\sqrt{2}^{\sqrt{2}}} = 2$，这是有理数。）因此，在任何一种情况下，都存在无理数 $a$ 和 $b$ 使得 $a^b$ 是有理数。
+    \wbvfill
+    
+    \end{enumerate}
+    
+    \hint{I'm leaving the last two for you to do.  One small hint: both are valid forms.
+    
+    最后两个留给你做。一个小提示：两种形式都有效。}
+    
+    
+    \end{enumerate}

@@ -1,0 +1,149 @@
+\begin{enumerate}
+  \item Prove that if the cube of an integer is odd, then that integer is odd.
+  
+  证明如果一个整数的立方是奇数，那么这个整数也是奇数。
+  \hint{The best hint for this problem is simply to write down the contrapositive statement.
+  It is trivial to prove!
+  
+  对这个问题最好的提示就是写下其逆否命题。证明它易如反掌！}
+  
+  \wbvfill
+  
+  \item Prove that whenever a prime $p$ does not divide the square of an integer, 
+  it also doesn't divide the original integer.
+  ($p \nmid x^2 \; \implies \; p \nmid x$)
+  
+  证明只要一个素数 $p$ 不能整除一个整数的平方，它也不能整除这个整数本身。（$p \nmid x^2 \; \implies \; p \nmid x$）
+  
+  \hint{The contrapositive is $(p \divides x) \; \implies \; (p \divides x^2)$.
+  
+  其逆否命题是 $(p \divides x) \; \implies \; (p \divides x^2)$。}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Prove (by contradiction) that there is no largest integer.
+  
+  用反证法证明不存在最大的整数。
+  \hint{Well, if there was a largest integer -- let's call it $L$ (for largest) -- then isn't $L+1$ an integer, and isn't it bigger?
+  That's the main idea.  A more formal proof might look like this:
+  
+  嗯，如果存在一个最大的整数——我们称之为 $L$（代表最大）——那么 $L+1$ 不也是一个整数，并且它不是更大吗？这就是主要思想。一个更正式的证明可能如下：
+  
+  \begin{proof} 
+  Suppose (by way of contradiction) that there is a largest integer $L$.
+  Then $L \in \Integers$ and $\forall z \in \Integers, L \geq z$.
+  Consider the quantity $L+1$.
+  Clearly $L+1$ is an integer (because it is the sum of two integers) and also
+  $L+1 > L$.
+  This is a contradiction so the original supposition is false.   Hence there is no largest integer.
+  
+  假设（通过反证法）存在一个最大的整数 $L$。那么 $L \in \Integers$ 且 $\forall z \in \Integers, L \geq z$。考虑量 $L+1$。显然 $L+1$ 是一个整数（因为它是两个整数的和），并且 $L+1 > L$。这是一个矛盾，所以最初的假设是错误的。因此，不存在最大的整数。
+  \end{proof}
+  }
+  
+  \wbvfill
+  
+  \item Prove (by contradiction) that there is no smallest positive real number.
+  
+  用反证法证明不存在最小的正实数。
+  \hint{Assume there was a smallest positive real number -- might as well call it $s$ (for smallest) -- what can we do to produce an even smaller number?
+  (But be careful that it needs to remain positive -- for instance $s-1$ won't work.)
+  
+  假设存在一个最小的正实数——不妨称之为 $s$（代表最小）——我们能做什么来产生一个更小的数？（但要小心，它需要保持为正——例如 $s-1$ 就行不通。）}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Prove (by contradiction) that the sum of a rational and an irrational 
+  number is irrational.
+  
+  用反证法证明一个有理数和一个无理数的和是无理数。
+  \hint{Suppose that x is rational and y is irrational and their sum (let's call it z) is also rational.
+  Do some algebra to solve for y, and you will see that y (which is, by presumption, irrational) is also the difference of two rational numbers (and hence, rational -- a contradiction.)
+  
+  假设x是有理数，y是无理数，它们的和（我们称之为z）也是有理数。做一些代数运算来解出y，你会发现y（根据假设，是无理数）也是两个有理数的差（因此，是有理数——这是一个矛盾）。
+  }
+  
+  \wbvfill
+  
+  %\workbookpagebreak
+  
+  \item Prove (by contraposition) that for all integers $x$ and $y$, if $x+y$ is odd, then $x\neq y$.
+  
+  用逆否证法证明对于所有整数 $x$ 和 $y$，如果 $x+y$ 是奇数，那么 $x\neq y$。
+  \hint{Well, the problem says to do this by contraposition, so let's write down the contrapositive:
+  
+  嗯，题目要求用逆否证法来做，所以我们先写下逆否命题：
+  
+  \[ \forall x, y \in \Integers, \; x=y \, \implies \, x+y \; \mbox{is even}. \]
+  
+  But proving that is obvious!
+  
+  但证明那个是显而易见的！
+  }
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Prove (by contraposition) that for all real numbers $a$ and $b$, if $ab$ is irrational, then $a$
+  is irrational or $b$ is irrational.
+  
+  用逆否证法证明对于所有实数 $a$ 和 $b$，如果 $ab$ 是无理数，那么 $a$ 是无理数或 $b$ 是无理数。
+  \hint{The contrapositive would be:
+  
+  逆否命-题将是：
+  
+  \[ \forall a,b \in \Reals, \; (a \in \Rationals \land b \in \Rationals) \, \implies ab \in \Rationals.
+  \]
+  
+  Wow! Haven't we proved that before?
+  
+  哇！我们以前不是证明过这个吗？}
+  
+  \wbvfill
+  
+  
+  %\workbookpagebreak
+  
+  \item A \index{Pythagorean triple}\emph{Pythagorean triple} is a set of three
+  natural numbers, $a$, $b$ and $c$, such that $a^2 + b^2 = c^2$.
+  Prove that, in a
+  Pythagorean triple, at least one of $a$ and $b$ is even.
+  Use either a proof by
+  contradiction or a proof by contraposition.
+  
+  一个\index{Pythagorean triple}\emph{勾股数}是一组三个自然数 $a, b, c$，使得 $a^2 + b^2 = c^2$。证明在一个勾股数中， $a$ 和 $b$ 至少有一个是偶数。使用反证法或逆否证法。
+  \hint{If both $a$ and $b$ are odd then their squares will be 1 mod 4 -- so the sum of their squares
+  will be 2 mod 4.  But $c^2$ can only be 0 or 1 mod 4, which gives us a contradiction.
+  
+  如果 $a$ 和 $b$ 都是奇数，那么它们的平方将是模4余1——所以它们的平方和将是模4余2。但是 $c^2$ 只能是模4余0或1，这就产生了一个矛盾。}
+  
+  \wbvfill
+  
+  \workbookpagebreak
+  
+  \item Suppose you have 2 pairs of positive real numbers whose products are 1.  That is, you have $(a,b)$ and $(c,d)$ in $\Reals^2$ satisfying $ab=cd=1$.
+  Prove that
+  $a < c$ implies that $b > d$.
+  
+  假设你有两对乘积为1的正实数。也就是说，你有 $(a,b)$ 和 $(c,d)$ 在 $\Reals^2$ 中满足 $ab=cd=1$。证明 $a < c$ 蕴涵 $b > d$。
+  
+   \hint{
+   \begin{proof}
+   Suppose by way of contradiction that $a,b,c,d \in \Reals$ satisfy $ab=cd=1$ and that $a<c$ and $b \leq d$.
+  By multiplying the inequalities we get that $ab < cd$ which contradicts the assumption that both products
+   are equal to 1 (and so must be equal to one another).
+   
+   假设（通过反证法）$a,b,c,d \in \Reals$ 满足 $ab=cd=1$ 且 $a<c$ 和 $b \leq d$。将这两个不等式相乘，我们得到 $ab < cd$，这与两个乘积都等于1（因此必须彼此相等）的假设相矛盾。
+   \end{proof} 
+    } 
+    
+    \wbvfill
+    
+    \workbookpagebreak
+    
+  \end{enumerate}

@@ -1,0 +1,1474 @@
+\chapter{Sets 集合}
+\label{ch:sets}
+
+{\em No more turkey, but I'd like some more of the bread it ate.
+--Hank Ketcham}
+
+{\em 不要火鸡了，但我想再来点它吃的面包。——汉克·凯查姆}
+
+
+\section{Basic notions of set theory 集合论的基本概念}
+\label{sec:basic_set_notions}
+
+In modern mathematics there is an area called \index{Category theory} 
+Category theory\footnote{The classic text by Saunders Mac Lane \cite{macl} %
+is still considered one of the best introductions to Category theory.} 
+which studies the 
+relationships between different areas of mathematics.
+在现代数学中，有一个称为\index{Category theory}范畴论\footnote{桑德斯·麦克兰的经典著作\cite{macl}至今仍被认为是范畴论最好的入门书之一。}的领域，它研究数学不同领域之间的关系。
+
+More precisely,
+the founders of category theory noticed that essentially the same theorems 
+and proofs could be found in many different mathematical fields -- with
+only the names of the structures involved changed.
+更准确地说，范畴论的创始人注意到，在许多不同的数学领域中可以找到基本上相同的定理和证明——只是所涉及的结构名称有所改变。
+
+In this sort of
+situation one can make what is known as a \emph{categorical} argument
+in which one proves the desired result in the abstract, without reference
+to the details of any particular field.
+在这种情况下，人们可以进行所谓的\emph{范畴}论证，即在抽象的层面上证明所期望的结果，而不涉及任何特定领域的细节。
+
+In effect this allows one
+to prove many theorems at once -- all you need to convert an abstract
+categorical proof into a concrete one relevant to a particular area
+is a sort of key or lexicon to provide the correct names for things.
+实际上，这使得人们可以一次性证明许多定理——你只需要一个类似钥匙或词典的东西，为事物提供正确的名称，就可以将一个抽象的范畴证明转换为与特定领域相关的具体证明。
+
+Now, category theory probably shouldn't really be studied until you 
+have a background that includes enough different fields that you can
+make sense of their categorical correspondences.
+现在，在你拥有足够的包含不同领域的背景，能够理解它们的范畴对应关系之前，可能不应该真正研究范畴论。
+
+Also, there are 
+a good many mathematicians who deride category theory as 
+``abstract nonsense.''   But, as someone interested in developing a facility
+with proofs, you should be on the lookout for categorical correspondences.
+此外，有相当多的数学家嘲笑范畴论为“抽象的废话”。但是，作为一个有兴趣培养证明能力的人，你应该留意范畴的对应关系。
+
+If you ever hear yourself utter something like ``well, the proof of 
+\emph{that} goes just like the proof of the 
+(insert weird technical-sounding name here) theorem'' you are  
+probably noticing a categorical correspondence.
+如果你曾听到自己说出类似“嗯，\emph{那个}的证明就像（此处插入奇怪的技术性名称）定理的证明一样”这样的话，你可能正在注意到一个范畴的对应关系。
+
+Okay, so category theory won't be of much
+use to you until much later in your mathematical career (if at all), and 
+one could argue that it doesn't really save that much effort.
+好吧，所以范畴论直到你数学职业生涯的后期才会有太大用处（如果还有用的话），而且有人可能会争辩说它并不能真正节省那么多精力。
+
+Why not just do two or three different 
+proofs instead of learning a whole new field so we can combine 
+them into one?
+为什么不直接做两三个不同的证明，而非要学习一个全新的领域以便将它们合而为一呢？
+
+Nevertheless, category theory is being
+mentioned here at the beginning of the chapter on sets.  Why?
+然而，范畴论在集合这一章的开头被提及。为什么呢？
+
+We are about to see our first example of a categorical correspondence.
+我们即将看到我们第一个范畴对应关系的例子。
+
+Logic and Set theory are different aspects of the same thing.
+逻辑和集合论是同一事物的不同方面。
+
+To
+describe a set people often quote 
+\index{G\"{o}del, Kurt} Kurt G\"{o}del -- 
+``A set is a Many that allows itself to be thought of as a One.''  (Note
+how the attempt at defining what is really an elemental, undefinable
+concept ends up sounding rather mystical.)  A more practical approach is
+to think of a set as the collection of things that make some open sentence
+\emph{true}.\footnote{This may sound less metaphysical,
+but this statement is also faulty because it defines ``set'' in terms of ``collection'' -- which will of course be defined elsewhere as ``the sort of things of which sets are one example.''} 
+
+为了描述一个集合，人们常常引用\index{G\"{o}del, Kurt}库尔特·哥德尔的话——“集合是允许自身被视为一个‘一’的‘多’。”（请注意，试图定义一个实际上是基本的、无法定义的概念，最终听起来相当神秘。）一个更实际的方法是，将集合看作是使某个开放句为\emph{真}的事物的集合。\footnote{这可能听起来不那么形而上学，但这个陈述也是有缺陷的，因为它用“集合”来定义“集”——当然，“集”会在别处被定义为“集合是其一个例子的那种东西”。} 
+
+Recall that in Logic the atomic concepts were ``true'', ``false'', 
+``sentence'' and ``statement.''    In Set theory, they are ``set'', 
+``element'' and ``membership.''  These concepts (more or less) correspond to
+one another.
+
+回想一下，在逻辑学中，原子概念是“真”、“假”、“句子”和“陈述”。在集合论中，它们是“集合”、“元素”和“隶属关系”。这些概念（或多或少）是相互对应的。
+
+In most books, a set is denoted either using the letter $M$ 
+(which stands for the German word ``menge'') or early alphabet capital roman 
+letters --
+$A$, $B$, $C$, \emph{et cetera}.
+在大多数书中，一个集合要么用字母 $M$（代表德语单词“menge”）表示，要么用字母表前部的大写罗马字母——$A, B, C$ 等等表示。
+
+Here, we will often emphasize the connection between
+sets and open sentences in Logic by using a subscript notation.
+在这里，我们将经常通过使用下标符号来强调集合和逻辑学中开放句之间的联系。
+
+The set that
+corresponds to the open sentence $P(x)$ will be denoted $S_P$, we call
+$S_P$ the \index{truth set} \emph{truth set} of~$P(x)$.
+
+与开放句 $P(x)$ 对应的集合将表示为 $S_P$，我们称 $S_P$ 为 $P(x)$ 的\index{truth set}\emph{真值集}。
+\[ S_P = \{ x \suchthat P(x) \} \]
+
+
+On the other hand, when we have a set given in the absence of any open 
+sentence, we'll be happy to use the early alphabet, capital roman letters 
+convention -- or frankly, any other letters we feel like!
+另一方面，当我们有一个没有附带任何开放句的集合时，我们会很乐意使用字母表前部的大写罗马字母的惯例——或者坦白说，任何我们喜欢的其他字母！
+
+Whenever we have a set $A$ given, it is easy to state a logical 
+open sentence that would correspond to it.
+每当我们给定一个集合 $A$ 时，都很容易陈述一个与之对应的逻辑开放句。
+
+The membership question: $M_A(x) =
+\,$ ``Is $x$ in the set $A$?''  Or, more succinctly, 
+$M_A(x) = \,$ ``$x \in A$''.
+
+隶属问题：$M_A(x) = \,$“$x$ 在集合 $A$ 中吗？”或者，更简洁地说，$M_A(x) = \,$“$x \in A$”。
+
+Thus the atomic concept ``true'' from Logic
+corresponds to the answer ``yes'' to the membership question in Set theory
+(and of course ``false'' corresponds to ``no'').
+因此，逻辑学中的原子概念“真”对应于集合论中对隶属问题的回答“是”（当然，“假”对应于“否”）。
+
+There are many interesting foundational issues which we are going to
+sidestep in our current development of Set theory.
+在我们当前发展集合论的过程中，有许多有趣的基础性问题我们将要回避。
+
+For instance,
+recall that in Logic we always worked inside some 
+\index{universe of discourse}``universe of discourse.''
+例如，回想一下，在逻辑学中，我们总是在某个\index{universe of discourse}“论域”内工作。
+
+As a consequence of the approach we are taking now, all of our set theoretic
+work will be done within some unknown 
+\index{universal set}``universal'' set.
+作为我们现在采取的方法的结果，我们所有的集合论工作都将在某个未知的\index{universal set}“全集”内完成。
+
+Attempts at 
+specifying (\emph{a priori}) a universal set for doing mathematics within 
+are doomed to failure.
+试图（\emph{先验地}）指定一个用于进行数学研究的全集的尝试注定会失败。
+
+In the early days of the twentieth century
+they attempted to at least get Set theory itself on a firm footing by
+defining the universal set to be ``the set of all sets'' -- an innocuous
+sounding idea that had funny consequences (we'll investigate this in 
+Section~\ref{sec:russell}).
+在二十世纪早期，人们试图通过将全集定义为“所有集合的集合”来至少为集合论本身奠定坚实的基础——这是一个听起来无害但却产生了有趣后果的想法（我们将在第~\ref{sec:russell}节中探讨这一点）。
+
+In Logic we had ``sentences'' and ``statements,'' the latter were 
+distinguished as having definite truth values.
+在逻辑学中，我们有“句子”和“陈述”，后者以具有确定的真值为特征。
+
+The corresponding
+thing in Set theory is that sets have the property that we can always
+tell whether a given object is or is not in them.
+在集合论中，相应的是集合具有这样的性质：我们总能判断一个给定的对象是否在其中。
+
+If it ever becomes
+necessary to talk about ``sets'' where we're not really sure what's in
+them we'll use the term \emph{collection}.
+如果有一天有必要谈论我们不确定其中包含什么的“集合”时，我们将使用术语\emph{搜集}。
+
+You should think of a set as being an \emph{unordered} collection of 
+things, thus $\{ \mbox{popover}, 1, \mbox{froggy} \}$ and  
+$\{ 1, \mbox{froggy}, \mbox{popover} \}$ are two ways to represent the 
+same set.
+你应该把集合看作是一个\emph{无序}的事物集合，因此 $\{ \mbox{popover}, 1, \mbox{froggy} \}$ 和 $\{ 1, \mbox{froggy}, \mbox{popover} \}$ 是表示同一个集合的两种方式。
+
+Also, a set either contains, or doesn't contain, a given element.
+另外，一个集合要么包含一个给定的元素，要么不包含。
+
+It doesn't make sense to have an element in a set multiple times.
+一个元素在一个集合中出现多次是没有意义的。
+
+By
+convention, if an element is listed more than once when a set is
+listed  we ignore the repetitions.
+按照惯例，如果在一个集合的列表中一个元素被列出多次，我们忽略重复。
+
+So, the sets
+$\{ 1, 1\}$ and $\{1\}$ are really the same thing.
+所以，集合 $\{ 1, 1\}$ 和 $\{1\}$ 实际上是同一个东西。
+
+If the notion
+of a set containing multiple instances of its elements is needed there
+is a concept known as a 
+\index{multiset}\emph{multiset} that is studied in Combinatorics.
+如果需要一个集合包含其元素的多个实例的概念，组合数学中有一个称为\index{multiset}\emph{多重集}的概念。
+
+In a multiset, each element is preceded by a so-called 
+\index{repetition number}\emph{repetition number}
+which may be the special symbol $\infty$ (indicating an unlimited number
+of repetitions).
+在多重集中，每个元素前面都有一个所谓的\index{repetition number}\emph{重复数}，这个数可能是特殊符号 $\infty$（表示无限次重复）。
+
+The multiset concept is useful when studying puzzles like
+``How many ways can the letters of MISSISSIPPI be rearranged?'' because the
+letters in MISSISSIPPI can be expressed as the multiset $\{1\cdot M, 4\cdot I,
+2\cdot P, 4\cdot S \}$.
+多重集的概念在研究像“MISSISSIPPI的字母有多少种排列方式？”这样的谜题时很有用，因为MISSISSIPPI中的字母可以表示为多重集 $\{1\cdot M, 4\cdot I, 2\cdot P, 4\cdot S \}$。
+
+With the exception of the following exercise, in the
+remainder of this chapter we will only be concerned with sets, never multisets.
+除了下面的练习，本章的其余部分我们只关心集合，不涉及多重集。
+\begin{exer}
+(Not for the timid!) How many ways can the letters of MISSISSIPPI be arranged?
+（胆小者勿试！）MISSISSIPPI的字母有多少种排列方式？
+\end{exer}
+
+If a computer scientist were seeking a data structure to implement the
+notion of ``set,'' he'd want a sorted list where repetitions of an entry
+were somehow disallowed.
+如果一个计算机科学家要寻找一种数据结构来实现“集合”的概念，他会想要一个排序的列表，其中不允许重复的条目。
+
+We've already noted that a set should be thought of
+as an unordered collection, and yet it's been asserted that a \emph{sorted}
+list would be the right vehicle for representing a set on a computer.
+我们已经注意到，一个集合应该被看作是一个无序的集合，但有人断言，一个\emph{排序的}列表是在计算机上表示一个集合的正确工具。
+
+Why?
+为什么？
+One reason is that we'd like to be able to tell (quickly) whether two sets
+are the same or not.
+一个原因是我们希望能够（快速地）判断两个集合是否相同。
+
+If the elements have been presorted it's easier.
+
+如果元素已经预先排序，就更容易了。
+
+Consider the difficulty in deciding whether the following two sets are
+equal.
+考虑一下判断以下两个集合是否相等的困难。
+\vfill
+
+\[ S_1 = \{ \spadesuit, 1, e, \pi, \diamondsuit, A, \Omega, h, \oplus, \epsilon \} \]
+
+\vfill
+
+\[ S_2 = \{ A, 1, \epsilon, \pi, e, s, \oplus,  \spadesuit, \Omega, \diamondsuit \} \]
+
+\newpage
+If instead we compare them after they've been sorted, the job is much easier.
+如果我们在它们排序后再进行比较，任务就容易多了。
+\[ S_1 = \{1, A, \diamondsuit, e, \epsilon, h, \Omega, \oplus, \pi, \spadesuit \} \]
+
+\[ S_2 = \{1, A, \diamondsuit, e, \epsilon, \Omega, \oplus, \pi, s, \spadesuit \} \]
+
+This business about ordered versus unordered comes up fairly often so it's 
+worth investing a few moments to figure out how it works.
+关于有序与无序的问题经常出现，所以花点时间弄清楚它的工作原理是值得的。
+
+If a collection
+of things that is inherently unordered is handed to us we generally \emph{put}
+them in an order that is pleasing to us.
+如果一个本质上无序的事物集合交给我们，我们通常会\emph{按照}我们喜欢的顺序排列它们。
+
+Consider receiving five cards
+from the dealer in a card game, or extracting seven letters from the bag 
+in a game of Scrabble.
+想想在纸牌游戏中从发牌人那里拿到五张牌，或者在拼字游戏中从袋子里抽出七个字母。
+
+If, on the other hand, we receive 
+a collection where order
+is important we certainly \emph{may not} rearrange them.
+另一方面，如果我们收到的一个集合中顺序很重要，我们当然\emph{不能}重新排列它们。
+
+Imagine someone
+receiving the telephone number of an attractive other but writing it down
+with the digits sorted in increasing order!
+想象一下，有人收到了一个有魅力的人的电话号码，却按数字递增的顺序把它写下来！
+\begin{exer}
+Consider a universe consisting of just the first 5 natural numbers
+$U = \{ 1, 2, 3, 4, 5 \}$.
+How many different sets having 4 elements
+are there in this universe?
+How many different ordered collections of 4 
+elements are there? 
+
+考虑一个只包含前5个自然数的全集 $U = \{ 1, 2, 3, 4, 5 \}$。在这个全集中，有多少个不同的包含4个元素的集合？有多少个不同的包含4个元素的有序集合？
+\end{exer}
+
+The last exercise suggests an interesting question.
+上一个练习提出了一个有趣的问题。
+
+If you have 
+a universal set of some fixed (finite) size, how many different sets
+are there?
+如果你有一个固定（有限）大小的全集，那么有多少个不同的集合？
+
+Obviously you can't have any more elements in a set than
+are in your universe.
+显然，一个集合中的元素不能比你的全集中的元素还多。
+
+What's the smallest possible size for a set?
+Many people would answer 1 -- which isn't unreasonable!
+一个集合可能的最小尺寸是多少？许多人会回答1——这并非不合理！
+-- after all
+a set is supposed to be a collection of things, and is it really possible
+to have a \emph{collection} with nothing in it?
+——毕竟一个集合应该是一堆东西，真的可能有一个什么都没有的\emph{集合}吗？
+
+The standard answer is
+0 however, mostly because it makes a certain counting formula work out
+nicely.
+然而，标准的答案是0，主要是因为它使某个计数公式很好地成立。
+
+A set with one element is known as a 
+\index{singleton set}\emph{singleton set} 
+(note the use of the indefinite article).
+只有一个元素的集合被称为\index{singleton set}\emph{单元集}（注意使用了不定冠词）。
+
+A set with no elements
+is known as the 
+\index{empty set}\emph{empty set} (note the definite article).
+没有元素的集合被称为\index{empty set}\emph{空集}（注意使用了定冠词）。
+
+There
+are as many singletons as there are elements in your universe.
+单元集的数量与你的全集中的元素数量一样多。
+
+They
+aren't the same though, for example $1 \neq \{ 1 \}$.
+但它们并不相同，例如 $1 \neq \{ 1 \}$。
+
+There is 
+only one empty set and it is denoted $\emptyset$ -- irrespective of the
+universe we are working in.
+
+只有一个空集，它用 $\emptyset$ 表示——无论我们在哪个全集中工作。
+
+Let's have a look at a small example.
+让我们看一个小例子。
+
+Suppose we have a universal set
+with 3 elements, without loss of generality, $\{1, 2, 3\}$.
+假设我们有一个包含3个元素的全集，不失一般性地，设为 $\{1, 2, 3\}$。
+
+It's 
+possible to construct a set, whose elements are all the possible sets
+in this universe.
+可以构造一个集合，其元素是这个全集中所有可能的集合。
+
+This set is known as the 
+\index{power set}\emph{power set} of the universal
+set.
+这个集合被称为全集的\index{power set}\emph{幂集}。
+
+Indeed, we can construct the power set of \emph{any} set $A$ and
+we denote it with the symbol ${\mathcal P}(A)$.
+实际上，我们可以构造\emph{任何}集合 $A$ 的幂集，并用符号 ${\mathcal P}(A)$ 表示。
+
+Returning to our
+example we have 
+
+回到我们的例子，我们有
+
+\begin{center}
+\begin{tabular}{rcl}
+ ${\mathcal P}(\{1, 2, 3 \}) = $ & $\left\{ \rule{0pt}{10pt}  \right.$ & $\emptyset,$ \\
+  & & $\{ 1 \},  \{ 2 \},  \{ 3 \},$ \\
+  & & $\{ 1, 2 \},  \{ 1, 3 \},  \{ 2, 3 \},$ \\
+  & & $\left. \{ 1, 2, 3 \} \rule{0pt}{10pt} \right\}.$
+\end{tabular}
+\end{center}
+
+\begin{exer} \rule{0pt}{0pt}
+
+Find the power sets $ {\mathcal P}(\{1, 2 \})$ and 
+${\mathcal P}(\{1, 2, 3, 4 \})$.
+Conjecture a formula for the number 
+of elements (these are, of course, \emph{sets}) in 
+${\mathcal P}(\{1, 2, \ldots n \})$.
+Hint: If your conjectured formula is correct you should see 
+why these sets are named as they are.
+
+求幂集 $ {\mathcal P}(\{1, 2 \})$ 和 ${\mathcal P}(\{1, 2, 3, 4 \})$。猜想一个关于 ${\mathcal P}(\{1, 2, \ldots n \})$ 中元素（当然，这些元素是\emph{集合}）数量的公式。提示：如果你猜想的公式是正确的，你应该会明白为什么这些集合会这样命名。
+\end{exer}
+
+One last thing before we end this section.  The size (a.k.a. \index{cardinality}cardinality) of a set is just the number of elements in it.
+在结束本节之前还有最后一件事。一个集合的大小（又名\index{cardinality}基数）就是它包含的元素数量。
+
+We use the
+very same symbol for cardinality as we do for the absolute value of a
+numerical entity.
+我们用与数值实体的绝对值完全相同的符号来表示基数。
+
+There should really never be any confusion.  If $A$ is
+a set then $|A|$ means that we should count how many things are in $A$.
+真的不应该有任何混淆。如果 $A$ 是一个集合，那么 $|A|$ 意味着我们应该计算 $A$ 中有多少个东西。
+
+If $A$ isn't a set then we are talking about the ordinary absolute value
+
+如果 $A$ 不是一个集合，那么我们谈论的是普通的绝对值。
+
+\clearpage 
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{sets-zh/basic-exer.tex}
+
+\newpage
+
+\section{Containment 包含关系}
+\label{sec:cont}
+
+There are two notions of being ``inside'' a set.
+关于在集合“内部”有两种概念。
+
+A thing may be
+an \emph{element} of a set, or may be contained as
+a subset.
+一个东西可以是一个集合的\emph{元素}，或者作为子集被包含。
+
+Distinguishing these two notions of inclusion is essential.   
+One difficulty that sometimes complicates things is that  a set may contain
+other sets \emph{as elements}.
+区分这两种包含的概念至关重要。一个有时会使事情复杂化的困难是，一个集合可能包含其他集合\emph{作为元素}。
+
+For instance, as we saw in the previous 
+section, the elements of a power set are themselves sets.
+例如，正如我们在上一节中看到的，一个幂集的元素本身就是集合。
+
+A set $A$ is a \index{subset}\emph{subset} of another set $B$ if all of $A$'s elements
+are also in $B$.
+如果集合 $A$ 的所有元素也都在集合 $B$ 中，那么 $A$ 是 $B$ 的一个\index{subset}\emph{子集}。
+
+The terminology 
+\index{superset}\emph{superset} is used to refer
+to $B$ in this situation, as in ``The set of all real-valued functions %
+in one real variable is a superset of the polynomial functions.''  The 
+subset/superset relationship is indicated with a symbol that should be
+thought of as a stylized version of the less-than-or-equal sign, when
+$A$ is a subset of $B$ we write $A \subseteq B$.
+在这种情况下，术语\index{superset}\emph{父集}用来指代 $B$，例如“所有一元实值函数的集合是多项式函数的父集。”子集/父集关系用一个应该被看作是小于等于号的风格化版本的符号来表示，当 $A$ 是 $B$ 的一个子集时，我们写作 $A \subseteq B$。
+
+We say that $A$ is 
+a \index{proper subset}\emph{proper subset} of $B$ if $B$ has some elements that aren't in
+$A$, and in this situation we write $A \subset B$ or if we really want
+to emphasize the fact that the sets are not equal we can write 
+$A \subsetneq B$.
+如果 $B$ 中有一些元素不在 $A$ 中，我们说 $A$ 是 $B$ 的一个\index{proper subset}\emph{真子集}，在这种情况下我们写作 $A \subset B$，或者如果我们真的想强调这两个集合不相等，我们可以写作 $A \subsetneq B$。
+
+By the way, if you want to emphasize the superset
+relationship, all of these symbols can be turned around.
+顺便说一下，如果你想强调父集关系，所有这些符号都可以反过来。
+
+So for example
+$A \supseteq B$ means that $A$ is a superset of $B$ although they could
+potentially be equal.
+例如，$A \supseteq B$ 意味着 $A$ 是 $B$ 的父集，尽管它们可能相等。
+
+As we've seen earlier, the symbol $\in$ is used between an element of
+a set and the set that it's in.  The following exercise is intended to
+clarify the distinction between $\in$ and $\subseteq$.
+正如我们之前看到的，符号 $\in$ 用在一个集合的元素和它所在的集合之间。下面的练习旨在阐明 $\in$ 和 $\subseteq$ 之间的区别。
+\begin{exer}
+Let $A = \left\{ \rule{0pt}{10pt} 1, 2, \{ 1 \}, \{ a, b \} \right\}$.
+Which of the following are true?
+
+设 $A = \left\{ \rule{0pt}{10pt} 1, 2, \{ 1 \}, \{ a, b \} \right\}$。以下哪些是正确的？
+
+\vfill
+
+\rule{72pt}{0pt} \begin{tabular}{ll}
+i) $ \{ a, b \} \subseteq A$. & vi) $  \{ 1 \} \subseteq A$.\\
+ii) $ \{ a, b \} \in A$. & vii) $  \{ 1 \} \in A$.\\
+iii) $  a \in A$. & viii) $  \{ 2 \} \in A$.\\
+iv) $  1 \in A$. & ix) $  \{ 2 \} \subseteq A$.\\
+v) $  1 \subseteq A$. & x) $  \{\{1\}\} \subseteq A$.\\
+\end{tabular}
+\end{exer}
+
+\newpage
+
+Another perspective that may help clear up the distinction between
+$\in$ and $\subseteq$ is to consider what they correspond to in Logic.
+另一个可能有助于澄清 $\in$ 和 $\subseteq$ 之间区别的视角是考虑它们在逻辑学中对应什么。
+
+The ``element of'' symbol $\in$ is used to construct open sentences
+that embody the membership question -- thus it corresponds to single
+sentences in Logic.
+“属于”符号 $\in$ 用于构造体现成员资格问题的开放句——因此它对应于逻辑学中的单个句子。
+
+The ``set containment'' symbol $\subseteq$ goes
+between two \emph{sets} and so whatever it corresponds to in Logic
+should be something that can appropriately be inserted between two
+sentences.
+“集合包含”符号 $\subseteq$ 位于两个\emph{集合}之间，所以无论它在逻辑学中对应什么，都应该是可以恰当地插入两个句子之间的东西。
+
+Let's run through a short example to figure out what that
+might be.
+我们来看一个简短的例子来弄清楚那可能是什么。
+
+To keep things
+simple we'll work inside the universal set $U=\{ 1, 2, 3, \ldots 50 \}$.
+为简单起见，我们将在全集 $U=\{ 1, 2, 3, \ldots 50 \}$ 内工作。
+
+Let $T$ be the subset of $U$ consisting of those numbers that are 
+divisible by 10, and let $F$ be those that are divisible by 5.
+
+设 $T$ 是 $U$ 中能被10整除的数的子集，设 $F$ 是能被5整除的数的子集。
+
+\[ T = \{10, 20, 30, 40, 50 \} \]
+\[ F = \{5, 10, 15, 20, 25, 30, 35, 40, 45, 50 \} \]
+
+Hopefully it is clear that $\subseteq$ can be inserted between these two sets
+like so: $T \subseteq F$.
+希望很清楚，$\subseteq$ 可以像这样插入这两个集合之间：$T \subseteq F$。
+
+On the other hand we can re-express the sets $T$ and $F$ using set-builder
+notation in order to see clearly what their membership questions are.
+另一方面，我们可以用集合构建符号重新表达集合 $T$ 和 $F$，以便清楚地看到它们的成员资格问题。
+\[ T = \{ x \in U \; \suchthat \; 10\divides x \} \]
+\[ F = \{ x \in U \; \suchthat \; 5\divides x \} \]
+
+What logical operator fits nicely between $10\divides x$ and $5\divides x$?
+在 $10\divides x$ 和 $5\divides x$ 之间，哪个逻辑运算符最合适？
+
+Well, of course, it's the implication arrow.  It's easy to
+verify that $10\divides x \, \implies \, 5\divides x$, and it's equally easy
+to note that the other direction doesn't work, $5\divides x \, \nRightarrow \, 10\divides x$ --- for instance, $5$ goes evenly into $15$, but $10$ doesn't.
+嗯，当然是蕴涵箭头。很容易验证 $10\divides x \, \implies \, 5\divides x$，同样也很容易注意到另一个方向不成立，$5\divides x \, \nRightarrow \, 10\divides x$——例如，5可以整除15，但10不行。
+
+The general statement is: if $A$ and $B$ are sets, and $M_A(x)$ and $M_B(x)$ 
+are their respective membership questions, then $A \subseteq B$ corresponds
+precisely to $\forall x \in U, M_A(x) \implies M_B(x)$.
+一般的陈述是：如果 $A$ 和 $B$ 是集合，并且 $M_A(x)$ 和 $M_B(x)$ 分别是它们的成员资格问题，那么 $A \subseteq B$ 精确地对应于 $\forall x \in U, M_A(x) \implies M_B(x)$。
+
+Now to many people (me included!) this looks funny at first, $\subseteq$
+in Set theory corresponds to $\implies$ in Logic.
+现在对许多人（包括我！）来说，这起初看起来很奇怪，集合论中的 $\subseteq$ 对应于逻辑学中的 $\implies$。
+
+It seems like both
+of these symbols are arrows of a sort -- but they point in opposite
+directions!
+这两个符号似乎都是某种箭头——但它们指向相反的方向！
+
+Personally, I resolve the apparent discrepancy by thinking
+about the ``strength'' of logical predicates.
+就我个人而言，我通过思考逻辑谓词的“强度”来解决这个明显的差异。
+
+One predicate is stronger
+than another if it puts more conditions on the elements that would make
+it true.
+如果一个谓词对使其为真的元素施加了更多条件，那么它就比另一个谓词更强。
+
+For example, ``$x$ is doubly-even'' is stronger than 
+``$x$ is (merely) even.''   Now, the stronger statement implies the weaker
+(assuming of course that they are stronger and weaker versions of the 
+same idea).
+例如，“$x$ 是双偶数”比“$x$ 仅仅是偶数”更强。现在，更强的陈述蕴涵了较弱的陈述（当然，假设它们是同一思想的强弱版本）。
+
+If a number is doubly-even (i.e.\ divisible by 4) then it
+is certainly even -- but the converse is certainly not true, $6$ is even
+but \emph{not} doubly-even.
+如果一个数是双偶数（即能被4整除），那么它肯定是偶数——但反之则不然，6是偶数但\emph{不是}双偶数。
+
+Think of all this in terms of sets now.
+Which set contains the other, the set of doubly-even numbers or the set
+of even numbers?
+现在从集合的角度思考这一切。哪个集合包含另一个，是双偶数集还是偶数集？
+
+Clearly the set that corresponds to more stringent
+membership criteria is smaller than the set that corresponds
+to less restrictive criteria, thus the set defined by a weak membership
+criterion contains the one having a stronger criterion.
+显然，对应更严格成员资格标准的集合小于对应较不严格标准的集合，因此，由较弱成员资格标准定义的集合包含具有较强标准的集合。
+
+If we are asked to prove that one set is contained in another as a subset,
+$A \subseteq B$, there are two ways to proceed.
+如果要求我们证明一个集合作为子集包含在另一个集合中，$A \subseteq B$，有两种方法。
+
+We may either argue by
+thinking about elements, or (although this amounts to the same thing) 
+we can show that $A$'s membership criterion
+implies $B$'s membership criterion.
+我们可以通过考虑元素来论证，或者（尽管这实际上是同一回事）我们可以证明 $A$ 的成员资格标准蕴涵了 $B$ 的成员资格标准。
+\begin{exer}
+Consider $S$, the set of perfect squares and $F$, the set of perfect fourth
+powers.  Which is contained in the other?
+Can you prove it?
+
+考虑 $S$，完全平方数集，和 $F$，完全四次方数集。哪个集合包含在另一个中？你能证明它吗？
+\end{exer}
+
+We'll end this section with a fairly elementary proof -- mainly just to
+illustrate how one should proceed in proving that one  set is contained in
+another.
+我们将以一个相当初等的证明来结束本节——主要只是为了说明在证明一个集合包含在另一个集合中时应该如何进行。
+
+Let $D$ represent the set of all integers that are divisible by 9,
+
+设 $D$ 代表所有能被9整除的整数的集合，
+
+\[ D = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=9k \}. \]
+
+Let $C$ represent the set of all integers that are divisible by 3,
+
+设 $C$ 代表所有能被3整除的整数的集合，
+
+\[ C = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=3k \}. \]
+ 
+The set $D$ is contained in $C$.  Let's prove
+it!
+集合 $D$ 包含在 $C$ 中。我们来证明它！
+\begin{proof}
+Suppose that $x$ is an arbitrary element of $D$.  From the definition
+of $D$ it follows that there is an integer $k$ such that $x=9k$.
+假设 $x$ 是 $D$ 的一个任意元素。根据 $D$ 的定义，存在一个整数 $k$ 使得 $x=9k$。
+
+We want to show that $x \in C$, but since $x=9k$ it is easy to 
+see that $x = 3(3k)$ which shows (since $3k$ is clearly an integer)
+that $x$ is in $C$.
+我们想要证明 $x \in C$，但由于 $x=9k$，很容易看出 $x = 3(3k)$，这表明（因为 $3k$ 显然是一个整数）$x$ 在 $C$ 中。
+\end{proof}
+
+\clearpage 
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{sets-zh/contain-exer.tex}
+
+\newpage
+
+\section{Set operations 集合运算}
+\label{sec:set_ops}
+
+In this section we'll continue to develop the correspondence between 
+Logic and Set theory.
+在本节中，我们将继续发展逻辑与集合论之间的对应关系。
+
+The logical connectors $\land$ and $\lor$ correspond to the set-theoretic
+notions of 
+\index{union}union ($\cup$) and 
+\index{intersection}intersection ($\cap$).
+逻辑联结词 $\land$ 和 $\lor$ 对应于集合论中的\index{union}并集（$\cup$）和\index{intersection}交集（$\cap$）的概念。
+
+The symbols are 
+designed to provide a mnemonic for the correspondence;
+这些符号旨在为这种对应关系提供助记；
+the Set theory
+symbols are just rounded versions of those from Logic.
+集合论的符号只是逻辑学符号的圆润版本。
+
+Explicitly, if $P(x)$ and $Q(x)$ are open sentences, then
+the \emph{union} of the corresponding truth sets $S_P$ and $S_Q$
+is defined by 
+
+明确地说，如果 $P(x)$ 和 $Q(x)$ 是开放句，那么相应真值集 $S_P$ 和 $S_Q$ 的\emph{并集}定义为
+
+\[ S_P \cup S_Q \; = \{ x \in U \suchthat P(x) \lor Q(x) \}. \]
+
+\begin{exer}
+Suppose two sets $A$ and $B$ are given.
+Re-express the previous
+definition of ``union'' using their membership criteria, $M_A(x) =$
+``$x \in A$'' and $M_B(x) = $ ``$x \in B$.''
+
+假设给定两个集合 $A$ 和 $B$。使用它们的成员资格标准 $M_A(x) = $“$x \in A$”和 $M_B(x) = $“$x \in B$”来重新表达前面“并集”的定义。
+\end{exer}
+
+The union of more than two sets can be expressed using a big union
+symbol.
+多于两个集合的并集可以用一个大的并集符号来表示。
+
+For example, consider the family of real intervals defined
+by $I_n = (n,n+1]$.\footnote{The elements %
+of $I_n$ can also be distinguished as the solution sets of %
+the inequalities $n < x \leq n+1$.}    
+There's an interval for every integer $n$.  Also, every real number is in
+one of these intervals.  The previous sentence can be expressed as
+
+例如，考虑由 $I_n = (n,n+1]$ 定义的实数区间族。\footnote{$I_n$ 的元素也可以被区分为不等式 $n < x \leq n+1$ 的解集。}对于每个整数 $n$ 都有一个区间。并且，每个实数都在这些区间中的一个之内。前一句话可以表示为
+
+\[ \Reals \; = \; \bigcup_{n\in\Integers} I_n. \]
+
+The intersection of two sets is conceptualized as ``what they have in common''
+but the precise definition is found by considering conjunctions,  
+
+两个集合的交集被概念化为“它们共有的部分”，但精确的定义是通过考虑合取得到的，
+
+\[ A \cap B \; = \; \{ x \in U \suchthat x \in A \; \land \; x \in B \}. \]
+
+\begin{exer} 
+With reference to two open sentences $P(x)$ and $Q(x)$, define the
+intersection of their truth sets, $S_P \cap S_Q$.
+
+参照两个开放句 $P(x)$ 和 $Q(x)$，定义它们的真值集 $S_P \cap S_Q$ 的交集。
+\end{exer}
+
+There is also a ``big'' version of the intersection symbol.  Using 
+the same family of intervals as before, 
+
+交集符号也有一个“大”的版本。使用与之前相同的区间族，
+
+\[ \mbox{\raisebox{-2pt}{$\emptyset$}} \; = \; \bigcap_{n\in\Integers} I_n. \]
+
+Of course the intersection of any distinct pair of these intervals is empty
+so the statement above isn't particularly strong.
+当然，这些区间中任何不同的一对的交集都是空的，所以上面的陈述并不是特别有力。
+
+Negation in Logic corresponds to 
+complementation in Set theory.  The 
+\index{complement}\emph{complement} of a set $A$ is usually denoted by $\overline{A}$ 
+(although some prefer a superscript $c$ -- as in $A^c$), this is the set
+of all things that \emph{aren't} in $A$.
+逻辑中的否定对应于集合论中的补集。一个集合 $A$ 的\index{complement}\emph{补集}通常用 $\overline{A}$ 表示（尽管有些人更喜欢上标c——如 $A^c$），这是所有\emph{不}在 $A$ 中的事物的集合。
+
+In thinking about complementation
+one quickly sees why the importance of working within a well-defined
+universal set is stressed.
+在思考补集时，人们很快就会明白为什么强调在明确定义的全集内工作的重要性。
+
+Consider the set of all math textbooks.
+Obviously the complement of this set would contain texts in English,
+Engineering and Evolution -- but that statement is implicitly 
+assuming that the universe of discourse is ``textbooks.''   It's equally
+valid to say that a very long sequence of zeros and ones, a luscious 
+red strawberry, and the number $\sqrt{\pi}$ 
+are not math textbooks and so
+these things are all elements of the complement of the set of all math
+textbooks.
+考虑所有数学教科书的集合。显然这个集合的补集将包含英语、工程学和进化论的教科书——但这个陈述隐含地假设了论域是“教科书”。同样可以说，一个很长的零一序列、一个甘美的红草莓和数字 $\sqrt{\pi}$ 都不是数学教科书，所以这些东西都是所有数学教科书集合的补集的元素。
+
+What is really a concern for us is the issue of whether or not
+the complement of a set is well-defined, that is, can we tell for sure
+whether a given item is or is not in the complement of a set.
+我们真正关心的是一个集合的补集是否是良定义的，也就是说，我们能否确定一个给定的项是否在集合的补集中。
+
+This 
+question is decidable exactly when the membership question for the
+original set is decidable.
+这个问题恰好在原始集合的成员资格问题是可判定的时候是可判定的。
+
+Many people think that the main
+reason for working within a fixed universal set is that we then 
+have well-defined complements.
+许多人认为在固定的全集内工作的主要原因是我们 тогда有良定义的补集。
+
+The real reason that we accept
+this restriction is to ensure that both membership criteria,
+$M_A(x)$ and $M_{\overline{A}}(x)$, are decidable open sentences.
+我们接受这个限制的真正原因是为了确保两个成员资格标准，$M_A(x)$ 和 $M_{\overline{A}}(x)$，都是可判定的开放句。
+
+As an example of the sort of strangeness that can crop up, consider that
+during the time that I, as the author of this book, was writing the 
+last paragraph, this text was nothing more than a very long
+sequence of zeros and ones in the memory of my computer\ldots
+
+作为可能出现的奇怪情况的一个例子，可以考虑一下，当我作为本书的作者写上一段时，这段文本在我电脑的内存中不过是一长串零和一……
+
+Every rule that we learned in Chapter~\ref{ch:logic} 
+(see Table~\ref{tab:bool_equiv}) has a set-theoretic equivalent.
+我们在第~\ref{ch:logic}章学到的每一条规则（见表~\ref{tab:bool_equiv}）都有一个集合论的等价物。
+
+These set-theoretic versions are
+expressed using equalities (i.e.\ the symbol $=$ in between two sets) which
+is actually a little bit funny if you think about it.
+这些集合论的版本用等式来表示（即在两个集合之间使用符号 $=$），如果你仔细想想，这其实有点有趣。
+
+We normally
+use $=$ to mean that two numbers or variables have the same numerical
+magnitude, as in $12^2 = 144$, we are doing something altogether
+different when we use that symbol between two sets, as in $\{1,2,3\}=
+\{\sqrt{1},\sqrt{4},\sqrt{9}\}$, but people seem to be used to this
+so there's no sense in quibbling.
+我们通常用 $=$ 来表示两个数或变量具有相同的数值大小，如 $12^2 = 144$，但当我们在两个集合之间使用这个符号时，我们做的是完全不同的事情，如 $\{1,2,3\}=\{\sqrt{1},\sqrt{4},\sqrt{9}\}$，但人们似乎已经习惯了这一点，所以没有必要斤斤计较。
+\begin{exer}
+Develop a useful definition for set equality.  In other words,
+come up with a (quantified) logical statement that means the
+same thing as ``$A = B$'' for two arbitrary sets $A$ and $B$.
+
+为集合相等性制定一个有用的定义。换句话说，对于两个任意集合 $A$ 和 $B$，提出一个（量化的）逻辑陈述，其含义与“$A = B$”相同。
+\end{exer}
+
+\begin{exer}
+What symbol in Logic should go between the membership criteria
+$M_A(x)$ and $M_B(x)$ if $A$ and $B$ are equal sets?
+
+如果 $A$ 和 $B$ 是相等的集合，那么在成员资格标准 $M_A(x)$ 和 $M_B(x)$ 之间应该使用哪个逻辑符号？
+\end{exer}
+
+In Table~\ref{tab:set_equiv} the rules governing the interactions 
+between the set theoretic operations are collected.
+在表~\ref{tab:set_equiv}中，收集了管理集合论运算之间相互作用的规则。
+
+We are now in a position somewhat similar to when we jumped from
+proving logical assertions with truth tables to doing two-column
+proofs.
+我们现在处于一个与我们从用真值表证明逻辑断言跳到做二列表证明时有些相似的位置。
+
+We have two different approaches for showing that two
+sets are equal.
+我们有两种不同的方法来证明两个集合相等。
+
+We can do a so-called ``element chasing'' proof
+(to show $A=B$, assume $x \in A$ and prove $x \in B$ and then vice versa).
+我们可以做一个所谓的“元素追踪”证明（要证明 $A=B$，假设 $x \in A$ 并证明 $x \in B$，然后反之亦然）。
+
+Or, we can construct a proof using the basic set equalities given
+in Table~\ref{tab:set_equiv}.
+或者，我们可以使用表~\ref{tab:set_equiv}中给出的基本集合等式来构造一个证明。
+
+Often the latter can take the form
+of a two-column proof.
+后者通常可以采用二列表证明的形式。
+\begin{table}[h] 
+\begin{center}
+\input{sets-zh/set-theoretic-equivalences.tex}
+\end{center}
+\caption{Basic set theoretic equalities. 基本集合论等式。}
+\index{set theoretic equalities}
+\label{tab:set_equiv}
+\end{table}
+
+\clearpage
+
+Before we proceed much further in our study of set theory it would be a
+good idea to give you an example.
+在我们进一步深入研究集合论之前，给出一个例子是个好主意。
+
+We're going to prove the same assertion
+in two different ways --- once via element chasing and once using the 
+basic set theoretic equalities from Table~\ref{tab:set_equiv}.
+我们将用两种不同的方式证明同一个断言——一次通过元素追踪，一次使用表~\ref{tab:set_equiv}中的基本集合论等式。
+
+The statement we'll prove is $A \cup B \; = \; A \cup (\overline{A} \cap B)$.
+我们将要证明的陈述是 $A \cup B \; = \; A \cup (\overline{A} \cap B)$。
+First, by chasing elements:
+
+首先，通过追踪元素：
+
+\begin{proof}
+Suppose $x$ is an element of $A \cup B$.
+By the definition of union we
+know that 
+
+假设 $x$ 是 $A \cup B$ 的一个元素。根据并集的定义，我们知道
+
+\[ x \in A \lor x \in B. \]
+
+The conjunctive identity law and the
+fact that $x \in A \lor x \notin A$ is a tautology gives us an equivalent
+logical statement:
+
+合取幺元律以及 $x \in A \lor x \notin A$ 是一个重言式这一事实，给了我们一个等价的逻辑陈述：
+
+\[ (x \in A \lor x \notin A) \land (x \in A \lor x \in B).
+\]
+
+Finally, this last statement is equivalent to
+
+最后，这个最后的陈述等价于
+
+\[ x \in A \lor (x \notin A \land x \in B) \]
+
+\noindent which is the definition of $x \in A \cup (\overline{A} \cap B)$.
+\noindent 这就是 $x \in A \cup (\overline{A} \cap B)$ 的定义。
+
+On the other hand, if we assume that $x \in A \cup (\overline{A} \cap B)$, it follows that 
+
+另一方面，如果我们假设 $x \in A \cup (\overline{A} \cap B)$，那么就有
+
+\[ x \in A \lor (x \notin A \land x \in B).
+\]
+
+Applying the distributive law, disjunctive complementarity and the identity law,
+in sequence we obtain
+
+依次应用分配律、析取互补律和幺元律，我们得到
+
+\begin{gather*} 
+ x \in A \lor (x \notin A \land x \in B) \\
+\cong (x \in A \lor x \notin A) \land (x \in A \lor x \in B) \\
+\cong t \land (x \in A \lor x \in B) \\
+\cong x \in A \lor x \in B
+\end{gather*}
+
+The last statement in this chain of logical equivalences provides the definition of $x \in A \cup B$.
+这个逻辑等价链中的最后一个陈述提供了 $x \in A \cup B$ 的定义。
+\end{proof}
+
+A two-column proof of the same statement looks like this:
+
+同一个陈述的二列表证明如下：
+
+\begin{proof}
+
+\begin{tabular}{cccl}
+  & $A \cup B$ & \rule{36pt}{0pt} & Given (已知) \\
+$=$ & $U \cap (A \cup B)$ & & Identity law (同一律) \\
+$=$ & $(A \cup \overline{A}) \cap (A \cup B)$ & & Complementarity (互补律) \\
+$=$ & $(A \cup (\overline{A} \cap B)$ & & Distributive law (分配律)\\
+\end{tabular}
+
+\end{proof}
+
+There are some notions within Set theory that don't have any clear
+parallels in Logic.  One of these is essentially a generalization 
+of the concept of ``complements.''   If you think of the set $\overline{A}$
+as being the difference between the universal set $U$ and the set $A$
+you are on the right track.  The 
+\index{difference (of sets)}\emph{difference} between two sets is written 
+$A \setminus B$ (sadly, sometimes this is denoted using the ordinary 
+subtraction symbol $A-B$) and is defined by
+
+在集合论中有一些概念在逻辑学中没有明确的对应物。其中之一本质上是“补集”概念的推广。如果你把集合 $\overline{A}$ 看作是全集 $U$ 和集合 $A$ 之间的差集，那你就对了。两个集合的\index{difference (of sets)}\emph{差集}写作 $A \setminus B$（遗憾的是，有时用普通的减法符号 $A-B$ 表示），其定义为
+
+\[   A \setminus B = A \cap \overline{B}. \]
+
+\noindent The difference, $A \setminus B$, consists of those elements of $A$ that aren't in $B$.
+\noindent 差集 $A \setminus B$ 由那些属于 $A$ 但不属于 $B$ 的元素组成。
+
+In some developments of Set theory, the difference of sets is 
+defined first and then complementation is defined by $\overline{A} = U \setminus A$.
+在集合论的一些发展中，差集是首先被定义的，然后补集被定义为 $\overline{A} = U \setminus A$。
+
+The difference of sets (like the difference of real numbers) is not a 
+commutative operation.
+集合的差集（像实数的差一样）不是一个交换运算。
+
+In other words $A \setminus B \neq B \setminus A$ 
+(in general).
+换句话说，$A \setminus B \neq B \setminus A$（在一般情况下）。
+
+It is possible to define an operation that acts somewhat 
+like the difference, but that \emph{is} commutative.
+可以定义一个作用有点像差集，但\emph{是}交换的运算。
+
+The 
+\index{symmetric difference}\emph{symmetric difference} 
+of two sets is denoted using a 
+triangle (really a capital Greek delta)
+
+两个集合的\index{symmetric difference}\emph{对称差}用一个三角形（实际上是一个大写的希腊字母delta）表示
+
+\[ A \triangle B = (A \setminus B) \cup (B\setminus A).
+\]
+
+\begin{exer}
+Show that  $A \triangle B = (A \cup B) \setminus (A \cap B)$.
+
+证明 $A \triangle B = (A \cup B) \setminus (A \cap B)$。
+\end{exer}
+
+Come on!
+来吧！
+
+You read right past that exercise without even pausing!
+
+你直接读过了那个练习，连停顿一下都没有！
+
+What?
+什么？
+
+You say you \emph{did} try it and it was too hard?
+你说你\emph{试过}了，但太难了？
+
+Okay, just for you (and this time only) I've prepared an aid to
+help you through\ldots
+
+好吧，就为了你（而且仅此一次），我准备了一个帮助你度过难关的工具……
+
+On the next page is a two-column proof of the result you need to 
+prove, but the lines of the proof are all scrambled.
+下一页是你需要证明的结果的二列表证明，但证明的各行被打乱了。
+
+Make a copy and cut out all the pieces and then glue them together
+into a valid proof.
+复印一份，剪下所有的部分，然后把它们粘合成一个有效的证明。
+
+So, no more excuses, just do it!
+
+所以，别再找借口了，动手吧！
+
+\newpage
+
+
+
+
+\begin{tabular}{|c|m{8em}|}\hline
+\rule[-16pt]{0pt}{44pt}$= (A \cap \overline{B}) \cup (B \cap \overline{A})$ & \rule{12pt}{0pt} identity law (同一律) \\\hline
+\rule[-16pt]{0pt}{44pt}$= (A \cup B) \cap \overline{(A \cap B)}$ & \rule{12pt}{0pt} def.\ of relative difference (相对差集定义) \rule{12pt}{0pt} \\\hline
+\rule[-16pt]{0pt}{44pt}$(A \cup B) \setminus (A \cap B)$ & \rule{12pt}{0pt} Given (已知)  \\\hline
+\rule[-16pt]{0pt}{44pt}\rule{12pt}{0pt}$= ((A \cap \overline{A}) \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup (B \cap \overline{B}))$ \rule{12pt}{0pt} & \rule{12pt}{0pt} distributive law (分配律)  \\\hline
+\rule[-16pt]{0pt}{44pt}$= (A \setminus B) \cup (B \setminus A)$ & \rule{12pt}{0pt}  def.\ of relative difference (相对差集定义) \\\hline
+\rule[-16pt]{0pt}{44pt}$= (A \cap \overline{(A \cap B)}) \cup (B \cap \overline{(A \cap B)})$ & \rule{12pt}{0pt} distributive law (分配律) \\\hline
+\rule[-16pt]{0pt}{44pt}$= A \triangle B $ & \rule{12pt}{0pt} def.\ of symmetric difference (对称差定义) \rule{12pt}{0pt}\\\hline
+\rule[-16pt]{0pt}{44pt}$= (A \cap (\overline{A} \cup \overline{B}) \cup (B \cap (\overline{A} \cup \overline{B}))$ & \rule{12pt}{0pt} DeMorgan's law (德摩根定律) \\\hline
+\rule[-16pt]{0pt}{44pt}$= (\emptyset \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup \emptyset)$ & \rule{12pt}{0pt} complementarity (互补律) \\\hline
+\end{tabular}
+
+\clearpage 
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{sets-zh/ops-exer.tex}
+
+\newpage
+
+
+\section{Venn diagrams 维恩图}
+\label{sec:venn}
+
+Hopefully, you've seen 
+\index{Venn diagram}Venn diagrams before, but possibly 
+you haven't thought deeply about them.
+希望你以前见过\index{Venn diagram}维恩图，但可能你没有深入思考过它们。
+
+Venn diagrams take 
+advantage of an obvious but important property of closed 
+curves drawn in the plane.
+维恩图利用了平面上绘制的闭合曲线一个明显但重要的性质。
+
+They divide the points in the
+plane into two sets, those that are inside the curve and
+those that are outside!
+它们将平面上的点分为两个集合，曲线内部的和曲线外部的！
+
+(Forget for a moment about the points
+that are on the curve.)  This seemingly obvious statement
+is known as the 
+\index{Jordan curve theorem}\emph{Jordan curve theorem}, and actually
+requires some details.
+（暂时忘记曲线上的点。）这个看似显而易见的陈述被称为\index{Jordan curve theorem}\emph{若尔当曲线定理}，实际上需要一些细节。
+
+A 
+\index{Jordan curve}\emph{Jordan curve} is the sort 
+of curve you might draw if you are required to end where
+you began and you are required not to cross-over any portion 
+of the curve that has already been drawn.
+一条\index{Jordan curve}\emph{若尔当曲线}是你可能画出的那种曲线，如果你被要求终点与起点重合，并且不与任何已经画过的部分交叉。
+
+In technical
+terms such a curve is called \emph{continuous}, \emph{simple} 
+and \emph{closed}.
+在技术术语中，这样的曲线被称为\emph{连续的}、\emph{简单的}和\emph{闭合的}。
+
+The Jordan curve theorem is one of those statements that hardly
+seems like it needs a proof, but nevertheless, the proof of this
+statement is probably the best-remembered work of the famous
+French mathematician \index{Jordan, Camille}Camille Jordan.
+若尔当曲线定理是那种几乎看起来不需要证明的陈述之一，但尽管如此，这个陈述的证明可能是著名法国数学家\index{Jordan, Camille}卡米尔·若尔当最被人铭记的工作。
+
+The prototypical Venn diagram is the picture that looks something
+like the view through a set of binoculars.
+典型的维恩图是看起来有点像透过一副双筒望远镜看到的景象的图片。
+\vspace{.1in}
+
+\input{figures/first_Venn.tex}
+
+\vspace{.1in}
+
+In a Venn diagram the 
+\index{universe of discourse}universe of discourse is normally drawn as
+a rectangular region inside of which all the action occurs.
+在维恩图中，\index{universe of discourse}论域通常被画成一个矩形区域，所有的活动都在其中发生。
+
+Each
+set in a Venn diagram is depicted by drawing a simple closed curve -- 
+typically a circle, but not necessarily!
+维恩图中的每个集合都通过画一个简单闭合曲线来描绘——通常是圆形，但并非必须！
+
+For instance, if you
+want to draw a Venn diagram that shows all the possible intersections
+among four sets, you'll find it's impossible with (only) circles.
+例如，如果你想画一个显示四个集合所有可能交集的维恩图，你会发现只用圆形是不可能的。
+\vspace{.1in}
+
+\input{figures/4set_Venn.tex}
+
+\vspace{.1in}
+
+\begin{exer}
+Verify that the diagram above has regions representing all 16 possible
+intersections of 4 sets.
+验证上图具有代表4个集合所有16种可能交集的区域。
+\end{exer}
+
+There is a certain ``zen'' to Venn diagrams that must be internalized,
+but once you have done so they can be used to think very effectively
+about the relationships between sets.
+维恩图有一定的“禅意”必须内化，但一旦你做到了，就可以用它们非常有效地思考集合之间的关系。
+
+The main deal is that the points
+inside of one of the simple closed curves are not necessarily in the set --
+only \emph{some} of the points inside a simple closed curve are in the
+set, and we don't know precisely where they are!
+主要的问题是，一个简单闭合曲线内部的点不一定都在集合中——只有\emph{一些}在一个简单闭合曲线内部的点在集合中，而且我们不确切知道它们在哪里！
+
+The various simple closed 
+curves in a Venn diagram divide the universe up into a bunch of regions.
+维恩图中的各种简单闭合曲线将全集分割成一堆区域。
+
+It might be best to think of these regions as fenced-in areas in which
+the elements of a set mill about, much like domesticated animals 
+in their pens.
+最好将这些区域看作是被围栏围起来的区域，集合的元素在其中闲逛，就像围栏里的家畜一样。
+
+One of our main tools in working with Venn diagrams is to deduce that
+certain of these regions don't contain any elements -- we then mark that
+region with the emptyset symbol ($\emptyset$).
+我们处理维恩图的主要工具之一是推断出这些区域中的某些区域不包含任何元素——然后我们用空集符号（$\emptyset$）标记该区域。
+
+Here is a small example of a finite universe.
+
+这里是一个有限全集的小例子。
+
+\vspace{.1in}
+
+\input{figures/silly_universe.tex}
+
+\vspace{.1in}
+
+\noindent And here is the same universe with some Jordan curves 
+used to encircle two subsets.
+
+\noindent 这里是同一个全集，用一些若尔当曲线圈出了两个子集。
+\vspace{.1in}
+
+\input{figures/silly_w_sets.tex}
+
+\vspace{.1in}
+
+This picture might lead us to think that the set of cartoon characters
+and the set of horses are disjoint, so we thought it would be nice
+to add one more element to our universe in order to dispel that notion.
+这张图可能会让我们认为卡通人物集合和马的集合是不相交的，所以我们认为在我们的全集中再增加一个元素来消除这种看法会很好。
+\vspace{.1in}
+
+\input{figures/silly_w_counter_ex.tex}
+
+\vspace{.1in}
+
+
+Suppose we have two sets $A$ and $B$ and we're interested
+in proving that $B \subseteq A$.
+假设我们有两个集合 $A$ 和 $B$，并且我们有兴趣证明 $B \subseteq A$。
+
+The job is done if we can show that
+all of $B$'s elements are actually in the eye-shaped region that represents
+the intersection $A \cap B$.
+如果我们能证明 $B$ 的所有元素实际上都在代表交集 $A \cap B$ 的眼形区域内，那么任务就完成了。
+
+It's equivalent if we can show that the
+region marked with $\emptyset$ in the following diagram is actually empty.
+如果我们能证明下图中标记为 $\emptyset$ 的区域实际上是空的，这也是等价的。
+\vspace{.1in}
+
+\input{figures/Venn_showing_implies.tex}
+
+\vspace{.1in}
+
+Let's put all this together.  The inclusion $B \subseteq A$ corresponds
+to the logical sentence $M_B \implies M_A$.
+让我们把这一切综合起来。包含关系 $B \subseteq A$ 对应于逻辑句子 $M_B \implies M_A$。
+
+We know that implications
+are equivalent to OR statements, so $M_B \implies M_A \, \cong \, 
+{\lnot}M_B \lor M_A$.
+我们知道蕴涵等价于或陈述，所以 $M_B \implies M_A \, \cong \, {\lnot}M_B \lor M_A$。
+
+The notion that the region we've 
+indicated above is empty is written as $\overline{A} \cap B \, = \, \emptyset$,
+in logical terms this is ${\lnot}M_A \land M_B \, \cong \, c$.
+我们上面指出的区域是空的概念写作 $\overline{A} \cap B \, = \, \emptyset$，在逻辑术语中，这是 ${\lnot}M_A \land M_B \, \cong \, c$。
+
+Finally, we apply DeMorgan's law and a commutation to get 
+${\lnot}M_B \lor M_A \, \cong \, t$.
+最后，我们应用德摩根定律和交换律得到 ${\lnot}M_B \lor M_A \, \cong \, t$。
+
+You should take note of the 
+convention that when you see a logical sentence just written on the 
+page (as is the case with $M_B \implies M_A$ in the first sentence
+of this paragraph) what's being asserted is that the sentence is 
+\emph{universally true}.
+你应该注意到这样一个惯例，即当你在页面上看到一个逻辑句子（就像本段第一句中的 $M_B \implies M_A$）时，所断言的是该句子是\emph{普遍为真}的。
+
+Thus, writing $M_B \implies M_A$ is the same thing as writing 
+$M_B \implies M_A \, \cong \, t$.
+因此，写 $M_B \implies M_A$ 与写 $M_B \implies M_A \, \cong \, t$ 是同一回事。
+
+One can use information that is known \emph{a priori} when 
+drawing a Venn diagram.
+在绘制维恩图时，可以使用\emph{先验}已知的信息。
+
+For instance if two sets are known 
+to be disjoint, or if one is known to be contained in the other,
+we can draw Venn diagrams like the following.
+例如，如果已知两个集合是不相交的，或者一个集合已知包含在另一个集合中，我们可以画出如下的维恩图。
+\vspace{.1in}
+
+\input{figures/disjoint_Venn.tex}
+
+\vspace{.2in}
+
+\input{figures/containment_Venn.tex}
+
+\vspace{.1in}
+
+However, both of these situations can also be dealt with
+by working with Venn diagrams in which the sets are in 
+\index{general position} \emph{general position} -- which
+in this situation means that every possible intersection is
+shown -- and then marking any empty regions with $\emptyset$.
+然而，这两种情况也可以通过处理集合处于\index{general position}\emph{一般位置}的维恩图来解决——在这种情况下，这意味着显示了所有可能的交集——然后用 $\emptyset$ 标记任何空的区域。
+\begin{exer}
+On a Venn diagram for two sets in general position, indicate
+the empty regions when
+\begin{itemize}
+\item[a)] The sets are disjoint.
+\item[b)] $A$ is contained in $B$.
+\end{itemize}
+
+在一个处于一般位置的两个集合的维恩图上，指出以下情况下的空区域：
+\begin{itemize}
+\item[a)] 集合不相交。
+\item[b)] $A$ 包含在 $B$ 中。
+\end{itemize}
+
+\input{figures/general_Venn.tex}
+\end{exer}
+
+There is a connection, perhaps obvious, between the regions we
+see in a Venn diagram with sets in general position and the recognizers
+we studied in the section on digital logic circuits.
+我们看到的处于一般位置的集合的维恩图中的区域与我们在数字逻辑电路部分研究的识别器之间，存在一个或许显而易见的联系。
+
+In fact both
+of these topics have to do with \index{disjunctive normal form}\emph{disjunctive normal form}.
+实际上，这两个主题都与\index{disjunctive normal form}\emph{析取范式}有关。
+
+In a Venn diagram with $k$ sets, we are seeing the universe
+of discourse broken up into the union of $2^k$ regions each of which 
+corresponds to an intersection of either one of the sets or its complement.
+在一个有 $k$ 个集合的维恩图中，我们看到论域被分解为 $2^k$ 个区域的并集，每个区域都对应于一个集合或其补集的交集。
+
+An arbitrary expression involving set-theoretic symbols and these $k$ sets
+is true in certain of these $2^k$ regions and false in the others.
+一个涉及集合论符号和这 $k$ 个集合的任意表达式，在这 $2^k$ 个区域的某些区域中为真，在其他区域中为假。
+
+We have put the arbitrary expression in disjunctive normal form when
+we express it as a union of the intersections that describe those regions.
+当我们把一个任意表达式表示为描述那些区域的交集的并集时，我们就把它化为了析取范式。
+\vspace{.1in}
+
+\input{figures/3set_Venn_gen_pos.tex}
+ 
+
+\clearpage 
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{sets-zh/venn-exer.tex}
+
+\newpage
+
+\section{Russell's Paradox 罗素悖论}
+\label{sec:russell}
+
+There is no Nobel prize category for mathematics.\footnote{There are prizes
+considered equivalent to the Nobel in stature -- the Fields Medal, awarded every four years by the International Mathematical Union to up to four mathematical researchers under the age of forty, and the Abel Prize, awarded annually by the King of Norway.}   Alfred Nobel's will
+called for the awarding of annual prizes in physics, chemistry, physiology 
+or medicine, literature, and peace.
+数学没有诺贝尔奖类别。\footnote{有一些奖项在地位上被认为与诺贝尔奖相当——菲尔兹奖，由国际数学联盟每四年颁发一次，授予最多四位四十岁以下的数学研究者；以及阿贝尔奖，由挪威国王每年颁发一次。}阿尔弗雷德·诺贝尔的遗嘱要求每年颁发物理学、化学、生理学或医学、文学以及和平奖。
+
+Later, the 
+``Bank of Sweden Prize in Economic Sciences in Memory of Alfred Nobel'' 
+was created and certainly several mathematicians have won what is 
+improperly known as the Nobel prize in Economics.
+后来，设立了“瑞典银行纪念阿尔弗雷德·诺贝尔经济学奖”，当然有几位数学家赢得了这个被不恰当地称为诺贝尔经济学奖的奖项。
+
+But, there is no 
+Nobel prize in Mathematics per se.
+但是，本身并没有诺贝尔数学奖。
+
+There is an interesting urban myth that
+purports to explain this lapse: Alfred Nobel's wife either left him for, or
+had an affair with a mathematician --- so Nobel, the inventor of dynamite
+and an immensely wealthy and powerful man, when he decided to endow 
+a set of annual prizes for ``those who, during the preceding year, shall have conferred the greatest benefit on mankind'' pointedly left out mathematicians.
+有一个有趣的都市传说试图解释这个疏漏：阿尔弗雷德·诺贝尔的妻子要么为了一个数学家离开了他，要么与一个数学家有染——所以诺贝尔，这位炸药的发明者，一个极其富有和有权势的人，当他决定设立一系列年度奖项以表彰“在过去一年中，为人类带来最大利益的人”时，特意把数学家排除在外。
+
+One major flaw in this theory is that Nobel was never married.
+这个理论的一个主要缺陷是诺贝尔从未结过婚。
+
+In all likelihood, Nobel simply didn't view mathematics as a field
+which provides benefits for mankind --- at least not directly.
+很有可能，诺贝尔只是不认为数学是一个为人类提供利益的领域——至少不是直接的。
+
+The broadest division within mathematics is between the ``pure''
+and ``applied'' branches.
+数学中最广泛的划分是在“纯粹”和“应用”两个分支之间。
+
+Just precisely where the dividing line
+between these spheres lies is a matter of opinion, but it can be
+argued that it is so far to one side that one may as well call an
+applied mathematician a physicist 
+(or chemist, or biologist, or economist, or \ldots).
+这两个领域之间的分界线究竟在哪里是一个见仁见智的问题，但可以认为它偏向一方如此之远，以至于应用数学家不妨被称为物理学家（或化学家、生物学家、经济学家……）。
+
+One thing is
+clear, Nobel believed to a certain extent in the utilitarian ethos.
+有一点是清楚的，诺贝尔在某种程度上相信功利主义精神。
+
+The value of a thing (or a person) is determined by how useful it is (or they 
+are), which makes it interesting that one of the few mathematicians
+to win a Nobel prize was Bertrand Russell (the 1950 prize in Literature
+ ``in recognition of his varied and significant writings in which he 
+champions humanitarian ideals and freedom of thought'').
+一个事物（或一个人）的价值取决于它（或他们）有多大用处，这使得少数几位获得诺贝尔奖的数学家之一是伯特兰·罗素这件事变得有趣（1950年的文学奖，“以表彰他多样而重要的著作，其中他倡导人道主义理想和思想自由”）。
+
+Bertrand Russell was one of the twentieth century's most colorful
+intellectuals.
+伯特兰·罗素是二十世纪最多姿多彩的知识分子之一。
+
+He helped revolutionize the foundations of mathematics,
+but was perhaps better known as a philosopher.
+他帮助革新了数学的基础，但或许作为哲学家更为人所知。
+
+It's hard to conceive 
+of \emph{anyone} who would characterize Russell as an applied mathematician!
+很难想象有\emph{任何人}会把罗素定性为应用数学家！
+
+Russell was an ardent anti-war and anti-nuclear activist.  He achieved a
+status (shared with Albert Einstein, but very few others) as an eminent
+scientist who was also a powerful moral authority.
+罗素是一位热心的反战和反核活动家。他达到了一个地位（与阿尔伯特·爱因斯坦共享，但很少有其他人），即作为一位杰出的科学家，同时也是一位强大的道德权威。
+
+Russell's mathematical
+work was of a very abstruse foundational sort; he was concerned with
+the idea of reducing all mathematical thought to Logic and Set theory.
+罗素的数学工作属于非常深奥的基础性工作；他关注于将所有数学思想简化为逻辑和集合论。
+
+In the beginning of our investigations into Set theory we mentioned 
+that the notion of a ``set of all sets'' leads to something paradoxical.
+在我们对集合论的调查开始时，我们提到“所有集合的集合”这个概念会导致悖论。
+
+Now we're ready to look more closely into that remark and hopefully 
+gain an understanding of Russell's paradox.
+现在我们准备更仔细地研究这个说法，并希望能够理解罗素悖论。
+
+By this point you should be okay with the notion of a set that 
+contains other sets, but would it be okay for a set to contain
+\emph{itself}?
+到目前为止，你应该已经接受了一个集合包含其他集合的概念，但是一个集合包含\emph{它自己}可以吗？
+
+That is, would it make sense to have a set 
+defined by
+
+也就是说，定义一个集合
+
+\[ A = \{ 1, 2, A \}?
+\]
+
+\noindent The set $A$ has three elements, $1$, $2$ and itself.
+\noindent 集合 $A$ 有三个元素，$1, 2$ 和它自己。
+
+So we
+could write
+
+所以我们可以写
+
+\[ A = \{ 1, 2, \{ 1, 2, A \} \}, \]
+ 
+\noindent and then
+
+\noindent 然后
+
+\[ A = \{ 1, 2, \{ 1, 2, \{ 1, 2, A \} \} \}, \]
+
+\noindent and then
+
+\noindent 然后
+
+\[ A = \{ 1, 2, \{ 1, 2, \{ 1, 2, \{ 1, 2, A \} \} \} \}, \]
+  
+\noindent et cetera.
+\noindent 等等。
+
+This obviously seems like a problem.  Indeed, often paradoxes seem to
+be caused by self-reference of this sort.
+这显然像一个问题。确实，悖论常常似乎是由这类自我指涉引起的。
+
+Consider 
+
+考虑
+
+\begin{center} 
+\framebox[1.1\width]{The sentence in this box is false. (这个框里的句子是假的。)}  
+\end{center}
+
+So a reasonable alternative
+is to ``do'' math among the sets that don't exhibit this particular
+pathology.
+所以一个合理的替代方案是在不表现出这种特殊病态的集合中“做”数学。
+
+Thus, inside the set of all sets we are singling out a particular subset
+that consists of sets which don't contain themselves.
+因此，在所有集合的集合内部，我们正在挑选出一个特殊的子集，它由不包含自身的集合组成。
+
+\[ {\mathcal S} = \{ A \suchthat \; A \; \mbox{is a set} \; \land \; A \notin A \} \]
+
+Now within the universal set we're working in (the set of all sets) there
+are only two possibilities: a given set is either in ${\mathcal S}$ or
+it is in its complement $\overline{\mathcal S}$.
+现在在我们工作的全集（所有集合的集合）中，只有两种可能性：一个给定的集合要么在 ${\mathcal S}$ 中，要么在它的补集 $\overline{\mathcal S}$ 中。
+
+Russell's paradox 
+comes about when we try to decide which of these alternatives pertains
+to ${\mathcal S}$ itself, the problem is that each alternative leads us 
+to the other!
+罗素悖论发生在我们试图决定这两种选择中哪一种适用于 ${\mathcal S}$ 本身时，问题在于每种选择都会把我们引向另一种！
+
+If we assume that ${\mathcal S} \in {\mathcal S}$, then it must be the 
+case that ${\mathcal S}$ satisfies the membership criterion for ${\mathcal S}$.
+Thus, ${\mathcal S} \notin {\mathcal S}$.
+
+如果我们假设 ${\mathcal S} \in {\mathcal S}$，那么 ${\mathcal S}$ 必须满足 ${\mathcal S}$ 的成员资格标准。因此，${\mathcal S} \notin {\mathcal S}$。
+
+On the other hand, if we assume that ${\mathcal S} \notin {\mathcal S}$,
+then we see that ${\mathcal S}$ does indeed satisfy the membership criterion for ${\mathcal S}$.
+Thus ${\mathcal S} \in {\mathcal S}$.
+
+另一方面，如果我们假设 ${\mathcal S} \notin {\mathcal S}$，那么我们看到 ${\mathcal S}$ 确实满足了 ${\mathcal S}$ 的成员资格标准。因此 ${\mathcal S} \in {\mathcal S}$。
+
+Russell himself developed a workaround for the paradox which
+bears his name.
+罗素本人为以他名字命名的悖论开发了一个变通办法。
+
+Together with Alfred North Whitehead he published
+a 3 volume work entitled \emph{Principia Mathematica}\footnote{Isaac Newton
+also published a 3 volume work which is often cited by this same title,
+\emph{Philosophiae Naturalis Principia Mathematica}.} \cite{PM}.
+他与阿尔弗雷德·诺斯·怀特海一起出版了一部名为《数学原理》的三卷本著作\footnote{艾萨克·牛顿也出版了一部3卷本的著作，常被引用相同的标题，《自然哲学的数学原理》。} \cite{PM}。
+
+In the Principia, Whitehead and Russell develop a system known as 
+\emph{type theory} which sets forth principles for avoiding problems
+like Russell's paradox.
+在《数学原理》中，怀特海和罗素发展了一个被称为\emph{类型论}的系统，该系统提出了避免像罗素悖论这类问题的原则。
+
+Basically, a set and its elements are of
+different ``types'' and so the notion of a set being contained in itself
+(as an element) is disallowed.
+基本上，一个集合和它的元素属于不同的“类型”，因此一个集合包含自身（作为元素）的概念是不被允许的。
+\clearpage 
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\input{sets-zh/russell-exer.tex}
+
+%\newpage
+%
+%\renewcommand{\bibname}{References for chapter 4}
+%\bibliographystyle{plain}
+%\bibliography{main}
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
