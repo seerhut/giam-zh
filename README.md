@@ -8,6 +8,7 @@ I broke the paragraphs into shorter sentences to check the translation more easi
 
 Of course, LLMs have done the most work, and it went well. I barely found any mistranslation, and I only fixed some LaTeX errors. I've got little time to check the content word by word, so please feel free to submit issues.
 
+This project is licensed under the GNU Free Documentation License version 1.3, as well as the original project.
 
 original project's README
 ====
