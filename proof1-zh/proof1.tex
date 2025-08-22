@@ -4,15 +4,15 @@
 \label{ch:proof1}
 
 {\em Love is a snowmobile racing across the tundra and then suddenly it %
- flips over, pinning you underneath. At night, the \index{weasels, ice} %
- ice weasels come. --Matt Groening} 
+      flips over, pinning you underneath. At night, the \index{weasels, ice} %
+      ice weasels come. --Matt Groening}
 
 {\em 爱是一辆雪地摩托驰骋于苔原，然后突然翻车，将你压在底下。到了晚上，\index{weasels, ice}冰鼬就会出现。——马特·格勒宁}
 
 \section{Direct proofs of universal statements 全称陈述的直接证明}
 \label{sec:direct}
 
-If you form the product of 4 consecutive numbers, the result will be one 
+If you form the product of 4 consecutive numbers, the result will be one
 less than a perfect square. Try it!
 
 如果你将4个连续数字相乘，结果将比一个完全平方数小1。试试看！
@@ -32,7 +32,7 @@ inductive argument in favor of the result.
 
 我们上面进行的三次计算构成了一个支持该结果的归纳论证。
 
-If you like we can try 
+If you like we can try
 a bunch of further examples,
 
 如果你愿意，我们可以尝试更多例子，
@@ -41,77 +41,77 @@ a bunch of further examples,
 
 \[ 14 \cdot 15 \cdot 16 \cdot 17 = 571200 = 239^2 - 1 \]
 
-\noindent but really, no matter how many examples we produce, we haven't 
+\noindent but really, no matter how many examples we produce, we haven't
 {\em proved} the statement --- we've just given evidence.
 
 \noindent 但实际上，无论我们举出多少例子，我们都没有{\em 证明}这个陈述——我们只是给出了证据。
 
-Generally, the first thing to do in proving a universal statement like 
+Generally, the first thing to do in proving a universal statement like
 this is to rephrase it as a conditional.
 
 通常，证明这样一个全称陈述的第一步是将其改写为条件句。
 
-The resulting statement is a 
-\index{universal conditional statement}\emph{Universal Conditional Statement} 
+The resulting statement is a
+\index{universal conditional statement}\emph{Universal Conditional Statement}
 or a UCS.
 
 得到的陈述是一个\index{universal conditional statement}\emph{全称条件陈述}或UCS。
 
-The reason for taking 
-this step is that the \emph{hypotheses} will then be clear -- they form 
+The reason for taking
+this step is that the \emph{hypotheses} will then be clear -- they form
 the antecedent of the UCS.
 
 采取这一步骤的原因是，这样\emph{假设}就会变得清晰——它们构成了UCS的前件。
 
-So, while you won't have really made any 
+So, while you won't have really made any
 progress in the proof by taking this advice, you will at least know what tools
 you have at hand.
 
 所以，虽然采纳这个建议并不会让你的证明有实质性进展，但至少你会知道你手头有哪些工具。
 
-Taking the example we started with, and rephrasing 
+Taking the example we started with, and rephrasing
 it as a UCS we get
 
 以我们开始的例子为例，并将其改写为UCS，我们得到
 
-\[ \forall a,b,c,d \in \Integers, (\mbox{a,b,c,d  consecutive}) 
-\implies \exists k \in \Integers, a{\cdot}b{\cdot}c{\cdot}d = k^2 -1 
+\[ \forall a,b,c,d \in \Integers, (\mbox{a,b,c,d  consecutive})
+      \implies \exists k \in \Integers, a{\cdot}b{\cdot}c{\cdot}d = k^2 -1
 \]
 
-The antecedent of the UCS is that $a,b,c$ and $d$ must be 
-{\em consecutive}.
+The antecedent of the UCS is that $a,b,c$ and $d$ must be
+      {\em consecutive}.
 
 这个UCS的前件是 $a,b,c$ 和 $d$ 必须是{\em 连续的}。
 
-By concentrating our attention on what it 
+By concentrating our attention on what it
 means to be consecutive, we should quickly realize that the original
 way we thought of the problem involved a red herring.
 
 通过集中注意力思考“连续”的含义，我们应该很快意识到我们最初思考这个问题的方式包含了一个障眼法。
 
-We don't need 
-to have variables for all four numbers; because they are consecutive, 
+We don't need
+to have variables for all four numbers; because they are consecutive,
 $a$ uniquely determines the other three.
 
 我们不需要为所有四个数都设置变量；因为它们是连续的，$a$ 唯一地确定了另外三个。
 
-Finally we have a version 
+Finally we have a version
 of the statement that we'd like to prove that should lend itself
 to our proof efforts.
 
 最终，我们得到了一个我们想要证明的陈述的版本，这个版本应该有助于我们的证明工作。
 
-\begin{thm} 
-\[ \forall a \in \Integers, \exists k \in \Integers, 
-a(a+1)(a+2)(a+3) = k^2 - 1. \]
+\begin{thm}
+      \[ \forall a \in \Integers, \exists k \in \Integers,
+            a(a+1)(a+2)(a+3) = k^2 - 1. \]
 \end{thm}
 
-In this simplistic example, the only thing we need to do is come 
+In this simplistic example, the only thing we need to do is come
 up with a value for $k$ given that we know what $a$ is.
 
 在这个简单的例子中，我们唯一需要做的就是在已知 $a$ 的情况下，找出一个 $k$ 的值。
 
-In other 
+In other
 words, a ``proof'' of this statement involves doing some algebra.
 
 换句话说，这个陈述的“证明”涉及一些代数运算。
@@ -121,91 +121,91 @@ Without further ado\ldots
 不再赘述……
 
 \begin{proof}
-Suppose that $a$ is a particular but arbitrarily chosen 
-integer.
+      Suppose that $a$ is a particular but arbitrarily chosen
+      integer.
 
-假设 $a$ 是一个特定但任意选择的整数。
+      假设 $a$ 是一个特定但任意选择的整数。
 
-Consider the product of the 4 consecutive integers, $a$, 
-$a+1$, $a+2$ and $a+3$.
+      Consider the product of the 4 consecutive integers, $a$,
+      $a+1$, $a+2$ and $a+3$.
 
-考虑4个连续整数 $a, a+1, a+2$ 和 $a+3$ 的乘积。
+      考虑4个连续整数 $a, a+1, a+2$ 和 $a+3$ 的乘积。
 
-We would like to show that this product is 
-one less than the square of an integer $k$.
+      We would like to show that this product is
+      one less than the square of an integer $k$.
 
-我们希望证明这个乘积比某个整数 $k$ 的平方小1。
+      我们希望证明这个乘积比某个整数 $k$ 的平方小1。
 
-Let $k$ be $a^2+3a+1$.  
+      Let $k$ be $a^2+3a+1$.
 
-令 $k$ 为 $a^2+3a+1$。
+      令 $k$ 为 $a^2+3a+1$。
 
-First, note that 
+      First, note that
 
-首先，注意到
+      首先，注意到
 
-\[  a(a+1)(a+2)(a+3) = a^4 + 6a^3 + 11a^2 + 6a.
-\]
+      \[  a(a+1)(a+2)(a+3) = a^4 + 6a^3 + 11a^2 + 6a.
+      \]
 
-Then, note that
+      Then, note that
 
-然后，注意到
+      然后，注意到
 
-\begin{gather*} 
-k^2 - 1 = (a^2 + 3a +1)^2 - 1 \\
-= (a^4  + 6a^3 + 11a^2 + 6a + 1) - 1 \\
-= a^4 + 6a^3 + 11a^2 + 6a.
-\end{gather*}
+      \begin{gather*}
+            k^2 - 1 = (a^2 + 3a +1)^2 - 1 \\
+            = (a^4  + 6a^3 + 11a^2 + 6a + 1) - 1 \\
+            = a^4 + 6a^3 + 11a^2 + 6a.
+      \end{gather*}
 
-\end{proof} 
+\end{proof}
 
-Now, if you followed the algebra above, (none of which was particularly 
-difficult) the proof stands as a completely valid argument showing the 
+Now, if you followed the algebra above, (none of which was particularly
+difficult) the proof stands as a completely valid argument showing the
 truth of our proposition, but this is \emph{very} unsatisfying!
 
 现在，如果你跟上了上面的代数运算（其中没有特别困难的部分），这个证明就构成了一个完全有效的论证，显示了我们命题的真实性，但这\emph{非常}不能令人满意！
 
-All 
+All
 the real work was concealed in one stark little sentence:
-``Let $k$ be $a^2+3a+1$.''   Where on Earth did that particular value 
+``Let $k$ be $a^2+3a+1$.''   Where on Earth did that particular value
 of $k$ come from?
 
 所有真正的工作都隐藏在一句简单而生硬的话里：“令 $k$ 为 $a^2+3a+1$。”这个特定的 $k$ 值究竟是从哪里来的？
 
-The answer to that question should hopefully 
-convince you that there is a huge difference between \emph{devising} 
+The answer to that question should hopefully
+convince you that there is a huge difference between \emph{devising}
 a proof and \emph{writing} one.
 
 这个问题的答案应该能让你相信，\emph{设计}一个证明和\emph{书写}一个证明之间有巨大的差别。
 
 A good proof can sometimes be
-somewhat akin to a good demonstration of magic, a magician doesn't 
-reveal the inner workings of his trick, neither should a mathematician 
+somewhat akin to a good demonstration of magic, a magician doesn't
+reveal the inner workings of his trick, neither should a mathematician
 feel guilty about leaving out some of the details behind the work!
 
 一个好的证明有时可能有点像一场精彩的魔术表演，魔术师不会揭示他戏法的内部运作，同样，一个数学家也不应该因为省略了工作背后的一些细节而感到内疚！
 
-Heck, there are plenty of times when you just have to \emph{guess} 
+Heck, there are plenty of times when you just have to \emph{guess}
 at something, but if your guess works out, you can write
 a perfectly correct proof.
 
 哎呀，有很多时候你只需要\emph{猜测}某个东西，但如果你的猜测成功了，你就可以写出一个完全正确的证明。
 
-In devising the proof above, we multiplied out the consecutive numbers 
-and then realized that we'd be done if we could find a polynomial in 
+In devising the proof above, we multiplied out the consecutive numbers
+and then realized that we'd be done if we could find a polynomial in
 $a$ whose square was $a^4  + 6a^3 + 11a^2 + 6a + 1$.
 
 在设计上述证明时，我们将连续的数相乘，然后意识到，如果我们能找到一个关于 $a$ 的多项式，其平方为 $a^4  + 6a^3 + 11a^2 + 6a + 1$，那么我们就完成了。
 
-Now, obviously, 
-we're going to need a quadratic polynomial, and because the leading 
-term is $a^4$ and the constant term is $1$, it should be of the form 
+Now, obviously,
+we're going to need a quadratic polynomial, and because the leading
+term is $a^4$ and the constant term is $1$, it should be of the form
 $a^2 + ma + 1$.
 
 现在，很明显，我们需要一个二次多项式，因为首项是 $a^4$，常数项是1，所以它应该是 $a^2 + ma + 1$ 的形式。
 
-Squaring this gives $a^4 + 2ma^3 + (m^2+2)a^2 + 2ma + 1$ 
-and comparing that result with what we want, we pretty quickly realize 
+Squaring this gives $a^4 + 2ma^3 + (m^2+2)a^2 + 2ma + 1$
+and comparing that result with what we want, we pretty quickly realize
 that $m$ had better be 3.  So it wasn't magic after all!
 
 将此平方得到 $a^4 + 2ma^3 + (m^2+2)a^2 + 2ma + 1$，将该结果与我们想要的结果进行比较，我们很快意识到 $m$ 最好是3。所以终究不是魔术！
@@ -214,89 +214,89 @@ This seems like a good time to make a comment on polynomial arithmetic.
 
 这似乎是评论多项式算术的好时机。
 
-\index{polynomial multiplication}  
-Many people give up (or go searching for a computer algebra system) 
+\index{polynomial multiplication}
+Many people give up (or go searching for a computer algebra system)
 when dealing with products of anything bigger than binomials.
 
 \index{polynomial multiplication}许多人在处理比二项式更大的乘积时会放弃（或去寻找计算机代数系统）。
 
-This 
-is a shame because there is an easy method using a table for performing 
+This
+is a shame because there is an easy method using a table for performing
 such multiplications.
 
 这很可惜，因为有一个使用表格的简单方法可以执行此类乘法。
 
-As an example, in devising the previous proof we 
+As an example, in devising the previous proof we
 needed to form the product $a(a+1)(a+2)(a+3)$, now we can use the
-distributive law or the infamous F.O.I.L rule to multiply pairs of these, 
+distributive law or the infamous F.O.I.L rule to multiply pairs of these,
 but we still need to multiply $(a^2+a)$ with $(a^2+5a+6)$.
 
 例如，在设计前一个证明时，我们需要计算乘积 $a(a+1)(a+2)(a+3)$，现在我们可以使用分配律或臭名昭著的F.O.I.L法则来乘以这些对，但我们仍然需要将 $(a^2+a)$ 与 $(a^2+5a+6)$ 相乘。
 
-Create a 
-table that has the terms of these two polynomials as its row and column 
+Create a
+table that has the terms of these two polynomials as its row and column
 headings.
 
 创建一个表格，将这两个多项式的项作为其行和列的标题。
 
 \begin{center}
-\begin{tabular}{c|ccc}
-      & \rule{3pt}{0pt} $a^2$ \rule{3pt}{0pt}  & \rule{3pt}{0pt}  $5a$ \rule{3pt}{0pt}  & \rule{3pt}{0pt}  $6$  \rule{3pt}{0pt} \\ \hline
-$a^2$ &         &      & \\
-$a$   &         &      & \\
-\end{tabular}
+      \begin{tabular}{c|ccc}
+                  & \rule{3pt}{0pt} $a^2$ \rule{3pt}{0pt} & \rule{3pt}{0pt}  $5a$ \rule{3pt}{0pt} & \rule{3pt}{0pt}  $6$  \rule{3pt}{0pt} \\ \hline
+            $a^2$ &                                       &                                       &                                       \\
+            $a$   &                                       &                                       &                                       \\
+      \end{tabular}
 \end{center}
 
-Now, fill in the entries of the table by multiplying the corresponding 
+Now, fill in the entries of the table by multiplying the corresponding
 row and column headers.
 
 现在，通过将相应的行和列标题相乘来填充表格的条目。
 
 \begin{center}
-\begin{tabular}{c|ccc}
-      &  \rule{3pt}{0pt}   $a^2$ \rule{3pt}{0pt}  & \rule{3pt}{0pt}  $5a$  \rule{3pt}{0pt}   &  \rule{3pt}{0pt} $6$  \rule{3pt}{0pt} \\ \hline
-$a^2$ &   $a^4$ & $5a^3$ & $6a^2$ \\
-$a$   &   $a^3$ & $5a^2$ & $6a$ \\
-\end{tabular}
+      \begin{tabular}{c|ccc}
+                  & \rule{3pt}{0pt}   $a^2$ \rule{3pt}{0pt} & \rule{3pt}{0pt}  $5a$  \rule{3pt}{0pt} & \rule{3pt}{0pt} $6$  \rule{3pt}{0pt} \\ \hline
+            $a^2$ & $a^4$                                   & $5a^3$                                 & $6a^2$                               \\
+            $a$   & $a^3$                                   & $5a^2$                                 & $6a$                                 \\
+      \end{tabular}
 \end{center}
 
 Finally add up all the entries of the table, combining any like terms.
 
 最后将表格中的所有条目相加，合并任何同类项。
 
-You should note that the F.O.I.L rule is just a mnemonic for the case when 
+You should note that the F.O.I.L rule is just a mnemonic for the case when
 the table has 2 rows and 2 columns.
 
 你应该注意到，F.O.I.L法则只是表格有2行2列情况下的一个助记法。
 
 Okay, let's get back to doing proofs.  We are going to do a lot of
-proofs involving the concepts of elementary number theory so, as a 
+proofs involving the concepts of elementary number theory so, as a
 convenience, all of the definitions that were made in Chapter~\ref{ch:intro}
 are gathered together in Table~\ref{tab:defs}.
 
 好了，让我们回到证明上来。我们将要做很多涉及初等数论概念的证明，所以为方便起见，第~\ref{ch:intro}章中所有的定义都集中在表~\ref{tab:defs}中。
 
-\begin{table}[hbt] 
-\input{proof1-zh/defs_elem_num_theory.tex}
-\caption{The definitions of elementary number theory restated. 初等数论的定义重述。}
-\label{tab:defs}
+\begin{table}[hbt]
+      \input{proof1-zh/defs_elem_num_theory.tex}
+      \caption{The definitions of elementary number theory restated. 初等数论的定义重述。}
+      \label{tab:defs}
 \end{table}
 
-\clearpage 
+\clearpage
 
-In this section we are concerned with 
+In this section we are concerned with
 \index{direct proofs}direct proofs of universal statements.
 
 在本节中，我们关注\index{direct proofs}全称陈述的直接证明。
 
-Such statements come in two flavors -- those that appear to involve 
+Such statements come in two flavors -- those that appear to involve
 conditionals, and those that don't:
 
 这类陈述有两种形式——一种似乎涉及条件句，另一种则不涉及：
 
 \begin{quote} Every prime greater than two is odd.
 
-每个大于2的素数都是奇数。
+      每个大于2的素数都是奇数。
 \end{quote}
 
 versus
@@ -305,16 +305,16 @@ versus
 
 \begin{quote} For all integers $n$, if $n$ is a prime greater than two, then $n$ is odd.
 
-对于所有整数 $n$，如果 $n$ 是一个大于2的素数，那么 $n$ 是奇数。
+      对于所有整数 $n$，如果 $n$ 是一个大于2的素数，那么 $n$ 是奇数。
 \end{quote}
 
-These two forms can readily be transformed one into the other, so 
+These two forms can readily be transformed one into the other, so
 we will always concentrate on the latter.
 
 这两种形式可以很容易地相互转换，所以我们将始终专注于后者。
 
 A direct proof of a UCS
-always follows a form known as 
+always follows a form known as
 \index{generalizing from the generic particular}
 ``generalizing from the generic particular.''
 We are trying to prove that $\forall x \in U, P(x) \implies Q(x)$.
@@ -328,25 +328,25 @@ The argument (in skeletal outline) will look like:
 \medskip
 
 \begin{center}
-\begin{tabular}{|c|} \hline
-\rule{16pt}{0pt}\begin{minipage}{.75\textwidth}
-\rule{0pt}{20pt} {\em Proof:} Suppose that $a$ is a particular but arbitrary element of $U$ such 
-that $P(a)$ holds.
+      \begin{tabular}{|c|} \hline
+            \rule{16pt}{0pt}\begin{minipage}{.75\textwidth}
+                                  \rule{0pt}{20pt} {\em Proof:} Suppose that $a$ is a particular but arbitrary element of $U$ such
+                                  that $P(a)$ holds.
 
-{\em 证明：}假设 $a$ 是 $U$ 中一个特定但任意的元素，使得 $P(a)$ 成立。
-\begin{center}
-$\vdots$
-\end{center}
+                                        {\em 证明：}假设 $a$ 是 $U$ 中一个特定但任意的元素，使得 $P(a)$ 成立。
+                                  \begin{center}
+                        $\vdots$
+                  \end{center}
 
-Therefore $Q(a)$ is true. \newline
-Thus we have shown that for all $x$ in $U$, $P(x) \implies Q(x)$.\newline
+                                  Therefore $Q(a)$ is true. \newline
+                                  Thus we have shown that for all $x$ in $U$, $P(x) \implies Q(x)$.\newline
 
-因此 $Q(a)$ 为真。\newline
-因此我们已经证明对于 $U$ 中的所有 $x$，$P(x) \implies Q(x)$ 成立。\newline
-\rule{0pt}{0pt} \hspace{\fill} Q.E.D.
-\rule[-10pt]{0pt}{16pt}
-\end{minipage} \rule{16pt}{0pt} \\ \hline
-\end{tabular}
+                                  因此 $Q(a)$ 为真。\newline
+                                  因此我们已经证明对于 $U$ 中的所有 $x$，$P(x) \implies Q(x)$ 成立。\newline
+                                  \rule{0pt}{0pt} \hspace{\fill} Q.E.D.
+                                  \rule[-10pt]{0pt}{16pt}
+                            \end{minipage} \rule{16pt}{0pt} \\ \hline
+      \end{tabular}
 \end{center}
 \medskip
 
@@ -354,27 +354,27 @@ Okay, so this outline is pretty crappy.
 
 好吧，所以这个大纲很糟糕。
 
-It tells you how to start and 
-end a direct proof, but those obnoxious dot-dot-dots in the middle are 
+It tells you how to start and
+end a direct proof, but those obnoxious dot-dot-dots in the middle are
 where all the real work has to go.
 
 它告诉你如何开始和结束一个直接证明，但中间那些讨厌的省略号是所有真正工作所在的地方。
 
-If I could tell you (even in outline) 
-how to fill in those dots, that would mean mathematical proof isn't really 
-a very interesting activity to engage in.  Filling in those dots will 
+If I could tell you (even in outline)
+how to fill in those dots, that would mean mathematical proof isn't really
+a very interesting activity to engage in.  Filling in those dots will
 sometimes (rarely) be obvious, more often it will be extremely challenging;
 
 如果我能告诉你（即使只是大纲）如何填补那些点，那就意味着数学证明并不是一个非常有趣的活动。填补那些点有时（很少）会很明显，更多时候会极具挑战性；
 
-it will require great creativity, loads of concentration, you'll call on 
+it will require great creativity, loads of concentration, you'll call on
 all your previous mathematical experiences, and you will most likely
 experience a certain degree of anguish.
 
 它将需要巨大的创造力、高度的专注力，你会调用你所有以前的数学经验，而且你很可能会经历一定程度的痛苦。
 
-Just remember that your sense 
-of accomplishment is proportional to the difficulty of the puzzles you 
+Just remember that your sense
+of accomplishment is proportional to the difficulty of the puzzles you
 attempt.
 
 只要记住，你的成就感与你尝试的谜题难度成正比。
@@ -383,30 +383,30 @@ So let's attempt another\ldots
 
 所以让我们再尝试一个……
 
-In Table~\ref{tab:defs} one of the very handy notions defined is that 
+In Table~\ref{tab:defs} one of the very handy notions defined is that
 of the \emph{floor} of a real number.
 
 在表~\ref{tab:defs}中，定义的一个非常方便的概念是实数的\emph{下取整}。
 
 \[ y = \lfloor x \rfloor \; \iff \; (y \in \mathbb Z \; \land \; y \leq x < y+1).\]
 
-There is a sad tendency for people to apply old rules in new situations 
+There is a sad tendency for people to apply old rules in new situations
 just because of a chance similarity in the notation.
 
 人们有一种可悲的倾向，仅仅因为符号上的偶然相似，就在新情况下应用旧规则。
 
-The brackets used 
-in notating the floor function look very similar to ordinary parentheses, 
+The brackets used
+in notating the floor function look very similar to ordinary parentheses,
 so the following ``rule'' is often proposed
 
 用于表示下取整函数的方括号看起来与普通圆括号非常相似，因此经常有人提出以下“规则”
 
 \[ \lfloor x + y \rfloor = \lfloor x \rfloor + \lfloor y \rfloor \]
 
-\begin{exer} 
-Find a counterexample to the previous ``rule.''
+\begin{exer}
+      Find a counterexample to the previous ``rule.''
 
-为前面的“规则”找一个反例。
+      为前面的“规则”找一个反例。
 \end{exer}
 
 What is (perhaps) surprising is that if one of the numbers involved is an
@@ -415,8 +415,8 @@ integer then the ``rule'' really works.
 （也许）令人惊讶的是，如果涉及的数字之一是整数，那么这个“规则”就真的成立。
 
 \begin{thm}
-\[ \forall x \in \Reals, \, \forall n \in \Integers, \, 
-\lfloor x + n \rfloor = \lfloor x \rfloor + \lfloor n \rfloor \]
+      \[ \forall x \in \Reals, \, \forall n \in \Integers, \,
+            \lfloor x + n \rfloor = \lfloor x \rfloor + \lfloor n \rfloor \]
 \end{thm}
 
 Since the floor of an integer {\em is} that integer, we could restate this
@@ -440,24 +440,24 @@ are the definitions of the concepts involved.
 
 在构建证明时，你下一个最有用的盟友是所涉概念的定义。
 
-The quantity 
+The quantity
 $\lfloor x \rfloor$ appears in the theorem, let's make
 use of the definition:
 
 定理中出现了量 $\lfloor x \rfloor$，让我们利用它的定义：
 
-\[ a = \lfloor x  \rfloor \; \iff \; a \in \Integers \; \, 
-\land \; \, a \leq x < a+1.
+\[ a = \lfloor x  \rfloor \; \iff \; a \in \Integers \; \,
+      \land \; \, a \leq x < a+1.
 \]
 
 The only other floor function that appears in the statement of the theorem
-(perhaps even more prominently) 
+(perhaps even more prominently)
 is $\lfloor x + n\rfloor$, here, the definition gives us
 
 定理陈述中出现的唯一另一个下取整函数（可能更突出）是 $\lfloor x + n\rfloor$，这里，定义告诉我们
- 
-\[ b = \lfloor x + n \rfloor \; \iff \; 
-b \in \Integers \; \, \land \; \, b \leq x + n < b+1.
+
+\[ b = \lfloor x + n \rfloor \; \iff \;
+      b \in \Integers \; \, \land \; \, b \leq x + n < b+1.
 \]
 
 These definitions are our only available tools so we'll certainly \emph{have}
@@ -465,64 +465,64 @@ to make use of them, and it's important to notice that that is a good thing;
 
 这些定义是我们唯一可用的工具，所以我们当然\emph{必须}利用它们，而且重要的是要注意到这是一件好事；
 
-the definitions allow us to work with something well-understood 
-(the inequalities that appear within them) rather than with something 
+the definitions allow us to work with something well-understood
+(the inequalities that appear within them) rather than with something
 new and relatively suspicious (the floor notation).
 
 这些定义让我们能够处理一些我们很了解的东西（它们内部出现的不等式），而不是一些新的、相对可疑的东西（下取整符号）。
 
-Putting the proof 
-of this statement together is an exercise in staring at the two definitions 
+Putting the proof
+of this statement together is an exercise in staring at the two definitions
 above and noting how one can be converted into the other.
 
 将这个陈述的证明组合起来，是一个盯着上面两个定义，并注意如何将一个转换为另一个的练习。
 
-It is also a 
+It is also a
 testament to the power of \emph{naming} things.
 
 它也证明了\emph{命名}事物的力量。
 
 \begin{proof}
-Suppose that $x$ is a particular but arbitrary real number 
-and that $n$ is a particular but arbitrary integer.
+      Suppose that $x$ is a particular but arbitrary real number
+      and that $n$ is a particular but arbitrary integer.
 
-假设 $x$ 是一个特定但任意的实数，并且 $n$ 是一个特定但任意的整数。
+      假设 $x$ 是一个特定但任意的实数，并且 $n$ 是一个特定但任意的整数。
 
-Let 
-$a = \lfloor x \rfloor$.  By the definition of the floor function 
-it follows that $a$ is an integer and $a \leq x < a+1$.
+      Let
+      $a = \lfloor x \rfloor$.  By the definition of the floor function
+      it follows that $a$ is an integer and $a \leq x < a+1$.
 
-令 $a = \lfloor x \rfloor$。根据下取整函数的定义，可知 $a$ 是一个整数且 $a \leq x < a+1$。
+      令 $a = \lfloor x \rfloor$。根据下取整函数的定义，可知 $a$ 是一个整数且 $a \leq x < a+1$。
 
-By adding 
-$n$ to each of the parts of this inequality
-we deduce a new (and equally valid) inequality, $a+n \leq x+n < a+n+1$.
+      By adding
+      $n$ to each of the parts of this inequality
+      we deduce a new (and equally valid) inequality, $a+n \leq x+n < a+n+1$.
 
-通过将这个不等式的每一部分都加上 $n$，我们推导出一个新的（同样有效的）不等式，$a+n \leq x+n < a+n+1$。
+      通过将这个不等式的每一部分都加上 $n$，我们推导出一个新的（同样有效的）不等式，$a+n \leq x+n < a+n+1$。
 
-Note that $a+n$ is an integer and the inequality above together with
-this fact constitute precisely the definition of 
-$a + n = \lfloor x + n \rfloor$.
+      Note that $a+n$ is an integer and the inequality above together with
+      this fact constitute precisely the definition of
+      $a + n = \lfloor x + n \rfloor$.
 
-请注意，$a+n$ 是一个整数，上面的不等式与这个事实一起，恰好构成了 $a + n = \lfloor x + n \rfloor$ 的定义。
+      请注意，$a+n$ 是一个整数，上面的不等式与这个事实一起，恰好构成了 $a + n = \lfloor x + n \rfloor$ 的定义。
 
-Finally, recalling that 
-$a = \lfloor x \rfloor$ (by assumption), and rewriting, we obtain the
-desired result
+      Finally, recalling that
+      $a = \lfloor x \rfloor$ (by assumption), and rewriting, we obtain the
+      desired result
 
-最后，回想起（根据假设）$a = \lfloor x \rfloor$，并重新书写，我们得到期望的结果
+      最后，回想起（根据假设）$a = \lfloor x \rfloor$，并重新书写，我们得到期望的结果
 
-\[ \lfloor x + n \rfloor = \lfloor x \rfloor + n.
-\]
+      \[ \lfloor x + n \rfloor = \lfloor x \rfloor + n.
+      \]
 
-\end{proof} 
+\end{proof}
 
 As we've seen in the examples presented in this section, coming up
 with a proof can sometimes involve a bit of ingenuity.
 
 正如我们在本节的例子中所看到的，提出一个证明有时需要一些独创性。
 
-But, sometimes, 
+But, sometimes,
 there is a ``follow your nose'' sort of approach that will
 allow you to devise a valid argument without necessarily displaying
 any great leaps of genius!
@@ -535,93 +535,91 @@ of advice about proof-writing:
 以下是关于证明写作的一些建议：
 
 \begin{itemize}
-\item Before anything else, determine precisely what hypotheses you
-can use.
+      \item Before anything else, determine precisely what hypotheses you
+            can use.
 
-在做任何其他事情之前，精确地确定你可以使用哪些假设。
-\item Jot down the definitions of {\em anything} in the statement of 
-the theorem.
+            在做任何其他事情之前，精确地确定你可以使用哪些假设。
+      \item Jot down the definitions of {\em anything} in the statement of
+            the theorem.
 
-记下定理陈述中{\em 任何}事物的定义。
-\item There are 26 letters at your disposal (and even more if you know
-Greek) (and you can always throw on subscripts!) don't be stingy with
-letters.
+            记下定理陈述中{\em 任何}事物的定义。
+      \item There are 26 letters at your disposal (and even more if you know
+            Greek) (and you can always throw on subscripts!) don't be stingy with
+            letters.
 
-你有26个字母可供使用（如果你懂希腊语，甚至更多）（而且你总可以加上下标！）不要吝啬使用字母。
+            你有26个字母可供使用（如果你懂希腊语，甚至更多）（而且你总可以加上下标！）不要吝啬使用字母。
 
-The nastiest mistake you can make is to use the same variable
-for two different things.
+            The nastiest mistake you can make is to use the same variable
+            for two different things.
 
-你能犯的最糟糕的错误是为两件不同的事情使用同一个变量。
-\item Please write a rough draft first.  Write two drafts!
+            你能犯的最糟糕的错误是为两件不同的事情使用同一个变量。
+      \item Please write a rough draft first.  Write two drafts!
 
-请先写一份草稿。写两份草稿！
+            请先写一份草稿。写两份草稿！
 
-Even if you
-can write beautiful, lucid prose on the first go around, it won't fly
-when it comes to organizing a proof.
+            Even if you
+            can write beautiful, lucid prose on the first go around, it won't fly
+            when it comes to organizing a proof.
 
-即使你第一次就能写出优美、清晰的散文，在组织一个证明时，这也不行。
-\item The statements in a proof are supposed to be logical statements.
+            即使你第一次就能写出优美、清晰的散文，在组织一个证明时，这也不行。
+      \item The statements in a proof are supposed to be logical statements.
 
-证明中的陈述应该是逻辑陈述。
+            证明中的陈述应该是逻辑陈述。
 
-That means they should be Boolean (statements that are either true or false).
+            That means they should be Boolean (statements that are either true or false).
 
-这意味着它们应该是布尔型的（即或真或假的陈述）。
+            这意味着它们应该是布尔型的（即或真或假的陈述）。
 
-An algebraic expression all by itself doesn't count, an inequality or an 
-equality does.
+            An algebraic expression all by itself doesn't count, an inequality or an
+            equality does.
 
-一个代数表达式本身不算数，一个不等式或一个等式才算。
-\item Don't say ``if'' when you mean ``since.''  Really!
+            一个代数表达式本身不算数，一个不等式或一个等式才算。
+      \item Don't say ``if'' when you mean ``since.''  Really!
 
-当你意指“因为”时，不要说“如果”。真的！
+            当你意指“因为”时，不要说“如果”。真的！
 
-If you start a
-proof about rational numbers like so:
+            If you start a
+            proof about rational numbers like so:
 
-如果你像这样开始一个关于有理数的证明：
+            如果你像这样开始一个关于有理数的证明：
 
-\begin{quote}
-{\em Proof:} Suppose that $x$ is a particular but arbitrary rational number.
+            \begin{quote}
+                  {\em Proof:} Suppose that $x$ is a particular but arbitrary rational number.
 
-{\em 证明：}假设 $x$ 是一个特定但任意的有理数。
+                        {\em 证明：}假设 $x$ 是一个特定但任意的有理数。
 
-If $x$ is a rational number, it follows that \ldots
+                  If $x$ is a rational number, it follows that \ldots
 
-如果 $x$ 是一个有理数，那么……
-\end{quote}
+                  如果 $x$ 是一个有理数，那么……
+            \end{quote}
 
-\noindent people are going to look at you funny.
+            \noindent people are going to look at you funny.
 
-\noindent 人们会用奇怪的眼神看你。
+            \noindent 人们会用奇怪的眼神看你。
 
-What's the point of 
-{\em supposing}
-that $x$ is rational, then acting as if you're in doubt of that fact by
-writing ``if''?
+            What's the point of
+                  {\em supposing}
+            that $x$ is rational, then acting as if you're in doubt of that fact by
+            writing ``if''?
 
-{\em 假设} $x$ 是有理数，然后又通过写“如果”来表现出你对这个事实的怀疑，这有什么意义呢？
+            {\em 假设} $x$ 是有理数，然后又通过写“如果”来表现出你对这个事实的怀疑，这有什么意义呢？
 
-You mean ``since.''
+            You mean ``since.''
 
-你的意思是“因为”。
-\item Mark off the beginning and the end of your proofs as a hint to your
-readers.
+            你的意思是“因为”。
+      \item Mark off the beginning and the end of your proofs as a hint to your
+            readers.
 
-标记出你证明的开头和结尾，作为给读者的提示。
+            标记出你证明的开头和结尾，作为给读者的提示。
 
-In this book we start off a proof by writing {\em Proof:} in 
-italics and we end every proof with the abbreviation 
-\index{quod erat demonstrandum}
-Q.E.D.\footnote{{\em Quod erat demonstrandum} or ``(that) which was to 
-be demonstrated.'' some authors prefer placing a small rectangle at 
-the end of their proofs, but Q.E.D.\ seems more pompous. {\em Quod erat demonstrandum} 或“（那）需要被证明的”。一些作者喜欢在他们的证明末尾放一个小矩形，但Q.E.D.似乎更庄重。}
+            In this book we start off a proof by writing {\em Proof:} in
+            italics and we end every proof with the abbreviation
+            \index{quod erat demonstrandum}
+            Q.E.D.\footnote{{\em Quod erat demonstrandum} or ``(that) which was to
+                  be demonstrated.'' some authors prefer placing a small rectangle at
+                  the end of their proofs, but Q.E.D.\ seems more pompous. }
 
-在本书中，我们以斜体的{\em 证明：}开始一个证明，并以缩写\index{quod erat demonstrandum}Q.E.D.结束每一个证明。\footnote{{\em Quod erat demonstrandum} or ``(that) which was to 
-be demonstrated.'' some authors prefer placing a small rectangle at 
-the end of their proofs, but Q.E.D.\ seems more pompous. {\em Quod erat demonstrandum} 或“（那）需要被证明的”。一些作者喜欢在他们的证明末尾放一个小矩形，但Q.E.D.似乎更庄重。}
+            在本书中，我们以斜体的{\em 证明：}开始一个证明，并以缩写\index{quod erat demonstrandum}Q.E.D.结束每一个证明。\footnote{{\em Quod erat demonstrandum} 或“（那）需要被证明的”。一些作者喜欢在他们的证明末尾放一个小矩形，但Q.E.D.似乎更庄重。}
 \end{itemize}
 
 \newpage
@@ -640,7 +638,7 @@ need to be proved -- we are supposed to just accept them!
 
 公理不需要被证明——我们应该直接接受它们！
 
-A very common 
+A very common
 problem for beginning proofwriters is telling the difference between statements
 that are axiomatic and statements that require some proof.
 
@@ -677,14 +675,14 @@ can use the fact (indeed, you'll need to use the fact) that the sum of two integ
 
 所以，在做那个练习时，你可以使用（实际上，你需要使用）两个整数的和是整数这个事实。
 
-So how about {\em that} statement?  Is it necessary to prove that adding integers produces 
+So how about {\em that} statement?  Is it necessary to prove that adding integers produces
 an integer?
 
 那么{\em 那个}陈述呢？有必要证明整数相加会产生一个整数吗？
 
-As a matter of fact it {\em is} necessary since the structure of the integers 
+As a matter of fact it {\em is} necessary since the structure of the integers
 rests on a foundation known as the Peano axioms for the naturals -- and the Peano axioms
-{\em don't} include one that guarantees that the sum of two naturals is also a natural.
+      {\em don't} include one that guarantees that the sum of two naturals is also a natural.
 
 事实上，这{\em 是}有必要的，因为整数的结构建立在被称为自然数的皮亚诺公理的基础上——而皮亚诺公理{\em 不}包含一个保证两个自然数之和也是自然数的公理。
 
@@ -694,12 +692,12 @@ you.
 
 如果你想追溯这一切的根源，去“看看兔子洞有多深”，我称赞你。
 
-But, if you just want to be able to get on with doing your homework problems, I sympathize 
+But, if you just want to be able to get on with doing your homework problems, I sympathize
 with that sentiment too.
 
 但是，如果你只是想能够继续做你的家庭作业，我也同情那种情绪。
 
-Let's agree that integers behave the way we've come to expect -- if 
+Let's agree that integers behave the way we've come to expect -- if
 you add or multiply integers the result will be an integer.
 
 让我们同意，整数的行为如我们所期望的那样——如果你对整数进行加法或乘法运算，结果将是一个整数。
@@ -716,26 +714,24 @@ you add or multiply integers the result will be an integer.
 \section{More direct proofs 更多直接证明}
 \label{sec:more}
 
-In creating a direct proof we need to look at our hypotheses, consider 
+In creating a direct proof we need to look at our hypotheses, consider
 the desired conclusion, and develop a strategy for transforming A into B.
-Quite often you'll find it easy to make several deductions from the 
-hypotheses, but none of them seems to be headed in the direction of 
+Quite often you'll find it easy to make several deductions from the
+hypotheses, but none of them seems to be headed in the direction of
 the desired conclusion.
 
 在创建一个直接证明时，我们需要审视我们的假设，思考期望的结论，并制定一个将A转换为B的策略。通常你会发现，从假设中做出几个推论很容易，但似乎没有一个是指向期望结论的方向。
 
-The usual advice at this stage is 
+The usual advice at this stage is
 \index{forwards-backwards method}
 ``Try working backwards from the conclusion.''
 \footnote{Some people refer to this as the forwards-backwards method, since %
-you work backwards from the conclusion, but also forwards from the premises, %
-in the hopes of meeting somewhere in the middle. 有些人称之为正向-逆向法，因为你从结论向后推，也从前提出发向前推，希望能中途相遇。}  
+      you work backwards from the conclusion, but also forwards from the premises, %
+      in the hopes of meeting somewhere in the middle.}
 
-在这个阶段，通常的建议是\index{forwards-backwards method}“尝试从结论向后推。”\footnote{Some people refer to this as the forwards-backwards method, since %
-you work backwards from the conclusion, but also forwards from the premises, %
-in the hopes of meeting somewhere in the middle. 有些人称之为正向-逆向法，因为你从结论向后推，也从前提出发向前推，希望能中途相遇。}
+在这个阶段，通常的建议是\index{forwards-backwards method}“尝试从结论向后推。”\footnote{有些人称之为正向-逆向法，因为你从结论向后推，也从前提出发向前推，希望能中途相遇。}
 
-There is a lovely result known as the 
+There is a lovely result known as the
 \index{arithmetic-geometric mean inequality}
 ``arithmetic-geometric mean inequality''
 whose proof epitomizes this approach.
@@ -747,8 +743,8 @@ different ways of getting an ``average'' between two real numbers.
 
 基本上，这个不等式比较了在两个实数之间获得“平均值”的两种不同方法。
 
-The 
-\index{arithmetic mean}\emph{arithmetic mean} of two real numbers $a$ and $b$ is the one you're 
+The
+\index{arithmetic mean}\emph{arithmetic mean} of two real numbers $a$ and $b$ is the one you're
 probably used to, $(a+b)/2$.
 
 两个实数 $a$ 和 $b$ 的\index{arithmetic mean}\emph{算术平均值}是你可能习惯的那种，即 $(a+b)/2$。
@@ -761,7 +757,7 @@ is dependent on context.
 许多人只称其为 $a$ 和 $b$ 的“平均值”，而不使用“算术”这个修饰词，但正如我们将看到的，我们对在两个数之间使用什么中间值的概念是依赖于上下文的。
 
 Consider the following two sequences of numbers
-(both of which have a missing entry) 
+(both of which have a missing entry)
 
 考虑以下两个数列（两者都有一个缺失的项）
 
@@ -777,28 +773,28 @@ Consider the following two sequences of numbers
 
 \noindent 我们应该如何填空？
 
-The first sequence is an 
-\index{arithmetic sequence}\emph{arithmetic sequence}.  
-Arithmetic sequences 
+The first sequence is an
+\index{arithmetic sequence}\emph{arithmetic sequence}.
+Arithmetic sequences
 are characterized by the property that the difference between successive
 terms is a constant.
 
 第一个数列是一个\index{arithmetic sequence}\emph{等差数列}。等差数列的特点是连续项之间的差是一个常数。
 
-The second sequence is a 
-\index{geometric sequence}\emph{geometric sequence}. 
-Geometric sequences have the property that the ratio of successive terms 
+The second sequence is a
+\index{geometric sequence}\emph{geometric sequence}.
+Geometric sequences have the property that the ratio of successive terms
 is a constant.
 
 第二个数列是一个\index{geometric sequence}\emph{等比数列}。等比数列的特点是连续项之间的比率是一个常数。
 
-The blank in the first sequence should be filled with the 
+The blank in the first sequence should be filled with the
 arithmetic mean of the surrounding entries $(23+37)/2 = 30$.
 
 第一个数列中的空格应该用其周围项的算术平均值填充：$(23+37)/2 = 30$。
 
-The blank 
-in the second sequence should be filled using the 
+The blank
+in the second sequence should be filled using the
 \index{geometric mean}geometric mean
 of \emph{its} surrounding entries: $\sqrt{24\cdot 96} = 48$.
 
@@ -810,8 +806,8 @@ to see how these two means compare to one another.
 
 既然我们接受在不同情境下使用两种不等价的\emph{平均值}概念的效用，那么看看这两种平均值如何相互比较是很有趣的。
 
-The 
-arithmetic-geometric mean inequality states that the arithmetic mean 
+The
+arithmetic-geometric mean inequality states that the arithmetic mean
 is always bigger.
 
 算术-几何平均值不等式指出，算术平均值总是更大的。
@@ -820,26 +816,26 @@ is always bigger.
 
 In proving this statement we have little choice but to work backwards
 from the conclusion because the only hypothesis we have to work with
-is that $a$ and $b$ are non-negative real numbers -- which isn't a 
+is that $a$ and $b$ are non-negative real numbers -- which isn't a
 particularly potent tool.
 
 在证明这个陈述时，我们别无选择，只能从结论向后推，因为我们唯一可以使用的假设是 $a$ 和 $b$ 是非负实数——这并不是一个特别有力的工具。
 
-But what should we do?  
-There isn't a good response to that 
+But what should we do?
+There isn't a good response to that
 question, we'll just have to try a bunch of different things and hope
 that something will work out.
 
 但是我们该怎么做呢？这个问题没有一个好的回答，我们只能尝试一堆不同的事情，并希望某些方法会奏效。
 
 When we finally get around to writing up
-our proof though, we'll have to rearrange the statements in the opposite 
+our proof though, we'll have to rearrange the statements in the opposite
 order from the way they were discovered.
 
 然而，当我们最终着手写下我们的证明时，我们将不得不以与发现它们相反的顺序重新排列陈述。
 
-This means that we would 
-be ill-advised to make any uni-directional inferences, we should 
+This means that we would
+be ill-advised to make any uni-directional inferences, we should
 strive to make biconditional connections between our statements
 (or else try to intentionally make converse errors).
 
@@ -854,9 +850,9 @@ both the fractions and the radicals\ldots
 
 \[ \iff \; a+b \geq 2\sqrt{ab} \]
 
-\[ \iff \; (a+b)^2 \geq 4ab \] 
+\[ \iff \; (a+b)^2 \geq 4ab \]
 
-\[ \iff \; a^2+2ab+b^2 \geq 4ab \] 
+\[ \iff \; a^2+2ab+b^2 \geq 4ab \]
 
 One of the steps above involves squaring both sides of an inequality.
 
@@ -867,13 +863,13 @@ words, is the following conditional true?
 
 我们需要问自己这个步骤是否真的是可逆的。换句话说，以下条件句是否为真？
 
-\[ \forall x,y \in \Rnoneg, \, \; 
-x \geq y \; \implies \sqrt{x} \geq \sqrt{y} \]
+\[ \forall x,y \in \Rnoneg, \, \;
+      x \geq y \; \implies \sqrt{x} \geq \sqrt{y} \]
 
-\begin{exer} 
-Provide a justification for the previous implication.
+\begin{exer}
+      Provide a justification for the previous implication.
 
-为前面的蕴涵提供一个理由。
+      为前面的蕴涵提供一个理由。
 \end{exer}
 
 What should we try next?
@@ -881,16 +877,16 @@ What should we try next?
 我们下一步应该尝试什么？
 
 There's really no good justification for
-this but experience working with quadratic polynomials either in 
+this but experience working with quadratic polynomials either in
 equalities or inequalities leads most people to try ``moving everything
-to one side,'' that is, manipulating things so that one side of the 
+to one side,'' that is, manipulating things so that one side of the
 equation or inequality is zero.
 
 对此并没有很好的理由，但处理等式或不等式中二次多项式的经验使大多数人尝试“将所有项移到一边”，也就是说，操作事物使得等式或不等式的一边为零。
 
-\[  a^2+2ab+b^2 \geq 4ab \] 
+\[  a^2+2ab+b^2 \geq 4ab \]
 
-\[ \iff \; a^2-2ab+b^2 \geq 0 \] 
+\[ \iff \; a^2-2ab+b^2 \geq 0 \]
 
 Whoa!  We're done!  Do you see why?
 
@@ -902,14 +898,14 @@ zero.
 
 如果不明白，我给你一个提示：任何实数的平方都大于或等于零。
 
-\begin{exer} 
-Re-assemble all of the steps taken in the previous few paragraphs
-into a proof of the arithmetic-geometric mean inequality.
+\begin{exer}
+      Re-assemble all of the steps taken in the previous few paragraphs
+      into a proof of the arithmetic-geometric mean inequality.
 
-将前面几段中采取的所有步骤重新组合成算术-几何平均值不等式的证明。
+      将前面几段中采取的所有步骤重新组合成算术-几何平均值不等式的证明。
 \end{exer}
 
- 
+
 \clearpage
 
 \noindent{\large \bf Exercises --- \thesection\ }
@@ -923,9 +919,9 @@ into a proof of the arithmetic-geometric mean inequality.
 \label{sec:contra}
 
 Suppose we are trying to prove that all thrackles are polycyclic
-\footnote{Both of these strange sounding words represent real 
-mathematical concepts, however, they don't have anything to do 
-with one another.}.
+\footnote{Both of these strange sounding words represent real
+      mathematical concepts, however, they don't have anything to do
+      with one another.}.
 
 假设我们试图证明所有的thrackle都是polycyclic\footnote{这两个听起来奇怪的词都代表真实的数学概念，然而，它们之间没有任何关系。}。
 
@@ -941,8 +937,8 @@ there may be no obvious way to accomplish this task.
 
 正如经常发生的那样，可能没有明显的方法来完成这项任务。
 
-\index{indirect proof}Indirect proof takes 
-a completely different tack.  Suppose you had a thrackle that wasn't 
+\index{indirect proof}Indirect proof takes
+a completely different tack.  Suppose you had a thrackle that wasn't
 polycyclic, and furthermore, show that this supposition leads to something
 truly impossible.
 
@@ -965,62 +961,62 @@ are an infinite number of primes.
 
 \begin{thm} \index{infinitude of the primes}(Euclid) The set of all prime numbers is infinite.
 
-（欧几里得）所有素数的集合是无限的。
+      （欧几里得）所有素数的集合是无限的。
 \end{thm}
 
 \begin{proof}
-Suppose on the contrary that there are only a finite number
-of primes.
+      Suppose on the contrary that there are only a finite number
+      of primes.
 
-相反地，假设只有有限个素数。
+      相反地，假设只有有限个素数。
 
-This finite set of prime numbers could, in principle, be listed
-in ascending order.
+      This finite set of prime numbers could, in principle, be listed
+      in ascending order.
 
-这个有限的素数集合原则上可以按升序列出。
+      这个有限的素数集合原则上可以按升序列出。
 
-\[  \{ p_1, p_2, p_3, \ldots , p_n \} \]
+      \[  \{ p_1, p_2, p_3, \ldots , p_n \} \]
 
-Consider the number $N$ formed by adding 1 to the product of all of these 
-primes.
+      Consider the number $N$ formed by adding 1 to the product of all of these
+      primes.
 
-考虑由所有这些素数的乘积加1构成的数 $N$。
+      考虑由所有这些素数的乘积加1构成的数 $N$。
 
-\[ N = 1 + \prod_{k=1}^n p_k \]
+      \[ N = 1 + \prod_{k=1}^n p_k \]
 
-Clearly, $N$ is much larger than the largest prime $p_n$, so $N$ cannot
-be a prime number itself.
+      Clearly, $N$ is much larger than the largest prime $p_n$, so $N$ cannot
+      be a prime number itself.
 
-显然，$N$ 远大于最大的素数 $p_n$，所以 $N$ 本身不可能是素数。
+      显然，$N$ 远大于最大的素数 $p_n$，所以 $N$ 本身不可能是素数。
 
-Thus $N$ must be a product of some of the 
-primes in the list.
+      Thus $N$ must be a product of some of the
+      primes in the list.
 
-因此，$N$ 必须是列表中某些素数的乘积。
+      因此，$N$ 必须是列表中某些素数的乘积。
 
-Suppose that $p_j$ is one of the primes that 
-divides $N$.
+      Suppose that $p_j$ is one of the primes that
+      divides $N$.
 
-假设 $p_j$ 是整除 $N$ 的素数之一。
+      假设 $p_j$ 是整除 $N$ 的素数之一。
 
-Now notice that, by construction, $N$ would leave remainder
-$1$ upon division by $p_j$.
+      Now notice that, by construction, $N$ would leave remainder
+      $1$ upon division by $p_j$.
 
-现在注意到，根据构造，$N$ 除以 $p_j$ 的余数将是1。
+      现在注意到，根据构造，$N$ 除以 $p_j$ 的余数将是1。
 
-This is a contradiction since we cannot have
-both $p_j \divides N$ and $p_j \nmid N$.
+      This is a contradiction since we cannot have
+      both $p_j \divides N$ and $p_j \nmid N$.
 
-这是一个矛盾，因为我们不能同时有 $p_j \divides N$ 和 $p_j \nmid N$。
+      这是一个矛盾，因为我们不能同时有 $p_j \divides N$ 和 $p_j \nmid N$。
 
-Since the supposition that there are only finitely many primes leads to
-a contradiction, there must indeed be an infinite number of primes.
+      Since the supposition that there are only finitely many primes leads to
+      a contradiction, there must indeed be an infinite number of primes.
 
-因为只有有限个素数的假设导致了矛盾，所以素数的数量必须是无限的。
+      因为只有有限个素数的假设导致了矛盾，所以素数的数量必须是无限的。
 \end{proof}
 
 If you are working on proving a UCS and the direct approach seems to be
-failing you may find that another indirect approach, 
+failing you may find that another indirect approach,
 \index{proof by contraposition}proof by contraposition,
 will do the trick.
 
@@ -1036,7 +1032,7 @@ conditional and then prove {\em that} directly.
 
 人们所做的是确定原始条件句的逆否命题，然后直接证明{\em 它}。
 
-In another sense this 
+In another sense this
 method {\em is} indirect because a proof by contraposition can usually
 be recast as a proof by contradiction fairly easily.
 
@@ -1058,7 +1054,7 @@ Let's first phrase this as a UCS.
 
 我们先把它表述成一个UCS。
 
-\[ \forall x \in \Integers, \; x^2 \, \mbox{even} \; \implies x \, \mbox{even} 
+\[ \forall x \in \Integers, \; x^2 \, \mbox{even} \; \implies x \, \mbox{even}
 \]
 
 Perhaps you tried to prove this result earlier.
@@ -1072,20 +1068,20 @@ in trying to show that $x$ is even.
 
 如果是这样，你可能遇到了一个概念性问题，即你所有能用的只有 $x^2$ 的偶数性，这在你试图证明 $x$ 是偶数时并没有给你太多弹药。
 
-The contrapositive of this 
+The contrapositive of this
 statement is:
 
 这个陈述的逆否命题是：
 
-\[ \forall x \in \Integers, \; x \, \mbox{not even} \; \implies x^2 \, \mbox{not even} 
+\[ \forall x \in \Integers, \; x \, \mbox{not even} \; \implies x^2 \, \mbox{not even}
 \]
- 
+
 Now, since $x$ and $x^2$ are integers, there is only one alternative to being
 even -- so we can re-express the contrapositive as
 
 现在，由于 $x$ 和 $x^2$ 都是整数，除了是偶数之外只有一种选择——所以我们可以将逆否命题重新表述为
 
-\[ \forall x \in \Integers, \; x \, \mbox{odd} \; \implies x^2 \, \mbox{odd}. 
+\[ \forall x \in \Integers, \; x \, \mbox{odd} \; \implies x^2 \, \mbox{odd}.
 \]
 
 Without further ado, here is the proof:
@@ -1093,70 +1089,70 @@ Without further ado, here is the proof:
 不再赘述，证明如下：
 
 \begin{thm}
-\[ \forall x \in \Integers, \; x^2 \, \mbox{even} \; 
-\implies x \, \mbox{even} 
-\]
+      \[ \forall x \in \Integers, \; x^2 \, \mbox{even} \;
+            \implies x \, \mbox{even}
+      \]
 \end{thm}
 \begin{proof}
-This statement is logically equivalent to 
+      This statement is logically equivalent to
 
-这个陈述在逻辑上等价于
+      这个陈述在逻辑上等价于
 
-\[ \forall x \in \Integers, \; x \, \mbox{odd} \; \implies x^2 \, \mbox{odd} 
-\]
+      \[ \forall x \in \Integers, \; x \, \mbox{odd} \; \implies x^2 \, \mbox{odd}
+      \]
 
-\noindent so we prove that instead.
+      \noindent so we prove that instead.
 
-\noindent 所以我们转而证明后者。
+      \noindent 所以我们转而证明后者。
 
-Suppose that $x$ is a particular but arbitrarily chosen integer
-such that $x$ is odd.
+      Suppose that $x$ is a particular but arbitrarily chosen integer
+      such that $x$ is odd.
 
-假设 $x$ 是一个特定但任意选择的奇数整数。
+      假设 $x$ 是一个特定但任意选择的奇数整数。
 
-Since $x$ is odd, there is an integer $k$ such that
-$x=2k+1$.
+      Since $x$ is odd, there is an integer $k$ such that
+      $x=2k+1$.
 
-因为 $x$ 是奇数，所以存在一个整数 $k$ 使得 $x=2k+1$。
+      因为 $x$ 是奇数，所以存在一个整数 $k$ 使得 $x=2k+1$。
 
-It follows that 
-$x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$.
+      It follows that
+      $x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$.
 
-因此，$x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$。
+      因此，$x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1$。
 
-Finally, we see that $x^2$ must be odd because it is of the form $2m+1$, where
-$m = 2k^2 + 2k$ is clearly an integer.
+      Finally, we see that $x^2$ must be odd because it is of the form $2m+1$, where
+      $m = 2k^2 + 2k$ is clearly an integer.
 
-最后，我们看到 $x^2$ 必须是奇数，因为它是 $2m+1$ 的形式，其中 $m = 2k^2 + 2k$ 显然是一个整数。
+      最后，我们看到 $x^2$ 必须是奇数，因为它是 $2m+1$ 的形式，其中 $m = 2k^2 + 2k$ 显然是一个整数。
 \end{proof}
 
 Let's have a look at a proof of the same statement done by contradiction.
 
 我们来看一个用反证法证明同一陈述的例子。
 \begin{proof}
-We wish to show that 
+      We wish to show that
 
-我们希望证明
+      我们希望证明
 
-\[ \forall x \in \Integers, \; x^2 \, \mbox{even} \; 
-\implies x \, \mbox{even}.
-\]
+      \[ \forall x \in \Integers, \; x^2 \, \mbox{even} \;
+            \implies x \, \mbox{even}.
+      \]
 
-Suppose to the contrary that there is an integer $x$ such that 
-$x^2$ is even but $x$ is odd.\footnote{Recall that the negation of 
-a UCS is an existentially quantified conjunction.}  Since $x$ is
-odd, there is an integer $m$ such that $x=2m+1$.
+      Suppose to the contrary that there is an integer $x$ such that
+      $x^2$ is even but $x$ is odd.\footnote{Recall that the negation of
+            a UCS is an existentially quantified conjunction.}  Since $x$ is
+      odd, there is an integer $m$ such that $x=2m+1$.
 
-相反地，假设存在一个整数 $x$，使得 $x^2$ 是偶数但 $x$ 是奇数。\footnote{回想一下，一个UCS的否定是一个存在量化的合取。}因为 $x$ 是奇数，所以存在一个整数 $m$ 使得 $x=2m+1$。
+      相反地，假设存在一个整数 $x$，使得 $x^2$ 是偶数但 $x$ 是奇数。\footnote{回想一下，一个UCS的否定是一个存在量化的合取。}因为 $x$ 是奇数，所以存在一个整数 $m$ 使得 $x=2m+1$。
 
-Therefore, by
-simple arithmetic, we obtain $x^2 = 4m^2+4m+1$ which is clearly odd.
+      Therefore, by
+      simple arithmetic, we obtain $x^2 = 4m^2+4m+1$ which is clearly odd.
 
-因此，通过简单的算术，我们得到 $x^2 = 4m^2+4m+1$，这显然是奇数。
+      因此，通过简单的算术，我们得到 $x^2 = 4m^2+4m+1$，这显然是奇数。
 
-This is a contradiction because (by assumption) $x^2$ is even.
+      This is a contradiction because (by assumption) $x^2$ is even.
 
-这是一个矛盾，因为（根据假设）$x^2$ 是偶数。
+      这是一个矛盾，因为（根据假设）$x^2$ 是偶数。
 \end{proof}
 
 The main problem in applying the method of proof by contradiction
@@ -1172,7 +1168,7 @@ drafts and rewriting.
 
 比任何其他证明技巧都更甚，反证法要求我们使用草稿和重写。
 
-After monkeying around enough that we find a 
+After monkeying around enough that we find a
 way to reach a contradiction, we need to go back to the beginning
 of the proof and highlight the feature that we will eventually contradict!
 
@@ -1189,61 +1185,61 @@ We'll end this section with an example from Geometry.
 我们将用一个几何学的例子来结束本节。
 
 \begin{thm}
-Among all triangles inscribed in a fixed circle, the one with maximum
-area is equilateral.
+      Among all triangles inscribed in a fixed circle, the one with maximum
+      area is equilateral.
 
-在所有内接于一个固定圆的三角形中，面积最大的那个是等边三角形。
+      在所有内接于一个固定圆的三角形中，面积最大的那个是等边三角形。
 \end{thm}
 
-\begin{proof} 
-We'll proceed by contradiction.  Suppose to the contrary that there is a 
-triangle, $\triangle ABC$, inscribed in a circle having maximum area that 
-is not equilateral.
+\begin{proof}
+      We'll proceed by contradiction.  Suppose to the contrary that there is a
+      triangle, $\triangle ABC$, inscribed in a circle having maximum area that
+      is not equilateral.
 
-我们将用反证法进行证明。相反地，假设存在一个内接于圆且面积最大的三角形 $\triangle ABC$，但它不是等边三角形。
+      我们将用反证法进行证明。相反地，假设存在一个内接于圆且面积最大的三角形 $\triangle ABC$，但它不是等边三角形。
 
-Since $\triangle ABC$ is not equilateral, there are 
-two sides of it that are not equal.
+      Since $\triangle ABC$ is not equilateral, there are
+      two sides of it that are not equal.
 
-由于 $\triangle ABC$ 不是等边三角形，所以它有两条边不相等。
+      由于 $\triangle ABC$ 不是等边三角形，所以它有两条边不相等。
 
-Without loss of generality, suppose that
-sides $\overline{AB}$ and $\overline{BC}$ have different lengths.
+      Without loss of generality, suppose that
+      sides $\overline{AB}$ and $\overline{BC}$ have different lengths.
 
-不失一般性，假设边 $\overline{AB}$ 和 $\overline{BC}$ 的长度不同。
+      不失一般性，假设边 $\overline{AB}$ 和 $\overline{BC}$ 的长度不同。
 
-Consider
-the remaining side ($\overline{AC}$) to be the base of this triangle.
+      Consider
+      the remaining side ($\overline{AC}$) to be the base of this triangle.
 
-将剩下的边（$\overline{AC}$）视为这个三角形的底边。
+      将剩下的边（$\overline{AC}$）视为这个三角形的底边。
 
-We can construct another triangle $\triangle AB'C$, also inscribed in our circle, and also 
-having $\overline{AC}$ as its base, having a greater altitude than
-$\triangle ABC$ --- since the area of a triangle is given by
-the formula $bh/2$ (where $b$ is the base, and $h$ is the altitude), 
-this triangle's area is evidently greater than that of $\triangle ABC$.
+      We can construct another triangle $\triangle AB'C$, also inscribed in our circle, and also
+      having $\overline{AC}$ as its base, having a greater altitude than
+      $\triangle ABC$ --- since the area of a triangle is given by
+      the formula $bh/2$ (where $b$ is the base, and $h$ is the altitude),
+      this triangle's area is evidently greater than that of $\triangle ABC$.
 
-我们可以构造另一个也内接于我们的圆，并同样以 $\overline{AC}$ 为底的三角形 $\triangle AB'C$，它的高比 $\triangle ABC$ 更大——因为三角形的面积由公式 $bh/2$（其中 $b$ 是底， $h$ 是高）给出，这个三角形的面积显然大于 $\triangle ABC$ 的面积。
+      我们可以构造另一个也内接于我们的圆，并同样以 $\overline{AC}$ 为底的三角形 $\triangle AB'C$，它的高比 $\triangle ABC$ 更大——因为三角形的面积由公式 $bh/2$（其中 $b$ 是底， $h$ 是高）给出，这个三角形的面积显然大于 $\triangle ABC$ 的面积。
 
-This is a contradiction since $\triangle ABC$ was presumed to have 
-maximal area.
+      This is a contradiction since $\triangle ABC$ was presumed to have
+      maximal area.
 
-这是一个矛盾，因为 $\triangle ABC$ 被假定为具有最大面积。
+      这是一个矛盾，因为 $\triangle ABC$ 被假定为具有最大面积。
 
-We leave the actual construction $\triangle AB'C$ to the following exercise.
+      We leave the actual construction $\triangle AB'C$ to the following exercise.
 
-我们将 $\triangle AB'C$ 的实际构造留给下面的练习。
+      我们将 $\triangle AB'C$ 的实际构造留给下面的练习。
 \end{proof}
 
 \begin{exer}
-Where should we place the point $B'$ in order to create a triangle  
-$\triangle AB'C$ having
-greater area than any triangle such as $\triangle ABC$ which is not isosceles?
+      Where should we place the point $B'$ in order to create a triangle
+      $\triangle AB'C$ having
+      greater area than any triangle such as $\triangle ABC$ which is not isosceles?
 
-为了创建一个面积比任何非等腰三角形 $\triangle ABC$ 都大的三角形 $\triangle AB'C$，我们应该将点 $B'$ 放在哪里？
-\begin{center}
-\input{figures/Non-isosceles.tex}
-\end{center}
+      为了创建一个面积比任何非等腰三角形 $\triangle ABC$ 都大的三角形 $\triangle AB'C$，我们应该将点 $B'$ 放在哪里？
+      \begin{center}
+            \input{figures/Non-isosceles.tex}
+      \end{center}
 
 \end{exer}
 \clearpage
@@ -1275,7 +1271,7 @@ be possible.
 如果我们试图证明的陈述是假的，那么任何证明都是不可能的。
 
 Really, a prerequisite to developing a facility with
-proofs is developing a good ``lie detector.''   We need to be able to 
+proofs is developing a good ``lie detector.''   We need to be able to
 guess, or quickly ascertain, whether a statement is true or false.
 
 实际上，培养证明能力的一个先决条件是培养一个好的“测谎仪”。我们需要能够猜测或迅速确定一个陈述是真是假。
@@ -1283,7 +1279,7 @@ guess, or quickly ascertain, whether a statement is true or false.
 If we are given a universally quantified statement the first thing to
 do is try it out for some random elements of the universe we're working
 in.  If we happen across a value that satisfies the statement's hypotheses
-but doesn't satisfy the conclusion, we've found what is known as a 
+but doesn't satisfy the conclusion, we've found what is known as a
 \index{counterexample}\emph{counterexample}.
 
 如果我们得到一个全称量化的陈述，首先要做的是在我们工作的论域中随机选取一些元素来检验它。如果我们偶然发现一个满足陈述假设但不满足结论的值，我们就找到了所谓的\index{counterexample}\emph{反例}。
@@ -1293,11 +1289,11 @@ Consider the following statement about integers and divisibility:
 考虑以下关于整数和整除性的陈述：
 
 \begin{conj} \label{conj:prim}
-\[ \forall a,b,c \in \Integers, \; a \divides bc \; \implies \; a \divides b \,
-\lor \, a \divides c. \]
+      \[ \forall a,b,c \in \Integers, \; a \divides bc \; \implies \; a \divides b \,
+            \lor \, a \divides c. \]
 \end{conj}
 
-This is phrased as a UCS, so the hypothesis is clear, we're looking 
+This is phrased as a UCS, so the hypothesis is clear, we're looking
 for three integers so that the first divides the product of the other
 two.
 
@@ -1308,33 +1304,33 @@ $a$, $b$ and $c$ such that $a \divides bc$.
 
 在下表中，我们收集了几个使得 $a \divides bc$ 成立的 $a, b, c$ 的值。
 \begin{center}
-\begin{tabular}{c|c|c|c}
-$a$ & $b$ & $c$ & $ a \divides b \, \lor \, a \divides c $ ? \\ \hline
-2 & 7 & 6 & yes \\  
-2 & 4 & 5 & yes \\  
-3 & 12 & 11 & yes \\
-3 & 5 & 15 & yes \\
-5 & 4 & 15 & yes \\
-5 & 10 & 3 & yes \\
-7 & 2 & 14 & yes \\
-\end{tabular}
+      \begin{tabular}{c|c|c|c}
+            $a$ & $b$ & $c$ & $ a \divides b \, \lor \, a \divides c $ ? \\ \hline
+            2   & 7   & 6   & yes                                        \\
+            2   & 4   & 5   & yes                                        \\
+            3   & 12  & 11  & yes                                        \\
+            3   & 5   & 15  & yes                                        \\
+            5   & 4   & 15  & yes                                        \\
+            5   & 10  & 3   & yes                                        \\
+            7   & 2   & 14  & yes                                        \\
+      \end{tabular}
 \end{center}
 
-\begin{exer} 
-As noted in Section~\ref{sec:def} the statement above is related to
-whether or not $a$ is prime.
+\begin{exer}
+      As noted in Section~\ref{sec:def} the statement above is related to
+      whether or not $a$ is prime.
 
-如第~\ref{sec:def}节所述，上述陈述与 $a$ 是否为素数有关。
+      如第~\ref{sec:def}节所述，上述陈述与 $a$ 是否为素数有关。
 
-Note that in the table, only prime
-values of $a$ appear.  This is a rather broad hint.
+      Note that in the table, only prime
+      values of $a$ appear.  This is a rather broad hint.
 
-注意在表格中，只出现了 $a$ 的素数值。这是一个相当明显的提示。
+      注意在表格中，只出现了 $a$ 的素数值。这是一个相当明显的提示。
 
-Find a 
-counterexample to Conjecture~\ref{conj:prim}.
+      Find a
+      counterexample to Conjecture~\ref{conj:prim}.
 
-为猜想~\ref{conj:prim}找一个反例。
+      为猜想~\ref{conj:prim}找一个反例。
 \end{exer}
 
 There can be times when the search for a counterexample starts to feel
@@ -1349,14 +1345,14 @@ a yet still be false?
 你会认为一个关于自然数的陈述可能对前50个（甚至更多）数都成立，但最终仍然是错误的吗？
 
 \begin{conj}
-\label{conj:prim2}
-\[ \forall n \in \Integers^+ \; n^2 - 79n + 1601 \, \mbox{is prime.} \]
+      \label{conj:prim2}
+      \[ \forall n \in \Integers^+ \; n^2 - 79n + 1601 \, \mbox{is prime.} \]
 \end{conj}
 
 \begin{exer}
-Find a counterexample to Conjecture~\ref{conj:prim2}
+      Find a counterexample to Conjecture~\ref{conj:prim2}
 
-为猜想~\ref{conj:prim2}找一个反例。
+      为猜想~\ref{conj:prim2}找一个反例。
 \end{exer}
 
 Hidden within Euclid's proof of the infinitude of the primes is
@@ -1365,7 +1361,7 @@ a sequence.
 在欧几里得关于素数无穷性的证明中，隐藏着一个序列。
 
 Recall that in the proof we deduced a contradiction
-by considering the number $N$ defined by 
+by considering the number $N$ defined by
 
 回想一下，在证明中，我们通过考虑由以下公式定义的数 $N$ 推导出了一个矛盾：
 
@@ -1386,27 +1382,27 @@ The first several values of this sequence are:
 该序列的前几个值是：
 
 \rule{72pt}{0pt} \begin{tabular}{c|c}
- $n$ & $N_n$ \\ \hline
- $1$ & $1+(2) = 3$ \\
- $2$ & $1+(2\cdot 3) = 7$\\
- $3$ & $1+(2\cdot 3\cdot 5) = 31$\\
- $4$ & $1+(2\cdot 3\cdot 5\cdot 7) = 211$\\
- $5$ & $1+(2\cdot 3\cdot 5\cdot 7\cdot 11) = 2311$\\
-$\vdots$ & $\vdots$ \\
+      $n$      & $N_n$                                       \\ \hline
+      $1$      & $1+(2) = 3$                                 \\
+      $2$      & $1+(2\cdot 3) = 7$                          \\
+      $3$      & $1+(2\cdot 3\cdot 5) = 31$                  \\
+      $4$      & $1+(2\cdot 3\cdot 5\cdot 7) = 211$          \\
+      $5$      & $1+(2\cdot 3\cdot 5\cdot 7\cdot 11) = 2311$ \\
+      $\vdots$ & $\vdots$                                    \\
 \end{tabular}
 
 Now, in the proof, we deduced a contradiction by noting that $N_n$ is
 much larger than $p_n$, so if $p_n$ is the largest prime it follows that
-$N_n$ can't be prime -- but what really appears to be the case (just look 
-at that table!) is that $N_n$ actually \emph{is} prime for all $n$. 
+$N_n$ can't be prime -- but what really appears to be the case (just look
+at that table!) is that $N_n$ actually \emph{is} prime for all $n$.
 
 现在，在证明中，我们通过注意到 $N_n$ 远大于 $p_n$ 推导出了一个矛盾，所以如果 $p_n$ 是最大的素数，那么 $N_n$ 不可能是素数——但实际情况似乎是（看看那个表格！）$N_n$ 对所有的 $n$ 实际上\emph{都}是素数。
 
 \begin{exer}
-Find a counterexample to the conjecture that $1+\prod_{k=1}^n p_k$
-is itself always a prime.
+      Find a counterexample to the conjecture that $1+\prod_{k=1}^n p_k$
+      is itself always a prime.
 
-为“$1+\prod_{k=1}^n p_k$ 本身总是一个素数”这个猜想找一个反例。
+      为“$1+\prod_{k=1}^n p_k$ 本身总是一个素数”这个猜想找一个反例。
 \end{exer}
 
 
@@ -1424,7 +1420,7 @@ is itself always a prime.
 \label{sec:cases}
 
 \index{proof by exhaustion}
-Proof by exhaustion is the least attractive proof method from 
+Proof by exhaustion is the least attractive proof method from
 an aesthetic perspective.
 
 \index{proof by exhaustion}从美学的角度来看，穷举证明是最没有吸引力的证明方法。
@@ -1458,25 +1454,25 @@ exhaustion using a computer.
 一个不断增长的重要成果列表，这些成果都是通过计算机使用穷举法“证明”的。
 
 Important examples of this phenomenon
-are the non-existence of a 
+are the non-existence of a
 \index{projective plane of order 10}
-projective plane of order 10\cite{lam} and the 
-only known value of a 
+projective plane of order 10\cite{lam} and the
+only known value of a
 \index{Ramsey number}Ramsey number for hypergraphs\cite{radz}.
 
 这种现象的重要例子包括不存在\index{projective plane of order 10}10阶射影平面\cite{lam}以及超图的\index{Ramsey number}拉姆齐数的唯一已知值\cite{radz}。
 
 \index{proof by cases}
-Proof by cases is subtly different from exhaustive proof -- for one 
+Proof by cases is subtly different from exhaustive proof -- for one
 thing a valid proof by cases can be used in an infinite universe.
 
 \index{proof by cases}分情况讨论证明与穷举证明有细微差别——其一，一个有效的分情况讨论证明可以用在无限的论域中。
 
 In a proof by cases one has to divide the universe of discourse into
-a finite number of sets\footnote{It is necessary to provide an argument that 
-this list of cases is complete!
-I.e.\ that every element of the universe
-falls into one of the cases.} and then provide a separate proof for each
+a finite number of sets\footnote{It is necessary to provide an argument that
+      this list of cases is complete!
+      I.e.\ that every element of the universe
+      falls into one of the cases.} and then provide a separate proof for each
 of the cases.
 
 在分情况讨论证明中，必须将论域划分为有限数量的集合\footnote{必须提供一个论证，说明这个情况列表是完备的！即论域中的每个元素都属于其中一种情况。}，然后为每种情况提供一个独立的证明。
@@ -1486,19 +1482,19 @@ using the division of integers into even and odd.
 
 许多关于整数的陈述都可以通过将整数分为奇数和偶数来证明。
 
-Another set of 
+Another set of
 cases that is used frequently is the finite number of possible remainders
 obtained when dividing by an integer $d$.
 
 另一组常用的情况是通过除以一个整数 $d$ 得到的有限数量的可能余数。
 
 (Note that even and odd correspond
-to the remainders $0$ and $1$ obtained after division by $2$.)    
-  
+to the remainders $0$ and $1$ obtained after division by $2$.)
+
 （请注意，奇数和偶数对应于除以2后得到的余数0和1。）
 
 A very famous instance of proof by cases is the computer-assisted proof
-of the 
+of the
 \index{four color theorem}
 four color theorem.
 
@@ -1512,28 +1508,28 @@ are always colored differently.
 四色定理是一个地图制作者早已知晓的结果，它表明4种颜色总是足以给地图上的国家着色，使得共享边界的国家总是颜色不同。
 
 Figure~\ref{fig:Lux_map} shows one instance
-of an arrangement of nations that requires at least four different colors, 
+of an arrangement of nations that requires at least four different colors,
 the theorem says that four colors are \emph{always} enough.
 
 图~\ref{fig:Lux_map}显示了一个需要至少四种不同颜色的国家排列实例，该定理表明四种颜色\emph{总是}足够的。
 
 It should be noted
-that real cartographers usually reserve a fifth color for oceans (and other 
-water) and that it is possible to conceive of a map requiring five colors if 
+that real cartographers usually reserve a fifth color for oceans (and other
+water) and that it is possible to conceive of a map requiring five colors if
 one allows the nations to be non-contiguous.
 
 应该指出，真正的地图制作者通常会为海洋（和其他水域）保留第五种颜色，并且如果允许国家不连续，可以设想出需要五种颜色的地图。
 
-In 1977, 
-\index{Appel, Kenneth} Kenneth Appel and 
+In 1977,
+\index{Appel, Kenneth} Kenneth Appel and
 \index{Haken, Wolfgang}Wolfgang Haken proved the four color
-theorem by reducing the infinitude of possibilities to 
+theorem by reducing the infinitude of possibilities to
 1,936 separate cases and analyzing each of these with a computer.
 
 1977年，\index{Appel, Kenneth}肯尼斯·阿佩尔和\index{Haken, Wolfgang}沃尔夫冈·哈肯通过将无限的可能性简化为1936个独立案例，并用计算机对每一个案例进行分析，证明了四色定理。
 
 The inelegance of a proof by cases is probably proportional to some power of
-the number of cases, but in any case, this proof is generally considered 
+the number of cases, but in any case, this proof is generally considered
 somewhat inelegant.
 
 一个分情况讨论证明的冗长程度可能与案例数量的某个次方成正比，但无论如何，这个证明通常被认为有些不够优雅。
@@ -1550,14 +1546,14 @@ the four color theorem see\cite{wiki-4color}.
 
 关于四色定理的一篇很好的介绍性文章，请见\cite{wiki-4color}。
 
-\begin{figure}[!hbtp] 
-\begin{center}
-\input{figures/Luxembourg.tex}
-\end{center}
-\caption[A four-color map.]{The nations surrounding %
-\index{Luxembourg} Luxembourg show %
-that sometimes 4 colors are required in cartography. 围绕\index{Luxembourg}卢森堡的国家表明，有时地图绘制需要4种颜色。}
-\label{fig:Lux_map}
+\begin{figure}[!hbtp]
+      \begin{center}
+            \input{figures/Luxembourg.tex}
+      \end{center}
+      \caption[A four-color map.四色地图]{The nations surrounding %
+            \index{Luxembourg} Luxembourg show %
+            that sometimes 4 colors are required in cartography. 围绕\index{Luxembourg}卢森堡的国家表明，有时地图绘制需要4种颜色。}
+      \label{fig:Lux_map}
 \end{figure}
 
 Most exhaustive proofs of statements that aren't trivial tend to either be (literally) too exhausting or to seem rather contrived.
@@ -1572,26 +1568,26 @@ statement has been checked for a large number of cases.
 存在某个陈述的穷举证明的一个例子是，当该陈述被认为是普遍成立的，但没有已知的通用证明——然而该陈述已经在大量案例中得到验证。
 
 \index{Goldbach's conjecture}Goldbach's conjecture
-is one such statement.  
-\index{Goldbach, Christian}Christian Goldbach~\cite{wiki-goldbach} 
+is one such statement.
+\index{Goldbach, Christian}Christian Goldbach~\cite{wiki-goldbach}
 was a mathematician born
-in \index{K\"{o}nigsberg}K\"{o}nigsberg Prussia, 
+in \index{K\"{o}nigsberg}K\"{o}nigsberg Prussia,
 who, curiously, did \emph{not} make the
 conjecture\footnote{This conjecture was %
-discussed previously in the exercises of Section~\ref{sec:def}} which bears
+      discussed previously in the exercises of Section~\ref{sec:def}} which bears
 his name.
 
 \index{Goldbach's conjecture}哥德巴赫猜想就是这样一个陈述。\index{Goldbach, Christian}克里斯蒂安·哥德巴赫~\cite{wiki-goldbach}是一位出生于普鲁士\index{K\"{o}nigsberg}柯尼斯堡的数学家，奇怪的是，他并\emph{没有}提出以他名字命名的那个猜想\footnote{这个猜想之前在第~\ref{sec:def}节的练习中讨论过}。
 
-In a letter to 
+In a letter to
 \index{Euler, Leonhard}Leonard Euler, Goldbach conjectured that every
-odd number greater than 5 could be expressed as the sum of three primes (nowadays this is known as the 
+odd number greater than 5 could be expressed as the sum of three primes (nowadays this is known as the
 \index{weak Goldbach conjecture} weak Goldbach conjecture).
 
 在一封给\index{Euler, Leonhard}莱昂哈德·欧拉的信中，哥德巴赫猜想每个大于5的奇数都可以表示为三个素数之和（现在这被称为\index{weak Goldbach conjecture}弱哥德巴赫猜想）。
 
-Euler apparently liked the 
-problem and replied to Goldbach stating what is now known as Goldbach's 
+Euler apparently liked the
+problem and replied to Goldbach stating what is now known as Goldbach's
 conjecture: Every even number greater than 2 can be expressed as the sum of
 two primes.
 
@@ -1629,56 +1625,60 @@ For example, consider the following theorem and proof.
 
 例如，考虑下面的定理和证明。
 
-\begin{thm} $\forall n \in \Integers \; n^2 \;$ is of the form $4k$ or 
-$4k+1$ for some $k \in \Integers$.
+\begin{thm} $\forall n \in \Integers \; n^2 \;$ is of the form $4k$ or
+      $4k+1$ for some $k \in \Integers$.
 \end{thm}
 
 \begin{proof}
-We will consider the four cases determined by the four
-possible residues mod 4.
+      We will consider the four cases determined by the four
+      possible residues mod 4.
 
-我们将考虑由模4的四种可能余数确定的四种情况。
+      我们将考虑由模4的四种可能余数确定的四种情况。
 
-\begin{itemize}
-\item[case i)] If $n \equiv 0 \pmod{4}$ then there is an integer $m$
-such that $n = 4m$.
+      \begin{itemize}
+            \item[case i)] If $n \equiv 0 \pmod{4}$ then there is an integer $m$
+                  such that $n = 4m$.
+                  It follows that $n^2 = (4m)^2 = 16m^2$ is of the
+                  form $4k$ where $k$ is $4m^2$.
 
-情况 i) 如果 $n \equiv 0 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m$。
-It follows that $n^2 = (4m)^2 = 16m^2$ is of the 
-form $4k$ where $k$ is $4m^2$.
+            \item[情况 i)] 如果 $n \equiv 0 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m$。
 
-因此 $n^2 = (4m)^2 = 16m^2$ 是 $4k$ 的形式，其中 $k$ 是 $4m^2$。
-\item[case ii)] If $n \equiv 1 \pmod{4}$ then there is an integer $m$
-such that $n = 4m+1$.
+                  因此 $n^2 = (4m)^2 = 16m^2$ 是 $4k$ 的形式，其中 $k$ 是 $4m^2$。
 
-情况 ii) 如果 $n \equiv 1 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m+1$。
-It follows that $n^2 = (4m+1)^2 = 16m^2 + 8m + 1$ 
-is of the form $4k+1$ where $k$ is $4m^2+2m$.
+            \item[case ii)] If $n \equiv 1 \pmod{4}$ then there is an integer $m$
+                  such that $n = 4m+1$.
+                  It follows that $n^2 = (4m+1)^2 = 16m^2 + 8m + 1$
+                  is of the form $4k+1$ where $k$ is $4m^2+2m$.
 
-因此 $n^2 = (4m+1)^2 = 16m^2 + 8m + 1$ 是 $4k+1$ 的形式，其中 $k$ 是 $4m^2+2m$。
-\item[case iii)] If $n \equiv 2 \pmod{4}$ then there is an integer $m$
-such that $n = 4m+2$.
+            \item[情况 ii)] 如果 $n \equiv 1 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m+1$。
 
-情况 iii) 如果 $n \equiv 2 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m+2$。
-It follows that $n^2 = (4m+2)^2 = 16m^2 + 16m + 4$ 
-is of the form $4k$ where $k$ is $4m^2+4m+1$.
+                  因此 $n^2 = (4m+1)^2 = 16m^2 + 8m + 1$ 是 $4k+1$ 的形式，其中 $k$ 是 $4m^2+2m$。
 
-因此 $n^2 = (4m+2)^2 = 16m^2 + 16m + 4$ 是 $4k$ 的形式，其中 $k$ 是 $4m^2+4m+1$。
-\item[case iv)] If $n \equiv 3 \pmod{4}$ then there is an integer $m$
-such that $n = 4m+3$.
+            \item[case iii)] If $n \equiv 2 \pmod{4}$ then there is an integer $m$
+                  such that $n = 4m+2$.
+                  It follows that $n^2 = (4m+2)^2 = 16m^2 + 16m + 4$
+                  is of the form $4k$ where $k$ is $4m^2+4m+1$.
 
-情况 iv) 如果 $n \equiv 3 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m+3$。
-It follows that $n^2 = (4m+3)^2 = 16m^2 + 24m + 9$ 
-is of the form $4k+1$ where $k$ is $4m^2+6m+2$.
+            \item[情况 iii)] 如果 $n \equiv 2 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m+2$。
 
-因此 $n^2 = (4m+3)^2 = 16m^2 + 24m + 9$ 是 $4k+1$ 的形式，其中 $k$ 是 $4m^2+6m+2$。
-\end{itemize}
+                  因此 $n^2 = (4m+2)^2 = 16m^2 + 16m + 4$ 是 $4k$ 的形式，其中 $k$ 是 $4m^2+4m+1$。
 
-Since these four cases exhaust the possibilities and since the desired
-result holds in each case, our proof is complete.
+            \item[case iv)] If $n \equiv 3 \pmod{4}$ then there is an integer $m$
+                  such that $n = 4m+3$.
+                  It follows that $n^2 = (4m+3)^2 = 16m^2 + 24m + 9$
+                  is of the form $4k+1$ where $k$ is $4m^2+6m+2$.
 
-由于这四种情况穷尽了所有可能性，并且期望的结果在每种情况下都成立，所以我们的证明是完整的。
-\end{proof} 
+            \item[情况 iv)] 如果 $n \equiv 3 \pmod{4}$，那么存在一个整数 $m$ 使得 $n = 4m+3$。
+
+
+                  因此 $n^2 = (4m+3)^2 = 16m^2 + 24m + 9$ 是 $4k+1$ 的形式，其中 $k$ 是 $4m^2+6m+2$。
+      \end{itemize}
+
+      Since these four cases exhaust the possibilities and since the desired
+      result holds in each case, our proof is complete.
+
+      由于这四种情况穷尽了所有可能性，并且期望的结果在每种情况下都成立，所以我们的证明是完整的。
+\end{proof}
 
 While the proof just stated is certainly valid, the argument is inelegant
 since a smaller number of cases would suffice.
@@ -1686,26 +1686,26 @@ since a smaller number of cases would suffice.
 虽然刚才陈述的证明无疑是有效的，但这个论证不够优雅，因为更少的情况就足够了。
 
 \begin{exer}
-The previous theorem can be proved using just two cases.  Do so.
+      The previous theorem can be proved using just two cases.  Do so.
 
-前一个定理可以用两种情况来证明。请证明之。
+      前一个定理可以用两种情况来证明。请证明之。
 \end{exer}
 
-We'll close this section by asking you to determine an exhaustive proof where 
+We'll close this section by asking you to determine an exhaustive proof where
 the complexity of the argument is challenging but not \emph{too} impossible.
 
 我们将通过要求你确定一个穷举证明来结束本节，该论证的复杂性具有挑战性但并非\emph{过于}不可能。
 
-\index{graph pebbling} Graph pebbling is an interesting concept originated 
+\index{graph pebbling} Graph pebbling is an interesting concept originated
 by the famous combinatorialist \index{Chung, Fan} Fan Chung.
 
-\index{graph pebbling}图配石是著名组合数学家\index{Chung, Fan}范·仲淹创的一个有趣概念。
+\index{graph pebbling}图配石是著名组合数学家\index{Chung, Fan}金芳蓉创的一个有趣概念。
 
-A ``graph'' 
+A ``graph''
 (as the term is used here) is a collection
-of places or locations which are known as ``nodes,'' some of which 
-are joined by paths or connections which are known as ``edges.'' 
-Graphs have been studied by mathematicians for about 400 years, and 
+of places or locations which are known as ``nodes,'' some of which
+are joined by paths or connections which are known as ``edges.''
+Graphs have been studied by mathematicians for about 400 years, and
 many interesting problems can be put in this setting.
 
 “图”（如此处所用）是地点或位置的集合，这些地点被称为“节点”，其中一些由路径或连接相连，这些连接被称为“边”。数学家研究图已有约400年历史，许多有趣的问题都可以放在这个背景下。
@@ -1733,7 +1733,7 @@ we must consume one pebble.
 图配石将这一点推向了极致：为了移动一颗石子，我们必须消耗一颗石子。
 
 Imagine that a bunch of pebbles are randomly
-distributed on the nodes of a graph, and that we are allowed to do 
+distributed on the nodes of a graph, and that we are allowed to do
 \emph{graph pebbling moves} -- we remove two pebbles from some node
 and place a single pebble on a node that is connected to it.
 
@@ -1743,39 +1743,39 @@ See Figure~\ref{fig:pebbling_move}.
 
 见图~\ref{fig:pebbling_move}。
 
-\begin{figure}[!hbtp] 
-\begin{center}
-\input{figures/pebbling.tex}
-\end{center}
-\caption[Graph pebbling.]{In graph pebbling problems a collection of pebbles
-are distributed on the nodes of a graph.
-There is no significance to the 
-particular graph that is shown here, or to the arrangement of pebbles -- 
-we are just giving an example. 在图配石问题中，一组石子分布在图的节点上。这里显示的特定图或石子的排列没有任何特殊意义——我们只是举一个例子。}
-\label{fig:pebbling}
+\begin{figure}[!hbtp]
+      \begin{center}
+            \input{figures/pebbling.tex}
+      \end{center}
+      \caption[Graph pebbling.图配石]{In graph pebbling problems a collection of pebbles
+            are distributed on the nodes of a graph.
+            There is no significance to the
+            particular graph that is shown here, or to the arrangement of pebbles --
+            we are just giving an example. 在图配石问题中，一组石子分布在图的节点上。这里显示的特定图或石子的排列没有任何特殊意义——我们只是举一个例子。}
+      \label{fig:pebbling}
 \end{figure}
 
-\begin{figure}[!hbtp] 
-\begin{center}
-\input{figures/pebbling_move.tex}
-\end{center}
-\caption[Graph pebbling move.]{A graph pebbling move takes two pebbles off
-of a node and puts one of them on an adjacent node (the other is discarded).
-Notice how node C, which formerly held 3 pebbles, now has only 1 and that 
-a pebble is now present on node D where previously there was none. 一个图配石移动从一个节点上拿走两颗石子，并将其中一颗放在相邻的节点上（另一颗被丢弃）。注意节点C以前有3颗石子，现在只有1颗，而节点D以前没有石子，现在有了一颗。}
-\label{fig:pebbling_move}
+\begin{figure}[!hbtp]
+      \begin{center}
+            \input{figures/pebbling_move.tex}
+      \end{center}
+      \caption[Graph pebbling move.图配石移动]{A graph pebbling move takes two pebbles off
+            of a node and puts one of them on an adjacent node (the other is discarded).
+            Notice how node C, which formerly held 3 pebbles, now has only 1 and that
+            a pebble is now present on node D where previously there was none. 一个图配石移动从一个节点上拿走两颗石子，并将其中一颗放在相邻的节点上（另一颗被丢弃）。注意节点C以前有3颗石子，现在只有1颗，而节点D以前没有石子，现在有了一颗。}
+      \label{fig:pebbling_move}
 \end{figure}
 
 For any particular graph, we can ask for its \emph{pebbling number}, $\rho$.
 
 对于任何特定的图，我们可以求其\emph{配石数} $\rho$。
 
-This is the smallest number so that if $\rho$ pebbles are distributed {\em in any way whatsoever} on the nodes of the graph, it will be possible to use 
+This is the smallest number so that if $\rho$ pebbles are distributed {\em in any way whatsoever} on the nodes of the graph, it will be possible to use
 pebbling moves so as to get a pebble to any node.
 
 这是最小的数，使得如果将 $\rho$ 颗石子{\em 以任何方式}分布在图的节点上，就可以使用配石移动将一颗石子移动到任何节点。
 
-For example, consider the triangle graph -- three nodes which are all 
+For example, consider the triangle graph -- three nodes which are all
 mutually connected.
 
 例如，考虑三角形图——三个相互连接的节点。
@@ -1785,27 +1785,27 @@ start with one pebble on each node we are already done;
 
 这个图的配石数是3。如果我们从每个节点上有一颗石子开始，我们已经完成了；
 
-if there is a 
+if there is a
 node that has two pebbles on it, we can use a pebbling move to reach
 either of the other two nodes.
 
 如果有一个节点上有两颗石子，我们可以使用配石移动到达另外两个节点中的任何一个。
 
-\begin{exer} 
-There is a graph $C_5$ which consists of 5 nodes connected in a circular
-fashion.  Determine its pebbling number.
-Prove your answer exhaustively.
+\begin{exer}
+      There is a graph $C_5$ which consists of 5 nodes connected in a circular
+      fashion.  Determine its pebbling number.
+      Prove your answer exhaustively.
 
-有一个图 $C_5$，由5个以圆形方式连接的节点组成。确定它的配石数。用穷举法证明你的答案。
+      有一个图 $C_5$，由5个以圆形方式连接的节点组成。确定它的配石数。用穷举法证明你的答案。
 
-Hint: the pebbling number must be greater than 4 because if one pebble is
-placed on each of 4 nodes the configuration is unmovable (we need to 
-have two pebbles on a node in order to be able to make a pebbling move
-at all) and so the 5th node can never be reached.
+      Hint: the pebbling number must be greater than 4 because if one pebble is
+      placed on each of 4 nodes the configuration is unmovable (we need to
+      have two pebbles on a node in order to be able to make a pebbling move
+      at all) and so the 5th node can never be reached.
 
-提示：配石数必须大于4，因为如果将一颗石子放在4个节点中的每一个上，这种配置是不可移动的（我们需要在一个节点上有两颗石子才能进行配石移动），因此永远无法到达第5个节点。
+      提示：配石数必须大于4，因为如果将一颗石子放在4个节点中的每一个上，这种配置是不可移动的（我们需要在一个节点上有两颗石子才能进行配石移动），因此永远无法到达第5个节点。
 \end{exer}
- 
+
 \clearpage
 
 \noindent{\large \bf Exercises --- \thesection\ }
@@ -1837,7 +1837,7 @@ actually \emph{proving} a related universal statement.
 Nevertheless,
 sometimes the way a theorem is stated emphasizes the existence question
 over the corresponding universal -- and so people talk about proving
-and disproving existential statements as a separate issue from 
+and disproving existential statements as a separate issue from
 universal statements.
 
 然而，有时定理的陈述方式更强调存在性问题而非相应的全称问题——因此人们将证明和反驳存在性陈述作为与全称陈述分开的问题来讨论。
@@ -1858,38 +1858,38 @@ For example:
 例如：
 
 \begin{thm}
-There is an even prime.
+      There is an even prime.
 
-存在一个偶素数。
+      存在一个偶素数。
 \end{thm}
 
 \begin{proof}
-The number 2 is both even and prime.
+      The number 2 is both even and prime.
 
-数字2既是偶数也是素数。
-\end{proof} 
+      数字2既是偶数也是素数。
+\end{proof}
 
 \begin{exer}
-The Fibonacci numbers are defined by the initial values $F(0)=1$
-and $F(1)=1$ and the recursive formula $F(n+1) = F(n)+F(n-1)$ (to
-get the next number in the series you add the last and the penultimate).
+      The Fibonacci numbers are defined by the initial values $F(0)=1$
+      and $F(1)=1$ and the recursive formula $F(n+1) = F(n)+F(n-1)$ (to
+      get the next number in the series you add the last and the penultimate).
 
-斐波那契数由初始值 $F(0)=1$ 和 $F(1)=1$ 以及递归公式 $F(n+1) = F(n)+F(n-1)$ 定义（要得到数列中的下一个数，你将最后一个和倒数第二个数相加）。
-\rule{72pt}{0pt} \begin{tabular}{c|c}
-$n$ & $F(n)$ \\ \hline
-0 & 1 \\
-1 & 1 \\
-2 & 2 \\
-3 & 3 \\
-4 & 5 \\
-5 & 8 \\
-$\vdots$ & $\vdots$\\
-\end{tabular}
-\medskip
+      斐波那契数由初始值 $F(0)=1$ 和 $F(1)=1$ 以及递归公式 $F(n+1) = F(n)+F(n-1)$ 定义（要得到数列中的下一个数，你将最后一个和倒数第二个数相加）。
+      \rule{72pt}{0pt} \begin{tabular}{c|c}
+            $n$      & $F(n)$   \\ \hline
+            0        & 1        \\
+            1        & 1        \\
+            2        & 2        \\
+            3        & 3        \\
+            4        & 5        \\
+            5        & 8        \\
+            $\vdots$ & $\vdots$ \\
+      \end{tabular}
+      \medskip
 
-Prove that there is a Fibonacci number that is a perfect square.
+      Prove that there is a Fibonacci number that is a perfect square.
 
-证明存在一个斐波那契数是完全平方数。
+      证明存在一个斐波那契数是完全平方数。
 \end{exer}
 
 A non-constructive existence proof is trickier.  One approach is to argue
@@ -1908,36 +1908,36 @@ This is my favorite non-constructive existential theorem/proof.
 
 一种特别巧妙的方法是使用二难推理。这是我最喜欢的非构造性存在定理/证明。
 \begin{thm}
-There are irrational numbers $\alpha$ and $\beta$ such that $\alpha^\beta$
-is rational.
+      There are irrational numbers $\alpha$ and $\beta$ such that $\alpha^\beta$
+      is rational.
 
-存在无理数 $\alpha$ 和 $\beta$ 使得 $\alpha^\beta$ 是有理数。
+      存在无理数 $\alpha$ 和 $\beta$ 使得 $\alpha^\beta$ 是有理数。
 \end{thm}
 
 \begin{proof}
-If $\sqrt{2}^{\sqrt{2}}$ is rational then we are done.
+      If $\sqrt{2}^{\sqrt{2}}$ is rational then we are done.
 
-如果 $\sqrt{2}^{\sqrt{2}}$ 是有理数，那么我们就完成了。
+      如果 $\sqrt{2}^{\sqrt{2}}$ 是有理数，那么我们就完成了。
 
-(Let $ \alpha = \beta = \sqrt{2}$.)  Otherwise, let 
-$\alpha = \sqrt{2}^{\sqrt{2}}$ and $\beta = \sqrt{2}$.
+      (Let $ \alpha = \beta = \sqrt{2}$.)  Otherwise, let
+      $\alpha = \sqrt{2}^{\sqrt{2}}$ and $\beta = \sqrt{2}$.
 
-（令 $ \alpha = \beta = \sqrt{2}$。）否则，令 $\alpha = \sqrt{2}^{\sqrt{2}}$ 且 $\beta = \sqrt{2}$。
+      （令 $ \alpha = \beta = \sqrt{2}$。）否则，令 $\alpha = \sqrt{2}^{\sqrt{2}}$ 且 $\beta = \sqrt{2}$。
 
-The result
-follows because $\left(\sqrt{2}^{\sqrt{2}}\right)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} 
-= \sqrt{2}^2 = 2$, which is clearly rational.
+      The result
+      follows because $\left(\sqrt{2}^{\sqrt{2}}\right)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})}
+            = \sqrt{2}^2 = 2$, which is clearly rational.
 
-结论成立，因为 $\left(\sqrt{2}^{\sqrt{2}}\right)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2}^2 = 2$，这显然是有理数。
-\end{proof} 
+      结论成立，因为 $\left(\sqrt{2}^{\sqrt{2}}\right)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} = \sqrt{2}^2 = 2$，这显然是有理数。
+\end{proof}
 
 Many existential proofs involve a property of the natural numbers
 known as the \index{well-ordering principle}well-ordering principle.
 
 许多存在性证明都涉及到自然数的一个性质，即\index{well-ordering principle}良序原则。
 
-The well-ordering principle is 
-sometimes abbreviated WOP.  If a set has WOP it doesn't mean that the 
+The well-ordering principle is
+sometimes abbreviated WOP.  If a set has WOP it doesn't mean that the
 set is ordered in a particularly good way, but rather that its subsets
 are like wells -- the kind one hoists water out of with a bucket on a rope.
 
@@ -1945,13 +1945,13 @@ are like wells -- the kind one hoists water out of with a bucket on a rope.
 
 You needn't be concerned with WOP in general at this point, but notice
 that the subsets of the natural numbers have a particularly nice property
- -- any non-empty set of natural numbers must have a least element (much like
+-- any non-empty set of natural numbers must have a least element (much like
 every water well has a bottom).
 
 你目前不必普遍地关心WOP，但请注意，自然数的子集有一个特别好的性质——任何非空的自然数集合都必须有一个最小元素（就像每口水井都有底一样）。
 
-Because the natural numbers have the well-ordering principle 
-we can prove that there is a least 
+Because the natural numbers have the well-ordering principle
+we can prove that there is a least
 natural number with property X by simply finding \emph{any} natural
 number with property X -- by doing that we've shown that the set of
 natural numbers with property X is non-empty and that's the only
@@ -1959,13 +1959,13 @@ hypothesis the WOP needs.
 
 因为自然数具有良序原则，我们可以通过简单地找到\emph{任何}一个具有性质X的自然数来证明存在一个具有性质X的最小自然数——通过这样做，我们已经表明具有性质X的自然数集合是非空的，而这正是WOP唯一需要的假设。
 
-For example, in the exercises in Section~\ref{sec:cases} we 
+For example, in the exercises in Section~\ref{sec:cases} we
 introduced vampire numbers.
 
 例如，在第~\ref{sec:cases}节的练习中，我们介绍了吸血鬼数。
 
-A \index{vampire number} \emph{vampire number} 
-is a 
+A \index{vampire number} \emph{vampire number}
+is a
 $2n$ digit number $v$ that factors as $v=xy$
 where $x$ and $y$ are $n$ digit numbers and the digits of $v$ are precisely the digits in $x$ and $y$ in some order.
 
@@ -1977,44 +1977,44 @@ are known as the ``fangs'' of $v$.
 数 $x$ 和 $y$ 被称为 $v$ 的“尖牙”。
 
 To eliminate trivial
-cases, both fangs may not end with zeros.  
+cases, both fangs may not end with zeros.
 
 为消除平凡情况，两个尖牙都不能以零结尾。
 
 
 \begin{thm}
-There is a smallest 6-digit vampire number.
+      There is a smallest 6-digit vampire number.
 
-存在一个最小的6位吸血鬼数。
+      存在一个最小的6位吸血鬼数。
 \end{thm}
 
 \begin{proof}
-The number $125460$ is a vampire number (in fact this is the smallest
-example of a vampire number with two sets of fangs: 
-$125460 = 204\cdot 615 = 246\cdot 510$).
+      The number $125460$ is a vampire number (in fact this is the smallest
+      example of a vampire number with two sets of fangs:
+      $125460 = 204\cdot 615 = 246\cdot 510$).
 
-数字 $125460$ 是一个吸血鬼数（实际上这是具有两对尖牙的吸血鬼数的最小例子：$125460 = 204\cdot 615 = 246\cdot 510$）。
+      数字 $125460$ 是一个吸血鬼数（实际上这是具有两对尖牙的吸血鬼数的最小例子：$125460 = 204\cdot 615 = 246\cdot 510$）。
 
-Since the set of 6-digit vampire
-numbers is non-empty, the well-ordering principle of the natural numbers
-allows us to deduce that there is a smallest 6-digit vampire number.
+      Since the set of 6-digit vampire
+      numbers is non-empty, the well-ordering principle of the natural numbers
+      allows us to deduce that there is a smallest 6-digit vampire number.
 
-由于6位吸血鬼数的集合是非空的，根据自然数的良序原则，我们可以推断出存在一个最小的6位吸血鬼数。
-\end{proof} 
- 
+      由于6位吸血鬼数的集合是非空的，根据自然数的良序原则，我们可以推断出存在一个最小的6位吸血鬼数。
+\end{proof}
+
 This is quite an interesting situation in that we know there is a smallest
 6-digit vampire number without having any idea what it is!
 
 这是一个非常有趣的情况，因为我们知道存在一个最小的6位吸血鬼数，却不知道它是什么！
 
 \begin{exer}
-Show that $102510$ is the smallest 6-digit vampire number.
+      Show that $102510$ is the smallest 6-digit vampire number.
 
-证明 $102510$ 是最小的6位吸血鬼数。
+      证明 $102510$ 是最小的6位吸血鬼数。
 \end{exer}
 
 There are quite a few occasions when we need to prove statements
-involving the \index{unique existence} unique existence quantifier 
+involving the \index{unique existence} unique existence quantifier
 ($\exists !$).
 
 有很多场合我们需要证明涉及\index{unique existence}唯一存在量词（$\exists !$）的陈述。
@@ -2030,21 +2030,21 @@ and we also need to show uniqueness.
 
 我们需要证明存在性——无论是构造性的还是非构造性的——并且我们还需要证明唯一性。
 
-To give an example of 
+To give an example of
 a unique existence proof we'll return to a concept first
 discussed in Section~\ref{sec:alg} and finish-up some business
 that was glossed-over there.
 
 为了给出一个唯一存在性证明的例子，我们将回到第~\ref{sec:alg}节首次讨论的一个概念，并完成那里被忽略的一些工作。
 
-Recall the Euclidean algorithm that was used to calculate the 
+Recall the Euclidean algorithm that was used to calculate the
 \index{greatest common divisor, gcd}greatest
 common divisor of two integers $a$ and $b$ (which we denote $\gcd{a}{b}$).
 
 回想一下用于计算两个整数 $a$ 和 $b$ 的\index{greatest common divisor, gcd}最大公约数（我们记作 $\gcd{a}{b}$）的欧几里得算法。
 
 There is a rather important question concerning algorithms known as
-the ``halting problem.''  Does the program eventually halt, or does it get 
+the ``halting problem.''  Does the program eventually halt, or does it get
 stuck in an infinite loop?
 
 关于算法有一个相当重要的问题，称为“停机问题”。程序最终会停止，还是会陷入无限循环？
@@ -2056,7 +2056,7 @@ unique existence result.
 我们知道欧几里得算法会停止（并输出正确的结果），因为我们知道以下唯一存在性结果。
 
 \[ \forall a, b \in \Integers^+, \, \exists ! \, d \in \Integers^+ \; \mbox{such that} \, d=\gcd{a}{b} \]
-  
+
 Now, before we can prove this result, we'll need a precise definition
 for $\gcd{a}{b}$.
 
@@ -2067,18 +2067,18 @@ means it needs to divide both $a$ and $b$.
 
 首先，一个gcd必须是一个\emph{公约数}，这意味着它需要能同时整除 $a$ 和 $b$。
 
-Secondly, among all the common 
+Secondly, among all the common
 divisors, it must be the \emph{largest}.
 
 其次，在所有公约数中，它必须是\emph{最大的}。
 
-This second point is usually 
+This second point is usually
 addressed
 by requiring that every other common divisor divides the gcd.
 
 第二点通常通过要求所有其他公约数都能整除这个gcd来解决。
 
-Finally we 
+Finally we
 should note that a gcd is always positive, for whenever a number divides
 another number so does its negative, and whichever of those two is positive
 will clearly be the greater!
@@ -2086,19 +2086,19 @@ will clearly be the greater!
 最后我们应该注意到，一个gcd总是正的，因为每当一个数能整除另一个数时，它的相反数也能，而这两个数中正的那个显然更大！
 
 This allows us to extend the definition of
-gcd to all integers, but things are conceptually easier if we 
+gcd to all integers, but things are conceptually easier if we
 keep our attention restricted to the positive integers.
 
 这使我们可以将gcd的定义扩展到所有整数，但如果我们将注意力限制在正整数上，概念上会更容易。
 
 \begin{defi}
-The \emph{greatest common divisor}, or gcd, of two positive 
-integers $a$ and $b$
-is a positive integer $d$ such that $d \divides a$ and $d \divides b$ and if $c$ is any
-other positive integer such that $c \divides a$ and $c \divides b$ then $c \divides d$.
+      The \emph{greatest common divisor}, or gcd, of two positive
+      integers $a$ and $b$
+      is a positive integer $d$ such that $d \divides a$ and $d \divides b$ and if $c$ is any
+      other positive integer such that $c \divides a$ and $c \divides b$ then $c \divides d$.
 
-两个正整数 $a$ 和 $b$ 的\emph{最大公约数}（gcd）是一个正整数 $d$，使得 $d \divides a$ 且 $d \divides b$，并且如果 $c$ 是任何其他满足 $c \divides a$ 和 $c \divides b$ 的正整数，那么 $c \divides d$。
-\[ \forall a,b,c,d \in \Integers^+ \; d=\gcd{a}{b} \; \iff \; d \divides a \, \land \, d \divides b \, \land \, (c \divides a \, \land \, c \divides b  \implies c \divides d)\]
+      两个正整数 $a$ 和 $b$ 的\emph{最大公约数}（gcd）是一个正整数 $d$，使得 $d \divides a$ 且 $d \divides b$，并且如果 $c$ 是任何其他满足 $c \divides a$ 和 $c \divides b$ 的正整数，那么 $c \divides d$。
+      \[ \forall a,b,c,d \in \Integers^+ \; d=\gcd{a}{b} \; \iff \; d \divides a \, \land \, d \divides b \, \land \, (c \divides a \, \land \, c \divides b  \implies c \divides d)\]
 \end{defi}
 
 Armed with this definition, let's return our attention to proving the
@@ -2120,7 +2120,7 @@ Put $d'$ in the place of $c$ in the definition to see that $d' \divides d$.
 
 将 $d'$ 放在定义中 $c$ 的位置，可以看到 $d' \divides d$。
 
-Similarly, we can deduce that $d \divides d'$ and if two numbers each divide 
+Similarly, we can deduce that $d \divides d'$ and if two numbers each divide
 into the other, they must be equal.
 
 类似地，我们可以推断出 $d \divides d'$，如果两个数互相整除，它们必须相等。
@@ -2130,19 +2130,19 @@ assumed $d$ and $d'$ were different.
 
 这是一个矛盾，因为我们假设 $d$ 和 $d'$ 是不同的。
 
-For the existence part we'll need to define a set -- known as the 
-\index{Z-module}$\Integers$-module generated by $a$ and $b$ -- that consists of all 
+For the existence part we'll need to define a set -- known as the
+\index{Z-module}$\Integers$-module generated by $a$ and $b$ -- that consists of all
 numbers of the form $xa+yb$ where $x$ and $y$ range over the integers.
 
 对于存在性部分，我们需要定义一个集合——称为由 $a$ 和 $b$ 生成的\index{Z-module}$\Integers$-模——它包含所有形如 $xa+yb$ 的数，其中 $x$ 和 $y$ 是整数。
 
-\begin{figure}[!hbtp] 
-\begin{center}
-\input{figures/Z-module.tex}
-\end{center}
-\caption[A $\Integers$-module.]{The $\Integers$-module generated by $21$ and %
-$15$.  The number $21x+15y$ is printed by the point $(x,y)$. 由21和15生成的$\Integers$-模。数字 $21x+15y$ 打印在点 $(x,y)$ 处。}
-\label{fig:zmodule}
+\begin{figure}[!hbtp]
+      \begin{center}
+            \input{figures/Z-module.tex}
+      \end{center}
+      \caption[A $\Integers$-module.$\Integers$-模]{The $\Integers$-module generated by $21$ and %
+            $15$.  The number $21x+15y$ is printed by the point $(x,y)$. 由21和15生成的$\Integers$-模。数字 $21x+15y$ 打印在点 $(x,y)$ 处。}
+      \label{fig:zmodule}
 \end{figure}
 
 This set has a very nice geometric character that often doesn't receive the
@@ -2156,48 +2156,48 @@ corresponds to a point in the Euclidean plane.
 
 由两个数（例子中是15和21）生成的$\Integers$-模的每个元素都对应欧几里得平面上的一个点。
 
-As indicated in 
+As indicated in
 Figure~\ref{fig:zmodule} there is a dividing line between the positive
 and negative elements in a $\Integers$-module.
 
 如图~\ref{fig:zmodule}所示，在一个$\Integers$-模中，正元素和负元素之间有一条分界线。
 
 It is also easy to see
-that there are many repetitions of the same value at different points 
+that there are many repetitions of the same value at different points
 in the plane.
 
 也很容易看出，在平面上的不同点有许多相同值的重复。
 
 \begin{exer}
-The value $0$ clearly occurs in a $\Integers$-module when both
-$x$ and $y$ are themselves zero.
+      The value $0$ clearly occurs in a $\Integers$-module when both
+      $x$ and $y$ are themselves zero.
 
-当 $x$ 和 $y$ 本身都为零时，值0显然出现在一个$\Integers$-模中。
+      当 $x$ 和 $y$ 本身都为零时，值0显然出现在一个$\Integers$-模中。
 
-Find another pair of $(x,y)$ 
-values such that $21x+15y$ is zero.
+      Find another pair of $(x,y)$
+      values such that $21x+15y$ is zero.
 
-找另一对 $(x,y)$ 值使得 $21x+15y$ 为零。
+      找另一对 $(x,y)$ 值使得 $21x+15y$ 为零。
 
-What is the slope of
-the line which separates the positive values from the negative
-in our $\Integers$-module?
+      What is the slope of
+      the line which separates the positive values from the negative
+      in our $\Integers$-module?
 
-在我们的$\Integers$-模中，分隔正值和负值的直线的斜率是多少？
-\end{exer} 
+      在我们的$\Integers$-模中，分隔正值和负值的直线的斜率是多少？
+\end{exer}
 
-In thinking about this $\Integers$-module, and perusing 
-Figure~\ref{fig:zmodule}, you may have noticed that the smallest 
-positive number in the $\Integers$-module is 3.  If you hadn't 
+In thinking about this $\Integers$-module, and perusing
+Figure~\ref{fig:zmodule}, you may have noticed that the smallest
+positive number in the $\Integers$-module is 3.  If you hadn't
 noticed that, look back and verify that fact now.
 
 在思考这个$\Integers$-模，并细读图~\ref{fig:zmodule}时，你可能已经注意到这个$\Integers$-模中最小的正数是3。如果你没有注意到，现在回头去验证这个事实。
 
 \begin{exer}
-How do we know that some smaller positive value (a $1$ or a $2$) doesn't
-occur somewhere in the Euclidean plane?
+      How do we know that some smaller positive value (a $1$ or a $2$) doesn't
+      occur somewhere in the Euclidean plane?
 
-我们怎么知道某个更小的正值（1或2）不会出现在欧几里得平面的某个地方？
+      我们怎么知道某个更小的正值（1或2）不会出现在欧几里得平面的某个地方？
 \end{exer}
 
 What we've just observed is a particular instance of a general result.
@@ -2205,65 +2205,65 @@ What we've just observed is a particular instance of a general result.
 我们刚才观察到的是一个普遍结果的特例。
 
 \begin{thm} \label{gcduniqueexists}
-The smallest positive number in the $\Integers$-module generated by
-$a$ and $b$ is $d = \gcd{a}{b}$.
+      The smallest positive number in the $\Integers$-module generated by
+      $a$ and $b$ is $d = \gcd{a}{b}$.
 
-由 $a$ 和 $b$ 生成的$\Integers$-模中最小的正数是 $d = \gcd{a}{b}$。
+      由 $a$ 和 $b$ 生成的$\Integers$-模中最小的正数是 $d = \gcd{a}{b}$。
 \end{thm}
 
 \begin{proof}
-Suppose that $d$ is the smallest positive number
-in the $\Integers$-module $\{ xa + yb \suchthat x,y \in \Integers \}$.
+      Suppose that $d$ is the smallest positive number
+      in the $\Integers$-module $\{ xa + yb \suchthat x,y \in \Integers \}$.
 
-假设 $d$ 是$\Integers$-模 $\{ xa + yb \suchthat x,y \in \Integers \}$中最小的正数。
+      假设 $d$ 是$\Integers$-模 $\{ xa + yb \suchthat x,y \in \Integers \}$中最小的正数。
 
-There are particular values of $x$ and $y$ (which we will distinguish
-with over-lines) such that $d = \overline{x}a + \overline{y}b$.
+      There are particular values of $x$ and $y$ (which we will distinguish
+      with over-lines) such that $d = \overline{x}a + \overline{y}b$.
 
-存在特定的 $x$ 和 $y$ 值（我们将用上划线区分它们）使得 $d = \overline{x}a + \overline{y}b$。
+      存在特定的 $x$ 和 $y$ 值（我们将用上划线区分它们）使得 $d = \overline{x}a + \overline{y}b$。
 
-Now, it 
-is easy to see that if $c$ is any common divisor of $a$ and $b$ then
-$c \divides d$, so what remains to be proved is that $d$ itself is a divisor
-of both $a$ and $b$.
+      Now, it
+      is easy to see that if $c$ is any common divisor of $a$ and $b$ then
+      $c \divides d$, so what remains to be proved is that $d$ itself is a divisor
+      of both $a$ and $b$.
 
-现在，很容易看出如果 $c$ 是 $a$ 和 $b$ 的任意公约数，那么 $c \divides d$，所以剩下需要证明的是 $d$ 本身是 $a$ 和 $b$ 的约数。
+      现在，很容易看出如果 $c$ 是 $a$ 和 $b$ 的任意公约数，那么 $c \divides d$，所以剩下需要证明的是 $d$ 本身是 $a$ 和 $b$ 的约数。
 
-Consider dividing $d$ into $a$.  By the 
-division algorithm there are uniquely determined numbers $q$ and $r$
-such that $a =qd + r$ with $0 \leq r < d$.
+      Consider dividing $d$ into $a$.  By the
+      division algorithm there are uniquely determined numbers $q$ and $r$
+      such that $a =qd + r$ with $0 \leq r < d$.
 
-考虑用 $d$ 除 $a$。根据除法算法，存在唯一确定的数 $q$ 和 $r$ 使得 $a =qd + r$ 且 $0 \leq r < d$。
+      考虑用 $d$ 除 $a$。根据除法算法，存在唯一确定的数 $q$ 和 $r$ 使得 $a =qd + r$ 且 $0 \leq r < d$。
 
-We will show that $r=0$.
-Suppose, to the contrary, that $r$ is positive.
+      We will show that $r=0$.
+      Suppose, to the contrary, that $r$ is positive.
 
-我们将证明 $r=0$。相反地，假设 $r$ 是正的。
+      我们将证明 $r=0$。相反地，假设 $r$ 是正的。
 
-Note that we can
-write $r$ as $r = a - qd = a - q(\overline{x}a + \overline{y}b) = (1-q\overline{x})a - q\overline{y}b$.
+      Note that we can
+      write $r$ as $r = a - qd = a - q(\overline{x}a + \overline{y}b) = (1-q\overline{x})a - q\overline{y}b$.
 
-注意我们可以将 $r$ 写成 $r = a - qd = a - q(\overline{x}a + \overline{y}b) = (1-q\overline{x})a - q\overline{y}b$。
+      注意我们可以将 $r$ 写成 $r = a - qd = a - q(\overline{x}a + \overline{y}b) = (1-q\overline{x})a - q\overline{y}b$。
 
-The last equality shows that $r$ is in the
-$\Integers$-module under consideration, and so, since $d$ is the smallest
-positive integer in this $\Integers$-module it follows that $r \geq d$ which
-contradicts the previously noted fact that $r < d$.
+      The last equality shows that $r$ is in the
+      $\Integers$-module under consideration, and so, since $d$ is the smallest
+      positive integer in this $\Integers$-module it follows that $r \geq d$ which
+      contradicts the previously noted fact that $r < d$.
 
-最后一个等式表明 $r$ 在所考虑的$\Integers$-模中，因此，由于 $d$ 是这个$\Integers$-模中最小的正整数，所以 $r \geq d$，这与之前提到的事实 $r < d$ 相矛盾。
+      最后一个等式表明 $r$ 在所考虑的$\Integers$-模中，因此，由于 $d$ 是这个$\Integers$-模中最小的正整数，所以 $r \geq d$，这与之前提到的事实 $r < d$ 相矛盾。
 
-Thus, $r=0$ and so
-it follows that $d \divides a$.  An entirely analogous argument can be used
-to show that $d \divides b$ which completes the proof that $d = \gcd{a}{b}$.
+      Thus, $r=0$ and so
+      it follows that $d \divides a$.  An entirely analogous argument can be used
+      to show that $d \divides b$ which completes the proof that $d = \gcd{a}{b}$.
 
-因此，$r=0$，所以 $d \divides a$。一个完全类似的论证可以用来证明 $d \divides b$，从而完成了 $d = \gcd{a}{b}$ 的证明。
-\end{proof} 
- 
+      因此，$r=0$，所以 $d \divides a$。一个完全类似的论证可以用来证明 $d \divides b$，从而完成了 $d = \gcd{a}{b}$ 的证明。
+\end{proof}
+
 
 \clearpage
 
 
-\noindent{\large \bf Exercises --- \thesection\ } 
+\noindent{\large \bf Exercises --- \thesection\ }
 
 \input{proof1-zh/exist-exer.tex}
 
