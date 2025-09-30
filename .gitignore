@@ -15,14 +15,17 @@ figures/*.tex
 **.lot
 **.nav
 **.out
-**.pdf
+# **.pdf
 **.snm
 **.synctex.gz
 **.toc
 **.fig.bak
+**.latexmk
+**.fdb_latexmk
+**.fls
 .DS_Store
 **.eps
-!GIAM.pdf
-!GIAM-cn.pdf
-!GIAM-hw.pdf
-!GIAM-solutions_manual.pdf
+# !GIAM.pdf
+# !GIAM-cn.pdf
+# !GIAM-hw.pdf
+# !GIAM-solutions_manual.pdf

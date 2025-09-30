@@ -1,9 +1,41 @@
 \documentclass[12pt,twoside]{book}
 \usepackage{fontspec}
 \usepackage{xeCJK}
-% \setCJKmainfont{STSong}
-% \setmainfont{Times New Roman}
+
+% \setmainfont{Source Serif 4 Light}
+\setCJKmainfont{Source Han Serif SC Light}
+% \setCJKmainfont{Noto Serif CJK SC}
+% \setCJKmainfont{Adobe Song Std}
+% \setCJKsansfont{Adobe Heiti Std}
+\setCJKsansfont{Source Han Sans SC Light}
+\setCJKmonofont{Source Han Serif SC Light}
+% 定义一个名为 "myemph" 的字体系列
+\newCJKfontfamily{\myemph}{Source Han Serif SC SemiBold}
+% 重新定义 \em 命令
+\DeclareEmphSequence{\myemph}
+
+\usepackage{indentfirst}
+\setlength{\parindent}{2em} % 设置段落缩进量为两个中文字符的宽度
+
+
 \RequirePackage{hyperref}
+\hypersetup{colorlinks=true, %
+  allcolors=blue, %
+  plainpages=false, %
+  pdfpagelabels, %
+  %hyperindex=true, %
+  %backref=true, %
+  %bookmarks=true, %
+  pdftitle={A Gentle Introduction to the Art of Mathematics}, %
+  pdfauthor={Joseph E.\ Fields}, %
+  pdfsubject={Foundations of Mathematics}, %
+  %pdfpagelayout=SinglePage, %
+  %pdfpagetransition=Dissolve, %
+  pdfstartview=FitH, %
+  %pdfstartpage=1, %
+  %pdffitwindow=true
+}
+
 
 \usepackage[english]{babel} %language selection
 % \selectlanguage{english}
@@ -44,7 +76,7 @@
 
 \frontmatter
 
-\title{A Gentle Introduction to the Art of Mathematics \\ 数学艺术入门 \\{\small Version \versionNum \ifthenelse{\boolean{LNotIsSim}}{S}{}\ifthenelse{\boolean{ZeroInNaturals}}{}{N} }}
+\title{A Gentle Introduction to \\ the Art of Mathematics \\ 数学艺术入门 \\{\small Version \versionNum \ifthenelse{\boolean{LNotIsSim}}{S}{}\ifthenelse{\boolean{ZeroInNaturals}}{}{N} }}
 \author{Joe Fields}
 \date{Southern Connecticut State University \\ 南康涅狄格州立大学}
 
